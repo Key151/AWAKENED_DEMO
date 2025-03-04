@@ -318,11 +318,23 @@ public class BattleS : MonoBehaviour
         VerificateButtonUI.ActivateButtonsMP();
     }
 
-    public void OnReturnButton()
+    public void OnMovementButton()
     {
         VerificateButtonUI.DisactivateButtonsMP();
+        VerificateButtonUI.ActivateButtonsMovement();
+    }
+    public void OnReturnButton()
+    {
+        VerificateButtonUI.DisactivateButtonsMovement();
         VerificateButtonUI.ActivateButtons();
     }
+
+    public void OnMoveButton()
+    {
+        VerificateButtonUI.DisactivateButtonsMovement();
+    }
+
+
 
     /*public void OnAttack()
     {

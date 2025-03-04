@@ -6,11 +6,15 @@ public class VerificateButtonUI : MonoBehaviour
 {
     public Button primaryButtonPlayer;
     public Button primaryButtonPlayer_2;
+    public Button primaryButtonPlayer_3;
     public Button primaryButtonEnemy;
+    public Button primaryButtonMove;
 
     public GameObject attackButton;
     public GameObject mpButton;
     public GameObject healButton;
+    public GameObject movementButton;
+    public GameObject moveButton;
     public GameObject returnButton;
     public GameObject enemyButton;
     public GameObject optionPanel;
@@ -23,6 +27,12 @@ public class VerificateButtonUI : MonoBehaviour
     {
         attackButton.SetActive(false);
         mpButton.SetActive(false);
+        optionPanel.SetActive(false);
+    }
+    public void DisactivateButtonsMovement()
+    {
+        moveButton.SetActive(false);
+        returnButton.SetActive(false);
         optionPanel.SetActive(false);
     }
 
@@ -39,7 +49,7 @@ public class VerificateButtonUI : MonoBehaviour
     public void DisactivateButtonsMP()
     {
         healButton.SetActive(false);
-        returnButton.SetActive(false);
+        movementButton.SetActive(false);
         optionPanel.SetActive(false);
     }
 
@@ -48,8 +58,15 @@ public class VerificateButtonUI : MonoBehaviour
     {
         optionPanel.SetActive(true);
         healButton.SetActive(true);
-        returnButton.SetActive(true);
+        movementButton.SetActive(true);
         primaryButtonPlayer_2.Select();
+    }
+    public void ActivateButtonsMovement()
+    {
+        optionPanel.SetActive(true);
+        moveButton.SetActive(true);
+        returnButton.SetActive(true);
+        primaryButtonPlayer_3.Select();
     }
 
     public void ActivateButtonsEnemy()
@@ -67,6 +84,5 @@ public class VerificateButtonUI : MonoBehaviour
     public void ActivateDialguePanel()
     {
         dialoguePanel.SetActive(true);
-        //Debug.LogError("Erro");
     }
 }

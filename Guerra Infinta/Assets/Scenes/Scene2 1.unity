@@ -712,10 +712,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryButtonPlayer: {fileID: 1212751639}
   primaryButtonPlayer_2: {fileID: 916035622}
+  primaryButtonPlayer_3: {fileID: 1034768221}
   primaryButtonEnemy: {fileID: 236284969}
+  primaryButtonMove: {fileID: 0}
   attackButton: {fileID: 1212751637}
   mpButton: {fileID: 1819096070}
   healButton: {fileID: 916035620}
+  movementButton: {fileID: 714391534}
+  moveButton: {fileID: 1034768220}
   returnButton: {fileID: 1920243510}
   enemyButton: {fileID: 236284967}
   optionPanel: {fileID: 2030111986}
