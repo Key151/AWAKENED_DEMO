@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class BattleS : MonoBehaviour
 {
+    //Linha
     VerificateButtonUI VerificateButtonUI;
     public enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
 
