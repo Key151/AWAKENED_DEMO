@@ -393,3 +393,5 @@ public class BattleS : MonoBehaviour
         hud.SetMP(unit);
     }
 }
+
+//Linha Criado por Elton
