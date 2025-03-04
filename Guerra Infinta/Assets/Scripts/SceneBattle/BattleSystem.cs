@@ -11,6 +11,7 @@ public class BattleS : MonoBehaviour
     VerificateButtonUI VerificateButtonUI;
     public enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
 
+    //Game Object
     public GameObject playerPrefab;
     public GameObject playerPrefab_2;
     public GameObject[] enemyPrefab;
@@ -19,10 +20,12 @@ public class BattleS : MonoBehaviour
     public Transform enemyBattleStation;
     public Text dialogueText;
 
+    //Hub
     public BattleHUD playerHUD;
     public BattleHUD playerHUD_2;
     public BattleHUD enemyHUD;
 
+    //Unit
     Unit playerUnit;
     Unit playerUnit_2;
     Unit enemyUnit;
