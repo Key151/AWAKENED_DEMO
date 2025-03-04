@@ -681,6 +681,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146269297}
   m_CullTransparentMesh: 1
+--- !u!1 &150505851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150505853}
+  - component: {fileID: 150505852}
+  m_Layer: 0
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &150505852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150505851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac71f96b2f70674e9776421b461e51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButtonPlayer: {fileID: 1212751639}
+  primaryButtonPlayer_2: {fileID: 916035622}
+  primaryButtonEnemy: {fileID: 236284969}
+  attackButton: {fileID: 1212751637}
+  mpButton: {fileID: 1819096070}
+  healButton: {fileID: 916035620}
+  returnButton: {fileID: 714391534}
+  enemyButton: {fileID: 236284967}
+  optionPanel: {fileID: 2030111986}
+  dialoguePanel: {fileID: 2076801145}
+--- !u!4 &150505853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150505851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8010092, y: -0.33993253, z: 0.031510357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172647083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,16 +2591,6 @@ MonoBehaviour:
   playerPrefab_2: {fileID: 2136917124798079353, guid: f38d19d913ed10041bf25cc8e735b52b, type: 3}
   enemyPrefab:
   - {fileID: 508094171281282804, guid: 4898c3644b2d1d24bb1d06b27fcb499f, type: 3}
-  primaryButtonPlayer: {fileID: 1212751639}
-  primaryButtonPlayer_2: {fileID: 916035622}
-  primaryButtonEnemy: {fileID: 236284969}
-  attackButton: {fileID: 1212751637}
-  mpButton: {fileID: 1819096070}
-  healButton: {fileID: 916035620}
-  returnButton: {fileID: 714391534}
-  enemyButton: {fileID: 236284967}
-  optionPanel: {fileID: 2030111986}
-  dialoguePanel: {fileID: 2076801145}
   playerBattleStation: {fileID: 1294944961}
   playerBattleStation_2: {fileID: 713751570}
   enemyBattleStation: {fileID: 1236580795}
@@ -8202,3 +8246,4 @@ SceneRoots:
   - {fileID: 594033682}
   - {fileID: 1294944961}
   - {fileID: 713751570}
+  - {fileID: 150505853}

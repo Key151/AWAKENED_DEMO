@@ -7,24 +7,12 @@ using UnityEngine.UI;
 
 public class BattleS : MonoBehaviour
 {
+    VerificateButtonUI VerificateButtonUI;
     public enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
 
     public GameObject playerPrefab;
     public GameObject playerPrefab_2;
     public GameObject[] enemyPrefab;
-
-    public Button primaryButtonPlayer;
-    public Button primaryButtonPlayer_2;
-    public Button primaryButtonEnemy;
-
-    public GameObject attackButton;
-    public GameObject mpButton;
-    public GameObject healButton;
-    public GameObject returnButton;
-    public GameObject enemyButton;
-    public GameObject optionPanel;
-    public GameObject dialoguePanel;
-
     public Transform playerBattleStation;
     public Transform playerBattleStation_2;
     public Transform enemyBattleStation;
@@ -50,6 +38,7 @@ public class BattleS : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        VerificateButtonUI = GameObject.Find("Button").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
 
@@ -87,7 +76,9 @@ public class BattleS : MonoBehaviour
         BattleList = new List<int>() { playerUnit.Spd, playerUnit_2.Spd, enemyUnit.Spd };
         BattleList.Sort((a, b) => b.CompareTo(a));
 
-        ActivateDialguePanel();
+        VerificateButtonUI.ActivateDialguePanel();
+            
+        //ActivateDialguePanel();
         dialogueText.text = "Um " + enemyUnit.UnitName + " Apareceu...\n";
 
         playerHUD.SetHUD(playerUnit);
@@ -106,7 +97,7 @@ public class BattleS : MonoBehaviour
     }
     void VerificateTurn()
     {
-        DisactivateDialguePanel();
+        VerificateButtonUI.DisactivateDialguePanel();
         if (enemyUnit.Dead)
         {
             state = BattleState.WON;
@@ -176,7 +167,7 @@ public class BattleS : MonoBehaviour
         //ActivatePanel();
         if (!click)
         {
-            ActivateButtons();
+            VerificateButtonUI.ActivateButtons();
             player_Unit.selected = true;
         }
         else
@@ -186,8 +177,8 @@ public class BattleS : MonoBehaviour
                 case 1://Ataque
                     {
                         player_Unit.selected = false;
-                        DisactivateButtons();
-                        ActivateDialguePanel();
+                        VerificateButtonUI.DisactivateButtons();
+                        VerificateButtonUI.ActivateDialguePanel();
                         player_Unit.Attack(enemyUnit);
                         enemyHUD.SetHP(enemyUnit.CurrentHP);
                         dialogueText.text = player_Unit.UnitName + " ataca!";
@@ -204,11 +195,11 @@ public class BattleS : MonoBehaviour
                     }
                 case 2://Cura
                     {
-                        DisactivateButtons();
+                        VerificateButtonUI.DisactivateButtons();
                         if(player_Unit.CurrentMP < player_Unit.UseMP)
                         {
                             player_Unit.selected = false;
-                            ActivateDialguePanel();
+                            VerificateButtonUI.ActivateDialguePanel();
                             dialogueText.text = player_Unit.UnitName + " não tem MP sulficiente!";
                             yield return new WaitForSeconds(2f);
                             //DisactivateDialguePanel();
@@ -217,7 +208,7 @@ public class BattleS : MonoBehaviour
                         else
                         {
                             player_Unit.selected = false;
-                            ActivateDialguePanel();
+                            VerificateButtonUI.ActivateDialguePanel();
                             player_Unit.MP();
                             player_Unit.Heal(player_Unit.HealHP);
                             UpdateHud(playerHUD, playerUnit);
@@ -241,7 +232,7 @@ public class BattleS : MonoBehaviour
         if (Random.Range(0, 10) >= 3)
         {Unit player = choosePlayer(playerUnit, playerUnit_2);
 
-            ActivateDialguePanel();
+            VerificateButtonUI.ActivateDialguePanel();
             enemy.Attack(player);
             player.takingDamage = true;
             dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
@@ -255,7 +246,7 @@ public class BattleS : MonoBehaviour
         //Fazer a habilidade de cura
         else
         {
-            ActivateDialguePanel();
+            VerificateButtonUI.ActivateDialguePanel();
             dialogueText.text = enemy.UnitName + " se cura!";
             enemy.Heal(enemy.HealHP);
             enemyHUD.SetHP(enemy.CurrentHP);
@@ -272,18 +263,18 @@ public class BattleS : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            ActivateDialguePanel();
+            VerificateButtonUI.ActivateDialguePanel();
             dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(2f);
-            DisactivateDialguePanel();
+            VerificateButtonUI.DisactivateDialguePanel();
             SceneManager.LoadScene(sceneName);
         }
         else if (state == BattleState.LOST)
         {
-            ActivateDialguePanel();
+            VerificateButtonUI.ActivateDialguePanel();
             dialogueText.text = "Você foi derrotado.";
             yield return new WaitForSeconds(2f);
-            DisactivateDialguePanel();
+            VerificateButtonUI.DisactivateDialguePanel();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -317,20 +308,20 @@ public class BattleS : MonoBehaviour
 
     public void OnAttackButton()
     {
-        DisactivateButtons();
-        ActivateButtonsEnemy();
+        VerificateButtonUI.DisactivateButtons();
+        VerificateButtonUI.ActivateButtonsEnemy();
     }
 
     public void OnMPButton()
     {
-        DisactivateButtons();
-        ActivateButtonsMP();
+        VerificateButtonUI.DisactivateButtons();
+        VerificateButtonUI.ActivateButtonsMP();
     }
 
     public void OnReturnButton()
     {
-        DisactivateButtonsMP();
-        ActivateButtons();
+        VerificateButtonUI.DisactivateButtonsMP();
+        VerificateButtonUI.ActivateButtons();
     }
 
     /*public void OnAttack()
@@ -352,12 +343,12 @@ public class BattleS : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN1)
         {
-            DisactivateButtonsMP();
+            VerificateButtonUI.DisactivateButtonsMP();
             StartCoroutine(PlayerTurn(playerUnit, true, 2));
         }
         else if (state == BattleState.PLAYERTURN2)
         {
-            DisactivateButtonsMP();
+            VerificateButtonUI.DisactivateButtonsMP();
             StartCoroutine(PlayerTurn(playerUnit_2, true, 2));
         }
 
@@ -368,15 +359,14 @@ public class BattleS : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN1)
         {
-            DisactivateButtonsEnemy();
+            VerificateButtonUI.DisactivateButtonsEnemy();
             StartCoroutine(PlayerTurn(playerUnit, true, 1));
 
         }
         else if (state == BattleState.PLAYERTURN2)
         {
-            DisactivateButtonsEnemy();
+            VerificateButtonUI.DisactivateButtonsEnemy();
             StartCoroutine(PlayerTurn(playerUnit_2, true, 1));
-
         }
         else
         {
@@ -389,56 +379,5 @@ public class BattleS : MonoBehaviour
         hud.SetHP(unit.CurrentHP);
         hud.UpdateHPText(unit);
         hud.SetMP(unit);
-    }
-
-    // DISATIVAR BOT�ES
-    public void DisactivateButtons()
-    {
-        attackButton.SetActive(false);
-        mpButton.SetActive(false);
-        optionPanel.SetActive(false);
-    }
-
-    public void DisactivateButtonsEnemy()
-    {
-        enemyButton.SetActive(false);
-    }
-
-    public void DisactivateDialguePanel()
-    {
-        dialoguePanel.SetActive(false);
-    }
-
-    public void DisactivateButtonsMP()
-    {
-        healButton.SetActive(false);
-        returnButton.SetActive(false);
-        optionPanel.SetActive(false);
-    }
-
-    // ATIVAR BOT�ES
-    public void ActivateButtonsMP()
-    {
-        optionPanel.SetActive(true);
-        healButton.SetActive(true);
-        returnButton.SetActive(true);
-        primaryButtonPlayer_2.Select();
-    }
-
-    public void ActivateButtonsEnemy()
-    {
-        enemyButton.SetActive(true);
-        primaryButtonEnemy.Select();
-    }
-    public void ActivateButtons()
-    {
-        optionPanel.SetActive(true);
-        attackButton.SetActive(true);
-        mpButton.SetActive(true);
-        primaryButtonPlayer.Select();
-    }
-    public void ActivateDialguePanel()
-    {
-        dialoguePanel.SetActive(true);
     }
 }
