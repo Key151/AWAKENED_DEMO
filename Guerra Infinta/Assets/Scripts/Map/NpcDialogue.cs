@@ -36,7 +36,7 @@ public class NpcDialogue : MonoBehaviour
             DisactiveClickToSpeak();
             if (!startDialogue)
             {
-                FindAnyObjectByType<Player>().speed = 0f;
+                FindAnyObjectByType<Player>().speedControl = 0f;
                 StartDialogue();
             }
             else if (dialogueText.text == dialogueNpc[dialogueIndex])
@@ -58,7 +58,7 @@ public class NpcDialogue : MonoBehaviour
             dialoguePanel.SetActive(false);
             startDialogue = false;
             dialogueIndex = 0;
-            FindAnyObjectByType<Player>().speed = 5f;
+            FindAnyObjectByType<Player>().speedControl = 1;
             //FindAnyObjectByType<ChangeAnimDialoguePanel>().closePanel = true;
         }
     }
