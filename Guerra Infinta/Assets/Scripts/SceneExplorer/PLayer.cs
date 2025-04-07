@@ -23,6 +23,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (PauseController.IsGamePaused)
+        {
+            speedControl = 0;
+            return;
+        }else
+        {
+            speedControl = 1;
+        }
         directionHori = Input.GetAxis("Horizontal");
         directionVert = Input.GetAxis("Vertical");
         Move();
@@ -38,25 +47,25 @@ public class Player : MonoBehaviour
     {
         //Velocidade X
         speedx *= 0.99f;
-        if(speedx > 0)
+        /*if(speedx > 0)
         {
-            speedx -= 0.1f;
+            speedx -= 0.5f;
         }else if(speedx < 0)
         {
-            speedx += 0.1f;
-        }
+            speedx += 0.5f;
+        }*/
         directionHori += speedx;
 
         //Velocidade Y
         speedy *= 0.99f;
-        if (speedy > 0)
+        /*if (speedy > 0)
         {
-            speedy -= 0.1f;
+            speedy -= 0.5f;
         }
         else if (speedy < 0)
         {
-            speedy += 0.1f;
-        }
+            speedy += 0.5f;
+        }*/
         directionVert += speedy;
 
 
