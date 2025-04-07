@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,23 +12,24 @@ public class collider : MonoBehaviour
         verificar = true;
     }
 
+    private void Encount(){
+        // Chance de ocorrer o encontro com inimigo
+        if (Random.Range(0, 100) >= 95)
+        {
+            SceneManager.LoadScene("Scene2");
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D Player)
     {
         if (verificar)
         {
-            // Verifica se o jogador está pressionando as teclas de movimento
+            // Verifica se o jogador estï¿½ pressionando as teclas de movimento
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 verificar = false;
-
-                Debug.Log("Está mexendo na area do inimigo");
-
-                // Chance de ocorrer o encontro com inimigo
-                if (Random.Range(0, 100) >= 95)
-                {
-                    SceneManager.LoadScene("Scene2");
-                }
-
+                Debug.Log("Estao mexendo na area do inimigo");
+                Encount();
                 StartCoroutine(Espera());
             }
 
