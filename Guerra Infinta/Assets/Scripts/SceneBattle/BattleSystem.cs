@@ -7,10 +7,9 @@ using UnityEngine.UI;
 
 public class BattleS : MonoBehaviour
 {
-    //Linha
-    // Outro teste asdhjaisudfhuioshdusand
     VerificateButtonUI VerificateButtonUI;
     public enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
+    public enum Action { AtkNormal, AtkSP, Def, Move }
 
     //Game Object
     public GameObject playerPrefab;
@@ -29,7 +28,7 @@ public class BattleS : MonoBehaviour
     //Unit
     Unit playerUnit;
     Unit playerUnit_2;
-    Unit enemyUnit;
+    Unit[] enemyUnit;
 
     public string sceneName;
     bool isDead_1;
@@ -54,7 +53,7 @@ public class BattleS : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        //Cria uma copia do playerPrefab com a posi��o do PlayerStation1
+        //Cria uma copia do playerPrefab com a posicao do PlayerStation1
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation_2);
         playerUnit = playerGO.GetComponent<Unit>();
 
@@ -62,7 +61,7 @@ public class BattleS : MonoBehaviour
         playerUnit.OrigenX = playerGO.transform.position.x;
         playerUnit.OrigenY = playerGO.transform.position.y;
 
-        //Cria uma copia do playerPrefab2 com a posi��o do PlayerStation2
+        //Cria uma copia do playerPrefab2 com a posicao do PlayerStation2
         GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation);
         playerUnit_2 = playerGO_2.GetComponent<Unit>();
 
@@ -71,30 +70,36 @@ public class BattleS : MonoBehaviour
         playerUnit_2.OrigenY = playerGO_2.transform.position.y;
 
         //Cria uma copia do enemyPrefab com a posi��o do EnemyStation
-        GameObject enemyGO = Instantiate(enemyPrefab[0], enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        foreach (var enemyP in enemyPrefab) 
+        {
+            int i = 0;
+            GameObject enemyGO = Instantiate(enemyP, enemyBattleStation);
+            enemyUnit[i] = enemyGO.GetComponent<Unit>();
 
-        //posição do inimigo 1
-        enemyUnit.xPosition = enemyGO.transform.position.x;
-        enemyUnit.yPosition = enemyGO.transform.position.y;
+            //posição do inimigo
+            enemyUnit[i].xPosition = enemyGO.transform.position.x;
+            enemyUnit[i].yPosition = enemyGO.transform.position.y;
+            i++;
+        }
 
-        BattleList = new List<int>() { playerUnit.Spd, playerUnit_2.Spd, enemyUnit.Spd };
+        BattleList = new List<int>() { playerUnit.Spd, playerUnit_2.Spd};
+
+        foreach (var enemy in enemyUnit) { 
+            BattleList.Add(enemy.Spd);
+        }
+
         BattleList.Sort((a, b) => b.CompareTo(a));
 
         VerificateButtonUI.ActivateDialguePanel();
             
         //ActivateDialguePanel();
-        dialogueText.text = "Um " + enemyUnit.UnitName + " Apareceu...\n";
+        dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
 
         playerHUD.SetHUD(playerUnit);
         playerHUD_2.SetHUD(playerUnit_2);
-        enemyHUD.SetHUD(enemyUnit);
+        enemyHUD.SetHUD(enemyUnit[0]);
 
-        //posição de ataque
-        playerUnit.AttackX = enemyBattleStation.position.x - 2f;
-        playerUnit.AttackY = enemyBattleStation.position.y + 1.2f;
-        playerUnit_2.AttackX = enemyBattleStation.position.x - 2f;
-        playerUnit_2.AttackY = enemyBattleStation.position.y + 1.2f;
+
 
         yield return new WaitForSeconds(3f);
 
@@ -103,7 +108,7 @@ public class BattleS : MonoBehaviour
     void VerificateTurn()
     {
         VerificateButtonUI.DisactivateDialguePanel();
-        if (enemyUnit.Dead)
+        if (enemyUnit[0].Dead)
         {
             state = BattleState.WON;
             StartCoroutine(EndBattle());
@@ -150,9 +155,9 @@ public class BattleS : MonoBehaviour
                 StartCoroutine(PlayerTurn(playerUnit_2, false, 0));
             }
         }
-        else if (BattleList[0] == enemyUnit.Spd)
+        else if (BattleList[0] == enemyUnit[0].Spd)
         {
-            if(enemyUnit.Dead)
+            if(enemyUnit[0].Dead)
             {
                 BattleList.Add(BattleList[0]);
                 BattleList.RemoveAt(0);
@@ -161,13 +166,13 @@ public class BattleS : MonoBehaviour
             else
             {
                 state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn(enemyUnit));
+                StartCoroutine(EnemyTurn(enemyUnit[0]));
             }
         }
     }
 
     // TURNO DO PLAYER
-    IEnumerator PlayerTurn(Unit player_Unit, bool click, int action)//Criar uma lista de opções com switch case
+    IEnumerator PlayerTurn(Unit player_Unit, bool click, Action action)//Criar uma lista de opções com switch case
     {
         //ActivatePanel();
         if (!click)
@@ -179,33 +184,32 @@ public class BattleS : MonoBehaviour
         {
             switch(action)
             {
-                case 1://Ataque
+                case Action.AtkNormal://Ataque
                     {
                         player_Unit.selected = false;
                         VerificateButtonUI.DisactivateButtons();
                         VerificateButtonUI.ActivateDialguePanel();
-                        player_Unit.Attack(enemyUnit);
-                        enemyHUD.SetHP(enemyUnit.CurrentHP);
+                        player_Unit.Attack(enemyUnit[0]);
+                        enemyHUD.SetHP(enemyUnit[0].CurrentHP);
                         dialogueText.text = player_Unit.UnitName + " ataca!";
-                        player_Unit.attacking = true;
-                        player_Unit.transform.position = new Vector3(player_Unit.AttackX, player_Unit.AttackY);
+                        playerUnit.MoveAtk(enemyUnit[0].transform);
                         yield return new WaitForSeconds(2f);
                         //DisactivateDialguePanel();
-                        player_Unit.transform.position = new Vector3(player_Unit.OrigenX, player_Unit.OrigenY);
+                        player_Unit.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
                         player_Unit.attacking = false;
                         BattleList.Add(BattleList[0]);
                         BattleList.RemoveAt(0);
                         VerificateTurn();
                         break;
                     }
-                case 2://Cura
+                case Action.AtkSP://Cura
                     {
                         VerificateButtonUI.DisactivateButtons();
-                        if(player_Unit.CurrentMP < player_Unit.UseMP)
+                        if(player_Unit.CurrentPP < player_Unit.UsePP)
                         {
                             player_Unit.selected = false;
                             VerificateButtonUI.ActivateDialguePanel();
-                            dialogueText.text = player_Unit.UnitName + " não tem MP sulficiente!";
+                            dialogueText.text = player_Unit.UnitName + " não tem PP sulficiente!";
                             yield return new WaitForSeconds(2f);
                             //DisactivateDialguePanel();
                             VerificateTurn();
@@ -214,7 +218,7 @@ public class BattleS : MonoBehaviour
                         {
                             player_Unit.selected = false;
                             VerificateButtonUI.ActivateDialguePanel();
-                            player_Unit.MP();
+                            player_Unit.PP();
                             player_Unit.Heal(player_Unit.HealHP);
                             UpdateHud(playerHUD, playerUnit);
                             UpdateHud(playerHUD_2, playerUnit_2);
@@ -308,8 +312,9 @@ public class BattleS : MonoBehaviour
         }
     }
 
-    // BOTAO DE ATAQUE
 
+
+    // BOTAO DE ATAQUE
 
     public void OnAttackButton()
     {
@@ -355,35 +360,35 @@ public class BattleS : MonoBehaviour
     }*/
 
 
-    //BOT�O DE CURA
+    //BOTAO DE CURA
     public void OnHealButton()
     {
         if (state == BattleState.PLAYERTURN1)
         {
             VerificateButtonUI.DisactivateButtonsMP();
-            StartCoroutine(PlayerTurn(playerUnit, true, 2));
+            StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkSP));
         }
         else if (state == BattleState.PLAYERTURN2)
         {
             VerificateButtonUI.DisactivateButtonsMP();
-            StartCoroutine(PlayerTurn(playerUnit_2, true, 2));
+            StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkSP));
         }
 
     }
 
-    //BOT�O DO INIMIGO
+    //BOTAO DO INIMIGO
     public void OnEnemyButton()
     {
         if (state == BattleState.PLAYERTURN1)
         {
             VerificateButtonUI.DisactivateButtonsEnemy();
-            StartCoroutine(PlayerTurn(playerUnit, true, 1));
+            StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkNormal));
 
         }
         else if (state == BattleState.PLAYERTURN2)
         {
             VerificateButtonUI.DisactivateButtonsEnemy();
-            StartCoroutine(PlayerTurn(playerUnit_2, true, 1));
+            StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkNormal));
         }
         else
         {
@@ -395,8 +400,6 @@ public class BattleS : MonoBehaviour
     {
         hud.SetHP(unit.CurrentHP);
         hud.UpdateHPText(unit);
-        hud.SetMP(unit);
+        hud.SetPP(unit);
     }
 }
-
-//Linha Criado por Elton

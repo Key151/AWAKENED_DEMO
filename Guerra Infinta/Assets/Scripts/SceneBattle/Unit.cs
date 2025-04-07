@@ -1,6 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -17,9 +19,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private float attackY;
     [SerializeField] private float origenX;
     [SerializeField] private float origenY;
-    [SerializeField] private int maxMP;
-    [SerializeField] private int currentMP;
-    [SerializeField] private int useMP;
+    [SerializeField] private int maxPP; // PP = Power Point
+    [SerializeField] private int currentPP;
+    [SerializeField] private int usePP;
+
+    private IAttack attack;
+
     public float xPosition;
     public float yPosition;
     public bool attacking;
@@ -29,13 +34,13 @@ public class Unit : MonoBehaviour
     public float AttackX
     {
         get { return attackX; }
-        set { attackX = value; }
+        set { attackX = value - 2f; }
     }
 
     public float AttackY
     {
         get { return attackY; }
-        set { attackY = value; }
+        set { attackY = value + 1.2f; }
     }
 
     public float OrigenX
@@ -79,22 +84,22 @@ public class Unit : MonoBehaviour
         get { return healHP; }
         set { healHP = value; }
     }
-    public int MaxMP
+    public int MaxPP
     {
-        get { return maxMP; }
-        set { maxMP = value; }
+        get { return maxPP; }
+        set { maxPP = value; }
     }
 
-    public int CurrentMP
+    public int CurrentPP
     {
-        get { return currentMP; }
-        set { currentMP = value; }
+        get { return currentPP; }
+        set { currentPP = value; }
     }
 
-    public int UseMP
+    public int UsePP
     {
-        get { return useMP; }
-        set { useMP = value; }
+        get { return usePP; }
+        set { usePP = value; }
     }
 
     public int Damage
@@ -113,26 +118,34 @@ public class Unit : MonoBehaviour
         get { return dead; }
         set { dead = value; }
     }
-
+    private void Start()
+    {
+        attack = GetComponent<IAttack>();
+    }
 
     public void Attack(Unit target)
     {
-        bool isDead = target.TakeDamage(Damage);
-
-        if (isDead)
-        {
-            target.CurrentHP = 0;
-            target.Dead = true;
-        }
-
+        attack?.Attack(this, target);
+        attacking = true;
     }
-
+    public void MoveAtk(Transform enemy)
+    {
+        //posição de ataque
+        float playerPositionX = enemy.position.x + AttackX;
+        float playerPositionY = enemy.position.y + AttackY;
+        this.transform.position = new Vector2(playerPositionX, playerPositionY);
+    }
     public bool TakeDamage(int dmg)
     {
         CurrentHP -= dmg;
 
         return CurrentHP <= 0;
     }
+    public void PP()
+    {
+        CurrentPP = CurrentPP - UsePP;
+    }
+
 
     public void Heal(int amout)
     {
@@ -142,11 +155,6 @@ public class Unit : MonoBehaviour
         {
             CurrentHP = MaxHP;
         }
-    }
-
-    public void MP()
-    {
-        CurrentMP = CurrentMP - UseMP;
     }
 
 }

@@ -641,8 +641,8 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 0}
   hpSlider: {fileID: 1488250227}
-  mpText: {fileID: 0}
-  mpSlider: {fileID: 0}
+  PPText: {fileID: 0}
+  PPSlider: {fileID: 0}
 --- !u!114 &146269300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,10 +712,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryButtonPlayer: {fileID: 1212751639}
   primaryButtonPlayer_2: {fileID: 916035622}
+  primaryButtonPlayer_3: {fileID: 0}
   primaryButtonEnemy: {fileID: 236284969}
+  primaryButtonMove: {fileID: 0}
   attackButton: {fileID: 1212751637}
   mpButton: {fileID: 1819096070}
   healButton: {fileID: 916035620}
+  movementButton: {fileID: 0}
+  moveButton: {fileID: 0}
   returnButton: {fileID: 714391534}
   enemyButton: {fileID: 236284967}
   optionPanel: {fileID: 2030111986}
@@ -1515,8 +1519,8 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 1135483303}
   hpSlider: {fileID: 358873654}
-  mpText: {fileID: 369515422}
-  mpSlider: {fileID: 1344882450}
+  PPText: {fileID: 0}
+  PPSlider: {fileID: 0}
 --- !u!114 &252062347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6060,8 +6064,8 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 571157140}
   hpSlider: {fileID: 1626469921}
-  mpText: {fileID: 42277012}
-  mpSlider: {fileID: 930317047}
+  PPText: {fileID: 0}
+  PPSlider: {fileID: 0}
 --- !u!114 &1638192000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7364,8 +7368,8 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 0}
   hpSlider: {fileID: 382626314}
-  mpText: {fileID: 0}
-  mpSlider: {fileID: 0}
+  PPText: {fileID: 0}
+  PPSlider: {fileID: 0}
 --- !u!114 &1955560001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7595,8 +7599,8 @@ MonoBehaviour:
   levelText: {fileID: 2088318959}
   hpText: {fileID: 0}
   hpSlider: {fileID: 451743866}
-  mpText: {fileID: 0}
-  mpSlider: {fileID: 0}
+  PPText: {fileID: 0}
+  PPSlider: {fileID: 0}
 --- !u!114 &1989446991
 MonoBehaviour:
   m_ObjectHideFlags: 0
