@@ -135,15 +135,15 @@ public class InimigoVoador : IMovivel, IVoador
 //public class AtaqueGelo : MonoBehaviour, IAtaque { ... }
 
 // Em algum gerenciador:
-public class TesteAtaque: MonoBehaviour { 
-    public void AtacarTodos()
-    {
-        //nome do tipo que virá lista //nome da lista = //pegar todos os ataques e colocar na lista
-        IAtaque[] ataques = FindObjectsOfType<MonoBehaviour>().OfType<IAtaque>().ToArray();
+//public class TesteAtaque: MonoBehaviour { 
+//    public void AtacarTodos()
+//    {
+//        //nome do tipo que virá lista //nome da lista = //pegar todos os ataques e colocar na lista
+//        IAtaque[] ataques = FindObjectsOfType<MonoBehaviour>().OfType<IAtaque>().ToArray();
 
-        foreach (var ataque in ataques)
-        {
-            ataque.Atacar();
-        }
-    }
-}
+//        foreach (var ataque in ataques)
+//        {
+//            ataque.Atacar();
+//        }
+//    }
+//}

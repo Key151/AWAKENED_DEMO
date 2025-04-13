@@ -5,52 +5,51 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BattleS : MonoBehaviour
+public class BattleSystem : MonoBehaviour
 {
     VerificateButtonUI VerificateButtonUI;
-    public enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
-    public enum Action { AtkNormal, AtkSP, Def, Move }
+    private enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
+    private enum Action { AtkNormal, AtkSP, Def, Move }
 
     //Game Object
+    [Header("Player Settings")]
     public GameObject playerPrefab;
     public GameObject playerPrefab_2;
-    public GameObject[] enemyPrefab;
     public Transform playerBattleStation;
     public Transform playerBattleStation_2;
-    public Transform enemyBattleStation;
-    public Text dialogueText;
-
-    //Hub
-    public BattleHUD playerHUD;
-    public BattleHUD playerHUD_2;
-    public BattleHUD enemyHUD;
-
-    //Unit
     Unit playerUnit;
     Unit playerUnit_2;
-    Unit[] enemyUnit;
+    public BattleHUD playerHUD;
+    public BattleHUD playerHUD_2;
+
+
+    [Header("Enemy Settings")]
+    public GameObject[] enemyPrefab;
+    private List<Unit> enemyUnit;
+    public List<Transform> enemyBattleStation;
+    public List<BattleHUD> enemyHUD;
+
+
+    [Header("Dialogue Settings")]
+    public Text dialogueText;
+
 
     public string sceneName;
     bool isDead_1;
     bool isDead_2;
 
-    public BattleState state;
-    List<int> BattleList;
+    private BattleState state;
+    List<Unit> BattleList;
 
 
     // Start is called before the first frame update
     void Start()
     {
         state = BattleState.START;
+        enemyUnit = new List<Unit>();
         VerificateButtonUI = GameObject.Find("Button").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
-
-    /*private void Update()
-    {
-        Debug.Log(Random.Range(1, 3));
-    }*/
-
     IEnumerator SetupBattle()
     {
         //Cria uma copia do playerPrefab com a posicao do PlayerStation1
@@ -69,35 +68,37 @@ public class BattleS : MonoBehaviour
         playerUnit_2.OrigenX = playerGO_2.transform.position.x;
         playerUnit_2.OrigenY = playerGO_2.transform.position.y;
 
-        //Cria uma copia do enemyPrefab com a posi��o do EnemyStation
-        foreach (var enemyP in enemyPrefab) 
+        for (int i = 0; i <= 2; i++)
         {
-            int i = 0;
-            GameObject enemyGO = Instantiate(enemyP, enemyBattleStation);
-            enemyUnit[i] = enemyGO.GetComponent<Unit>();
+            //Cria uma copia do enemyPrefab com a posicao do EnemyStation
+            GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i]);
+
+            //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
+            enemyUnit.Add(enemyGO.GetComponent<Unit>());
 
             //posição do inimigo
-            enemyUnit[i].xPosition = enemyGO.transform.position.x;
-            enemyUnit[i].yPosition = enemyGO.transform.position.y;
-            i++;
+            enemyUnit[i].SetPosition(enemyGO.transform.position.x, enemyGO.transform.position.y);
+
+            enemyHUD[i].SetHUD(enemyUnit[i]);
         }
 
-        BattleList = new List<int>() { playerUnit.Spd, playerUnit_2.Spd};
+        BattleList = new List<Unit>() { playerUnit, playerUnit_2 };
 
-        foreach (var enemy in enemyUnit) { 
-            BattleList.Add(enemy.Spd);
+        foreach (var enemy in enemyUnit)
+        {
+            BattleList.Add(enemy);
         }
 
-        BattleList.Sort((a, b) => b.CompareTo(a));
+        BattleList.Sort((a, b) => b.Spd.CompareTo(a.Spd));
 
         VerificateButtonUI.ActivateDialguePanel();
-            
+
         //ActivateDialguePanel();
         dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
 
         playerHUD.SetHUD(playerUnit);
         playerHUD_2.SetHUD(playerUnit_2);
-        enemyHUD.SetHUD(enemyUnit[0]);
+        enemyHUD[0].SetHUD(enemyUnit[0]);
 
 
 
@@ -108,6 +109,7 @@ public class BattleS : MonoBehaviour
     void VerificateTurn()
     {
         VerificateButtonUI.DisactivateDialguePanel();
+
         if (enemyUnit[0].Dead)
         {
             state = BattleState.WON;
@@ -120,17 +122,10 @@ public class BattleS : MonoBehaviour
             StartCoroutine(EndBattle());
         }
 
-        /*else if (BattleList.Count == 0)
+        else if (BattleList[0] == playerUnit)
         {
-            Debug.LogError("BattleList está vazia.");
-            return; // Previne erros se a lista estiver vazia
-        }*/
-
-        else if (BattleList[0] == playerUnit.Spd)
-        {
-            if(playerUnit.Dead)
+            if (playerUnit.Dead)
             {
-                BattleList.Add(BattleList[0]);
                 BattleList.RemoveAt(0);
                 VerificateTurn();
             }
@@ -141,11 +136,10 @@ public class BattleS : MonoBehaviour
             }
         }
 
-        else if (BattleList[0] == playerUnit_2.Spd)
+        else if (BattleList[0] == playerUnit_2)
         {
-            if(playerUnit_2.Dead)
+            if (playerUnit_2.Dead)
             {
-                BattleList.Add(BattleList[0]);
                 BattleList.RemoveAt(0);
                 VerificateTurn();
             }
@@ -155,11 +149,10 @@ public class BattleS : MonoBehaviour
                 StartCoroutine(PlayerTurn(playerUnit_2, false, 0));
             }
         }
-        else if (BattleList[0] == enemyUnit[0].Spd)
+        else if (BattleList[0] == enemyUnit[0])
         {
-            if(enemyUnit[0].Dead)
+            if (enemyUnit[0].Dead)
             {
-                BattleList.Add(BattleList[0]);
                 BattleList.RemoveAt(0);
                 VerificateTurn();
             }
@@ -182,7 +175,7 @@ public class BattleS : MonoBehaviour
         }
         else
         {
-            switch(action)
+            switch (action)
             {
                 case Action.AtkNormal://Ataque
                     {
@@ -190,7 +183,7 @@ public class BattleS : MonoBehaviour
                         VerificateButtonUI.DisactivateButtons();
                         VerificateButtonUI.ActivateDialguePanel();
                         player_Unit.Attack(enemyUnit[0]);
-                        enemyHUD.SetHP(enemyUnit[0].CurrentHP);
+                        enemyHUD[0].SetHP(enemyUnit[0].CurrentHP);
                         dialogueText.text = player_Unit.UnitName + " ataca!";
                         playerUnit.MoveAtk(enemyUnit[0].transform);
                         yield return new WaitForSeconds(2f);
@@ -205,7 +198,7 @@ public class BattleS : MonoBehaviour
                 case Action.AtkSP://Cura
                     {
                         VerificateButtonUI.DisactivateButtons();
-                        if(player_Unit.CurrentPP < player_Unit.UsePP)
+                        if (player_Unit.CurrentPP < player_Unit.UsePP)
                         {
                             player_Unit.selected = false;
                             VerificateButtonUI.ActivateDialguePanel();
@@ -239,7 +232,8 @@ public class BattleS : MonoBehaviour
     IEnumerator EnemyTurn(Unit enemy)
     {
         if (Random.Range(0, 10) >= 3)
-        {Unit player = choosePlayer(playerUnit, playerUnit_2);
+        {
+            Unit player = choosePlayer(playerUnit, playerUnit_2);
 
             VerificateButtonUI.ActivateDialguePanel();
             enemy.Attack(player);
@@ -258,7 +252,7 @@ public class BattleS : MonoBehaviour
             VerificateButtonUI.ActivateDialguePanel();
             dialogueText.text = enemy.UnitName + " se cura!";
             enemy.Heal(enemy.HealHP);
-            enemyHUD.SetHP(enemy.CurrentHP);
+            enemyHUD[0].SetHP(enemy.CurrentHP);
             yield return new WaitForSeconds(2f);
             //DisactivateDialguePanel();
         }
@@ -313,7 +307,6 @@ public class BattleS : MonoBehaviour
     }
 
 
-
     // BOTAO DE ATAQUE
 
     public void OnAttackButton()
@@ -343,22 +336,6 @@ public class BattleS : MonoBehaviour
     {
         VerificateButtonUI.DisactivateButtonsMovement();
     }
-
-
-
-    /*public void OnAttack()
-    {
-        if (state == BattleState.PLAYERTURN1)
-        {
-            StartCoroutine(PlayerTurn(playerUnit, true));
-        }
-
-        else if (state == BattleState.PLAYERTURN2)
-        {
-            StartCoroutine(PlayerTurn(playerUnit_2, true));
-        }
-    }*/
-
 
     //BOTAO DE CURA
     public void OnHealButton()

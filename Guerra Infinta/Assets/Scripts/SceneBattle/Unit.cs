@@ -25,8 +25,6 @@ public class Unit : MonoBehaviour
 
     private IAttack attack;
 
-    public float xPosition;
-    public float yPosition;
     public bool attacking;
     public bool selected;
     public bool takingDamage;
@@ -121,6 +119,10 @@ public class Unit : MonoBehaviour
     private void Start()
     {
         attack = GetComponent<IAttack>();
+    }
+    public void SetPosition(float x, float y)
+    {
+        this.transform.position = new Vector2(x, y);
     }
 
     public void Attack(Unit target)
