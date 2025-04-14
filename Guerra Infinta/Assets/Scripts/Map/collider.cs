@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class collider : MonoBehaviour
 {
+    [SerializeField] string scene;
     bool verificar = true;
     IEnumerator Espera()
     {
@@ -16,7 +17,7 @@ public class collider : MonoBehaviour
         // Chance de ocorrer o encontro com inimigo
         if (Random.Range(0, 100) >= 95)
         {
-            SceneManager.LoadScene("Scene2");
+            SceneManager.LoadScene(scene);
         }
     }
 

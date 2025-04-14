@@ -1316,7 +1316,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scene1
+          m_StringArgument: Scene1 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &235112003
@@ -3331,7 +3331,7 @@ MonoBehaviour:
   - {fileID: 146269299}
   - {fileID: 1955560000}
   dialogueText: {fileID: 1724139436}
-  sceneName: Scene1
+  sceneName: Scene1 1
 --- !u!4 &530989527
 Transform:
   m_ObjectHideFlags: 0

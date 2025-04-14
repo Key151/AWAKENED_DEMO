@@ -608,6 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97878d36b466e045b38d48224ec1708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: SceneBattle
 --- !u!66 &257037883
 CompositeCollider2D:
   m_ObjectHideFlags: 0
