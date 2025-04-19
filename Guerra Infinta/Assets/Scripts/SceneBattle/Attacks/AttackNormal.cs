@@ -1,16 +1,11 @@
-﻿using Unity.VisualScripting;
-
-public class AttackNormal : IAttack
+﻿public class AttackNormal : IAttack
 {
     public void Attack(Unit attacker, Unit target)
     {
+        int valorBase = 20;
         //caso der false, significa que não deu para executar o dano
-        bool isDead = target.TakeDamage(attacker.Damage);
+        target.TakeDamage(attacker.Damage);
 
-        if (isDead)
-        {
-            target.CurrentHP = 0;
-            target.Dead = true;
-        }
+        attacker.CurrentActionPoint -= valorBase;
     }
 }

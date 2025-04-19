@@ -17,7 +17,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab_2;
     public Transform playerBattleStation;
     public Transform playerBattleStation_2;
-    Unit playerUnit;
+    UnitPlayerBoy playerUnit;
     Unit playerUnit_2;
     public BattleHUD playerHUD;
     public BattleHUD playerHUD_2;
@@ -54,7 +54,7 @@ public class BattleSystem : MonoBehaviour
     {
         //Cria uma copia do playerPrefab com a posicao do PlayerStation1
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation_2);
-        playerUnit = playerGO.GetComponent<Unit>();
+        playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
         //posição do jogador 1
         playerUnit.OrigenX = playerGO.transform.position.x;
@@ -195,35 +195,35 @@ public class BattleSystem : MonoBehaviour
                         VerificateTurn();
                         break;
                     }
-                case Action.AtkSP://Cura
-                    {
-                        VerificateButtonUI.DisactivateButtons();
-                        if (player_Unit.CurrentPP < player_Unit.UsePP)
-                        {
-                            player_Unit.selected = false;
-                            VerificateButtonUI.ActivateDialguePanel();
-                            dialogueText.text = player_Unit.UnitName + " não tem PP sulficiente!";
-                            yield return new WaitForSeconds(2f);
-                            //DisactivateDialguePanel();
-                            VerificateTurn();
-                        }
-                        else
-                        {
-                            player_Unit.selected = false;
-                            VerificateButtonUI.ActivateDialguePanel();
-                            player_Unit.PP();
-                            player_Unit.Heal(player_Unit.HealHP);
-                            UpdateHud(playerHUD, playerUnit);
-                            UpdateHud(playerHUD_2, playerUnit_2);
-                            dialogueText.text = player_Unit.UnitName + " se curou!";
-                            yield return new WaitForSeconds(2f);
-                            //DisactivateDialguePanel();
-                            BattleList.Add(BattleList[0]);
-                            BattleList.RemoveAt(0);
-                            VerificateTurn();
-                        }
-                        break;
-                    }
+                //case Action.AtkSP://Cura
+                //    {
+                //        VerificateButtonUI.DisactivateButtons();
+                //        if (player_Unit.CurrentActionPoint < player_Unit.UseActionPoint)
+                //        {
+                //            player_Unit.selected = false;
+                //            VerificateButtonUI.ActivateDialguePanel();
+                //            dialogueText.text = player_Unit.UnitName + " não tem ActionPoint sulficiente!";
+                //            yield return new WaitForSeconds(2f);
+                //            //DisactivateDialguePanel();
+                //            VerificateTurn();
+                //        }
+                //        else
+                //        {
+                //            player_Unit.selected = false;
+                //            VerificateButtonUI.ActivateDialguePanel();
+                //            player_Unit.ActionPoint();
+                //            player_Unit.Heal(player_Unit.HealHP);
+                //            UpdateHud(playerHUD, playerUnit);
+                //            UpdateHud(playerHUD_2, playerUnit_2);
+                //            dialogueText.text = player_Unit.UnitName + " se curou!";
+                //            yield return new WaitForSeconds(2f);
+                //            //DisactivateDialguePanel();
+                //            BattleList.Add(BattleList[0]);
+                //            BattleList.RemoveAt(0);
+                //            VerificateTurn();
+                //        }
+                //        break;
+                //    }
             }
         }
     }
@@ -247,15 +247,15 @@ public class BattleSystem : MonoBehaviour
 
         }
         //Fazer a habilidade de cura
-        else
-        {
-            VerificateButtonUI.ActivateDialguePanel();
-            dialogueText.text = enemy.UnitName + " se cura!";
-            enemy.Heal(enemy.HealHP);
-            enemyHUD[0].SetHP(enemy.CurrentHP);
-            yield return new WaitForSeconds(2f);
-            //DisactivateDialguePanel();
-        }
+        //else
+        //{
+        //    VerificateButtonUI.ActivateDialguePanel();
+        //    dialogueText.text = enemy.UnitName + " se cura!";
+        //    enemy.Heal(enemy.HealHP);
+        //    enemyHUD[0].SetHP(enemy.CurrentHP);
+        //    yield return new WaitForSeconds(2f);
+        //    //DisactivateDialguePanel();
+        //}
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
@@ -377,6 +377,6 @@ public class BattleSystem : MonoBehaviour
     {
         hud.SetHP(unit.CurrentHP);
         hud.UpdateHPText(unit);
-        hud.SetPP(unit);
+        hud.SetActionPoint(unit);
     }
 }

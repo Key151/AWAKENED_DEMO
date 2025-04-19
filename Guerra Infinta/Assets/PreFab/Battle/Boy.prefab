@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1303657472795899025}
   - component: {fileID: 3615470963422556894}
   - component: {fileID: 2927160101822192100}
-  - component: {fileID: 2152434975529949525}
+  - component: {fileID: 8705265667884359140}
   - component: {fileID: 4566985938056910365}
   m_Layer: 0
   m_Name: Boy
@@ -112,7 +112,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2152434975529949525
+--- !u!114 &8705265667884359140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,26 +121,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 623906946662630777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2931c3a3f0b01ba47a416f16c621dd19, type: 3}
+  m_Script: {fileID: 11500000, guid: a5c2cf851a630c64e8f58566f06c349f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Menino
-  unitLevel: 3
   damage: 15
   maxHP: 24
   currentHP: 24
-  healHP: 5
   spd: 20
   dead: 0
   attackX: 0
   attackY: 0
   origenX: 0
   origenY: 0
-  maxMP: 50
-  currentMP: 50
-  useMP: 10
-  xPosition: 0
-  yPosition: 0
+  maxActionPoint: 20
+  currentActionPoint: 20
   attacking: 0
   selected: 0
   takingDamage: 0
@@ -156,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503217d2c0494fc458e60af9882f2cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit: {fileID: 2152434975529949525}
+  Unit: {fileID: 8705265667884359140}

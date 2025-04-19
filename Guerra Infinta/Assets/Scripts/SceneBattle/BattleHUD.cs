@@ -9,8 +9,8 @@ public class BattleHUD : MonoBehaviour
     public Text levelText;
     public Text hpText;
     public Slider hpSlider;
-    public Text PPText;
-    public Slider PPSlider;
+    public Text ActionPointText;
+    public Slider ActionPointSlider;
 
     public void SetHUD(Unit unit)
     {
@@ -19,16 +19,16 @@ public class BattleHUD : MonoBehaviour
         {
             hpText.text = unit.CurrentHP + "/" + unit.MaxHP;
         }
-        if (PPText != null && PPSlider != null)
+        if (ActionPointText != null && ActionPointSlider != null)
         {
-            PPText.text = unit.CurrentPP + "/" + unit.MaxPP;
-            PPSlider.maxValue = unit.MaxPP;
-            PPSlider.value = unit.CurrentPP;
+            ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
+            ActionPointSlider.maxValue = unit.MaxActionPoint;
+            ActionPointSlider.value = unit.CurrentActionPoint;
         }
-        if (levelText != null)
-        {
-            levelText.text = "Lvl " + unit.UnitLevel;
-        }
+        //if (levelText != null)
+        //{
+        //    levelText.text = "Lvl " + unit.UnitLevel;
+        //}
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
     }
@@ -43,10 +43,10 @@ public class BattleHUD : MonoBehaviour
         hpText.text = unit.CurrentHP + "/" + unit.MaxHP;
     }
 
-    public void SetPP(Unit unit)
+    public void SetActionPoint(Unit unit)
     {
-        PPSlider.value = unit.CurrentPP;
-        PPText.text = unit.CurrentPP + "/" + unit.MaxPP;
+        ActionPointSlider.value = unit.CurrentActionPoint;
+        ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
 
     }
 }
