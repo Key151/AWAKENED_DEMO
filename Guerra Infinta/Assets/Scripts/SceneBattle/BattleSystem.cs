@@ -118,8 +118,13 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
-
-
+        foreach (var unit in BattleList)
+        {
+            if (unit is IWhitchUnit turnUnit)
+            {
+                turnUnit.WhoIam();
+            }
+        }
 
         //if (enemyUnit[0].Dead)
         //{
@@ -323,7 +328,7 @@ public class BattleSystem : MonoBehaviour
     public void OnAttackButton()
     {
         VerificateButtonUI.DisactivateButtons();
-        VerificateButtonUI.ActivateButtonsEnemy();
+        VerificateButtonUI.SelectEnemy();
     }
 
     public void OnMPButton()
