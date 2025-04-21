@@ -107,6 +107,7 @@ public class BattleSystem : MonoBehaviour
     void VerificateTurn()
     {
         VerificateButtonUI.DisactivateDialguePanel();
+        VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
 
         for (int i = 0; i > BattleList.Count; i++)
         {

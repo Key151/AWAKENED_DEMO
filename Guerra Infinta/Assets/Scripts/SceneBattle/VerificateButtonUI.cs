@@ -4,25 +4,26 @@ using UnityEngine.UI;
 
 public class VerificateButtonUI : MonoBehaviour
 {
-    public Button primaryButtonPlayer;
-    public Button primaryButtonPlayer_2;
-    public Button primaryButtonPlayer_3;
-    public Button primaryButtonEnemy;
-    public Button primaryButtonMove;
+    [SerializeField] private Button primaryButtonPlayer;
+    [SerializeField] private Button primaryButtonPlayer_2;
+    [SerializeField] private Button primaryButtonPlayer_3;
+    [SerializeField] private Button primaryButtonEnemy;
+    [SerializeField] private Button primaryButtonMove;
 
-    public GameObject attackButton;
-    public GameObject mpButton;
-    public GameObject healButton;
-    public GameObject toMovementButton;
-    public GameObject moveButton;
-    public GameObject returnButton;
-    public GameObject enemyButton;
-    public GameObject optionPanel;
-    public GameObject dialoguePanel;
+    [SerializeField] private GameObject attackButton;
+    [SerializeField] private GameObject mpButton;
+    [SerializeField] private GameObject healButton;
+    [SerializeField] private GameObject toMovementButton;
+    [SerializeField] private GameObject moveButton;
+    [SerializeField] private GameObject returnButton;
+    [SerializeField] private GameObject enemyButton;
+    [SerializeField] private GameObject optionPanel;
+    [SerializeField] private GameObject dialoguePanel;
 
-
-
-    // DISATIVAR BOTOES
+    public void MovePanel(UnitPlayer player)
+    {
+        optionPanel.transform.position = new Vector2(player.transform.position.x + .0f, player.transform.position.y);
+    }
 
     // Desativa os primeiros botões de ataque e MP
     public void DisactivateButtons()

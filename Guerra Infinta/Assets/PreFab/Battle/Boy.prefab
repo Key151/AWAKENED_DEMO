@@ -128,7 +128,7 @@ MonoBehaviour:
   damage: 15
   maxHP: 24
   currentHP: 24
-  spd: 20
+  spd: 40
   dead: 0
   attackX: 0
   attackY: 0
