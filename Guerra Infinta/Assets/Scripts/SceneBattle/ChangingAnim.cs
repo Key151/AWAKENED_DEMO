@@ -5,10 +5,8 @@ public class ChangingAnim : MonoBehaviour
 
     private Animator mAnimator;
     string currentState;
-    //public bool animAttack;
-    //Unit playerUnit_2;
 
-    [SerializeField] UnitPlayerBoy Unit;
+    [SerializeField] UnitPlayer Unit;
 
     const string Idle = "Idle";
     const string Attack = "Attack";
@@ -33,7 +31,7 @@ public class ChangingAnim : MonoBehaviour
 
     void Update()
     {
-        if(Unit.checkDead())
+        if(Unit.CheckDead())
         {
             ChangeAnimatonState(Dead);
         }

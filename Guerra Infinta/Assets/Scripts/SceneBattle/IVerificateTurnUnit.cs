@@ -1,4 +1,6 @@
+using static BattleSystem;
+
 public interface IVerificateTurnUnit
 {
-    EnumUnit turnUnit();
+    BattleState turnUnit();
 }

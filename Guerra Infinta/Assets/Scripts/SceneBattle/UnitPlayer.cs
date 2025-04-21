@@ -1,8 +1,10 @@
 
+using static BattleSystem;
+
 public class UnitPlayer : Unit, IVerificateTurnUnit
 {
-    public EnumUnit turnUnit()
+    public BattleState turnUnit()
     {
-        return EnumUnit.Player;
+        return BattleState.PLAYERTURN;
     }
 }

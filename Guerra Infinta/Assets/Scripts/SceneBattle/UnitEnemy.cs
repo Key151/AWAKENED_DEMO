@@ -1,8 +1,10 @@
 
+using static BattleSystem;
+
 public class UnitEnemy : Unit, IVerificateTurnUnit
 {
-    public EnumUnit turnUnit()
+    public BattleState turnUnit()
     {
-        return EnumUnit.Enenmy;
+        return BattleState.ENEMYTURN;
     }
 }

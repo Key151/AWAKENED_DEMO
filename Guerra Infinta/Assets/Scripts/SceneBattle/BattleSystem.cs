@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class BattleSystem : MonoBehaviour
 {
     VerificateButtonUI VerificateButtonUI;
-    private enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
+    public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
     private enum Action { AtkNormal, Item, Def, Move }
 
     //Game Object
@@ -19,7 +19,7 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform playerBattleStation_2;
     UnitPlayerBoy playerUnit;
-    Unit playerUnit_2;
+    UnitPlayerGirl playerUnit_2;
     public BattleHUD playerHUD;
     public BattleHUD playerHUD_2;
 
@@ -36,8 +36,6 @@ public class BattleSystem : MonoBehaviour
 
 
     public string sceneName;
-    bool isDead_1;
-    bool isDead_2;
 
     private BattleState state;
     List<Unit> BattleList;
@@ -47,13 +45,8 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-<<<<<<< Updated upstream
-        enemyUnit = new List<Unit>();
-        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
-=======
         enemyUnit = new List<UnitEnemy>();
-        VerificateButtonUI = GameObject.Find("Button").GetComponent<VerificateButtonUI>();
->>>>>>> Stashed changes
+        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -68,7 +61,7 @@ public class BattleSystem : MonoBehaviour
 
         //Cria uma copia do playerPrefab2 com a posicao do PlayerStation2
         GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation);
-        playerUnit_2 = playerGO_2.GetComponent<Unit>();
+        playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
         //posição do jogador 2
         playerUnit_2.OrigenX = playerGO_2.transform.position.x;
@@ -99,7 +92,6 @@ public class BattleSystem : MonoBehaviour
 
         VerificateButtonUI.ActivateDialguePanel();
 
-        //ActivateDialguePanel();
         dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
 
         playerHUD.SetHUD(playerUnit);
@@ -118,7 +110,7 @@ public class BattleSystem : MonoBehaviour
 
         for (int i = 0; i > BattleList.Count; i++)
         {
-            if (BattleList[i].checkDead())
+            if (BattleList[i].CheckDead())
             {
                 BattleList.RemoveAt(i);
             }
@@ -136,7 +128,17 @@ public class BattleSystem : MonoBehaviour
 
         if (BattleList[0] is IVerificateTurnUnit turnUnit)
         {
-            turnUnit.turnUnit();
+            state = turnUnit.turnUnit();
+        }
+
+        switch (state)
+        {
+            case BattleState.PLAYERTURN:
+                StartCoroutine(PlayerTurn(BattleList[0], false, 0));
+                break;
+            case BattleState.ENEMYTURN:
+                StartCoroutine(EnemyTurn(BattleList[0]));
+                break;
         }
 
     }
@@ -156,17 +158,17 @@ public class BattleSystem : MonoBehaviour
             {
                 case Action.AtkNormal://Ataque
                     {
-                        player_Unit.selected = false;
+                        BattleList[0].selected = false;
                         VerificateButtonUI.DisactivateButtons();
                         VerificateButtonUI.ActivateDialguePanel();
-                        player_Unit.Attack(enemyUnit[0]);
+                        BattleList[0].Attack(enemyUnit[0]);
                         enemyHUD[0].SetHP(enemyUnit[0].CurrentHP);
-                        dialogueText.text = player_Unit.UnitName + " ataca!";
+                        dialogueText.text = BattleList[0].UnitName + " ataca!";
                         playerUnit.MoveAtk(enemyUnit[0].transform);
                         yield return new WaitForSeconds(2f);
                         //DisactivateDialguePanel();
-                        player_Unit.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
-                        player_Unit.attacking = false;
+                        BattleList[0].transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
+                        BattleList[0].attacking = false;
                         BattleList.Add(BattleList[0]);
                         BattleList.RemoveAt(0);
                         VerificateTurn();
@@ -210,7 +212,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (Random.Range(0, 10) >= 3)
         {
-            Unit player = choosePlayer(playerUnit, playerUnit_2);
+            Unit player = ChoosePlayer(playerUnit, playerUnit_2);
 
             VerificateButtonUI.ActivateDialguePanel();
             enemy.Attack(player);
@@ -260,7 +262,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //Ataque do inimigo
-    public Unit choosePlayer(Unit playerturn1, Unit playerturn2)
+    public Unit ChoosePlayer(Unit playerturn1, Unit playerturn2)
     {
         ////Verificar se está morto
         //if (playerturn1.Dead)
@@ -333,21 +335,8 @@ public class BattleSystem : MonoBehaviour
     //BOTAO DO INIMIGO
     public void OnEnemyButton()
     {
-        if (state == BattleState.PLAYERTURN1)
-        {
-            VerificateButtonUI.DisactivateButtonsEnemy();
-            StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkNormal));
-
-        }
-        else if (state == BattleState.PLAYERTURN2)
-        {
-            VerificateButtonUI.DisactivateButtonsEnemy();
-            StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkNormal));
-        }
-        else
-        {
-            return;
-        }
+        VerificateButtonUI.DisactivateButtonsEnemy();
+        StartCoroutine(PlayerTurn(BattleList[0], true, Action.AtkNormal));
     }
 
     public void UpdateHud(BattleHUD hud, Unit unit)

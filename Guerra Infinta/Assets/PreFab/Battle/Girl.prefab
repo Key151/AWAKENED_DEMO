@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8532514484813481482}
   - component: {fileID: 6880386358950177359}
   - component: {fileID: 3521211831757133062}
-  - component: {fileID: -6674310864004094090}
+  - component: {fileID: 4635667083339551426}
   - component: {fileID: 8469651381530249041}
   m_Layer: 0
   m_Name: Girl
@@ -112,7 +112,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-6674310864004094090
+--- !u!114 &4635667083339551426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,26 +121,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2136917124798079353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2931c3a3f0b01ba47a416f16c621dd19, type: 3}
+  m_Script: {fileID: 11500000, guid: d57962b588379354abd0f8a7faf3371c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Menina
-  unitLevel: 3
-  damage: 6
-  maxHP: 45
-  currentHP: 45
-  healHP: 10
+  unitName: Girl
+  damage: 15
+  maxHP: 100
+  currentHP: 100
   spd: 30
   dead: 0
   attackX: 0
   attackY: 0
   origenX: 0
   origenY: 0
-  maxMP: 50
-  currentMP: 50
-  useMP: 10
-  xPosition: 0
-  yPosition: 0
+  maxActionPoint: 30
+  currentActionPoint: 30
   attacking: 0
   selected: 0
   takingDamage: 0
@@ -156,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503217d2c0494fc458e60af9882f2cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit: {fileID: -6674310864004094090}
+  Unit: {fileID: 4635667083339551426}

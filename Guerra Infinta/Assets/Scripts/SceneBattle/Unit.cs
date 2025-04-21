@@ -100,25 +100,25 @@ public class Unit : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        currentHP -= damage;
-        if (currentHP <= 0)
+        this.currentHP -= damage;
+        if (this.currentHP <= 0)
         {
-            currentHP = 0;
-            dead = true;
+            this.currentHP = 0;
+            this.dead = true;
         }
     }
 
-    public bool checkDead()
+    public bool CheckDead()
     {
-        if (currentHP <= 0)
+        if (this.currentHP <= 0)
         {
-            dead = true;
+            this.dead = true;
         }
         else
         {
-            dead = false;
+            this.dead = false;
         }
-        return dead;
+        return this.dead;
     }
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6523982453817895242}
   - component: {fileID: 555950551487170912}
-  - component: {fileID: 3041464412527831025}
+  - component: {fileID: 776566016094356933}
   - component: {fileID: 3318544481686936350}
   m_Layer: 0
   m_Name: Enemy 1
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3041464412527831025
+--- !u!114 &776566016094356933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,26 +98,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 508094171281282804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2931c3a3f0b01ba47a416f16c621dd19, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c3f62bb08e810d44adc85f990fc543a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Diabo
-  unitLevel: 5
-  damage: 8
-  maxHP: 100
-  currentHP: 100
-  healHP: 20
-  spd: 15
+  unitName: Diablo2
+  damage: 10
+  maxHP: 80
+  currentHP: 80
+  spd: 12
   dead: 0
   attackX: 0
   attackY: 0
   origenX: 0
   origenY: 0
-  maxMP: 0
-  currentMP: 0
-  useMP: 0
-  xPosition: 0
-  yPosition: 0
+  maxActionPoint: 0
+  currentActionPoint: 0
   attacking: 0
   selected: 0
   takingDamage: 0

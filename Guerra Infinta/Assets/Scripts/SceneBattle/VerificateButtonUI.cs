@@ -32,14 +32,14 @@ public class VerificateButtonUI : MonoBehaviour
         optionPanel.SetActive(false);
     }
 
-    //ApÛs clicar no bot„o MP, ser· desativado esses botıes: Cura e Movimento
+    //ApÛs clicar no bot„o MP, serÅEdesativado esses botıes: Cura e Movimento
     public void DisactivateButtonsMP()
     {
         healButton.SetActive(false);
         toMovementButton.SetActive(false);
         optionPanel.SetActive(false);
     }
-    //ApÛs clicar no bot„o Movimento, ser· ativado esses botıes: Mover e Retornar
+    //ApÛs clicar no bot„o Movimento, serÅEativado esses botıes: Mover e Retornar
     public void DisactivateButtonsMovement()
     {
         moveButton.SetActive(false);
@@ -71,7 +71,7 @@ public class VerificateButtonUI : MonoBehaviour
         primaryButtonPlayer.Select();
     }
 
-    //ApÛs clicar no bot„o MP, ser· ativado esses botıes: Cura e Movimento
+    //ApÛs clicar no bot„o MP, serÅEativado esses botıes: Cura e Movimento
     public void ActivateButtonsMP()
     {
         optionPanel.SetActive(true);
@@ -80,7 +80,7 @@ public class VerificateButtonUI : MonoBehaviour
         primaryButtonPlayer_2.Select();
     }
 
-    //ApÛs clicar no bot„o Movimento, ser· ativado esses botıes: Mover e Retornar
+    //ApÛs clicar no bot„o Movimento, serÅEativado esses botıes: Mover e Retornar
     public void ActivateButtonsMovement()
     {
         optionPanel.SetActive(true);
