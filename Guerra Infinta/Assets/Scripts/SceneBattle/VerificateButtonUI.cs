@@ -90,8 +90,11 @@ public class VerificateButtonUI : MonoBehaviour
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public void SelectEnemy()
 =======
+=======
+>>>>>>> Stashed changes
     //Ativa  os botões para atacar os inimigos
     public void ActivateButtonsEnemy()
 >>>>>>> Stashed changes
