@@ -110,58 +110,69 @@ public class BattleSystem : MonoBehaviour
     {
         VerificateButtonUI.DisactivateDialguePanel();
 
-        if (enemyUnit[0].Dead)
+        for (int i = 0; i > BattleList.Count; i++)
         {
-            state = BattleState.WON;
-            StartCoroutine(EndBattle());
-        }
-
-        else if (playerUnit.Dead && playerUnit_2.Dead)
-        {
-            state = BattleState.LOST;
-            StartCoroutine(EndBattle());
-        }
-
-        else if (BattleList[0] == playerUnit)
-        {
-            if (playerUnit.Dead)
+            if (BattleList[i].checkDead())
             {
-                BattleList.RemoveAt(0);
-                VerificateTurn();
-            }
-            else
-            {
-                state = BattleState.PLAYERTURN1;
-                StartCoroutine(PlayerTurn(playerUnit, false, 0));
+                BattleList.RemoveAt(i);
             }
         }
 
-        else if (BattleList[0] == playerUnit_2)
-        {
-            if (playerUnit_2.Dead)
-            {
-                BattleList.RemoveAt(0);
-                VerificateTurn();
-            }
-            else
-            {
-                state = BattleState.PLAYERTURN2;
-                StartCoroutine(PlayerTurn(playerUnit_2, false, 0));
-            }
-        }
-        else if (BattleList[0] == enemyUnit[0])
-        {
-            if (enemyUnit[0].Dead)
-            {
-                BattleList.RemoveAt(0);
-                VerificateTurn();
-            }
-            else
-            {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn(enemyUnit[0]));
-            }
-        }
+
+
+
+        //if (enemyUnit[0].Dead)
+        //{
+        //    state = BattleState.WON;
+        //    StartCoroutine(EndBattle());
+        //}
+
+        //else if (playerUnit.Dead && playerUnit_2.Dead)
+        //{
+        //    state = BattleState.LOST;
+        //    StartCoroutine(EndBattle());
+        //}
+
+        //else if (BattleList[0] == playerUnit)
+        //{
+        //    if (playerUnit.Dead)
+        //    {
+        //        BattleList.RemoveAt(0);
+        //        VerificateTurn();
+        //    }
+        //    else
+        //    {
+        //        state = BattleState.PLAYERTURN1;
+        //        StartCoroutine(PlayerTurn(playerUnit, false, 0));
+        //    }
+        //}
+
+        //else if (BattleList[0] == playerUnit_2)
+        //{
+        //    if (playerUnit_2.Dead)
+        //    {
+        //        BattleList.RemoveAt(0);
+        //        VerificateTurn();
+        //    }
+        //    else
+        //    {
+        //        state = BattleState.PLAYERTURN2;
+        //        StartCoroutine(PlayerTurn(playerUnit_2, false, 0));
+        //    }
+        //}
+        //else if (BattleList[0] == enemyUnit[0])
+        //{
+        //    if (enemyUnit[0].Dead)
+        //    {
+        //        BattleList.RemoveAt(0);
+        //        VerificateTurn();
+        //    }
+        //    else
+        //    {
+        //        state = BattleState.ENEMYTURN;
+        //        StartCoroutine(EnemyTurn(enemyUnit[0]));
+        //    }
+        //}
     }
 
     // TURNO DO PLAYER
@@ -285,15 +296,15 @@ public class BattleSystem : MonoBehaviour
     //Ataque do inimigo
     public Unit choosePlayer(Unit playerturn1, Unit playerturn2)
     {
-        //Verificar se está morto
-        if (playerturn1.Dead)
-        {
-            return playerturn2;
-        }
-        else if (playerturn2.Dead)
-        {
-            return playerturn1;
-        }
+        ////Verificar se está morto
+        //if (playerturn1.Dead)
+        //{
+        //    return playerturn2;
+        //}
+        //else if (playerturn2.Dead)
+        //{
+        //    return playerturn1;
+        //}
 
         //Qual jogador vai atacar
         if (Random.Range(1, 3) == 1)

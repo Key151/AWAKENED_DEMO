@@ -88,11 +88,6 @@ public class Unit : MonoBehaviour, IDamageable
         get { return spd; }
         set { spd = value; }
     }
-    public bool Dead
-    {
-        get { return dead; }
-        set { dead = value; }
-    }
     public void SetPosition(float x, float y)
     {
         this.transform.position = new Vector2(x, y);
@@ -113,6 +108,22 @@ public class Unit : MonoBehaviour, IDamageable
         }
     }
 
+    public bool checkDead()
+    {
+        if (currentHP <= 0)
+        {
+            dead = true;
+        }
+        else
+        {
+            dead = false;
+        }
+        return dead;
+    }
+
+
+
+    //-----------------------------
     public void Heal(int amout)
     {
         CurrentHP += amout;

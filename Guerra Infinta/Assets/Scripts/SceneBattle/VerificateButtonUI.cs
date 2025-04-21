@@ -69,7 +69,7 @@ public class VerificateButtonUI : MonoBehaviour
         primaryButtonPlayer_3.Select();
     }
 
-    public void ActivateButtonsEnemy()
+    public void SelectEnemy()
     {
         enemyButton.SetActive(true);
         primaryButtonEnemy.Select();

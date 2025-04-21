@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitPlayerBoy : Unit
+public class UnitPlayerBoy : UnitPlayer
 {
     // ou private List<IAtaque>() ataques = new List<IAtaque>();
     private Dictionary<ItemList, IAttackSP> attackSP = new Dictionary<ItemList, IAttackSP>();
