@@ -13,7 +13,7 @@ public class VerificateButtonUI : MonoBehaviour
     public GameObject attackButton;
     public GameObject mpButton;
     public GameObject healButton;
-    public GameObject movementButton;
+    public GameObject toMovementButton;
     public GameObject moveButton;
     public GameObject returnButton;
     public GameObject enemyButton;
@@ -23,12 +23,23 @@ public class VerificateButtonUI : MonoBehaviour
 
 
     // DISATIVAR BOTOES
+
+    // Desativa os primeiros botões de ataque e MP
     public void DisactivateButtons()
     {
         attackButton.SetActive(false);
         mpButton.SetActive(false);
         optionPanel.SetActive(false);
     }
+
+    //Após clicar no botão MP, será desativado esses botões: Cura e Movimento
+    public void DisactivateButtonsMP()
+    {
+        healButton.SetActive(false);
+        toMovementButton.SetActive(false);
+        optionPanel.SetActive(false);
+    }
+    //Após clicar no botão Movimento, será ativado esses botões: Mover e Retornar
     public void DisactivateButtonsMovement()
     {
         moveButton.SetActive(false);
@@ -36,6 +47,7 @@ public class VerificateButtonUI : MonoBehaviour
         optionPanel.SetActive(false);
     }
 
+    //Desativa  os botões para atacar os inimigos
     public void DisactivateButtonsEnemy()
     {
         enemyButton.SetActive(false);
@@ -46,21 +58,29 @@ public class VerificateButtonUI : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-    public void DisactivateButtonsMP()
-    {
-        healButton.SetActive(false);
-        movementButton.SetActive(false);
-        optionPanel.SetActive(false);
-    }
+    
 
     // ATIVAR BOTOES
+
+    // Ativa os primeiros botões de ataque e MP
+    public void ActivateButtons()
+    {
+        optionPanel.SetActive(true);
+        attackButton.SetActive(true);
+        mpButton.SetActive(true);
+        primaryButtonPlayer.Select();
+    }
+
+    //Após clicar no botão MP, será ativado esses botões: Cura e Movimento
     public void ActivateButtonsMP()
     {
         optionPanel.SetActive(true);
         healButton.SetActive(true);
-        movementButton.SetActive(true);
+        toMovementButton.SetActive(true);
         primaryButtonPlayer_2.Select();
     }
+
+    //Após clicar no botão Movimento, será ativado esses botões: Mover e Retornar
     public void ActivateButtonsMovement()
     {
         optionPanel.SetActive(true);
@@ -69,18 +89,18 @@ public class VerificateButtonUI : MonoBehaviour
         primaryButtonPlayer_3.Select();
     }
 
+<<<<<<< Updated upstream
     public void SelectEnemy()
+=======
+    //Ativa  os botões para atacar os inimigos
+    public void ActivateButtonsEnemy()
+>>>>>>> Stashed changes
     {
         enemyButton.SetActive(true);
         primaryButtonEnemy.Select();
     }
-    public void ActivateButtons()
-    {
-        optionPanel.SetActive(true);
-        attackButton.SetActive(true);
-        mpButton.SetActive(true);
-        primaryButtonPlayer.Select();
-    }
+
+    
     public void ActivateDialguePanel()
     {
         dialoguePanel.SetActive(true);

@@ -47,7 +47,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         enemyUnit = new List<Unit>();
-        VerificateButtonUI = GameObject.Find("Button").GetComponent<VerificateButtonUI>();
+        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -337,7 +337,7 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.ActivateButtonsMP();
     }
 
-    public void OnMovementButton()
+    public void OnToMovementButton()
     {
         VerificateButtonUI.DisactivateButtonsMP();
         VerificateButtonUI.ActivateButtonsMovement();
