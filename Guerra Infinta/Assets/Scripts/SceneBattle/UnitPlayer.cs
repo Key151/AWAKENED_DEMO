@@ -1,7 +1,7 @@
 
-public class UnitPlayer : Unit, IWhitchUnit
+public class UnitPlayer : Unit, IVerificateTurnUnit
 {
-    public EnumUnit WhoIam()
+    public EnumUnit turnUnit()
     {
         return EnumUnit.Player;
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Resources;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ public class BattleSystem : MonoBehaviour
 {
     VerificateButtonUI VerificateButtonUI;
     private enum BattleState { START, PLAYERTURN1, PLAYERTURN2, ENEMYTURN, WON, LOST }
-    private enum Action { AtkNormal, AtkSP, Def, Move }
+    private enum Action { AtkNormal, Item, Def, Move }
 
     //Game Object
     [Header("Player Settings")]
@@ -25,7 +26,7 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Enemy Settings")]
     public GameObject[] enemyPrefab;
-    private List<Unit> enemyUnit;
+    private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
     public List<BattleHUD> enemyHUD;
 
@@ -46,8 +47,13 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+<<<<<<< Updated upstream
         enemyUnit = new List<Unit>();
         VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
+=======
+        enemyUnit = new List<UnitEnemy>();
+        VerificateButtonUI = GameObject.Find("Button").GetComponent<VerificateButtonUI>();
+>>>>>>> Stashed changes
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -74,7 +80,7 @@ public class BattleSystem : MonoBehaviour
             GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i]);
 
             //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
-            enemyUnit.Add(enemyGO.GetComponent<Unit>());
+            enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
 
             //posição do inimigo
             enemyUnit[i].SetPosition(enemyGO.transform.position.x, enemyGO.transform.position.y);
@@ -118,66 +124,21 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
-        foreach (var unit in BattleList)
+        if (!BattleList.OfType<UnitPlayer>().Any())
         {
-            if (unit is IWhitchUnit turnUnit)
-            {
-                turnUnit.WhoIam();
-            }
+            state = BattleState.WON;
         }
 
-        //if (enemyUnit[0].Dead)
-        //{
-        //    state = BattleState.WON;
-        //    StartCoroutine(EndBattle());
-        //}
+        else if (!BattleList.OfType<UnitEnemy>().Any())
+        {
+            state = BattleState.LOST;
+        }
 
-        //else if (playerUnit.Dead && playerUnit_2.Dead)
-        //{
-        //    state = BattleState.LOST;
-        //    StartCoroutine(EndBattle());
-        //}
+        if (BattleList[0] is IVerificateTurnUnit turnUnit)
+        {
+            turnUnit.turnUnit();
+        }
 
-        //else if (BattleList[0] == playerUnit)
-        //{
-        //    if (playerUnit.Dead)
-        //    {
-        //        BattleList.RemoveAt(0);
-        //        VerificateTurn();
-        //    }
-        //    else
-        //    {
-        //        state = BattleState.PLAYERTURN1;
-        //        StartCoroutine(PlayerTurn(playerUnit, false, 0));
-        //    }
-        //}
-
-        //else if (BattleList[0] == playerUnit_2)
-        //{
-        //    if (playerUnit_2.Dead)
-        //    {
-        //        BattleList.RemoveAt(0);
-        //        VerificateTurn();
-        //    }
-        //    else
-        //    {
-        //        state = BattleState.PLAYERTURN2;
-        //        StartCoroutine(PlayerTurn(playerUnit_2, false, 0));
-        //    }
-        //}
-        //else if (BattleList[0] == enemyUnit[0])
-        //{
-        //    if (enemyUnit[0].Dead)
-        //    {
-        //        BattleList.RemoveAt(0);
-        //        VerificateTurn();
-        //    }
-        //    else
-        //    {
-        //        state = BattleState.ENEMYTURN;
-        //        StartCoroutine(EnemyTurn(enemyUnit[0]));
-        //    }
-        //}
     }
 
     // TURNO DO PLAYER
@@ -354,20 +315,20 @@ public class BattleSystem : MonoBehaviour
     }
 
     //BOTAO DE CURA
-    public void OnHealButton()
-    {
-        if (state == BattleState.PLAYERTURN1)
-        {
-            VerificateButtonUI.DisactivateButtonsMP();
-            StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkSP));
-        }
-        else if (state == BattleState.PLAYERTURN2)
-        {
-            VerificateButtonUI.DisactivateButtonsMP();
-            StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkSP));
-        }
+    //public void OnHealButton()
+    //{
+    //    if (state == BattleState.PLAYERTURN1)
+    //    {
+    //        VerificateButtonUI.DisactivateButtonsMP();
+    //        StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkSP));
+    //    }
+    //    else if (state == BattleState.PLAYERTURN2)
+    //    {
+    //        VerificateButtonUI.DisactivateButtonsMP();
+    //        StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkSP));
+    //    }
 
-    }
+    //}
 
     //BOTAO DO INIMIGO
     public void OnEnemyButton()
