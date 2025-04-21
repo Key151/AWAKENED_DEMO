@@ -88,16 +88,14 @@ public class VerificateButtonUI : MonoBehaviour
         returnButton.SetActive(true);
         primaryButtonPlayer_3.Select();
     }
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     public void SelectEnemy()
-=======
-=======
->>>>>>> Stashed changes
+    {
+        enemyButton.SetActive(true);
+        primaryButtonEnemy.Select();
+    }
+
     //Ativa  os botões para atacar os inimigos
     public void ActivateButtonsEnemy()
->>>>>>> Stashed changes
     {
         enemyButton.SetActive(true);
         primaryButtonEnemy.Select();
