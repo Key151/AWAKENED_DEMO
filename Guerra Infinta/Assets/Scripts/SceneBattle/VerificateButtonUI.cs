@@ -22,7 +22,7 @@ public class VerificateButtonUI : MonoBehaviour
 
     public void MovePanel(UnitPlayer player)
     {
-        optionPanel.transform.position = new Vector2(player.transform.position.x + .0f, player.transform.position.y);
+        optionPanel.transform.position = new Vector2(player.transform.position.x + 2.0f, player.transform.position.y);
     }
 
     // Desativa os primeiros botões de ataque e MP
