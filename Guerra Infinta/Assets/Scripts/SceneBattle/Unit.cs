@@ -100,11 +100,11 @@ public class Unit : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        this.currentHP -= damage;
-        if (this.currentHP <= 0)
+        currentHP -= damage;
+        if (currentHP <= 0)
         {
-            this.currentHP = 0;
-            this.dead = true;
+            currentHP = 0;
+            dead = true;
         }
     }
 
@@ -119,6 +119,11 @@ public class Unit : MonoBehaviour, IDamageable
             this.dead = false;
         }
         return this.dead;
+    }
+
+    void Start()
+    {
+        attackNormal = new AttackNormal();
     }
 
 

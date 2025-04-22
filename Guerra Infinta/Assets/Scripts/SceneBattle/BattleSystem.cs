@@ -107,7 +107,6 @@ public class BattleSystem : MonoBehaviour
     void VerificateTurn()
     {
         VerificateButtonUI.DisactivateDialguePanel();
-        VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
 
         for (int i = 0; i > BattleList.Count; i++)
         {
@@ -151,6 +150,7 @@ public class BattleSystem : MonoBehaviour
         if (!click)
         {
             VerificateButtonUI.ActivateButtons();
+            VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
             player_Unit.selected = true;
         }
         else
@@ -159,17 +159,19 @@ public class BattleSystem : MonoBehaviour
             {
                 case Action.AtkNormal://Ataque
                     {
-                        BattleList[0].selected = false;
+                        UnitPlayer player = BattleList[0] as UnitPlayer;
+                        player.selected = false;
                         VerificateButtonUI.DisactivateButtons();
                         VerificateButtonUI.ActivateDialguePanel();
-                        BattleList[0].Attack(enemyUnit[0]);
+                        player.Attack(enemyUnit[0]);
                         enemyHUD[0].SetHP(enemyUnit[0].CurrentHP);
-                        dialogueText.text = BattleList[0].UnitName + " ataca!";
-                        playerUnit.MoveAtk(enemyUnit[0].transform);
+                        dialogueText.text = player.UnitName + " ataca!";
+                        player.MoveAtk(enemyUnit[0].transform);
+                        player.attacking = true;
                         yield return new WaitForSeconds(2f);
                         //DisactivateDialguePanel();
-                        BattleList[0].transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
-                        BattleList[0].attacking = false;
+                        player.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
+                        player.attacking = false;
                         BattleList.Add(BattleList[0]);
                         BattleList.RemoveAt(0);
                         VerificateTurn();
@@ -219,8 +221,8 @@ public class BattleSystem : MonoBehaviour
             enemy.Attack(player);
             player.takingDamage = true;
             dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-            UpdateHud(playerHUD, playerUnit);
-            UpdateHud(playerHUD_2, playerUnit_2);
+            UpdateHud(playerHUD, player);
+            //UpdateHud(playerHUD_2, playerUnit_2);
             yield return new WaitForSeconds(2f);
             //DisactivateDialguePanel();
             player.takingDamage = false;

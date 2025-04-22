@@ -16,7 +16,9 @@ public class VerificateButtonUI : MonoBehaviour
     [SerializeField] private GameObject toMovementButton;
     [SerializeField] private GameObject moveButton;
     [SerializeField] private GameObject returnButton;
-    [SerializeField] private GameObject enemyButton;
+    [SerializeField] private GameObject enemyButton_1;
+    [SerializeField] private GameObject enemyButton_2;
+    [SerializeField] private GameObject enemyButton_3;
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject dialoguePanel;
 
@@ -51,7 +53,9 @@ public class VerificateButtonUI : MonoBehaviour
     //Desativa  os botões para atacar os inimigos
     public void DisactivateButtonsEnemy()
     {
-        enemyButton.SetActive(false);
+        enemyButton_1.SetActive(false);
+        enemyButton_2.SetActive(false);
+        enemyButton_3.SetActive(false);
     }
 
     public void DisactivateDialguePanel()
@@ -91,14 +95,18 @@ public class VerificateButtonUI : MonoBehaviour
     }
     public void SelectEnemy()
     {
-        enemyButton.SetActive(true);
+        enemyButton_1.SetActive(true);
+        enemyButton_2.SetActive(true);
+        enemyButton_3.SetActive(true);
         primaryButtonEnemy.Select();
     }
 
     //Ativa  os botões para atacar os inimigos
     public void ActivateButtonsEnemy()
     {
-        enemyButton.SetActive(true);
+        enemyButton_1.SetActive(true);
+        enemyButton_2.SetActive(true);
+        enemyButton_3.SetActive(true);
         primaryButtonEnemy.Select();
     }
 
