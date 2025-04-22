@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,8 +17,8 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab_2;
     public Transform playerBattleStation;
     public Transform playerBattleStation_2;
-    UnitPlayerBoy playerUnit;
-    UnitPlayerGirl playerUnit_2;
+    private UnitPlayerBoy playerUnit;
+    private UnitPlayerGirl playerUnit_2;
     public BattleHUD playerHUD;
     public BattleHUD playerHUD_2;
 
@@ -33,7 +32,7 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public Text dialogueText;
-
+    private BattleEnemy battleEnemy;
 
     public string sceneName;
 
@@ -46,6 +45,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
+        battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
@@ -96,9 +96,6 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHUD(playerUnit);
         playerHUD_2.SetHUD(playerUnit_2);
-        enemyHUD[0].SetHUD(enemyUnit[0]);
-
-
 
         yield return new WaitForSeconds(3f);
 
@@ -107,6 +104,8 @@ public class BattleSystem : MonoBehaviour
     void VerificateTurn()
     {
         VerificateButtonUI.DisactivateDialguePanel();
+        UpdateHud(playerHUD, playerUnit);
+        UpdateHud(playerHUD_2, playerUnit_2);
 
         for (int i = 0; i > BattleList.Count; i++)
         {
@@ -151,7 +150,9 @@ public class BattleSystem : MonoBehaviour
         {
             VerificateButtonUI.ActivateButtons();
             VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
+            player_Unit.HealAP();
             player_Unit.selected = true;
+            BattleList[0].selected = true;
         }
         else
         {
@@ -159,53 +160,24 @@ public class BattleSystem : MonoBehaviour
             {
                 case Action.AtkNormal://Ataque
                     {
-                        UnitPlayer player = BattleList[0] as UnitPlayer;
-                        player.selected = false;
+                        UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
+
+                        playerAtual.selected = false;
                         VerificateButtonUI.DisactivateButtons();
                         VerificateButtonUI.ActivateDialguePanel();
-                        player.Attack(enemyUnit[0]);
+                        playerAtual.Attack(enemyUnit[0]);
                         enemyHUD[0].SetHP(enemyUnit[0].CurrentHP);
-                        dialogueText.text = player.UnitName + " ataca!";
-                        player.MoveAtk(enemyUnit[0].transform);
-                        player.attacking = true;
+                        dialogueText.text = playerAtual.UnitName + " ataca!";
+                        playerAtual.MoveAtk(enemyUnit[0].transform);
+                        playerAtual.attacking = true;
                         yield return new WaitForSeconds(2f);
-                        //DisactivateDialguePanel();
-                        player.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
-                        player.attacking = false;
+                        playerAtual.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
+                        playerAtual.attacking = false;
                         BattleList.Add(BattleList[0]);
                         BattleList.RemoveAt(0);
                         VerificateTurn();
                         break;
                     }
-                //case Action.AtkSP://Cura
-                //    {
-                //        VerificateButtonUI.DisactivateButtons();
-                //        if (player_Unit.CurrentActionPoint < player_Unit.UseActionPoint)
-                //        {
-                //            player_Unit.selected = false;
-                //            VerificateButtonUI.ActivateDialguePanel();
-                //            dialogueText.text = player_Unit.UnitName + " não tem ActionPoint sulficiente!";
-                //            yield return new WaitForSeconds(2f);
-                //            //DisactivateDialguePanel();
-                //            VerificateTurn();
-                //        }
-                //        else
-                //        {
-                //            player_Unit.selected = false;
-                //            VerificateButtonUI.ActivateDialguePanel();
-                //            player_Unit.ActionPoint();
-                //            player_Unit.Heal(player_Unit.HealHP);
-                //            UpdateHud(playerHUD, playerUnit);
-                //            UpdateHud(playerHUD_2, playerUnit_2);
-                //            dialogueText.text = player_Unit.UnitName + " se curou!";
-                //            yield return new WaitForSeconds(2f);
-                //            //DisactivateDialguePanel();
-                //            BattleList.Add(BattleList[0]);
-                //            BattleList.RemoveAt(0);
-                //            VerificateTurn();
-                //        }
-                //        break;
-                //    }
             }
         }
     }
@@ -213,31 +185,13 @@ public class BattleSystem : MonoBehaviour
     // TURNO DO INIMIGO
     IEnumerator EnemyTurn(Unit enemy)
     {
-        if (Random.Range(0, 10) >= 3)
-        {
-            Unit player = ChoosePlayer(playerUnit, playerUnit_2);
+        UnitPlayer player = ChoosePlayer(playerUnit, playerUnit_2);
 
-            VerificateButtonUI.ActivateDialguePanel();
-            enemy.Attack(player);
-            player.takingDamage = true;
-            dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-            UpdateHud(playerHUD, player);
-            //UpdateHud(playerHUD_2, playerUnit_2);
-            yield return new WaitForSeconds(2f);
-            //DisactivateDialguePanel();
-            player.takingDamage = false;
-
-        }
-        //Fazer a habilidade de cura
-        //else
-        //{
-        //    VerificateButtonUI.ActivateDialguePanel();
-        //    dialogueText.text = enemy.UnitName + " se cura!";
-        //    enemy.Heal(enemy.HealHP);
-        //    enemyHUD[0].SetHP(enemy.CurrentHP);
-        //    yield return new WaitForSeconds(2f);
-        //    //DisactivateDialguePanel();
-        //}
+        VerificateButtonUI.ActivateDialguePanel();
+        battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
+        dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
+        yield return new WaitForSeconds(2f);
+        player.takingDamage = false;
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
@@ -263,31 +217,6 @@ public class BattleSystem : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         }
     }
-
-    //Ataque do inimigo
-    public Unit ChoosePlayer(Unit playerturn1, Unit playerturn2)
-    {
-        ////Verificar se está morto
-        //if (playerturn1.Dead)
-        //{
-        //    return playerturn2;
-        //}
-        //else if (playerturn2.Dead)
-        //{
-        //    return playerturn1;
-        //}
-
-        //Qual jogador vai atacar
-        if (Random.Range(1, 3) == 1)
-        {
-            return playerturn1;
-        }
-        else
-        {
-            return playerturn2;
-        }
-    }
-
 
     // BOTAO DE ATAQUE
 
@@ -319,21 +248,18 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.DisactivateButtonsMovement();
     }
 
-    //BOTAO DE CURA
-    //public void OnHealButton()
-    //{
-    //    if (state == BattleState.PLAYERTURN1)
-    //    {
-    //        VerificateButtonUI.DisactivateButtonsMP();
-    //        StartCoroutine(PlayerTurn(playerUnit, true, Action.AtkSP));
-    //    }
-    //    else if (state == BattleState.PLAYERTURN2)
-    //    {
-    //        VerificateButtonUI.DisactivateButtonsMP();
-    //        StartCoroutine(PlayerTurn(playerUnit_2, true, Action.AtkSP));
-    //    }
-
-    //}
+    // Escolhe o jogador que vai atacar
+    private UnitPlayer ChoosePlayer(UnitPlayer playerturn1, UnitPlayer playerturn2)
+    {
+        if (Random.Range(1, 3) == 1)
+        {
+            return playerturn1;
+        }
+        else
+        {
+            return playerturn2;
+        }
+    }
 
     //BOTAO DO INIMIGO
     public void OnEnemyButton()

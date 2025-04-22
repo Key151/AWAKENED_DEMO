@@ -128,14 +128,14 @@ MonoBehaviour:
   damage: 15
   maxHP: 100
   currentHP: 100
-  spd: 30
+  spd: 40
   dead: 0
   attackX: 0
   attackY: 0
   origenX: 0
   origenY: 0
-  maxActionPoint: 30
-  currentActionPoint: 30
+  maxActionPoint: 100
+  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0

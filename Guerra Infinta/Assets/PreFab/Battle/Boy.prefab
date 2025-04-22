@@ -124,18 +124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c2cf851a630c64e8f58566f06c349f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Menino
+  unitName: Boy
   damage: 15
-  maxHP: 24
-  currentHP: 24
-  spd: 40
+  maxHP: 100
+  currentHP: 100
+  spd: 30
   dead: 0
   attackX: 0
   attackY: 0
   origenX: 0
   origenY: 0
-  maxActionPoint: 20
-  currentActionPoint: 20
+  maxActionPoint: 100
+  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0

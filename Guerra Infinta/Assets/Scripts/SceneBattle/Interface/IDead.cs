@@ -1,4 +1,4 @@
 public interface IDead
 {
-    bool checkDead();
+    bool CheckDead();
 }

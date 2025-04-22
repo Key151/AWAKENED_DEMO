@@ -4,7 +4,7 @@ using UnityEngine;
 public class UnitPlayerBoy : UnitPlayer
 {
     // ou private List<IAtaque>() ataques = new List<IAtaque>();
-    private Dictionary<ItemList, IAttackSP> attackSP = new Dictionary<ItemList, IAttackSP>();
+    private readonly Dictionary<ItemList, IAttackSP> attackSP = new Dictionary<ItemList, IAttackSP>();
 
     public UnitPlayerBoy()
     {
@@ -31,5 +31,4 @@ public class UnitPlayerBoy : UnitPlayer
             Debug.Log($"Novo ataque desbloqueado: {item}!");
         }
     }
-
 }

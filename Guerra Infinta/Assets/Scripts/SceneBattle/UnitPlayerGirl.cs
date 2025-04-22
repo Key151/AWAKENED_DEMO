@@ -4,7 +4,7 @@ using UnityEngine;
 public class UnitPlayerGirl : UnitPlayer
 {
     // ou private List<IAtaque>() ataques = new List<IAtaque>();
-    private Dictionary<ItemList, IAttackSP> attackSP = new Dictionary<ItemList, IAttackSP>();
+    private readonly Dictionary<ItemList, IAttackSP> attackSP = new Dictionary<ItemList, IAttackSP>();
 
     public UnitPlayerGirl()
     {

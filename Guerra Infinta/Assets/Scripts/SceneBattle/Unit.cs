@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Unit : MonoBehaviour, IDamageable
@@ -106,20 +107,21 @@ public class Unit : MonoBehaviour, IDamageable
             currentHP = 0;
             dead = true;
         }
+        Debug.Log($"{this} recebeu {damage} de dano");
+    }
+
+    public void HealAP()
+    {
+        CurrentActionPoint += 10;
     }
 
     public bool CheckDead()
     {
-        if (this.currentHP <= 0)
-        {
-            this.dead = true;
-        }
-        else
-        {
-            this.dead = false;
-        }
-        return this.dead;
+        dead = (currentHP <= 0);
+        return dead;
+        //return (currentHP <= 0) ? dead = true : dead = false;
     }
+
 
     void Start()
     {
