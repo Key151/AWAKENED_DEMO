@@ -182,6 +182,26 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
+    {
+        UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
+
+        playerAtual.selected = false;
+        VerificateButtonUI.DisactivateButtons();
+        VerificateButtonUI.ActivateDialguePanel();
+        playerAtual.Attack(enemyUnit[enemyNumber]);
+        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
+        dialogueText.text = playerAtual.UnitName + " ataca!";
+        playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
+        playerAtual.attacking = true;
+        yield return new WaitForSeconds(2f);
+        playerAtual.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
+        playerAtual.attacking = false;
+        BattleList.Add(BattleList[0]);
+        BattleList.RemoveAt(0);
+        VerificateTurn();
+    }
+
     // TURNO DO INIMIGO
     IEnumerator EnemyTurn(Unit enemy)
     {
@@ -262,10 +282,11 @@ public class BattleSystem : MonoBehaviour
     }
 
     //BOTAO DO INIMIGO
-    public void OnEnemyButton()
+    public void OnEnemyButton(int enemyNumber)
     {
         VerificateButtonUI.DisactivateButtonsEnemy();
-        StartCoroutine(PlayerTurn(BattleList[0], true, Action.AtkNormal));
+        StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
+        //StartCoroutine(PlayerTurn(BattleList[0], true, Action.AtkNormal));
     }
 
     public void UpdateHud(BattleHUD hud, Unit unit)
