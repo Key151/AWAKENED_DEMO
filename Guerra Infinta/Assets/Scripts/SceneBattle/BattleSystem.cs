@@ -107,11 +107,14 @@ public class BattleSystem : MonoBehaviour
         UpdateHud(playerHUD, playerUnit);
         UpdateHud(playerHUD_2, playerUnit_2);
 
-        for (int i = 0; i > BattleList.Count; i++)
+        Debug.Log(BattleList.Count);
+
+        for (int i = 0; i < BattleList.Count; i++)
         {
             if (BattleList[i].CheckDead())
             {
                 BattleList.RemoveAt(i);
+                //BattleList.Remove(BattleList[i]);
             }
         }
 
@@ -182,6 +185,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+    // Cópia de "case Action.AtkNormal://Ataque"
     IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
         UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
@@ -208,10 +212,24 @@ public class BattleSystem : MonoBehaviour
         UnitPlayer player = ChoosePlayer(playerUnit, playerUnit_2);
 
         VerificateButtonUI.ActivateDialguePanel();
-        battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
-        dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-        yield return new WaitForSeconds(2f);
-        player.takingDamage = false;
+        //battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
+
+        if (Random.Range(0, 10) >= 3)
+        {
+            enemy.Attack(player);
+            player.takingDamage = true;
+            dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
+            yield return new WaitForSeconds(2f);
+            player.takingDamage = false;
+        }
+
+        else
+        {
+           dialogueText.text = enemy.UnitName + " se cura" + "!";
+            yield return new WaitForSeconds(2f);
+        }
+
+        VerificateButtonUI.DisactivateDialguePanel();
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
