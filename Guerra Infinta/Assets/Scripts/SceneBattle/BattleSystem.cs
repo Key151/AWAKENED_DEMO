@@ -141,6 +141,9 @@ public class BattleSystem : MonoBehaviour
             case BattleState.ENEMYTURN:
                 StartCoroutine(EnemyTurn(BattleList[0]));
                 break;
+            default: 
+                EndBattle();
+                break;
         }
 
     }
