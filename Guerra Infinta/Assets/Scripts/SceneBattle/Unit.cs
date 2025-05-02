@@ -8,35 +8,22 @@ using UnityEngine;
 public class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private string unitName;
-    [SerializeField] private int damage;
+    [SerializeField] private int damageBase;
     [SerializeField] private int maxHP;
     [SerializeField] private int currentHP;
     [SerializeField] private int spd;
     [SerializeField] private bool dead;
-    [SerializeField] private float attackX;
-    [SerializeField] private float attackY;
     [SerializeField] private float origenX;
     [SerializeField] private float origenY;
     [SerializeField] private int maxActionPoint;
     [SerializeField] private int currentActionPoint;
 
-    public AttackNormal attackNormal;
+    private IAttack attackNormal;
+
+    private int damageBonus = 0;
     public bool attacking;
     public bool selected;
     public bool takingDamage;
-
-    public float AttackX
-    {
-        get { return attackX; }
-        set { attackX = value - 2f; }
-    }
-
-    public float AttackY
-    {
-        get { return attackY; }
-        set { attackY = value + 1.2f; }
-    }
-
     public float OrigenX
     {
         get { return origenX; }
@@ -79,8 +66,13 @@ public class Unit : MonoBehaviour, IDamageable
 
     public int Damage
     {
-        get { return damage; }
-        set { damage = value; }
+        get { return damageBase; }
+    }
+
+    public int DamageBonus
+    {
+        get { return damageBonus; }
+        set { damageBonus = value; }
     }
 
     public int Spd
@@ -88,9 +80,14 @@ public class Unit : MonoBehaviour, IDamageable
         get { return spd; }
         set { spd = value; }
     }
+    public int TotalDamage()
+    {
+        return damageBase + damageBonus;
+    }
+
     public void SetPosition(float x, float y)
     {
-        this.transform.position = new Vector2(x, y);
+        transform.position = new Vector2(x, y);
     }
 
    public void Attack(Unit target)
@@ -122,12 +119,10 @@ public class Unit : MonoBehaviour, IDamageable
     }
 
 
-    void Start()
+    void Awake()
     {
         attackNormal = new AttackNormal();
     }
-
-
 
     //-----------------------------
     public void Heal(int amout)

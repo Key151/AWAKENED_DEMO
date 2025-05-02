@@ -1,8 +1,7 @@
 public enum ItemList
 {
-    ItemA,
-    ItemB,
-    ItemC,
-    ItemD,
-    ItemE
+    PauDeMadeira,
+    Agua,
+    Suco,
+    Faca
 }

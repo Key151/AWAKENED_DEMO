@@ -136,59 +136,27 @@ public class BattleSystem : MonoBehaviour
         switch (state)
         {
             case BattleState.PLAYERTURN:
-                StartCoroutine(PlayerTurn(BattleList[0], false, 0));
+                PlayerTurn(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
                 StartCoroutine(EnemyTurn(BattleList[0]));
                 break;
-            default: 
-                EndBattle();
+            default:
+                StartCoroutine(EndBattle());
                 break;
         }
 
     }
 
     // TURNO DO PLAYER
-    IEnumerator PlayerTurn(Unit player_Unit, bool click, Action action)//Criar uma lista de opções com switch case
+    void PlayerTurn(Unit player_Unit)//Criar uma lista de opções com switch case
     {
-        //ActivatePanel();
-        if (!click)
-        {
             VerificateButtonUI.ActivateButtons();
             VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
             player_Unit.HealAP();
             player_Unit.selected = true;
             BattleList[0].selected = true;
-        }
-        else
-        {
-            switch (action)
-            {
-                case Action.AtkNormal://Ataque
-                    {
-                        UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
-
-                        playerAtual.selected = false;
-                        VerificateButtonUI.DisactivateButtons();
-                        VerificateButtonUI.ActivateDialguePanel();
-                        playerAtual.Attack(enemyUnit[0]);
-                        enemyHUD[0].SetHP(enemyUnit[0].CurrentHP);
-                        dialogueText.text = playerAtual.UnitName + " ataca!";
-                        playerAtual.MoveAtk(enemyUnit[0].transform);
-                        playerAtual.attacking = true;
-                        yield return new WaitForSeconds(2f);
-                        playerAtual.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
-                        playerAtual.attacking = false;
-                        BattleList.Add(BattleList[0]);
-                        BattleList.RemoveAt(0);
-                        VerificateTurn();
-                        break;
-                    }
-            }
-        }
     }
-
-    // Cópia de "case Action.AtkNormal://Ataque"
     IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
         UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
@@ -196,6 +164,7 @@ public class BattleSystem : MonoBehaviour
         playerAtual.selected = false;
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
+        Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
         playerAtual.Attack(enemyUnit[enemyNumber]);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
         dialogueText.text = playerAtual.UnitName + " ataca!";
@@ -307,7 +276,6 @@ public class BattleSystem : MonoBehaviour
     {
         VerificateButtonUI.DisactivateButtonsEnemy();
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
-        //StartCoroutine(PlayerTurn(BattleList[0], true, Action.AtkNormal));
     }
 
     public void UpdateHud(BattleHUD hud, Unit unit)

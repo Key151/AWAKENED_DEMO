@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Diablo3
-  damage: 5
+  damageBase: 10
   maxHP: 50
   currentHP: 50
   spd: 8

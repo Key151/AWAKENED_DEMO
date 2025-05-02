@@ -147,3 +147,53 @@ public class InimigoVoador : IMovivel, IVoador
 //        }
 //    }
 //}
+
+
+//-------------------------------------------------------------------------------------------
+//Exemplo de Interface e troca de ataque
+
+//public class AttackNormal : IAttack
+//{
+//    public void Attack(Unit attacker, Unit target)
+//    {
+//        // Comportamento do ataque normal
+//    }
+//}
+
+//public class MagicAttack : IAttack
+//{
+//    public void Attack(Unit attacker, Unit target)
+//    {
+//        // Comportamento do ataque mágico
+//    }
+//}
+
+//public class RangedAttack : IAttack
+//{
+//    public void Attack(Unit attacker, Unit target)
+//    {
+//        // Comportamento do ataque à distância
+//    }
+//}
+
+//private IAttack attackStrategy;
+
+//void Start()
+//{
+//    attackStrategy = new AttackNormal();  // Inicia com ataque normal
+//}
+
+//public void ChangeToMagicAttack()
+//{
+//    attackStrategy = new MagicAttack();  // Muda para o ataque mágico
+//}
+
+//public void ChangeToRangedAttack()
+//{
+//    attackStrategy = new RangedAttack();  // Muda para o ataque à distância
+//}
+
+//public void Attack(Unit target)
+//{
+//    attackStrategy.Attack(this, target);  // Executa o ataque com o tipo atual de ataque
+//}

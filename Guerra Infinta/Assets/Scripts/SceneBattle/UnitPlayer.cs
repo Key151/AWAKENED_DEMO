@@ -1,8 +1,14 @@
+﻿using System.Collections.Generic;
 using UnityEngine;
 using static BattleSystem;
 
 public class UnitPlayer : Unit, IVerificateTurnUnit
 {
+    private float attackX = -2f;
+    private float attackY = 0f;
+    [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
+
+    private readonly Dictionary<TipoItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
     public BattleState turnUnit()
     {
         return BattleState.PLAYERTURN;
@@ -10,8 +16,33 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
 
     public void MoveAtk(Transform enemy)
     {
-        float playerPositionX = enemy.position.x + AttackX;
-        float playerPositionY = enemy.position.y + AttackY;
-        this.transform.position = new Vector2(playerPositionX, playerPositionY);
+        float playerPositionX = enemy.position.x + attackX;
+        float playerPositionY = enemy.position.y + attackY;
+        transform.position = new Vector2(playerPositionX, playerPositionY);
+    }
+
+    public void EquipItem(ItemWeaponEquip newItem)
+    {
+        if (equippedItems.TryGetValue(newItem.TipoWeapon, out ItemWeaponEquip currentWeapon))
+        {
+            currentWeapon.Unequip(this);
+            Debug.Log("Desequipado com sucesso!");
+        }
+
+        equippedItems[newItem.TipoWeapon] = newItem; // Adiciona o novo item equipavel ao dicionário
+        newItem.Equip(this);
+        Debug.Log("Equipado com sucesso!");
+    }
+
+    void Start()
+    {
+        if (ItemEquipment != null)
+        {
+            foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
+            {
+                EquipItem(item);
+                Debug.Log($"Está com {item.ItemName}!");
+            }
+        }
     }
 }

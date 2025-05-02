@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Diablo
-  damage: 8
+  damageBase: 7
   maxHP: 100
   currentHP: 100
-  spd: 15
+  spd: 50
   dead: 0
   attackX: 0
   attackY: 0

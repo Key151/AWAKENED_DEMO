@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Boy
-  damage: 15
+  damageBase: 10
   maxHP: 100
   currentHP: 100
   spd: 30
@@ -139,6 +139,8 @@ MonoBehaviour:
   attacking: 0
   selected: 0
   takingDamage: 0
+  ItemEquipment:
+  - {fileID: 11400000, guid: 6be4861c3f597dc499b9bda8787520cd, type: 2}
 --- !u!114 &4566985938056910365
 MonoBehaviour:
   m_ObjectHideFlags: 0

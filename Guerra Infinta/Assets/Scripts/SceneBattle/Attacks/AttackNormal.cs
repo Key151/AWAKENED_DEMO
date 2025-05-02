@@ -2,16 +2,17 @@
 {
     public void Attack(Unit attacker, Unit target)
     {
-        int valorBase = 20;
+        int valorBase = 0;
 
-        target.TakeDamage(attacker.Damage);
+        target.TakeDamage(attacker.TotalDamage());
 
         attacker.CurrentActionPoint -= valorBase;
+
         if (attacker.CurrentActionPoint <= 0)
         {
             attacker.CurrentActionPoint = 0;
         }
 
-        UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.Damage}");
+        UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.TotalDamage()}");
     }
 }
