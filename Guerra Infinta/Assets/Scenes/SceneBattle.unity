@@ -1428,8 +1428,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.52400005}
-  m_AnchoredPosition: {x: -660.00006, y: -311.00003}
-  m_SizeDelta: {x: 600, y: 135.00003}
+  m_AnchoredPosition: {x: -660.00006, y: -473.5}
+  m_SizeDelta: {x: 600, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252062346
 MonoBehaviour:
@@ -1697,7 +1697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -245}
+  m_AnchoredPosition: {x: 0, y: -245}
   m_SizeDelta: {x: -1533.4102, y: 454.95996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309421885
@@ -4621,7 +4621,7 @@ MonoBehaviour:
   primaryButtonPlayer: {fileID: 1839601031}
   primaryButtonPlayer_2: {fileID: 1835204170}
   primaryButtonPlayer_3: {fileID: 1156161910}
-  primaryButtonEnemy: {fileID: 269254995}
+  primaryButtonEnemy: {fileID: 236284969}
   primaryButtonMove: {fileID: 0}
   attackButton: {fileID: 1839601027}
   mpButton: {fileID: 2125950196}
@@ -6550,7 +6550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.52400005}
-  m_AnchoredPosition: {x: -660.00006, y: -473.50006}
+  m_AnchoredPosition: {x: -42, y: -473.50006}
   m_SizeDelta: {x: 600, y: 135.00002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638191999

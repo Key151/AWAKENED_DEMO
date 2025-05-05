@@ -115,4 +115,81 @@ public class VerificateButtonUI : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
     }
+
+
+
+    // Atualiza os botões do inimigo
+
+    public void UpdateEnemyButton()
+    {
+        UpdateEnemyButton_1();
+        UpdateEnemyButton_2();
+        UpdateEnemyButton_3();
+    }
+
+    public void UpdateEnemyButton_1()  // Atualiza a configuração do botão enemyButton_1
+    {
+        Navigation NewNav = new Navigation();
+        if (!enemyButton_2.activeSelf)
+        {
+            if (!enemyButton_3.activeSelf)
+            {
+                NewNav.selectOnUp = null;
+                NewNav.selectOnDown = null;
+            }
+            else
+            {
+                NewNav.selectOnDown = enemyButton_3.GetComponent<Button>();
+            }
+        }
+        else if (!enemyButton_3.activeSelf)
+        {
+            NewNav.selectOnUp = enemyButton_2.GetComponent<Button>();
+        }
+        enemyButton_1.GetComponent<Button>().navigation = NewNav;
+    }
+
+    public void UpdateEnemyButton_2()  // Atualiza a configuração do botão enemyButton_2
+    {
+        Navigation NewNav = new Navigation();
+        if (!enemyButton_1.activeSelf)
+        {
+            if (!enemyButton_3.activeSelf)
+            {
+                NewNav.selectOnUp = null;
+                NewNav.selectOnDown = null;
+            }
+            else
+            {
+                NewNav.selectOnUp = enemyButton_3.GetComponent<Button>();
+            }
+        }
+        else if (!enemyButton_3.activeSelf)
+        {
+            NewNav.selectOnDown = enemyButton_1.GetComponent<Button>();
+        }
+        enemyButton_2.GetComponent<Button>().navigation = NewNav;
+    }
+    public void UpdateEnemyButton_3()  // Atualiza a configuração do botão enemyButton_3
+    {
+        Navigation NewNav = new Navigation();
+        if (!enemyButton_1.activeSelf)
+        {
+            if (!enemyButton_2.activeSelf)
+            {
+                NewNav.selectOnUp = null;
+                NewNav.selectOnDown = null;
+            }
+            else
+            {
+                NewNav.selectOnDown = enemyButton_2.GetComponent<Button>();
+            }
+        }
+        else if (!enemyButton_2.activeSelf)
+        {
+            NewNav.selectOnUp = enemyButton_1.GetComponent<Button>();
+        }
+        enemyButton_3.GetComponent<Button>().navigation = NewNav;
+    }
+
 }
