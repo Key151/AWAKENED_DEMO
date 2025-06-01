@@ -17029,6 +17029,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a18d4676-a06c-4dcd-a892-4caea73b482f
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed9c94d8-8bb7-41e2-a735-64aa0ad76312
+    m_ActionName: 'EnemyButtons/Dawn[/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1019993d-afb1-46e9-ae26-d16935398838
+    m_ActionName: 'EnemyButtons/Up[/Keyboard/upArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

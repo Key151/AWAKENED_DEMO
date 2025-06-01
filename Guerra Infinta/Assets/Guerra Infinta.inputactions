@@ -771,6 +771,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "EnemyButtons",
+            "id": "2e0c0f9d-846e-4ee2-8dad-169096b7e14b",
+            "actions": [
+                {
+                    "name": "Dawn",
+                    "type": "Button",
+                    "id": "ed9c94d8-8bb7-41e2-a735-64aa0ad76312",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "1019993d-afb1-46e9-ae26-d16935398838",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4d4840ad-029c-411a-94b0-61de2c18798a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ded441dc-35c6-4ae3-ac63-33f6d034a5ff",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

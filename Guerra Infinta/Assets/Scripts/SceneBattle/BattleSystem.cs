@@ -46,7 +46,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
         battleEnemy = new BattleEnemy();
-        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
+        VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -115,6 +115,14 @@ public class BattleSystem : MonoBehaviour
             {
                 BattleList.RemoveAt(i);
                 //BattleList.Remove(BattleList[i]);
+            }
+        }
+
+        for (int i = 0; i < enemyUnit.Count; i++) // Desativa o botão do inimgo morto
+        {
+            if (enemyUnit[i].CheckDead())
+            {
+                VerificateButtonUI.KillEnemyButton(i);
             }
         }
 
@@ -236,27 +244,13 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.SelectEnemy();
     }
 
-    public void OnMPButton()
-    {
-        VerificateButtonUI.DisactivateButtons();
-        VerificateButtonUI.ActivateButtonsMP();
-    }
-
-    public void OnToMovementButton()
-    {
-        VerificateButtonUI.DisactivateButtonsMP();
-        VerificateButtonUI.ActivateButtonsMovement();
-    }
     public void OnReturnButton()
     {
-        VerificateButtonUI.DisactivateButtonsMovement();
-        VerificateButtonUI.ActivateButtons();
+        SceneManager.LoadScene("Scene1 1");
+        //VerificateButtonUI.DisactivateButtonsMovement();
+        //VerificateButtonUI.ActivateButtons();
     }
 
-    public void OnMoveButton()
-    {
-        VerificateButtonUI.DisactivateButtonsMovement();
-    }
 
     // Escolhe o jogador que vai atacar
     private UnitPlayer ChoosePlayer(UnitPlayer playerturn1, UnitPlayer playerturn2)

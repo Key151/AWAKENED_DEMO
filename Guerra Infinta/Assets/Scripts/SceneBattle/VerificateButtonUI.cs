@@ -5,57 +5,75 @@ using UnityEngine.UI;
 public class VerificateButtonUI : MonoBehaviour
 {
     [SerializeField] private Button primaryButtonPlayer;
-    [SerializeField] private Button primaryButtonPlayer_2;
-    [SerializeField] private Button primaryButtonPlayer_3;
     [SerializeField] private Button primaryButtonEnemy;
-    [SerializeField] private Button primaryButtonMove;
 
     [SerializeField] private GameObject attackButton;
-    [SerializeField] private GameObject mpButton;
-    [SerializeField] private GameObject healButton;
-    [SerializeField] private GameObject toMovementButton;
-    [SerializeField] private GameObject moveButton;
     [SerializeField] private GameObject returnButton;
-    [SerializeField] private GameObject enemyButton_1;
-    [SerializeField] private GameObject enemyButton_2;
-    [SerializeField] private GameObject enemyButton_3;
+    //[SerializeField] private GameObject enemyButton_1;
+    //[SerializeField] private GameObject enemyButton_2;
+    //[SerializeField] private GameObject enemyButton_3;
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject dialoguePanel;
 
+    public GameObject[] enemyButtonsGO; // GameObject dos botıes dos inimigos para poder ativar e desavitar
+    public Button[] enemyButtons;       // Buttons dos botıes dos inimigos para poder selecionar
+    public GameObject[] verificateEnemyButton; // Objeto que pertence ao bot„o, se ele for desativado, o bot„o ficar· desativado
+    public GameObject[] enemyUI;
+
+
+    //Move o painel de aÁıes
     public void MovePanel(UnitPlayer player)
     {
         optionPanel.transform.position = new Vector2(player.transform.position.x + 2.0f, player.transform.position.y);
     }
 
-    // Desativa os primeiros botıes de ataque e MP
-    public void DisactivateButtons()
+    // ATIVAR BOTOES
+
+    // Ativa os  botıes de ataque e Voltar
+    public void ActivateButtons()
     {
-        attackButton.SetActive(false);
-        mpButton.SetActive(false);
-        optionPanel.SetActive(false);
+        optionPanel.SetActive(true);
+        attackButton.SetActive(true);
+        returnButton.SetActive(true);
+        primaryButtonPlayer.Select();
     }
 
-    //ApÛs clicar no bot„o MP, serÅEdesativado esses botıes: Cura e Movimento
-    public void DisactivateButtonsMP()
+    public void SelectEnemy()//Ativa  os botıes para atacar os inimigos
     {
-        healButton.SetActive(false);
-        toMovementButton.SetActive(false);
-        optionPanel.SetActive(false);
+        for(int i = 0; i < verificateEnemyButton.Length; i++)
+        {
+            if (verificateEnemyButton[i].activeSelf)
+            {
+                enemyButtonsGO[i].SetActive(true);
+                enemyButtons[i].Select();
+            }
+        }
+        //primaryButtonEnemy.Select();
     }
-    //ApÛs clicar no bot„o Movimento, serÅEativado esses botıes: Mover e Retornar
-    public void DisactivateButtonsMovement()
+    
+    public void ActivateDialguePanel() //Ativa o painel de aÁıes
     {
-        moveButton.SetActive(false);
+        dialoguePanel.SetActive(true);
+    }
+
+
+    // DESATIVAR BOTOES
+
+    
+    public void DisactivateButtons() // Desativa os botıes de ataque e Voltar
+    {
+        attackButton.SetActive(false);
         returnButton.SetActive(false);
         optionPanel.SetActive(false);
     }
 
-    //Desativa  os botıes para atacar os inimigos
-    public void DisactivateButtonsEnemy()
+    
+    public void DisactivateButtonsEnemy() //Desativa  os botıes para atacar os inimigos
     {
-        enemyButton_1.SetActive(false);
-        enemyButton_2.SetActive(false);
-        enemyButton_3.SetActive(false);
+        for (int i = 0; i < enemyButtonsGO.Length; i++)
+        {
+            enemyButtonsGO[i].SetActive(false);
+        }
     }
 
     public void DisactivateDialguePanel()
@@ -63,133 +81,51 @@ public class VerificateButtonUI : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-    
+    // ATUALIZA OS BOT‘ES DOS INIMIGOS
 
-    // ATIVAR BOTOES
-
-    // Ativa os primeiros botıes de ataque e MP
-    public void ActivateButtons()
+    public void KillEnemyButton(int enemyKilled) //N„o permite que o bot„o do inimigo fique ativo
     {
-        optionPanel.SetActive(true);
-        attackButton.SetActive(true);
-        mpButton.SetActive(true);
-        primaryButtonPlayer.Select();
-    }
-
-    //ApÛs clicar no bot„o MP, serÅEativado esses botıes: Cura e Movimento
-    public void ActivateButtonsMP()
-    {
-        optionPanel.SetActive(true);
-        healButton.SetActive(true);
-        toMovementButton.SetActive(true);
-        primaryButtonPlayer_2.Select();
-    }
-
-    //ApÛs clicar no bot„o Movimento, serÅEativado esses botıes: Mover e Retornar
-    public void ActivateButtonsMovement()
-    {
-        optionPanel.SetActive(true);
-        moveButton.SetActive(true);
-        returnButton.SetActive(true);
-        primaryButtonPlayer_3.Select();
-    }
-    public void SelectEnemy()
-    {
-        enemyButton_1.SetActive(true);
-        enemyButton_2.SetActive(true);
-        enemyButton_3.SetActive(true);
-        primaryButtonEnemy.Select();
-    }
-
-    //Ativa  os botıes para atacar os inimigos
-    public void ActivateButtonsEnemy()
-    {
-        enemyButton_1.SetActive(true);
-        enemyButton_2.SetActive(true);
-        enemyButton_3.SetActive(true);
-        primaryButtonEnemy.Select();
-    }
-
-    
-    public void ActivateDialguePanel()
-    {
-        dialoguePanel.SetActive(true);
+        verificateEnemyButton[enemyKilled].SetActive(false);
     }
 
 
 
-    // Atualiza os botıes do inimigo
 
-    public void UpdateEnemyButton()
+    /*
+    public void UpdateEnemyButtonDown() //Faz com que a seleÁ„o dos botıes dos inimigos v· para baixo
     {
-        UpdateEnemyButton_1();
-        UpdateEnemyButton_2();
-        UpdateEnemyButton_3();
-    }
 
-    public void UpdateEnemyButton_1()  // Atualiza a configuraÁ„o do bot„o enemyButton_1
-    {
-        Navigation NewNav = new Navigation();
-        if (!enemyButton_2.activeSelf)
+        selectedEnemyButton++;
+
+        while (!enemyButtons[selectedEnemyButton].IsActive())
         {
-            if (!enemyButton_3.activeSelf)
+            selectedEnemyButton++;
+            if(selectedEnemyButton >= 3)
             {
-                NewNav.selectOnUp = null;
-                NewNav.selectOnDown = null;
+                selectedEnemyButton = 0;
             }
-            else
+
+        }    
+
+        enemyButtons[selectedEnemyButton].Select();
+        
+    }*/
+
+
+    /*
+    public void UpdateEnemyButtonUp() //Faz com que a seleÁ„o dos botıes dos inimigos v· para cima
+    {
+        selectedEnemyButton --;
+
+        while (!enemyButtons[selectedEnemyButton].IsActive())
+        {
+            selectedEnemyButton--;
+            if(selectedEnemyButton < 0)
             {
-                NewNav.selectOnDown = enemyButton_3.GetComponent<Button>();
+                selectedEnemyButton = 3;
             }
         }
-        else if (!enemyButton_3.activeSelf)
-        {
-            NewNav.selectOnUp = enemyButton_2.GetComponent<Button>();
-        }
-        enemyButton_1.GetComponent<Button>().navigation = NewNav;
-    }
-
-    public void UpdateEnemyButton_2()  // Atualiza a configuraÁ„o do bot„o enemyButton_2
-    {
-        Navigation NewNav = new Navigation();
-        if (!enemyButton_1.activeSelf)
-        {
-            if (!enemyButton_3.activeSelf)
-            {
-                NewNav.selectOnUp = null;
-                NewNav.selectOnDown = null;
-            }
-            else
-            {
-                NewNav.selectOnUp = enemyButton_3.GetComponent<Button>();
-            }
-        }
-        else if (!enemyButton_3.activeSelf)
-        {
-            NewNav.selectOnDown = enemyButton_1.GetComponent<Button>();
-        }
-        enemyButton_2.GetComponent<Button>().navigation = NewNav;
-    }
-    public void UpdateEnemyButton_3()  // Atualiza a configuraÁ„o do bot„o enemyButton_3
-    {
-        Navigation NewNav = new Navigation();
-        if (!enemyButton_1.activeSelf)
-        {
-            if (!enemyButton_2.activeSelf)
-            {
-                NewNav.selectOnUp = null;
-                NewNav.selectOnDown = null;
-            }
-            else
-            {
-                NewNav.selectOnDown = enemyButton_2.GetComponent<Button>();
-            }
-        }
-        else if (!enemyButton_2.activeSelf)
-        {
-            NewNav.selectOnUp = enemyButton_1.GetComponent<Button>();
-        }
-        enemyButton_3.GetComponent<Button>().navigation = NewNav;
-    }
-
+        enemyButtons[selectedEnemyButton].Select();
+        
+    }*/
 }
