@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
@@ -20,6 +21,11 @@ public class VerificateButtonUI : MonoBehaviour
     public GameObject[] verificateEnemyButton; // Objeto que pertence ao botão, se ele for desativado, o botão ficará desativado
     public GameObject[] enemyUI;
 
+
+    public void Update()
+    {
+
+    }
 
     //Move o painel de ações
     public void MovePanel(UnitPlayer player)
@@ -104,11 +110,9 @@ public class VerificateButtonUI : MonoBehaviour
             {
                 selectedEnemyButton = 0;
             }
-
         }    
-
         enemyButtons[selectedEnemyButton].Select();
-        
+
     }*/
 
 
