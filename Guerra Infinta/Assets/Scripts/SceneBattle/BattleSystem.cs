@@ -51,13 +51,13 @@ public class BattleSystem : MonoBehaviour
         //Maneger = new BattleManager();
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
-<<<<<<< Updated upstream
-        battleEnemy = new BattleEnemy();
+
+        //battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
-=======
+
         //battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
->>>>>>> Stashed changes
+
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
