@@ -134,12 +134,12 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
-        if (!BattleList.OfType<UnitPlayer>().Any())
+        if (!BattleList.OfType<UnitEnemy>().Any())
         {
             state = BattleState.WON;
         }
 
-        else if (!BattleList.OfType<UnitEnemy>().Any())
+        else if (!BattleList.OfType<UnitPlayer>().Any())
         {
             state = BattleState.LOST;
         }
