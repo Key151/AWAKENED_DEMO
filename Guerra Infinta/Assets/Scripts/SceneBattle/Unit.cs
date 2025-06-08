@@ -10,7 +10,6 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private string unitName;
     [SerializeField] private int damageBase;
     [SerializeField] private int maxHP;
-    [SerializeField] private int currentHP;
     [SerializeField] private int spd;
     [SerializeField] private bool dead;
     [SerializeField] private float origenX;
@@ -19,11 +18,12 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int currentActionPoint;
 
     private IAttack attackNormal;
-
+    private int currentHP;
     private int damageBonus = 0;
     public bool attacking;
     public bool selected;
     public bool takingDamage;
+
     public float OrigenX
     {
         get { return origenX; }
@@ -122,6 +122,7 @@ public class Unit : MonoBehaviour, IDamageable
     void Awake()
     {
         attackNormal = new AttackNormal();
+        currentHP = maxHP;
     }
 
     //-----------------------------

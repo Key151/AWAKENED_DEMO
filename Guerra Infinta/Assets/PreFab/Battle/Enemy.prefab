@@ -107,8 +107,6 @@ MonoBehaviour:
   currentHP: 100
   spd: 50
   dead: 0
-  attackX: 0
-  attackY: 0
   origenX: 0
   origenY: 0
   maxActionPoint: 0

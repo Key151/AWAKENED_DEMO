@@ -103,12 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Diablo2
   damageBase: 5
-  maxHP: 80
-  currentHP: 80
+  maxHP: 40
+  currentHP: 40
   spd: 12
   dead: 0
-  attackX: 0
-  attackY: 0
   origenX: 0
   origenY: 0
   maxActionPoint: 0

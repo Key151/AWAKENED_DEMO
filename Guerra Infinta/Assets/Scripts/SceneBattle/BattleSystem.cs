@@ -11,6 +11,7 @@ public class BattleSystem : MonoBehaviour
     public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
     private enum Action { AtkNormal, Item, Def, Move }
 
+
     //Game Object
     [Header("Player Settings")]
     public GameObject playerPrefab;
@@ -32,8 +33,12 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public Text dialogueText;
-    private BattleEnemy battleEnemy;
+    //private BattleEnemy battleEnemy;
 
+    [Header("ActionCommand")]
+    [SerializeField] private BattleManager Maneger;
+
+    [Header("Scene")]
     public string sceneName;
 
     private BattleState state;
@@ -43,10 +48,16 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Maneger = new BattleManager();
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
+<<<<<<< Updated upstream
         battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
+=======
+        //battleEnemy = new BattleEnemy();
+        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
+>>>>>>> Stashed changes
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -157,29 +168,32 @@ public class BattleSystem : MonoBehaviour
     }
 
     // TURNO DO PLAYER
-    void PlayerTurn(Unit player_Unit)//Criar uma lista de opções com switch case
+    void PlayerTurn(Unit player_Unit)
     {
-            VerificateButtonUI.ActivateButtons();
-            VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
-            player_Unit.HealAP();
-            player_Unit.selected = true;
-            BattleList[0].selected = true;
+        VerificateButtonUI.ActivateButtons();
+        VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
+        player_Unit.HealAP();
+        player_Unit.selected = true;
+        BattleList[0].selected = true;
     }
     IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
-        UnitPlayer playerAtual = BattleList[0] as UnitPlayer;
+        yield return new WaitForSeconds(0.25f);
+        UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
         playerAtual.selected = false;
+        Maneger.StartAttackSequence(playerAtual);
+        playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
+        playerAtual.attacking = true;
+        yield return new WaitForSeconds(1.5f);
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
-        Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
         playerAtual.Attack(enemyUnit[enemyNumber]);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
         dialogueText.text = playerAtual.UnitName + " ataca!";
-        playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
-        playerAtual.attacking = true;
-        yield return new WaitForSeconds(2f);
-        playerAtual.transform.position = new Vector2(player_Unit.OrigenX, player_Unit.OrigenY);
+        Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
+        yield return new WaitForSeconds(0.5f);
+        playerAtual.transform.position = new Vector2(playerAtual.OrigenX, playerAtual.OrigenY);
         playerAtual.attacking = false;
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
