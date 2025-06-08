@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class ActionCommand : MonoBehaviour
 {
-    public float windowStart = 0.5f;
-    public float windowEnd = 1.0f;
+    [Header("Timing")]
+    [SerializeField] private float windowStart;
+    [SerializeField] private float windowEnd;
 
     private float timer = 0f;
     private bool commandActive = false;

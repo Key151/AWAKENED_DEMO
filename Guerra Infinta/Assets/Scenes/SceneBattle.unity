@@ -3117,6 +3117,7 @@ MonoBehaviour:
   - {fileID: 1989446990}
   - {fileID: 1955560000}
   dialogueText: {fileID: 1724139436}
+  Maneger: {fileID: 530989528}
   sceneName: Scene1 1
 --- !u!4 &530989527
 Transform:
@@ -9094,14 +9095,7 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< Updated upstream
-=======
-  - {fileID: 530989527}
   - {fileID: 2056260165}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   - {fileID: 1276758885}
   - {fileID: 594033682}
   - {fileID: 1294944961}

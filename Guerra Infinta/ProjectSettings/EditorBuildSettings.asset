@@ -18,13 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneBattle.unity
     guid: 7c8d85d2207193846926c54cdcc30472
   m_configObjects:
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     com.unity.input.settings: {fileID: 11400000, guid: df71855e751dd70468b01791866ef6db, type: 2}
-=======
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 59b2a621b6f6dc6468bb74dcbf957945, type: 3}
->>>>>>> Stashed changes
-=======
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 59b2a621b6f6dc6468bb74dcbf957945, type: 3}
->>>>>>> Stashed changes
   m_UseUCBPForAssetBundles: 0

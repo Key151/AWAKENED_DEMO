@@ -55,9 +55,6 @@ public class BattleSystem : MonoBehaviour
         //battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
 
-        //battleEnemy = new BattleEnemy();
-        VerificateButtonUI = GameObject.Find("Buttons").GetComponent<VerificateButtonUI>();
-
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
@@ -147,7 +144,7 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.LOST;
         }
 
-        if (BattleList[0] is IVerificateTurnUnit turnUnit)
+        else if (BattleList[0] is IVerificateTurnUnit turnUnit)
         {
             state = turnUnit.turnUnit();
         }
@@ -178,7 +175,7 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
         playerAtual.selected = false;
@@ -213,14 +210,14 @@ public class BattleSystem : MonoBehaviour
             enemy.Attack(player);
             player.takingDamage = true;
             dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             player.takingDamage = false;
         }
 
         else
         {
            dialogueText.text = enemy.UnitName + " se cura" + "!";
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
 
         VerificateButtonUI.DisactivateDialguePanel();

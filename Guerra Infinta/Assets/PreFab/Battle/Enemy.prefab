@@ -103,8 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Diablo
   damageBase: 7
-  maxHP: 100
-  currentHP: 100
+  maxHP: 50
   spd: 50
   dead: 0
   origenX: 0

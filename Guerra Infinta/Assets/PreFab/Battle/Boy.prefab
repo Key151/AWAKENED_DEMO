@@ -126,12 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Boy
   damageBase: 10
-  maxHP: 100
-  currentHP: 100
+  maxHP: 50
   spd: 30
   dead: 0
-  attackX: 0
-  attackY: 0
   origenX: 0
   origenY: 0
   maxActionPoint: 100
