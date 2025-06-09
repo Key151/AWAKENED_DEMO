@@ -37,6 +37,7 @@ public class NpcDialogue : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && readyToSpeak)
         {
+            PauseController.SetPause(true);
             //FindAnyObjectByType<Player>().speedControl = 0f;
             dialogueManager.StartDialogue(dialogueScene);
             DisactiveClickToSpeak();

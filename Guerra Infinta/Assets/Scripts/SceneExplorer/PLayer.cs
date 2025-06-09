@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        speedControl = 1;
     }
 
     // Update is called once per frame
@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         if (PauseController.IsGamePaused)
         {
             speedControl = 0;
-            return;
         }else
         {
             speedControl = 1;

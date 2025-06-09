@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speedx;
     [SerializeField] private float speedy;
-    [SerializeField] private float moveSpeed = 0.2f;
+    [SerializeField] private float moveSpeed = 4f;
+    [SerializeField] private float speedControl = 1;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,8 +18,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseController.IsGamePaused)
+        {
+            speedControl = 0;
+        }
+        else
+        {
+            speedControl = 1;
+        }
         //rb.linearVelocity = new Vector2(speedx, speedy);
-        rb.linearVelocity = moveInput * moveSpeed;
+        rb.linearVelocity = moveInput * moveSpeed * speedControl;
         //rb.linearVelocity = moveInput;
         ChangeDirection(rb.linearVelocity.x);
     }

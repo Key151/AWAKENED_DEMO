@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
         if (currentIndex >= currentSequence.dialogueLines.Count)
         {
+            PauseController.SetPause(false);
             EndDialogue();
             return;
         }
