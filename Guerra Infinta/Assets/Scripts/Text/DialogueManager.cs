@@ -54,6 +54,18 @@ public class DialogueManager : MonoBehaviour
         FindAnyObjectByType<Player>().speedControl = 1;
         dialoguePanel.SetActive(false);
     }
+
+
+    /*
+    public void StartMenuText(DialogueSequenceData sequence, Text text)
+    {
+        currentSequence = sequence;
+        currentIndex = 0;
+        var line = currentSequence.dialogueLines[currentIndex];
+        text.text = line.GetText(currentLanguage);
+    }*/
+
+
     public void SetLanguage(Language language)
     {
         currentLanguage = language;
