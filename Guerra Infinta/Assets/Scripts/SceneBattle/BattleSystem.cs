@@ -168,7 +168,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn(Unit player_Unit)
     {
         VerificateButtonUI.ActivateButtons();
-        VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
+        //VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
         player_Unit.HealAP();
         player_Unit.selected = true;
         BattleList[0].selected = true;

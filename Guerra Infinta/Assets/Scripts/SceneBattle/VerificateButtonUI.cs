@@ -28,10 +28,10 @@ public class VerificateButtonUI : MonoBehaviour
     }
 
     //Move o painel de ações
-    public void MovePanel(UnitPlayer player)
+    /*public void MovePanel(UnitPlayer player)
     {
         optionPanel.transform.position = new Vector2(player.transform.position.x + 3.5f, player.transform.position.y);
-    }
+    }*/
 
     // ATIVAR BOTOES
 

@@ -4,23 +4,40 @@ using UnityEngine.EventSystems;
 public class ShowOnSelect : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     public GameObject enemyHUD;
+    private bool selected = false;
 
     void Start()
     {
         // Garante que o objeto começa invisível
         if (enemyHUD != null)
-            enemyHUD.SetActive(false);
-    }
-
-    public void OnSelect(BaseEventData eventData)
-    {
-        if (enemyHUD != null)
-            enemyHUD.SetActive(true);
+        {
+            if (!selected)
+            {
+                enemyHUD.SetActive(false);
+                Debug.Log("Inicio-1");
+            }
+            Debug.Log("Inicio");
+        }
+            
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
         if (enemyHUD != null)
+        {
             enemyHUD.SetActive(false);
+            Debug.Log("Selecionado");
+        }
     }
+    public void OnSelect(BaseEventData eventData)
+    {
+        if (enemyHUD != null)
+        {
+            enemyHUD.SetActive(true);
+            selected = true;
+            Debug.Log("Deselecionado");
+        }
+
+    }
+
 }
