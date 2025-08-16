@@ -60,20 +60,20 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         //Cria uma copia do playerPrefab com a posicao do PlayerStation1
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation_2);
+        GameObject playerGO = Instantiate(playerPrefab);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
         //posição do jogador 1
-        playerUnit.OrigenX = playerGO.transform.position.x;
-        playerUnit.OrigenY = playerGO.transform.position.y;
+        //playerUnit.OrigenX = playerGO.transform.position.x;
+        //playerUnit.OrigenY = playerGO.transform.position.y;
 
         //Cria uma copia do playerPrefab2 com a posicao do PlayerStation2
-        GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation);
+        GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
         //posição do jogador 2
-        playerUnit_2.OrigenX = playerGO_2.transform.position.x;
-        playerUnit_2.OrigenY = playerGO_2.transform.position.y;
+        //playerUnit_2.OrigenX = playerGO_2.transform.position.x;
+        //playerUnit_2.OrigenY = playerGO_2.transform.position.y;
 
         for (int i = 0; i <= 2; i++)
         {
@@ -180,18 +180,18 @@ public class BattleSystem : MonoBehaviour
 
         playerAtual.selected = false;
         Maneger.StartAttackSequence(playerAtual);
-        playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
-        playerAtual.attacking = true;
+        //playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
+        //playerAtual.attacking = true;
         yield return new WaitForSeconds(1.5f);
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
+        dialogueText.text = playerAtual.UnitName + " ataca!";
         playerAtual.Attack(enemyUnit[enemyNumber]);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
-        dialogueText.text = playerAtual.UnitName + " ataca!";
         Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
         yield return new WaitForSeconds(0.5f);
-        playerAtual.transform.position = new Vector2(playerAtual.OrigenX, playerAtual.OrigenY);
-        playerAtual.attacking = false;
+        //playerAtual.transform.position = new Vector2(playerAtual.OrigenX, playerAtual.OrigenY);
+        //playerAtual.attacking = false;
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
@@ -207,11 +207,11 @@ public class BattleSystem : MonoBehaviour
 
         if (Random.Range(0, 10) >= 3)
         {
-            enemy.Attack(player);
-            player.takingDamage = true;
             dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
+            enemy.Attack(player);
+            //player.takingDamage = true;
             yield return new WaitForSeconds(1f);
-            player.takingDamage = false;
+            //player.takingDamage = false;
         }
 
         else

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class BattleHUD : MonoBehaviour
     public Text levelText;
     public Text hpText;
     public Slider hpSlider;
+    public TextMeshPro nameTextMesh;
     public Text ActionPointText;
     public Slider ActionPointSlider;
 
