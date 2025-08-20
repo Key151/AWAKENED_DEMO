@@ -136,7 +136,8 @@ MonoBehaviour:
   attacking: 0
   selected: 0
   takingDamage: 0
-  ItemEquipment: []
+  ItemEquipment:
+  - {fileID: 11400000, guid: 6be4861c3f597dc499b9bda8787520cd, type: 2}
 --- !u!114 &8469651381530249041
 MonoBehaviour:
   m_ObjectHideFlags: 0

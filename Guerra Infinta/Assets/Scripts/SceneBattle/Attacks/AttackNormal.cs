@@ -1,10 +1,15 @@
-﻿public class AttackNormal : IAttack
+﻿using System;
+using UnityEditor;
+public class AttackNormal : IAttack
 {
     public void Attack(Unit attacker, Unit target)
     {
-        int valorBase = 0;
+        int valorBase = 5;
+        int interval = 3;
+        Random r = new();
+        int DanoTotal = attacker.TotalDamage() + r.Next(-interval, interval);
 
-        target.TakeDamage(attacker.TotalDamage());
+        target.TakeDamage(DanoTotal);
 
         attacker.CurrentActionPoint -= valorBase;
 
