@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public Text dialogueText;
+    private Text turnText;
     //private BattleEnemy battleEnemy;
 
     [Header("ActionCommand")]
@@ -43,6 +45,10 @@ public class BattleSystem : MonoBehaviour
 
     private BattleState state;
     List<Unit> BattleList;
+
+    [Header("HUD")]
+    //HUDController hudController = AddComponent();
+    public string namehud;
 
 
     // Start is called before the first frame update
@@ -152,6 +158,10 @@ public class BattleSystem : MonoBehaviour
         switch (state)
         {
             case BattleState.PLAYERTURN:
+                //namehud = BattleList[0].ToString();
+                //turnText.text = "Turno: " + namehud;
+                //hudController.ChanegenameTurn(turnText);
+                //Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa " + namehud);
                 PlayerTurn(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
