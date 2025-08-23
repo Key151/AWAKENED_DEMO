@@ -8,7 +8,7 @@ public class ShowOnSelect : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     void Start()
     {
-        // Garante que o objeto começa invisível
+        // Garante que o objeto comece invisiel
         if (enemyHUD != null)
         {
             if (!selected)
