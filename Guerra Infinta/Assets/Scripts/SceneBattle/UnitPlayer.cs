@@ -7,6 +7,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     private float attackX = -2f;
     private float attackY = 0f;
     [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
+    private PlayerData playerData;
 
     private readonly Dictionary<TipoItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
     public BattleState turnUnit()
@@ -44,5 +45,28 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
                 Debug.Log($"Está com {item.ItemName}!");
             }
         }
+
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        // Tenta carregar dados existentes
+        var savedPlyer = GameManager.Instance.loadPlayer(UnitName);
+
+        if (savedPlyer != null)
+        {
+            // Se já existe, fica com ultimo HP
+            CurrentHP = savedPlyer.hp;
+        }
+    }
+
+    public void SaveData() {
+        playerData = new PlayerData
+        {
+            playerId = UnitName,
+            hp = CurrentHP
+        };
+        GameManager.Instance.savePlayer(playerData);
     }
 }

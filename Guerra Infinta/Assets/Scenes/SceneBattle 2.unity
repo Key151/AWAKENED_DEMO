@@ -3230,7 +3230,7 @@ MonoBehaviour:
   - {fileID: 1955560000}
   dialogueText: {fileID: 1724139436}
   Maneger: {fileID: 530989528}
-  sceneName: Scene1 1
+  sceneName: SceneExplorer
   namehud: 
 --- !u!4 &530989527
 Transform:

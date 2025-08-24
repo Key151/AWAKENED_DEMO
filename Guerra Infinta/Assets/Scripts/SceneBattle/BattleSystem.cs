@@ -266,6 +266,8 @@ public class BattleSystem : MonoBehaviour
 
     public void OnReturnButton()
     {
+        playerUnit.SaveData();
+        playerUnit_2.SaveData();
         SceneManager.LoadScene(sceneName);
         //VerificateButtonUI.DisactivateButtonsMovement();
         //VerificateButtonUI.ActivateButtons();
