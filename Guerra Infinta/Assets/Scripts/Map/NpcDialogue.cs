@@ -19,12 +19,8 @@ public class NpcDialogue : MonoBehaviour
 
     [SerializeField]
     private DialogueSequenceData dialogueScene;
-
     private DialogueManager dialogueManager;
     private bool readyToSpeak;
-    //private bool startDialogue;
-
-    //private Animator dialoguePanel_UI;
     void Start()    
     {
         dialogueManager = FindAnyObjectByType<DialogueManager>();

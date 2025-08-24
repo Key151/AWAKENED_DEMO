@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Granada
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  quantity: 0
-  damageAmount: 0
+  itemName: Granada
+  description: Joga granada para dar dano
+  quantity: 1
+  damageAmount: 20
