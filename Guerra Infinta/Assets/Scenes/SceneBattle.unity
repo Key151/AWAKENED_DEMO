@@ -1044,6 +1044,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 0}
   hpSlider: {fileID: 1488250227}
+  nameTextMesh: {fileID: 0}
   ActionPointText: {fileID: 0}
   ActionPointSlider: {fileID: 0}
 --- !u!114 &146269300
@@ -1817,6 +1818,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 1135483303}
   hpSlider: {fileID: 358873654}
+  nameTextMesh: {fileID: 0}
   ActionPointText: {fileID: 369515422}
   ActionPointSlider: {fileID: 1344882450}
 --- !u!114 &252062347
@@ -3148,7 +3150,8 @@ MonoBehaviour:
   - {fileID: 1955560000}
   dialogueText: {fileID: 1724139436}
   Maneger: {fileID: 530989528}
-  sceneName: Scene1 1
+  sceneName: SceneExplorer
+  namehud: 
 --- !u!4 &530989527
 Transform:
   m_ObjectHideFlags: 0
@@ -6893,6 +6896,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 571157140}
   hpSlider: {fileID: 1626469921}
+  nameTextMesh: {fileID: 0}
   ActionPointText: {fileID: 42277012}
   ActionPointSlider: {fileID: 930317047}
 --- !u!114 &1638192000
@@ -8166,6 +8170,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 0}
   hpSlider: {fileID: 382626314}
+  nameTextMesh: {fileID: 0}
   ActionPointText: {fileID: 0}
   ActionPointSlider: {fileID: 0}
 --- !u!114 &1955560001
@@ -8318,6 +8323,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   hpText: {fileID: 0}
   hpSlider: {fileID: 451743866}
+  nameTextMesh: {fileID: 0}
   ActionPointText: {fileID: 0}
   ActionPointSlider: {fileID: 0}
 --- !u!114 &1989446991

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TelaInicial.unity
     guid: 7fc8cc52a714de841bb30c7f4a61c1e2
   - enabled: 1
-    path: Assets/Scenes/Scene1 1.unity
+    path: Assets/Scenes/SceneExplorer.unity
     guid: b2b04e5f3a0d2e949ba28cd99d020381
   - enabled: 1
     path: Assets/Scenes/SceneBattle.unity

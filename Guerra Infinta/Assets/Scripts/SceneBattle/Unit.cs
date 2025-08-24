@@ -12,6 +12,8 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int maxActionPoint;
     [SerializeField] private int currentActionPoint;
 
+    public static Unit Instance { get; private set; }
+
     private IAttack attackNormal;
     private int currentHP;
     private int damageBonus = 0;
@@ -117,6 +119,18 @@ public class Unit : MonoBehaviour, IDamageable
     void Awake()
     {
         attackNormal = new AttackNormal();
+
+        // Garante que só exista um PlayerStats
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Inicializa apenas uma vez
         currentHP = maxHP;
     }
 

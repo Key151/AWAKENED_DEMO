@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -267,7 +266,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnReturnButton()
     {
-        SceneManager.LoadScene("Scene1 1");
+        SceneManager.LoadScene(sceneName);
         //VerificateButtonUI.DisactivateButtonsMovement();
         //VerificateButtonUI.ActivateButtons();
     }
