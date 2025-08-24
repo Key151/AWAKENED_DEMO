@@ -17,7 +17,7 @@ public class ActionCommand : MonoBehaviour
         timer = 0f;
         commandActive = true;
         inputReceived = false;
-        onComplete = callback;
+        onComplete = callback; // armazenou a funcao Action<bool>, nesse caso armazena a lambda
     }
 
     void Update()
@@ -43,6 +43,6 @@ public class ActionCommand : MonoBehaviour
     {
         commandActive = false;
         inputReceived = true;
-        onComplete?.Invoke(success);
+        onComplete?.Invoke(success);  //o Invoke nao e obrigatorio, envia success para o result da lambda
     }
 }
