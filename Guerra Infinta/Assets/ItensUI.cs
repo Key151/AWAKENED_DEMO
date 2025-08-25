@@ -11,8 +11,8 @@ public class ItensUI : MonoBehaviour
     [SerializeField]
     private InventoryList inventory;
 
-    public Item testIten;
-    public int testItenamount;
+    private Item testIten;
+    //public int testItenamount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +22,8 @@ public class ItensUI : MonoBehaviour
             Debug.Log(inventory.inventoryList.Count);
             Debug.Log(inventory.inventoryList[i]);
         }
+
+        UpdateItensUI();
     }
 
     // Update is called once per frame
@@ -32,19 +34,20 @@ public class ItensUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        for (int i = 0; i<3; i++)
+        for (int i = 0; i<inventory.inventoryList.Count; i++)
         {
-            Debug.Log(inventory.inventoryList.Count);
-            Debug.Log(inventory.inventoryList[i]);
-        }
-
-        /*foreach(Item iten in inventory)
-        {
+            //Nome de item
+            testIten = inventory.inventoryList[i];
             GameObject entry = Instantiate(itenPrefab, itenListContent);
             TMP_Text itenNameText = entry.transform.Find("ItensNameText").GetComponent<TMP_Text>();
-            Transform itenNumberList = entry.transform.Find("ItensNumberText");
+            Transform itenNumberList = entry.transform.Find("ItensNumberPanel");
+            itenNameText.text = testIten.itemName;
 
-            //itenNameText.text = iten.item.Name;
-        }*/
+            //Quantidade do item
+            GameObject quantityTextGO = Instantiate(itenTextPrefab, itenNumberList);
+            TMP_Text quantityText = quantityTextGO.GetComponent<TMP_Text>();
+            quantityText.text = testIten.quantity.ToString();
+
+        }
     }
 }
