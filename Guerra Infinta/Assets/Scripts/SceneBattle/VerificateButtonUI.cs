@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,10 +17,14 @@ public class VerificateButtonUI : MonoBehaviour
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject dialoguePanel;
 
+    [SerializeField] private GameObject itensPanel;
+
     public GameObject[] enemyButtonsGO; // GameObject dos botões dos inimigos para poder ativar e desavitar
     public Button[] enemyButtons;       // Buttons dos botões dos inimigos para poder selecionar
     public GameObject[] verificateEnemyButton; // Objeto que pertence ao botão, se ele for desativado, o botão ficará desativado
     public GameObject[] enemyUI;
+
+    [SerializeField] private ItensUI itensUI;
 
 
     public void Update()
@@ -62,10 +67,16 @@ public class VerificateButtonUI : MonoBehaviour
         dialoguePanel.SetActive(true);
     }
 
+    public void ActivateItensPanel() //Ativa o painel de ações
+    {
+        //itensUI.UpdateItensUI();
+        itensPanel.SetActive(true);
+    }
+
 
     // DESATIVAR BOTOES
 
-    
+
     public void DisactivateButtons() // Desativa os botões de ataque e Voltar
     {
         attackButton.SetActive(false);
