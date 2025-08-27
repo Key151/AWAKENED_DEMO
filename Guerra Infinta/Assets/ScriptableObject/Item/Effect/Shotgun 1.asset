@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Shotgun
   description: Uma 12
-  quantity: 0
+  quantity: 3
   damageAmount: 15

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Granada
   description: Joga granada para dar dano
-  quantity: 1
+  quantity: 10
   damageAmount: 20

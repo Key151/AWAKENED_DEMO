@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pistola
   description: Uma pistola simples
-  quantity: 1
+  quantity: 10
   damageAmount: 10
