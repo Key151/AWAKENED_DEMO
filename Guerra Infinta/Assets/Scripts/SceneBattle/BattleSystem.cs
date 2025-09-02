@@ -261,8 +261,8 @@ public class BattleSystem : MonoBehaviour
     public void OnAttackButton()
     {
         VerificateButtonUI.DisactivateButtons();
-        VerificateButtonUI.ActivateItensPanel();
-        //VerificateButtonUI.SelectEnemy();
+        //VerificateButtonUI.ActivateItensPanel();
+        VerificateButtonUI.SelectEnemy();
     }
 
     public void OnReturnButton()

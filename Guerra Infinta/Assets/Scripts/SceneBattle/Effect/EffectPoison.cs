@@ -5,7 +5,7 @@ public class EffectPoison : ScriptableObject, IEffects
 {
     [SerializeField] private int damagePerTurn;
     [SerializeField] private int duration;
-    public void ApplyEffect(Unit target)
+    public void Effect(Unit target)
     {
         target.TakeDamage(damagePerTurn);
     }

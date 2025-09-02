@@ -10,7 +10,7 @@ public class ItensUI : MonoBehaviour
     public GameObject itenTextPrefab;
 
     [SerializeField]
-    private InventoryList inventory;
+    private InventoryBattleList inventory;
 
     private Item testIten;
     //public int testItenamount;
@@ -27,7 +27,13 @@ public class ItensUI : MonoBehaviour
         UpdateItensUI();
     }
 
-    // Update is called once per frame
+    public void UseItem(Unit player, Unit target)
+    {
+        foreach (var item in inventory.inventoryList)
+        {
+            item.ApplyEffect( player,  target);
+        }
+    }
 
     public void Botao(int list)
     {
@@ -67,7 +73,7 @@ public class ItensUI : MonoBehaviour
                 if (i == 0)
                 {
                     itenPrefab.Select();
-                    entry.Select();
+                    entry.Select();              
                 }
             }
             else
