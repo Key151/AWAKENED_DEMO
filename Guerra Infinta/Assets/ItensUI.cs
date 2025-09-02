@@ -27,14 +27,6 @@ public class ItensUI : MonoBehaviour
         UpdateItensUI();
     }
 
-    public void UseItem(Unit player, Unit target)
-    {
-        foreach (var item in inventory.inventoryList)
-        {
-            item.ApplyEffect( player,  target);
-        }
-    }
-
     public void Botao(int list)
     {
         inventory.inventoryList[list].quantity--;

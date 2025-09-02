@@ -1539,9 +1539,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530989526}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnEnemyButton
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1899,10 +1899,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530989526}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnEnemyButton
-        m_Mode: 3
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2520,6 +2520,7 @@ Transform:
   - {fileID: 1222266298}
   - {fileID: 685035091}
   - {fileID: 1137007129}
+  - {fileID: 889271972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451743865
@@ -4248,6 +4249,59 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &889271971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889271972}
+  - component: {fileID: 889271973}
+  m_Layer: 0
+  m_Name: EnemyButtonController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889271972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889271971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 422247236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &889271973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889271971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e82b8d788695ca44b964beddb669590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verificateEnemyButton:
+  - {fileID: 804407386}
+  - {fileID: 583928032}
+  - {fileID: 1252462104}
+  enemyButton:
+  - {fileID: 236284969}
+  - {fileID: 1299947480}
+  - {fileID: 269254995}
+  inventory: {fileID: 11400000, guid: fa4e79a983d19a648977841cbff196bd, type: 2}
 --- !u!1 &930317045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,6 +5365,7 @@ MonoBehaviour:
   - {fileID: 583928032}
   - {fileID: 1252462104}
   enemyUI: []
+  itensUI: {fileID: 0}
 --- !u!4 &1222266298
 Transform:
   m_ObjectHideFlags: 0
@@ -5793,9 +5848,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530989526}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnEnemyButton
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

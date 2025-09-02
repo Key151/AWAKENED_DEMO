@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class BattleSystem : MonoBehaviour
 {
     VerificateButtonUI VerificateButtonUI;
+    EnemyButtonController EnemyButtonController;
     public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
     private enum Action { AtkNormal, Item, Def, Move }
 
@@ -59,6 +60,7 @@ public class BattleSystem : MonoBehaviour
 
         //battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
+        EnemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
 
         StartCoroutine(SetupBattle());
     }
@@ -120,7 +122,7 @@ public class BattleSystem : MonoBehaviour
         UpdateHud(playerHUD, playerUnit);
         UpdateHud(playerHUD_2, playerUnit_2);
 
-        Debug.Log(BattleList.Count);
+        //Debug.Log(BattleList.Count);
 
         for (int i = 0; i < BattleList.Count; i++)
         {
@@ -160,10 +162,11 @@ public class BattleSystem : MonoBehaviour
                 //namehud = BattleList[0].ToString();
                 //turnText.text = "Turno: " + namehud;
                 //hudController.ChanegenameTurn(turnText);
-                //Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa " + namehud);
+                Debug.Log("Player:" + BattleList);
                 PlayerTurn(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
+                Debug.Log("Enemy:" + BattleList);
                 StartCoroutine(EnemyTurn(BattleList[0]));
                 break;
             default:
@@ -197,7 +200,7 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = playerAtual.UnitName + " ataca!";
         playerAtual.Attack(enemyUnit[enemyNumber]);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
-        Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
+        //Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
         yield return new WaitForSeconds(0.5f);
         //playerAtual.transform.position = new Vector2(playerAtual.OrigenX, playerAtual.OrigenY);
         //playerAtual.attacking = false;
@@ -260,9 +263,11 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
+        Debug.Log("Estou entrando no OnAttackButton");
         VerificateButtonUI.DisactivateButtons();
         //VerificateButtonUI.ActivateItensPanel();
-        VerificateButtonUI.SelectEnemy();
+        //VerificateButtonUI.SelectEnemy();
+        EnemyButtonController.SelectEnemyButtonAtack();
     }
 
     public void OnReturnButton()
@@ -289,7 +294,9 @@ public class BattleSystem : MonoBehaviour
     //BOTAO DO INIMIGO
     public void OnEnemyButton(int enemyNumber)
     {
-        VerificateButtonUI.DisactivateButtonsEnemy();
+        Debug.Log("Estou entrando no OnEnemyButton");
+        //VerificateButtonUI.DisactivateButtonsEnemy();
+        EnemyButtonController.DisactivateButtonsEnemy();
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
     }
 

@@ -18,6 +18,6 @@ public class AttackNormal : IAttack
             attacker.CurrentActionPoint = 0;
         }
 
-        UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.TotalDamage()}");
+        //UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.TotalDamage()}");
     }
 }

@@ -21,7 +21,7 @@ public class VerificateButtonUI : MonoBehaviour
 
     public GameObject[] enemyButtonsGO; // GameObject dos botıes dos inimigos para poder ativar e desavitar
     public Button[] enemyButtons;       // Buttons dos botıes dos inimigos para poder selecionar
-    public GameObject[] verificateEnemyButton; // Objeto que pertence ao bot„o, se ele for desativado, o bot„o ficarÅEdesativado
+    public GameObject[] verificateEnemyButton; // Objeto que pertence ao bot„o, se ele for desativado, o bot„o fica desativado
     public GameObject[] enemyUI;
 
     [SerializeField] private ItensUI itensUI;
