@@ -30,15 +30,9 @@ public class EnemyButtonController : MonoBehaviour
         {
             if (verificateEnemyButton[i].activeSelf)
             {
-                if(state != State.Iten)
-                {
-                    int index = i;
-                    //enemyButton[i].onClick.AddListener(() => { UseItem(player, index); });
-                }
-                if (i == verificateEnemyButton.Length - 1)
-                {
-                    state = State.Iten;
-                }
+                enemyButton[i].onClick.RemoveAllListeners();
+                int index = i;
+                //enemyButton[i].onClick.AddListener(() => { UseItem(player, index); });
                 enemyButton[i].gameObject.SetActive(true);
                 enemyButton[i].Select();
             }
@@ -51,15 +45,9 @@ public class EnemyButtonController : MonoBehaviour
         {
             if (verificateEnemyButton[i].activeSelf)
             {
-                if (state != State.Attack)
-                {
-                    int index = i;
-                    enemyButton[i].onClick.AddListener(() => {battleSystem.OnEnemyButton(index); });
-                }
-                if(i == verificateEnemyButton.Length -1)
-                {
-                    state = State.Attack;
-                }
+                enemyButton[i].onClick.RemoveAllListeners();
+                int index = i;
+                enemyButton[i].onClick.AddListener(() => {battleSystem.OnEnemyButton(index); });
                 enemyButton[i].gameObject.SetActive(true);
                 enemyButton[i].Select();
             }
