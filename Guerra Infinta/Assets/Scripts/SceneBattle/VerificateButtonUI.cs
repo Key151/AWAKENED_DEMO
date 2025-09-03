@@ -62,12 +62,12 @@ public class VerificateButtonUI : MonoBehaviour
         //primaryButtonEnemy.Select();
     }
     
-    public void ActivateDialguePanel() //Ativa o painel de aÁıes
+    public void ActivateDialguePanel() //Ativa o painel de Dialogo
     {
         dialoguePanel.SetActive(true);
     }
 
-    public void ActivateItensPanel() //Ativa o painel de aÁıes
+    public void ActivateItensPanel() //Ativa o painel de Itens
     {
         //itensUI.UpdateItensUI();
         itensPanel.SetActive(true);
@@ -98,49 +98,15 @@ public class VerificateButtonUI : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
+    public void DisactivateItensPanel() //Ativa o painel de Itens
+    {
+        itensPanel.SetActive(false);
+    }
+
     // ATUALIZA OS BOT‘ES DOS INIMIGOS
 
     public void KillEnemyButton(int enemyKilled) //N„o permite que o bot„o do inimigo fique ativo
     {
         verificateEnemyButton[enemyKilled].SetActive(false);
     }
-
-
-
-
-    /*
-    public void UpdateEnemyButtonDown() //Faz com que a seleÁ„o dos botıes dos inimigos vÅEpara baixo
-    {
-
-        selectedEnemyButton++;
-
-        while (!enemyButtons[selectedEnemyButton].IsActive())
-        {
-            selectedEnemyButton++;
-            if(selectedEnemyButton >= 3)
-            {
-                selectedEnemyButton = 0;
-            }
-        }    
-        enemyButtons[selectedEnemyButton].Select();
-
-    }*/
-
-
-    /*
-    public void UpdateEnemyButtonUp() //Faz com que a seleÁ„o dos botıes dos inimigos vÅEpara cima
-    {
-        selectedEnemyButton --;
-
-        while (!enemyButtons[selectedEnemyButton].IsActive())
-        {
-            selectedEnemyButton--;
-            if(selectedEnemyButton < 0)
-            {
-                selectedEnemyButton = 3;
-            }
-        }
-        enemyButtons[selectedEnemyButton].Select();
-        
-    }*/
 }

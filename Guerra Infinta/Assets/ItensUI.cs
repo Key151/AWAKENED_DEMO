@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ItensUI : MonoBehaviour
 {
+    VerificateButtonUI verificateButtonUI;
+    EnemyButtonController enemyButtonController;
 
     public Transform itenListContent;
     public Button itenPrefab;
@@ -18,19 +20,16 @@ public class ItensUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        /*
         for (int i = 0; i < inventory.inventoryList.Count; i++)
         {
             Debug.Log(inventory.inventoryList.Count);
             Debug.Log(inventory.inventoryList[i]);
         }
-
+        */
+        enemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
+        verificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
         UpdateItensUI();
-    }
-
-    public void Botao(int list)
-    {
-        inventory.inventoryList[list].quantity--;
-        Debug.Log(inventory.inventoryList[list].quantity + "   i:" + list);
     }
 
     public void UpdateItensUI()
@@ -57,10 +56,8 @@ public class ItensUI : MonoBehaviour
                 TMP_Text quantityText = quantityTextGO.GetComponent<TMP_Text>();
                 quantityText.text = testIten.quantity.ToString();
 
-                //entry.onClick.AddListener(() => Botao(i));
-
                 int index = i;
-                entry.onClick.AddListener(() => { this.inventory.inventoryList[index].quantity--; Debug.Log("Novo valor: " + this.inventory.inventoryList[index].quantity); UpdateItensUI(); }); 
+                entry.onClick.AddListener(() => { this.inventory.inventoryList[index].quantity--; UpdateItensUI(); verificateButtonUI.DisactivateItensPanel(); enemyButtonController.SelectEnemyButtonsItens(); }); 
 
                 if (i == 0)
                 {

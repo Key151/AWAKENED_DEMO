@@ -50,6 +50,9 @@ public class BattleSystem : MonoBehaviour
     //HUDController hudController = AddComponent();
     public string namehud;
 
+    [Header("Itens")]
+    [SerializeField] private InventoryBattleList inventory;
+
 
     // Start is called before the first frame update
     void Start()
@@ -263,11 +266,16 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
-        Debug.Log("Estou entrando no OnAttackButton");
         VerificateButtonUI.DisactivateButtons();
         //VerificateButtonUI.ActivateItensPanel();
         //VerificateButtonUI.SelectEnemy();
         EnemyButtonController.SelectEnemyButtonAtack();
+    }
+
+    public void OnItenButton()
+    {
+        VerificateButtonUI.DisactivateButtons();
+        VerificateButtonUI.ActivateItensPanel();
     }
 
     public void OnReturnButton()
@@ -292,12 +300,33 @@ public class BattleSystem : MonoBehaviour
     }
 
     //BOTAO DO INIMIGO
-    public void OnEnemyButton(int enemyNumber)
+    public void OnEnemyButtonAttack(int enemyNumber)
     {
-        Debug.Log("Estou entrando no OnEnemyButton");
         //VerificateButtonUI.DisactivateButtonsEnemy();
         EnemyButtonController.DisactivateButtonsEnemy();
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
+    }
+
+    public void OnEnemyButtonIten(int enemyNumber)
+    {
+        EnemyButtonController.DisactivateButtonsEnemy();
+        UseItem(BattleList[0], enemyUnit[enemyNumber]);
+    }
+
+    public void UseItem(Unit player, Unit target)
+    {
+        foreach (var item in inventory.inventoryList)
+        {
+            item.ApplyEffect(player, target);
+        }
+        BattleList.Add(BattleList[0]);
+        BattleList.RemoveAt(0);
+        VerificateTurn();
+    }
+
+    public Unit TurnCheck()
+    {
+        return BattleList[0];
     }
 
     public void UpdateHud(BattleHUD hud, Unit unit)

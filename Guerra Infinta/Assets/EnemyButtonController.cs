@@ -11,20 +11,15 @@ public class EnemyButtonController : MonoBehaviour
 
     [SerializeField] private GameObject[] verificateEnemyButton;
     [SerializeField] private Button[] enemyButton;
-    [SerializeField] private InventoryBattleList inventory;
-
-    private enum State { Attack, Iten, Other }
-    private State state;
 
 
     void Start()
     {
         battleSystem = GameObject.Find("BattleSystem").GetComponent<BattleSystem>();
-        state = State.Other;
     }
 
 
-    public void SelectEnemyButtonsItens(Unit player)
+    public void SelectEnemyButtonsItens()
     {
         for (int i = 0; i < verificateEnemyButton.Length; i++)
         {
@@ -32,7 +27,7 @@ public class EnemyButtonController : MonoBehaviour
             {
                 enemyButton[i].onClick.RemoveAllListeners();
                 int index = i;
-                //enemyButton[i].onClick.AddListener(() => { UseItem(player, index); });
+                enemyButton[i].onClick.AddListener(() => { battleSystem.OnEnemyButtonIten(index); });
                 enemyButton[i].gameObject.SetActive(true);
                 enemyButton[i].Select();
             }
@@ -47,7 +42,7 @@ public class EnemyButtonController : MonoBehaviour
             {
                 enemyButton[i].onClick.RemoveAllListeners();
                 int index = i;
-                enemyButton[i].onClick.AddListener(() => {battleSystem.OnEnemyButton(index); });
+                enemyButton[i].onClick.AddListener(() => {battleSystem.OnEnemyButtonAttack(index); });
                 enemyButton[i].gameObject.SetActive(true);
                 enemyButton[i].Select();
             }
@@ -61,13 +56,4 @@ public class EnemyButtonController : MonoBehaviour
             enemyButton[i].gameObject.SetActive(false);
         }
     }
-
-    public void UseItem(Unit player,Unit target)
-    {
-        foreach (var item in inventory.inventoryList)
-        {
-            item.ApplyEffect(player, target);
-        }
-    }
-
 }
