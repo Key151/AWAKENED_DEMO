@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Text speakerText;
     public Text dialogueText;
     public GameObject dialoguePanel;
+    public bool dialogue;
 
     private DialogueSequenceData currentSequence;
     private int currentIndex;
@@ -17,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueSequenceData sequence)
     {
+        dialogue = true;
         currentSequence = sequence;
         currentIndex = 0;
         dialoguePanel.SetActive(true);
@@ -44,14 +46,27 @@ public class DialogueManager : MonoBehaviour
     private void ShowLine()
     {
         var line = currentSequence.dialogueLines[currentIndex];
-        iconImage.sprite = line.Icon;
-        speakerText.text = line.SpeakerName;
+        Color cor = iconImage.color;
+        if (line.Icon != null)
+        {
+            cor.a = 1f;
+            iconImage.color = cor;
+            iconImage.sprite = line.Icon;
+        }
+        else
+        {
+            cor.a = 0f;
+            iconImage.color = cor;
+        }
+
+            speakerText.text = line.SpeakerName;
         dialogueText.text = line.GetText(currentLanguage);
     }
 
     private void EndDialogue()
     {
         FindAnyObjectByType<Player>().speedControl = 1;
+        dialogue = false;
         dialoguePanel.SetActive(false);
     }
 
