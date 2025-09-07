@@ -25,7 +25,7 @@ public class ActionCommand : MonoBehaviour
         if (!commandActive) return;
 
         timer += Time.deltaTime;
-        Debug.Log($"tempo atual:{timer}");
+        //Debug.Log($"tempo atual:{timer}");
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
