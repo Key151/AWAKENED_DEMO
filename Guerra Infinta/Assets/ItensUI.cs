@@ -57,7 +57,7 @@ public class ItensUI : MonoBehaviour
                 quantityText.text = testIten.quantity.ToString();
 
                 int index = i;
-                entry.onClick.AddListener(() => { this.inventory.inventoryList[index].quantity--; UpdateItensUI(); verificateButtonUI.DisactivateItensPanel(); enemyButtonController.SelectEnemyButtonsItens(); }); 
+                entry.onClick.AddListener(() => {UpdateItensUI(); verificateButtonUI.DisactivateItensPanel(); enemyButtonController.SelectEnemyButtonsItens(index); }); 
 
                 if (i == 0)
                 {
@@ -72,4 +72,11 @@ public class ItensUI : MonoBehaviour
             }
         }
     }
+
+    public void ReduceQuantityIten(int index)
+    {
+        inventory.inventoryList[index].quantity--;
+        UpdateItensUI();
+    }
+
 }

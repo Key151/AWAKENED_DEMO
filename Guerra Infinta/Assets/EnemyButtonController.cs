@@ -19,7 +19,7 @@ public class EnemyButtonController : MonoBehaviour
     }
 
 
-    public void SelectEnemyButtonsItens()
+    public void SelectEnemyButtonsItens(int itensIndex)
     {
         for (int i = 0; i < verificateEnemyButton.Length; i++)
         {
@@ -27,7 +27,7 @@ public class EnemyButtonController : MonoBehaviour
             {
                 enemyButton[i].onClick.RemoveAllListeners();
                 int index = i;
-                enemyButton[i].onClick.AddListener(() => { battleSystem.OnEnemyButtonIten(index); });
+                enemyButton[i].onClick.AddListener(() => { battleSystem.OnEnemyButtonIten(index, itensIndex); });
                 enemyButton[i].gameObject.SetActive(true);
                 enemyButton[i].Select();
             }

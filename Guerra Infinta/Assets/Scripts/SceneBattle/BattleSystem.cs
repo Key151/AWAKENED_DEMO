@@ -52,6 +52,7 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Itens")]
     [SerializeField] private InventoryBattleList inventory;
+    private ItensUI itensUI;
 
 
     // Start is called before the first frame update
@@ -64,6 +65,7 @@ public class BattleSystem : MonoBehaviour
         //battleEnemy = new BattleEnemy();
         VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
         EnemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
+        itensUI = GameObject.Find("ItensUIController").GetComponent<ItensUI>();
 
         StartCoroutine(SetupBattle());
     }
@@ -307,17 +309,20 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
     }
 
-    public void OnEnemyButtonIten(int enemyNumber)
+    public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
     {
         EnemyButtonController.DisactivateButtonsEnemy();
-        UseItem(BattleList[0], enemyUnit[enemyNumber]);
+        UseItem(itensIndex, BattleList[0], enemyUnit[enemyNumber], enemyNumber);
     }
 
-    public void UseItem(int index, Unit player, Unit target)
+    public void UseItem(int index, Unit player, Unit target, int enemyNumber)
     {
         if (index < 0 || index >= inventory.inventoryList.Count) return;
 
-        inventory.inventoryList[index].ApplyEffect(player, target);
+        //inventory.inventoryList[index].ApplyEffect(player, target);
+        inventory.inventoryList[index].ApplyEffect(player, enemyUnit[enemyNumber]);
+        itensUI.ReduceQuantityIten(index);
+        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
         Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
 
         BattleList.Add(BattleList[0]);
