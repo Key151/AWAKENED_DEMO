@@ -10,6 +10,8 @@ public class VerificateButtonUI : MonoBehaviour
     [SerializeField] private Button primaryButtonEnemy;
 
     [SerializeField] private GameObject attackButton;
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject itensButton;
     [SerializeField] private GameObject returnButton;
     //[SerializeField] private GameObject enemyButton_1;
     //[SerializeField] private GameObject enemyButton_2;
@@ -45,7 +47,8 @@ public class VerificateButtonUI : MonoBehaviour
     {
         optionPanel.SetActive(true);
         attackButton.SetActive(true);
-        returnButton.SetActive(true);
+        itensButton.SetActive(true);
+        backButton.SetActive(true);
         primaryButtonPlayer.Select();
     }
 
@@ -73,6 +76,12 @@ public class VerificateButtonUI : MonoBehaviour
         itensPanel.SetActive(true);
     }
 
+    public void ActivateReturnButton()
+    {
+        optionPanel.SetActive(true);
+        returnButton.SetActive(true);
+    }
+
 
     // DESATIVAR BOTOES
 
@@ -80,6 +89,8 @@ public class VerificateButtonUI : MonoBehaviour
     public void DisactivateButtons() // Desativa os botões de ataque e Voltar
     {
         attackButton.SetActive(false);
+        itensButton.SetActive(false);
+        backButton.SetActive(false);
         returnButton.SetActive(false);
         optionPanel.SetActive(false);
     }
@@ -96,11 +107,22 @@ public class VerificateButtonUI : MonoBehaviour
     public void DisactivateDialguePanel()
     {
         dialoguePanel.SetActive(false);
+
     }
 
     public void DisactivateItensPanel() //Ativa o painel de Itens
     {
         itensPanel.SetActive(false);
+        optionPanel.SetActive(false);
+        returnButton.SetActive(false);
+    }
+
+    public void DisactivateReturnButton()
+    {
+        optionPanel.SetActive(false);
+        returnButton.SetActive(false);
+        DisactivateButtonsEnemy();
+        DisactivateItensPanel();
     }
 
     // ATUALIZA OS BOTÔES DOS INIMIGOS

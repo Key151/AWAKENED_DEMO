@@ -269,24 +269,29 @@ public class BattleSystem : MonoBehaviour
     public void OnAttackButton()
     {
         VerificateButtonUI.DisactivateButtons();
-        //VerificateButtonUI.ActivateItensPanel();
-        //VerificateButtonUI.SelectEnemy();
         EnemyButtonController.SelectEnemyButtonAtack();
+        VerificateButtonUI.ActivateReturnButton();
     }
 
     public void OnItenButton()
     {
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateItensPanel();
+        VerificateButtonUI.ActivateReturnButton();
     }
 
-    public void OnReturnButton()
+    public void OnBackButton()
     {
         playerUnit.SaveData();
         playerUnit_2.SaveData();
         SceneManager.LoadScene(sceneName);
     }
 
+    public void OnReturnButton()
+    {
+        VerificateButtonUI.DisactivateReturnButton();
+        VerificateButtonUI.ActivateButtons();
+    }
 
     // Escolhe o jogador que vai atacar
     private UnitPlayer ChoosePlayer(UnitPlayer playerturn1, UnitPlayer playerturn2)
@@ -306,12 +311,14 @@ public class BattleSystem : MonoBehaviour
     {
         //VerificateButtonUI.DisactivateButtonsEnemy();
         EnemyButtonController.DisactivateButtonsEnemy();
+        VerificateButtonUI.DisactivateReturnButton();
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
     }
 
     public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
     {
         EnemyButtonController.DisactivateButtonsEnemy();
+        VerificateButtonUI.DisactivateReturnButton();
         UseItem(itensIndex, BattleList[0], enemyUnit[enemyNumber], enemyNumber);
     }
 
