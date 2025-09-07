@@ -313,12 +313,13 @@ public class BattleSystem : MonoBehaviour
         UseItem(BattleList[0], enemyUnit[enemyNumber]);
     }
 
-    public void UseItem(Unit player, Unit target)
+    public void UseItem(int index, Unit player, Unit target)
     {
-        foreach (var item in inventory.inventoryList)
-        {
-            item.ApplyEffect(player, target);
-        }
+        if (index < 0 || index >= inventory.inventoryList.Count) return;
+
+        inventory.inventoryList[index].ApplyEffect(player, target);
+        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
+
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();

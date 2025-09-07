@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Guerra Infinta.sln"
+    "dotnet.defaultSolution": "Guerra Infinta.sln",
+    "dotnet.preferCSharpExtension": true
 }
