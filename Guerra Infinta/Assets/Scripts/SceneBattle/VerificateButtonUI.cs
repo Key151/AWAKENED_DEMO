@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class VerificateButtonUI : MonoBehaviour
 {
-    [SerializeField] private Button primaryButtonPlayer;
-    [SerializeField] private Button primaryButtonEnemy;
+    //[SerializeField] private Button primaryButtonPlayer;
+    //[SerializeField] private Button primaryButtonEnemy;
 
     [SerializeField] private GameObject attackButton;
     [SerializeField] private GameObject backButton;
@@ -49,7 +49,7 @@ public class VerificateButtonUI : MonoBehaviour
         attackButton.SetActive(true);
         itensButton.SetActive(true);
         backButton.SetActive(true);
-        primaryButtonPlayer.Select();
+        //primaryButtonPlayer.Select();
     }
 
     public void SelectEnemy()//Ativa  os botões para atacar os inimigos
@@ -59,7 +59,7 @@ public class VerificateButtonUI : MonoBehaviour
             if (verificateEnemyButton[i].activeSelf)
             {
                 enemyButtonsGO[i].SetActive(true);
-                enemyButtons[i].Select();
+                //enemyButtons[i].Select();
             }
         }
         //primaryButtonEnemy.Select();

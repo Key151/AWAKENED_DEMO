@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713448dc1b164e540987902722357a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: Scene1 1
+  Scene: SceneExplorer
   menu: {fileID: 1939555241}
   controls: {fileID: 445913825}
 --- !u!1 &150636973

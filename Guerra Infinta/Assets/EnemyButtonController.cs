@@ -29,7 +29,7 @@ public class EnemyButtonController : MonoBehaviour
                 int index = i;
                 enemyButton[i].onClick.AddListener(() => { battleSystem.OnEnemyButtonIten(index, itensIndex); });
                 enemyButton[i].gameObject.SetActive(true);
-                enemyButton[i].Select();
+                //enemyButton[i].Select();
             }
         }
     }
@@ -44,7 +44,7 @@ public class EnemyButtonController : MonoBehaviour
                 int index = i;
                 enemyButton[i].onClick.AddListener(() => {battleSystem.OnEnemyButtonAttack(index); });
                 enemyButton[i].gameObject.SetActive(true);
-                enemyButton[i].Select();
+                //enemyButton[i].Select();
             }
         }
     }

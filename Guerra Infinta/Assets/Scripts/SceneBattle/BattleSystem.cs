@@ -328,9 +328,9 @@ public class BattleSystem : MonoBehaviour
 
         //inventory.inventoryList[index].ApplyEffect(player, target);
         inventory.inventoryList[index].ApplyEffect(player, enemyUnit[enemyNumber]);
+        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
-        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
 
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);

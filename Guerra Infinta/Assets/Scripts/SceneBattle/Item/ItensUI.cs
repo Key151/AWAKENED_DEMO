@@ -59,11 +59,12 @@ public class ItensUI : MonoBehaviour
                 int index = i;
                 entry.onClick.AddListener(() => {UpdateItensUI(); verificateButtonUI.DisactivateItensPanel(); verificateButtonUI.ActivateReturnButton(); enemyButtonController.SelectEnemyButtonsItens(index); }); 
 
+                /*
                 if (i == 0)
                 {
                     itenPrefab.Select();
                     entry.Select();              
-                }
+                }*/
             }
             else
             {

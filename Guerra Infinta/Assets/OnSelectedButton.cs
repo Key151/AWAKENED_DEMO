@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShowOnSelect : MonoBehaviour, ISelectHandler, IDeselectHandler
+
+//IPointerEnterHandler, IPointerExitHandler - É usado para saber se um objeto está com o mouse em cima ---- ISelectHandler, IDeselectHandler - É usado para saber se um botão está selecionado
+public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject enemyHUD;
     private bool selected = false;
@@ -14,30 +16,28 @@ public class ShowOnSelect : MonoBehaviour, ISelectHandler, IDeselectHandler
             if (!selected)
             {
                 enemyHUD.SetActive(false);
-                Debug.Log("Inicio-1");
+                //Debug.Log("Inicio-1");
             }
-            Debug.Log("Inicio");
+            //Debug.Log("Inicio");
         }
-            
     }
-
-    public void OnDeselect(BaseEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (enemyHUD != null)
         {
             enemyHUD.SetActive(false);
-            Debug.Log("Selecionado");
+            //Debug.Log("Selecionado");
         }
     }
-    public void OnSelect(BaseEventData eventData)
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (enemyHUD != null)
         {
             enemyHUD.SetActive(true);
             selected = true;
-            Debug.Log("Deselecionado");
+            //Debug.Log("Deselecionado");
         }
-
     }
 
 }
