@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3f62bb08e810d44adc85f990fc543a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Inimigo Vermelho
+  unitName: Inimigo Verde
   damageBase: 7
   maxHP: 50
   spd: 50

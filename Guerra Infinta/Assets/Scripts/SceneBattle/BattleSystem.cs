@@ -123,6 +123,7 @@ public class BattleSystem : MonoBehaviour
     }
     void VerificateTurn()
     {
+        DisableHudImage();
         VerificateButtonUI.DisactivateDialguePanel();
         UpdateHud(playerHUD, playerUnit);
         UpdateHud(playerHUD_2, playerUnit_2);
@@ -169,6 +170,7 @@ public class BattleSystem : MonoBehaviour
                 //hudController.ChanegenameTurn(turnText);
                 Debug.Log("Player:" + BattleList);
                 PlayerTurn(BattleList[0]);
+                UpdateHudImage(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
                 Debug.Log("Enemy:" + BattleList);
@@ -347,4 +349,23 @@ public class BattleSystem : MonoBehaviour
         hud.UpdateHPText(unit);
         hud.SetActionPoint(unit);
     }
+
+    public void UpdateHudImage(Unit unit)
+    {
+        if(unit == playerUnit)
+        {
+            playerHUD.ActiveHudImage();
+        }
+        else if (unit == playerUnit_2)
+        {
+            playerHUD_2.ActiveHudImage();
+        }
+    }
+
+    public void DisableHudImage()
+    {
+        playerHUD.DisactiveHudImage();
+        playerHUD_2.DisactiveHudImage();
+    }
+
 }

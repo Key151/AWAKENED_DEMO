@@ -40,4 +40,10 @@ public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         }
     }
 
+    public void OnClick()
+    {
+        enemyHUD.SetActive(false);
+    }
+
+
 }

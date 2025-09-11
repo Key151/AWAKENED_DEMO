@@ -13,6 +13,7 @@ public class BattleHUD : MonoBehaviour
     public TextMeshPro nameTextMesh;
     public Text ActionPointText;
     public Slider ActionPointSlider;
+    public GameObject hudImage;
 
     public void SetHUD(Unit unit)
     {
@@ -33,11 +34,15 @@ public class BattleHUD : MonoBehaviour
         //}
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
+        DisactiveHudImage();
     }
 
     public void SetHP(int hp)
     {
-        hpSlider.value = hp;
+        while(hpSlider.value != hp)
+        {
+            hpSlider.value--;
+        }
     }
 
     public void UpdateHPText(Unit unit)
@@ -51,4 +56,22 @@ public class BattleHUD : MonoBehaviour
         ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
 
     }
+
+    public void ActiveHudImage()
+    {
+        hudImage.SetActive(true);
+    }
+
+    public void DisactiveHudImage()
+    {
+        if(hudImage != null)
+        {
+            hudImage.SetActive(false);
+        }
+        else
+        {
+            return;
+        }
+    }
+
 }
