@@ -21,20 +21,20 @@ public class GameManager : MonoBehaviour
 
     public void savePlayer(PlayerData player)
     {
-        Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
+        //Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
         playerDicio[player.playerId] = player;
     }
 
     public PlayerData loadPlayer(string playerId)
     {
-        Debug.Log($"[LOAD] Tentando carregar {playerId}");
+        //Debug.Log($"[LOAD] Tentando carregar {playerId}");
 
         if (playerDicio.TryGetValue(playerId, out PlayerData data))
         {
-            Debug.Log($"[LOAD] Achei {data.playerId} HP={data.hp}");
+            //Debug.Log($"[LOAD] Achei {data.playerId} HP={data.hp}");
             return data;
         }
-        Debug.Log("[LOAD] N?o encontrado!");
+        //Debug.Log("[LOAD] Nao encontrado!");
         return null;
     }
 

@@ -7,8 +7,6 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int maxHP;
     [SerializeField] private int spd;
     [SerializeField] private bool dead;
-    [SerializeField] private float origenX;
-    [SerializeField] private float origenY;
     [SerializeField] private int maxActionPoint;
     [SerializeField] private int currentActionPoint;
 
@@ -18,18 +16,6 @@ public class Unit : MonoBehaviour, IDamageable
     public bool attacking;
     public bool selected;
     public bool takingDamage;
-
-    public float OrigenX
-    {
-        get { return origenX; }
-        set { origenX = value; }
-    }
-
-    public float OrigenY
-    {
-        get { return origenY; }
-        set { origenY = value; }
-    }
 
     public string UnitName
     {
@@ -90,7 +76,7 @@ public class Unit : MonoBehaviour, IDamageable
         attackNormal.Attack(this, target);
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHP -= damage;
         if (currentHP <= 0)
@@ -106,7 +92,7 @@ public class Unit : MonoBehaviour, IDamageable
         CurrentActionPoint += 10;
     }
 
-    public bool CheckDead()
+    public virtual bool CheckDead()
     {
         dead = (currentHP <= 0);
         return dead;

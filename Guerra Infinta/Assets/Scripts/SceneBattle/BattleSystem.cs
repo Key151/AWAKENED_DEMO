@@ -90,13 +90,13 @@ public class BattleSystem : MonoBehaviour
         for (int i = 0; i <= 2; i++)
         {
             //Cria uma copia do enemyPrefab com a posicao do EnemyStation
-            GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i]);
+            GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
 
             //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
             enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
 
             //posição do inimigo
-            enemyUnit[i].SetPosition(enemyGO.transform.position.x, enemyGO.transform.position.y);
+            //enemyUnit[i].SetPosition(enemyGO.transform.position.x, enemyGO.transform.position.y);
 
             enemyHUD[i].SetHUD(enemyUnit[i]);
         }
@@ -199,7 +199,6 @@ public class BattleSystem : MonoBehaviour
         Maneger.StartAttackSequence(playerAtual);
         //playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
         //playerAtual.attacking = true;
-        yield return new WaitForSeconds(1.5f);
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
         dialogueText.text = playerAtual.UnitName + " ataca!";
