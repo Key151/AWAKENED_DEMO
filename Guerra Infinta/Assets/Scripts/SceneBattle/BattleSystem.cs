@@ -75,17 +75,9 @@ public class BattleSystem : MonoBehaviour
         GameObject playerGO = Instantiate(playerPrefab);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
-        //posição do jogador 1
-        //playerUnit.OrigenX = playerGO.transform.position.x;
-        //playerUnit.OrigenY = playerGO.transform.position.y;
-
         //Cria uma copia do playerPrefab2 com a posicao do PlayerStation2
         GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
-
-        //posição do jogador 2
-        //playerUnit_2.OrigenX = playerGO_2.transform.position.x;
-        //playerUnit_2.OrigenY = playerGO_2.transform.position.y;
 
         for (int i = 0; i <= 2; i++)
         {
@@ -94,9 +86,6 @@ public class BattleSystem : MonoBehaviour
 
             //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
             enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
-
-            //posição do inimigo
-            //enemyUnit[i].SetPosition(enemyGO.transform.position.x, enemyGO.transform.position.y);
 
             enemyHUD[i].SetHUD(enemyUnit[i]);
         }
@@ -128,21 +117,20 @@ public class BattleSystem : MonoBehaviour
         UpdateHud(playerHUD, playerUnit);
         UpdateHud(playerHUD_2, playerUnit_2);
 
-        //Debug.Log(BattleList.Count);
-
-        for (int i = 0; i < BattleList.Count; i++)
+        for (int i = BattleList.Count - 1; i >= 0; i--)
         {
             if (BattleList[i].CheckDead())
             {
                 BattleList.RemoveAt(i);
-                //BattleList.Remove(BattleList[i]);
             }
         }
 
-        for (int i = 0; i < enemyUnit.Count; i++) // Desativa o botão do inimgo morto
+        for (int i = enemyUnit.Count - 1; i >= 0; i--) // Desativa o botão do inimgo morto
         {
             if (enemyUnit[i].CheckDead())
             {
+                Destroy(enemyUnit[i].gameObject);
+                enemyUnit.RemoveAt(i);
                 VerificateButtonUI.KillEnemyButton(i);
             }
         }
@@ -199,8 +187,6 @@ public class BattleSystem : MonoBehaviour
 
         playerAtual.selected = false;
         Maneger.StartAttackSequence(playerAtual);
-        //playerAtual.MoveAtk(enemyUnit[enemyNumber].transform);
-        //playerAtual.attacking = true;
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
         dialogueText.text = playerAtual.UnitName + " ataca!";
@@ -208,8 +194,6 @@ public class BattleSystem : MonoBehaviour
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
         //Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
         yield return new WaitForSeconds(0.5f);
-        //playerAtual.transform.position = new Vector2(playerAtual.OrigenX, playerAtual.OrigenY);
-        //playerAtual.attacking = false;
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();

@@ -8,7 +8,6 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
 
     public override bool CheckDead()
     {
-        Destroy(this);
         return base.CheckDead();
     }
 
