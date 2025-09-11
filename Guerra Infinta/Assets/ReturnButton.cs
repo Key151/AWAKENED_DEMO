@@ -3,11 +3,11 @@ using UnityEngine;
 public class ReturnButton : MonoBehaviour
 {
 
-    private BattleSystem battleSystem;
+    OptionPanel optionPanel;
 
     void Start()
     {
-        battleSystem = GameObject.Find("BattleSystem").GetComponent<BattleSystem>();
+        optionPanel = GameObject.Find("Canvas(Front)").GetComponent<OptionPanel>();
     }
 
     void Update()
@@ -16,7 +16,7 @@ public class ReturnButton : MonoBehaviour
         {
             if (this.gameObject.activeSelf)
             {
-                battleSystem.OnReturnButton();
+                optionPanel.OnReturnButton();
             }
         }
     }

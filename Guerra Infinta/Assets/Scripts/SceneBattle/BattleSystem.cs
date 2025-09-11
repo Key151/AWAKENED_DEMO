@@ -249,35 +249,6 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    // BOTAO DE ATAQUE
-
-    public void OnAttackButton()
-    {
-        VerificateButtonUI.DisactivateButtons();
-        EnemyButtonController.SelectEnemyButtonAtack();
-        VerificateButtonUI.ActivateReturnButton();
-    }
-
-    public void OnItenButton()
-    {
-        VerificateButtonUI.DisactivateButtons();
-        VerificateButtonUI.ActivateItensPanel();
-        VerificateButtonUI.ActivateReturnButton();
-    }
-
-    public void OnBackButton()
-    {
-        playerUnit.SaveData();
-        playerUnit_2.SaveData();
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void OnReturnButton()
-    {
-        VerificateButtonUI.DisactivateReturnButton();
-        VerificateButtonUI.ActivateButtons();
-    }
-
     // Escolhe o jogador que vai atacar
     private UnitPlayer ChoosePlayer(UnitPlayer playerturn1, UnitPlayer playerturn2)
     {
@@ -292,27 +263,28 @@ public class BattleSystem : MonoBehaviour
     }
 
     //BOTAO DO INIMIGO
-    public void OnEnemyButtonAttack(int enemyNumber)
-    {
-        //VerificateButtonUI.DisactivateButtonsEnemy();
-        EnemyButtonController.DisactivateButtonsEnemy();
-        VerificateButtonUI.DisactivateReturnButton();
-        StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
-    }
-
-    public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
-    {
-        EnemyButtonController.DisactivateButtonsEnemy();
-        VerificateButtonUI.DisactivateReturnButton();
-        UseItem(itensIndex, BattleList[0], enemyUnit[enemyNumber], enemyNumber);
-    }
-
+    /*
     public void UseItem(int index, Unit player, Unit target, int enemyNumber)
     {
         if (index < 0 || index >= inventory.inventoryList.Count) return;
 
         //inventory.inventoryList[index].ApplyEffect(player, target);
         inventory.inventoryList[index].ApplyEffect(player, enemyUnit[enemyNumber]);
+        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
+        itensUI.ReduceQuantityIten(index);
+        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
+
+        BattleList.Add(BattleList[0]);
+        BattleList.RemoveAt(0);
+        VerificateTurn();
+    }*/
+
+    public void UseItem(int index, int enemyNumber)
+    {
+        if (index < 0 || index >= inventory.inventoryList.Count) return;
+
+        //inventory.inventoryList[index].ApplyEffect(player, target);
+        inventory.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
         Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
@@ -350,6 +322,26 @@ public class BattleSystem : MonoBehaviour
     {
         playerHUD.DisactiveHudImage();
         playerHUD_2.DisactiveHudImage();
+    }
+
+
+    //Para usar em outros Scripts
+    public void GetToAttackEnemy(int enemyNumber)
+    {
+        StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
+
+    }
+    public UnitPlayer PLayer(int playerNum)
+    {
+        if (playerNum == 1)
+        {
+            return playerUnit;
+        }
+        else if (playerNum == 2)
+        {
+            return playerUnit_2;
+        }
+        else return null;
     }
 
 }

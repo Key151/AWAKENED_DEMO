@@ -8,6 +8,7 @@ public class EnemyButtonController : MonoBehaviour
 {
 
     BattleSystem battleSystem;
+    VerificateButtonUI verificateButtonUI;
 
     [SerializeField] private GameObject[] verificateEnemyButton;
     [SerializeField] private Button[] enemyButton;
@@ -16,6 +17,7 @@ public class EnemyButtonController : MonoBehaviour
     void Start()
     {
         battleSystem = GameObject.Find("BattleSystem").GetComponent<BattleSystem>();
+        verificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
     }
 
 
@@ -56,4 +58,22 @@ public class EnemyButtonController : MonoBehaviour
             enemyButton[i].gameObject.SetActive(false);
         }
     }
+
+    public void OnEnemyButtonAttack(int enemyNumber)
+    {
+        //VerificateButtonUI.DisactivateButtonsEnemy();
+        DisactivateButtonsEnemy();
+        verificateButtonUI.DisactivateReturnButton();
+        battleSystem.GetToAttackEnemy(enemyNumber);
+    }
+
+    public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
+    {
+        DisactivateButtonsEnemy();
+        verificateButtonUI.DisactivateReturnButton();
+        battleSystem.UseItem(itensIndex, enemyNumber);
+    }
+
+
+
 }
