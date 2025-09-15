@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: DialogoTeste 6
+  m_Name: Dialogo-1-1
   m_EditorClassIdentifier: 
-  speakerName: Inimigo
-  icon: {fileID: 21300000, guid: 2c1050bdc8c8ba14ead38532607ad157, type: 3}
-  portugueseText: Boa sorte!
-  englishText: Good Luck!
+  speakerName: Menina
+  icon: {fileID: 21300000, guid: 5b79a2cade2712d4b8950cffa90f61c9, type: 3}
+  portugueseText: "Acho que dever\xEDamos falar com ele, talvez ele n\xE3o seja um
+    inimigo."
+  englishText: I think we should talk with him, maybe he is not an enemy.

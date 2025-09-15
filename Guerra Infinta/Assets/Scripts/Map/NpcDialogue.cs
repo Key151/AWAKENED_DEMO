@@ -1,6 +1,8 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NpcDialogue : MonoBehaviour
@@ -16,7 +18,7 @@ public class NpcDialogue : MonoBehaviour
     //public Text nameNpc;
     //public Image imageNpc;
     //public Sprite spriteNpc;
-
+    [SerializeField] string scene;
     [SerializeField]
     private DialogueSequenceData dialogueScene;
     private DialogueManager dialogueManager;
@@ -31,14 +33,24 @@ public class NpcDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(EsperarDialogoETrocarCena());
+    }
+
+    IEnumerator EsperarDialogoETrocarCena()
+    {
         if (Input.GetButtonDown("Fire1") && readyToSpeak)
         {
             PauseController.SetPause(true);
-            //FindAnyObjectByType<Player>().speedControl = 0f;
             dialogueManager.StartDialogue(dialogueScene);
             DisactiveClickToSpeak();
             readyToSpeak = false;
+
+            yield return new WaitUntil(() => dialogueManager.dialogue == false);
+
+            SceneManager.LoadScene(scene);
         }
+        // Aqui a corrotina fica "parada" até que a condição seja verdadeira
+        
     }
     //void NextDialogue()
     //{

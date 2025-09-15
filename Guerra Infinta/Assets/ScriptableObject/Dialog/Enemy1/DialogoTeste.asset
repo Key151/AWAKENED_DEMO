@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Inimigo
   icon: {fileID: 21300000, guid: 2c1050bdc8c8ba14ead38532607ad157, type: 3}
-  portugueseText: "Oi, este \xE9 teste de dialogo."
-  englishText: Hi, this is dialog test.
+  portugueseText: "O que voc\xEAs est\xE3o fazendo aqui?"
+  englishText: What are you doing here?

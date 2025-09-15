@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d27f6b9309cba3d49ab3c7aa069bcbf2, type: 3}
-  m_Name: SequenciaTeste
+  m_Name: Dialogo-1-Sequencia
   m_EditorClassIdentifier: 
   dialogueLines:
-  - {fileID: 11400000, guid: 94e9ecaf505f861438c1e1ca213b3249, type: 2}
-  - {fileID: 11400000, guid: 7d67b56fd5fed2d4683bc05b960af58e, type: 2}
-  - {fileID: 11400000, guid: 37365b9abafed114fac87dcfbdd31302, type: 2}
+  - {fileID: 11400000, guid: e6cd1a315a697414c89444b05c367747, type: 2}
+  - {fileID: 11400000, guid: 1d0241186c97bae4e9b9748e7ec07bc2, type: 2}
+  - {fileID: 11400000, guid: 1d45f428ea74e454caa7186c88c034c3, type: 2}

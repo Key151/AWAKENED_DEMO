@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DialogoInicial : MonoBehaviour
@@ -8,28 +9,32 @@ public class DialogoInicial : MonoBehaviour
 
     
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
+    GameManager gameManager;
 
     //[SerializeField] private GameObject blackScreen;
-    private bool startGame;
 
     void Start()
     {
-        screen.SetActive(true);
-        blackScreen = GameObject.Find("BlackScreen").GetComponent<BlackScreen>();
+        gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
         dialogueManager = FindAnyObjectByType<DialogueManager>();
-        startGame = true;
     }
 
     void Update()
     {
-        if (startGame){
-            PauseController.SetPause(true);
-            dialogueManager.StartDialogue(dialogueSequenceStartGame);
-            startGame = false;
-        }
-        if(dialogueManager.dialogue == false)
+        if (!gameManager.FirstSceneStatusNeverPlayAgain())
         {
-            blackScreen.StartAnimatorBS();
+            screen.SetActive(true);
+            blackScreen = GameObject.Find("BlackScreen").GetComponent<BlackScreen>();
+            if (gameManager.FirstSceneStatusGameStarted())
+            {
+                PauseController.SetPause(true);
+                gameManager.IsPlayinfFirstScene();
+                dialogueManager.StartDialogue(dialogueSequenceStartGame);
+            }
+            else if(gameManager.FirstSceneStatusEnded())
+            {
+                blackScreen.StartAnimatorBS();
+            }
         }
     }
 }

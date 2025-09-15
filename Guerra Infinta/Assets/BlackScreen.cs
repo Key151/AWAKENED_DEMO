@@ -4,9 +4,11 @@ public class BlackScreen : MonoBehaviour
 {
 
     private Animator animator;
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         animator.enabled = false;
     }
@@ -20,6 +22,12 @@ public class BlackScreen : MonoBehaviour
     {
         animator.enabled = true;
         //this.gameObject.SetActive(false);
+    }
+
+    public void EndAnimationBS()
+    {
+        this.gameObject.SetActive(false);
+        gameManager.NeverPlayFirstScene();
     }
 
 }

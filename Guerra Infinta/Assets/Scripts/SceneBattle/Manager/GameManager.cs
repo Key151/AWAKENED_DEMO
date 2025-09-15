@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +8,18 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private Dictionary<string, PlayerData> playerDicio = new Dictionary<string, PlayerData>();
+
+    private enum FirstDialogueState
+    {
+        GameStarted,
+        DialoguePlaying,
+        DialogueEnded,
+        NeverPlayAgain
+    }
+
+    private FirstDialogueState dialogueState;
+
+    private bool firstScene;
 
     void Awake()
     {
@@ -17,6 +31,7 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        dialogueState = FirstDialogueState.GameStarted;
     }
 
     public void savePlayer(PlayerData player)
@@ -36,6 +51,43 @@ public class GameManager : MonoBehaviour
         }
         //Debug.Log("[LOAD] Nao encontrado!");
         return null;
+    }
+
+
+    // Controlador do dialogo inicial
+    public bool FirstSceneStatusEnded()
+    {
+        return dialogueState == FirstDialogueState.DialogueEnded;
+    }
+
+    public bool FirstSceneStatusPlaying()
+    {
+        return dialogueState == FirstDialogueState.DialoguePlaying;
+    }
+
+    public bool FirstSceneStatusGameStarted()
+    {
+        return dialogueState == FirstDialogueState.GameStarted;
+    }
+
+    public bool FirstSceneStatusNeverPlayAgain()
+    {
+        return dialogueState == FirstDialogueState.NeverPlayAgain;
+    }
+
+    public void EndFirstScene()
+    {
+        dialogueState = FirstDialogueState.DialogueEnded;
+    }
+
+    public void IsPlayinfFirstScene()
+    {
+        dialogueState = FirstDialogueState.DialoguePlaying;
+    }
+
+    public void NeverPlayFirstScene()
+    {
+        dialogueState = FirstDialogueState.NeverPlayAgain;
     }
 
 }

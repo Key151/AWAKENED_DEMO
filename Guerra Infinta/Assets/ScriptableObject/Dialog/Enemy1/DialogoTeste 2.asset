@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Inimigo
   icon: {fileID: 21300000, guid: 2c1050bdc8c8ba14ead38532607ad157, type: 3}
-  portugueseText: "Caso voc\xEA avance para o local que esta escuro na sua frente,"
-  englishText: If you advance to the dark place in front of you,
+  portugueseText: "Eu n\xE3o quero conversar, vamos lutar!"
+  englishText: "I don\xB4t want to talk, i want to battle!"
