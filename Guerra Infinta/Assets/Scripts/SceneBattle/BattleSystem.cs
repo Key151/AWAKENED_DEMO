@@ -129,8 +129,9 @@ public class BattleSystem : MonoBehaviour
         {
             if (enemyUnit[i].CheckDead())
             {
-                Destroy(enemyUnit[i].gameObject);
-                enemyUnit.RemoveAt(i);
+                enemyUnit[i].gameObject.SetActive(false);
+                //Destroy(enemyUnit[i].gameObject);
+                //enemyUnit.RemoveAt(i);
                 VerificateButtonUI.KillEnemyButton(i);
             }
         }
@@ -156,12 +157,12 @@ public class BattleSystem : MonoBehaviour
                 //namehud = BattleList[0].ToString();
                 //turnText.text = "Turno: " + namehud;
                 //hudController.ChanegenameTurn(turnText);
-                Debug.Log("Player:" + BattleList);
+                //Debug.Log("Player:" + BattleList);
                 PlayerTurn(BattleList[0]);
                 UpdateHudImage(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
-                Debug.Log("Enemy:" + BattleList);
+                //Debug.Log("Enemy:" + BattleList);
                 StartCoroutine(EnemyTurn(BattleList[0]));
                 break;
             default:
@@ -285,7 +286,8 @@ public class BattleSystem : MonoBehaviour
 
         //inventory.inventoryList[index].ApplyEffect(player, target);
         inventory.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
-        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
+        //Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
+        Debug.Log(index);
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
 

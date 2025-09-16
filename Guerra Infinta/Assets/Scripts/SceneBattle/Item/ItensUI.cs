@@ -57,14 +57,8 @@ public class ItensUI : MonoBehaviour
                 quantityText.text = testIten.quantity.ToString();
 
                 int index = i;
-                entry.onClick.AddListener(() => {UpdateItensUI(); verificateButtonUI.DisactivateItensPanel(); verificateButtonUI.ActivateReturnButton(); enemyButtonController.SelectEnemyButtonsItens(index); }); 
-
-                /*
-                if (i == 0)
-                {
-                    itenPrefab.Select();
-                    entry.Select();              
-                }*/
+                entry.onClick.RemoveAllListeners();
+                entry.onClick.AddListener(() => {verificateButtonUI.DisactivateItensPanel(); verificateButtonUI.ActivateReturnButton(); enemyButtonController.SelectEnemyButtonsItens(index); });
             }
             else
             {

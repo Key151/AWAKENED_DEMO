@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: New Windows Profile
+  m_Name: New Windows Profile 2
   m_EditorClassIdentifier: 
   m_AssetVersion: 1
   m_BuildTarget: 19
@@ -23,7 +23,11 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/TelaInicial.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/SceneExplorer.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/SceneBattle.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/SceneBattle 2.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []

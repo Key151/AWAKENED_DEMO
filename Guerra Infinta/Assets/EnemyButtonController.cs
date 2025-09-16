@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +13,6 @@ public class EnemyButtonController : MonoBehaviour
 
     [SerializeField] private GameObject[] verificateEnemyButton;
     [SerializeField] private Button[] enemyButton;
-
 
     void Start()
     {
@@ -33,6 +33,12 @@ public class EnemyButtonController : MonoBehaviour
                 enemyButton[i].gameObject.SetActive(true);
                 //enemyButton[i].Select();
             }
+            /*else
+            {
+                enemyButton.RemoveAt(i);
+                verificateEnemyButton.RemoveAt(i);
+                i--;
+            }*/
         }
     }
 
@@ -48,6 +54,12 @@ public class EnemyButtonController : MonoBehaviour
                 enemyButton[i].gameObject.SetActive(true);
                 //enemyButton[i].Select();
             }
+            /*else
+            {
+                enemyButton.RemoveAt(i);
+                verificateEnemyButton.RemoveAt(i);
+                i--;
+            }*/
         }
     }
 
@@ -73,7 +85,4 @@ public class EnemyButtonController : MonoBehaviour
         verificateButtonUI.DisactivateReturnButton();
         battleSystem.UseItem(itensIndex, enemyNumber);
     }
-
-
-
 }
