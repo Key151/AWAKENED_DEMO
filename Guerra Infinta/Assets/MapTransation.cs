@@ -14,7 +14,7 @@ public class MapTransation : MonoBehaviour
 
     private void Awake()
     {
-        confiner = FindObjectOfType<CinemachineConfiner2D>();
+        confiner = FindAnyObjectByType<CinemachineConfiner2D>();
         player2 = GameObject.FindGameObjectWithTag("Player2");
     }
 

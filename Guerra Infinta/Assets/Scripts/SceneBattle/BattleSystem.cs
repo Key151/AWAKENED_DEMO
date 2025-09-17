@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class BattleSystem : MonoBehaviour
 {
-    VerificateButtonUI VerificateButtonUI;
-    EnemyButtonController EnemyButtonController;
     public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
     private enum Action { AtkNormal, Item, Def, Move }
 
@@ -34,7 +32,6 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public Text dialogueText;
-    private Text turnText;
     //private BattleEnemy battleEnemy;
 
     [Header("ActionCommand")]
@@ -52,7 +49,10 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Itens")]
     [SerializeField] private InventoryBattleList inventory;
-    private ItensUI itensUI;
+
+    [Header("Classes")]
+    [SerializeField] private ItensUI itensUI;
+    [SerializeField] private VerificateButtonUI VerificateButtonUI;
 
 
     // Start is called before the first frame update
@@ -63,9 +63,6 @@ public class BattleSystem : MonoBehaviour
         enemyUnit = new List<UnitEnemy>();
 
         //battleEnemy = new BattleEnemy();
-        VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
-        EnemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
-        itensUI = GameObject.Find("ItensUIController").GetComponent<ItensUI>();
 
         StartCoroutine(SetupBattle());
     }
@@ -238,6 +235,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(2f);
             VerificateButtonUI.DisactivateDialguePanel();
+            SavePLayer();
             SceneManager.LoadScene(sceneName);
         }
         else if (state == BattleState.LOST)
@@ -246,6 +244,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você foi derrotado.";
             yield return new WaitForSeconds(2f);
             VerificateButtonUI.DisactivateDialguePanel();
+            SavePLayer();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -333,17 +332,11 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
 
     }
-    public UnitPlayer PLayer(int playerNum)
+
+    public void SavePLayer()
     {
-        if (playerNum == 1)
-        {
-            return playerUnit;
-        }
-        else if (playerNum == 2)
-        {
-            return playerUnit_2;
-        }
-        else return null;
+        playerUnit.SaveData();
+        playerUnit_2.SaveData();
     }
 
 }

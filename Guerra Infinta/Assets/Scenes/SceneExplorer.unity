@@ -17983,7 +17983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d95ea68eee6b8f4a80bda148d34b135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
   dialogueSequenceStartGame: {fileID: 11400000, guid: 2598e511c8d409543ab351c09cce9d44, type: 2}
+  index: 0
 --- !u!61 &1900761655
 BoxCollider2D:
   m_ObjectHideFlags: 0

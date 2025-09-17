@@ -7,18 +7,12 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyButtonController : MonoBehaviour
 {
-
-    BattleSystem battleSystem;
-    VerificateButtonUI verificateButtonUI;
-
     [SerializeField] private GameObject[] verificateEnemyButton;
     [SerializeField] private Button[] enemyButton;
 
-    void Start()
-    {
-        battleSystem = GameObject.Find("BattleSystem").GetComponent<BattleSystem>();
-        verificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
-    }
+    [Header("Classes")]
+    [SerializeField] private BattleSystem battleSystem;
+    [SerializeField] private VerificateButtonUI verificateButtonUI;
 
 
     public void SelectEnemyButtonsItens(int itensIndex)
@@ -31,14 +25,7 @@ public class EnemyButtonController : MonoBehaviour
                 int index = i;
                 enemyButton[i].onClick.AddListener(() => { OnEnemyButtonIten(index, itensIndex); });
                 enemyButton[i].gameObject.SetActive(true);
-                //enemyButton[i].Select();
             }
-            /*else
-            {
-                enemyButton.RemoveAt(i);
-                verificateEnemyButton.RemoveAt(i);
-                i--;
-            }*/
         }
     }
 
@@ -52,14 +39,7 @@ public class EnemyButtonController : MonoBehaviour
                 int index = i;
                 enemyButton[i].onClick.AddListener(() => {OnEnemyButtonAttack(index); });
                 enemyButton[i].gameObject.SetActive(true);
-                //enemyButton[i].Select();
             }
-            /*else
-            {
-                enemyButton.RemoveAt(i);
-                verificateEnemyButton.RemoveAt(i);
-                i--;
-            }*/
         }
     }
 
@@ -73,7 +53,6 @@ public class EnemyButtonController : MonoBehaviour
 
     public void OnEnemyButtonAttack(int enemyNumber)
     {
-        //VerificateButtonUI.DisactivateButtonsEnemy();
         DisactivateButtonsEnemy();
         verificateButtonUI.DisactivateReturnButton();
         battleSystem.GetToAttackEnemy(enemyNumber);

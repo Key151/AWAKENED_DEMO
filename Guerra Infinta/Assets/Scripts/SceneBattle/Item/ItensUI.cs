@@ -4,31 +4,21 @@ using UnityEngine.UI;
 
 public class ItensUI : MonoBehaviour
 {
-    VerificateButtonUI verificateButtonUI;
-    EnemyButtonController enemyButtonController;
 
     public Transform itenListContent;
     public Button itenPrefab;
     public GameObject itenTextPrefab;
 
-    [SerializeField]
-    private InventoryBattleList inventory;
+    [Header("Classes")]
+    [SerializeField] private InventoryBattleList inventory;
+    [SerializeField] private VerificateButtonUI verificateButtonUI;
+    [SerializeField] private EnemyButtonController enemyButtonController;
 
     private Item testIten;
-    //public int testItenamount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        /*
-        for (int i = 0; i < inventory.inventoryList.Count; i++)
-        {
-            Debug.Log(inventory.inventoryList.Count);
-            Debug.Log(inventory.inventoryList[i]);
-        }
-        */
-        enemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
-        verificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
         UpdateItensUI();
     }
 

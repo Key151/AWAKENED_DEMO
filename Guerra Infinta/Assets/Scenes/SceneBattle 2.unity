@@ -2682,6 +2682,8 @@ MonoBehaviour:
   sceneName: SceneExplorer
   namehud: 
   inventory: {fileID: 11400000, guid: fa4e79a983d19a648977841cbff196bd, type: 2}
+  itensUI: {fileID: 685035092}
+  VerificateButtonUI: {fileID: 1222266297}
 --- !u!4 &530989527
 Transform:
   m_ObjectHideFlags: 0
@@ -3160,6 +3162,8 @@ MonoBehaviour:
   itenPrefab: {fileID: 266163764259280885, guid: d69509154716f3944a65e7bb4889029e, type: 3}
   itenTextPrefab: {fileID: 3422030405944631418, guid: 057a8f590204a52468dff268e1799803, type: 3}
   inventory: {fileID: 11400000, guid: fa4e79a983d19a648977841cbff196bd, type: 2}
+  verificateButtonUI: {fileID: 1222266297}
+  enemyButtonController: {fileID: 889271973}
 --- !u!1 &696959711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,6 +3818,8 @@ MonoBehaviour:
   - {fileID: 236284969}
   - {fileID: 1299947480}
   - {fileID: 269254995}
+  battleSystem: {fileID: 530989526}
+  verificateButtonUI: {fileID: 1222266297}
 --- !u!1 &930317045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,8 +4554,6 @@ MonoBehaviour:
   - {fileID: 804407386}
   - {fileID: 583928032}
   - {fileID: 1252462104}
-  enemyUI: []
-  itensUI: {fileID: 0}
 --- !u!4 &1222266298
 Transform:
   m_ObjectHideFlags: 0
@@ -7403,6 +7407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: SceneExplorer
+  battleSystem: {fileID: 530989526}
+  VerificateButtonUI: {fileID: 1222266297}
+  EnemyButtonController: {fileID: 889271973}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -5,9 +5,10 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class DialogueScript : MonoBehaviour
 {
 
-    DialogueManager dialogueManager;
+    [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
     private static bool hasDialoguePlayed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

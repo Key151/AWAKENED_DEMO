@@ -6,16 +6,10 @@ using UnityEngine.UI;
 
 public class VerificateButtonUI : MonoBehaviour
 {
-    //[SerializeField] private Button primaryButtonPlayer;
-    //[SerializeField] private Button primaryButtonEnemy;
-
     [SerializeField] private GameObject attackButton;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject itensButton;
     [SerializeField] private GameObject returnButton;
-    //[SerializeField] private GameObject enemyButton_1;
-    //[SerializeField] private GameObject enemyButton_2;
-    //[SerializeField] private GameObject enemyButton_3;
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject dialoguePanel;
 
@@ -24,21 +18,7 @@ public class VerificateButtonUI : MonoBehaviour
     public GameObject[] enemyButtonsGO; // GameObject dos botões dos inimigos para poder ativar e desavitar
     public Button[] enemyButtons;       // Buttons dos botões dos inimigos para poder selecionar
     public GameObject[] verificateEnemyButton; // Objeto que pertence ao botão, se ele for desativado, o botão fica desativado
-    public GameObject[] enemyUI;
-
-    [SerializeField] private ItensUI itensUI;
-
-
-    public void Update()
-    {
-
-    }
-
-    //Move o painel de ações
-    /*public void MovePanel(UnitPlayer player)
-    {
-        optionPanel.transform.position = new Vector2(player.transform.position.x + 3.5f, player.transform.position.y);
-    }*/
+    //public GameObject[] enemyUI;
 
     // ATIVAR BOTOES
 
@@ -49,7 +29,6 @@ public class VerificateButtonUI : MonoBehaviour
         attackButton.SetActive(true);
         itensButton.SetActive(true);
         backButton.SetActive(true);
-        //primaryButtonPlayer.Select();
     }
 
     public void SelectEnemy()//Ativa  os botões para atacar os inimigos
@@ -59,10 +38,8 @@ public class VerificateButtonUI : MonoBehaviour
             if (verificateEnemyButton[i].activeSelf)
             {
                 enemyButtonsGO[i].SetActive(true);
-                //enemyButtons[i].Select();
             }
         }
-        //primaryButtonEnemy.Select();
     }
     
     public void ActivateDialguePanel() //Ativa o painel de Dialogo
@@ -72,7 +49,6 @@ public class VerificateButtonUI : MonoBehaviour
 
     public void ActivateItensPanel() //Ativa o painel de Itens
     {
-        //itensUI.UpdateItensUI();
         itensPanel.SetActive(true);
     }
 

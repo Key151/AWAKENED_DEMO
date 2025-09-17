@@ -5,19 +5,13 @@ using static BattleSystem;
 
 public class OptionPanel : MonoBehaviour
 {
-    BattleSystem battleSystem;
-    VerificateButtonUI VerificateButtonUI;
-    EnemyButtonController EnemyButtonController;
-
     [Header("Scene")]
     public string sceneName;
 
-    void Start()
-    {
-        VerificateButtonUI = GameObject.Find("ButtonsController").GetComponent<VerificateButtonUI>();
-        EnemyButtonController = GameObject.Find("EnemyButtonController").GetComponent<EnemyButtonController>();
-        battleSystem = GameObject.Find("BattleSystem").GetComponent<BattleSystem>();
-    }
+    [Header("Classes")]
+    [SerializeField] private BattleSystem battleSystem;
+    [SerializeField] private VerificateButtonUI VerificateButtonUI;
+    [SerializeField] private EnemyButtonController EnemyButtonController;
 
     public void OnAttackButton()
     {
@@ -35,8 +29,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnBackButton()
     {
-        battleSystem.PLayer(1).SaveData();
-        battleSystem.PLayer(2).SaveData();
+        battleSystem.SavePLayer();
         SceneManager.LoadScene(sceneName);
     }
 
