@@ -1,9 +1,6 @@
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class NpcDialogue : MonoBehaviour
 {
