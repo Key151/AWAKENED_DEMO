@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneExplorer.unity
     guid: b2b04e5f3a0d2e949ba28cd99d020381
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneBattle.unity
-    guid: 86d3845d401ece14daa72a7f2bfd282f
+    guid: 7c8d85d2207193846926c54cdcc30472
   - enabled: 1
     path: Assets/Scenes/SceneBattle 2.unity
     guid: 2ddfb8ac1773b3943a6b63d5a22b286d
