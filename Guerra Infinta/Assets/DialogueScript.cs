@@ -6,7 +6,7 @@ public class DialogueScript : MonoBehaviour
 {
     [Header("Dicionário e GameManager-Save")]
     [SerializeField] private string dictionaryKey;
-    GameManager gameManager;
+    SaveDialogueManager saveDialogueManager;
 
     [Header("Diálogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
@@ -17,7 +17,7 @@ public class DialogueScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
+        saveDialogueManager = GameObject.Find("SaveDialogueManager").GetComponent<SaveDialogueManager>();
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
     }
@@ -25,7 +25,7 @@ public class DialogueScript : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!gameManager.GetDialogueValue(dictionaryKey))
+        if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
             StartDialogue();
         }
@@ -45,7 +45,7 @@ public class DialogueScript : MonoBehaviour
         }
         else if (dialogueIsOn && !dialogueManager.dialogue)
         {
-            gameManager.SaveDialogue(dictionaryKey, true);
+            saveDialogueManager.SaveDialogue(dictionaryKey, true);
         }
     }
 

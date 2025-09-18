@@ -9,7 +9,7 @@ public class DialogoInicial : MonoBehaviour
 
     [Header("Dicionário e GameManager-Save")]
     [SerializeField] private string dictionaryKey;
-    GameManager gameManager;
+    SaveDialogueManager saveDialogueManager;
 
     [Header("Diálogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
@@ -18,14 +18,14 @@ public class DialogoInicial : MonoBehaviour
 
     void Start()
     {
-        gameManager = gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
+        saveDialogueManager = GameObject.Find("SaveDialogueManager").GetComponent<SaveDialogueManager>();
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
     }
 
     void Update()
     {
-        if (!gameManager.GetDialogueValue(dictionaryKey))
+        if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
             StartDialogue();
         }
@@ -49,7 +49,7 @@ public class DialogoInicial : MonoBehaviour
         else if (dialogueIsOn && !dialogueManager.dialogue)
         {
             blackScreen.StartAnimatorBS();
-            gameManager.SaveDialogue(dictionaryKey, true);
+            saveDialogueManager.SaveDialogue(dictionaryKey, true);
         }
     }
 }
