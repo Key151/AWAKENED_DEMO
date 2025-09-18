@@ -9,17 +9,7 @@ public class GameManager : MonoBehaviour
 
     private Dictionary<string, PlayerData> playerDicio = new Dictionary<string, PlayerData>();
 
-    private enum FirstDialogueState
-    {
-        GameStarted,
-        DialoguePlaying,
-        DialogueEnded,
-        NeverPlayAgain
-    }
-
-    private FirstDialogueState dialogueState;
-
-    private bool firstScene;
+    private Dictionary<string, bool> dialogueDicio = new Dictionary<string, bool>();
 
     void Awake()
     {
@@ -30,8 +20,9 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        dialogueDicio.Add("dialogue_Inicial", false);
+        dialogueDicio.Add("dialogue_1", false);
         DontDestroyOnLoad(gameObject);
-        dialogueState = FirstDialogueState.GameStarted;
     }
 
     public void savePlayer(PlayerData player)
@@ -53,41 +44,22 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-
-    // Controlador do dialogo inicial
-    public bool FirstSceneStatusEnded()
+    public void SaveDialogue(string dialogueKey, bool dialogueValue)
     {
-        return dialogueState == FirstDialogueState.DialogueEnded;
+        if (dialogueDicio.ContainsKey(dialogueKey))
+        {
+            dialogueDicio[dialogueKey] = dialogueValue;
+        }
+        else return;
     }
 
-    public bool FirstSceneStatusPlaying()
+    public bool GetDialogueValue(string dialogueKey)
     {
-        return dialogueState == FirstDialogueState.DialoguePlaying;
-    }
-
-    public bool FirstSceneStatusGameStarted()
-    {
-        return dialogueState == FirstDialogueState.GameStarted;
-    }
-
-    public bool FirstSceneStatusNeverPlayAgain()
-    {
-        return dialogueState == FirstDialogueState.NeverPlayAgain;
-    }
-
-    public void EndFirstScene()
-    {
-        dialogueState = FirstDialogueState.DialogueEnded;
-    }
-
-    public void IsPlayinfFirstScene()
-    {
-        dialogueState = FirstDialogueState.DialoguePlaying;
-    }
-
-    public void NeverPlayFirstScene()
-    {
-        dialogueState = FirstDialogueState.NeverPlayAgain;
+        if (dialogueDicio.ContainsKey(dialogueKey))
+        {
+            return dialogueDicio[dialogueKey];
+        }
+        else return false;
     }
 
 }

@@ -4,27 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class NpcDialogue : MonoBehaviour
 {
-    //public string[] dialogueNpc;
-    //public int dialogueIndex;
-    //public string npcName;
 
-    public GameObject clickToSpeak;
-    //public GameObject dialoguePanel;
-    //public Text dialogueText;
-
-    //public Text nameNpc;
-    //public Image imageNpc;
-    //public Sprite spriteNpc;
-    [SerializeField] string scene;
-    [SerializeField]
-    private DialogueSequenceData dialogueScene;
+    [Header("Diálogo")]
+    [SerializeField] private DialogueSequenceData dialogueScene;
     private DialogueManager dialogueManager;
+
+    [Header("Variáveis")]
+    [SerializeField] string scene;
+    [SerializeField] private GameObject clickToSpeak;
     private bool readyToSpeak;
+
+
     void Start()    
     {
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         DisactiveClickToSpeak();
-        //dialoguePanel_UI = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,40 +36,12 @@ public class NpcDialogue : MonoBehaviour
             DisactiveClickToSpeak();
             readyToSpeak = false;
 
-            yield return new WaitUntil(() => dialogueManager.dialogue == false);
+            yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada até que a condição seja verdadeira
 
             SceneManager.LoadScene(scene);
         }
-        // Aqui a corrotina fica "parada" até que a condição seja verdadeira
-        
     }
-    //void NextDialogue()
-    //{
-    //    dialogueIndex++;
 
-    //    if (dialogueIndex < dialogueNpc.Length)
-    //    {
-    //        StartCoroutine(ShowDialogue());
-    //    }
-    //    else
-    //    {
-    //        dialoguePanel.SetActive(false);
-    //        startDialogue = false;
-    //        dialogueIndex = 0;
-    //        FindAnyObjectByType<Player>().speedControl = 1;
-    //        //FindAnyObjectByType<ChangeAnimDialoguePanel>().closePanel = true;
-    //    }
-    //}
-    //void StartDialogue()
-    //{
-    //    nameNpc.text = npcName;
-    //    imageNpc.sprite = spriteNpc;
-    //    startDialogue = true;
-    //    dialogueIndex = 0;
-    //    //FindAnyObjectByType<ChangeAnimDialoguePanel>().closePanel = false;
-    //    dialoguePanel.SetActive(true);
-    //    StartCoroutine(ShowDialogue());
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

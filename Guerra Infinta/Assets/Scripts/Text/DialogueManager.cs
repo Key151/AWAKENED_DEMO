@@ -65,13 +65,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        var gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
-        if (gameManager.FirstSceneStatusPlaying())
-        {
-            gameManager.EndFirstScene();
-        }
-        FindAnyObjectByType<Player>().speedControl = 1;
         dialogue = false;
+        FindAnyObjectByType<Player>().speedControl = 1;
         dialoguePanel.SetActive(false);
     }
 

@@ -27,7 +27,6 @@ public class BlackScreen : MonoBehaviour
     public void EndAnimationBS()
     {
         this.gameObject.SetActive(false);
-        gameManager.NeverPlayFirstScene();
     }
 
 }

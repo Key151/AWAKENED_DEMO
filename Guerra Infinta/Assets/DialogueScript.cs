@@ -1,30 +1,52 @@
+using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
+    [Header("Dicionário e GameManager-Save")]
+    [SerializeField] private string dictionaryKey;
+    GameManager gameManager;
 
-    [SerializeField] private DialogueManager dialogueManager;
+    [Header("Diálogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
-    private static bool hasDialoguePlayed;
+    DialogueManager dialogueManager;
+
+    private bool dialogueIsOn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = gameManager = GameObject.Find("SaveSystem").GetComponent<GameManager>();
         dialogueManager = FindAnyObjectByType<DialogueManager>();
-        hasDialoguePlayed = false;
+        dialogueIsOn = false;
     }
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!hasDialoguePlayed)
+        if (!gameManager.GetDialogueValue(dictionaryKey))
         {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                PauseController.SetPause(true);
-                dialogueManager.StartDialogue(dialogueSequenceStartGame);
-                hasDialoguePlayed = true;
-            }
+            StartDialogue();
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
         }
     }
+
+    public void StartDialogue()
+    {
+        if (!dialogueIsOn)
+        {
+            PauseController.SetPause(true);
+            dialogueManager.StartDialogue(dialogueSequenceStartGame);
+            dialogueIsOn = true;
+        }
+        else if (dialogueIsOn && !dialogueManager.dialogue)
+        {
+            gameManager.SaveDialogue(dictionaryKey, true);
+        }
+    }
+
 }

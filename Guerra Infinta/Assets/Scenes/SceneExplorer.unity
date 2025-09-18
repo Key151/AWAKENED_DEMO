@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screen: {fileID: 1818204973}
+  dictionaryKey: dialogue_Inicial
   dialogueSequenceStartGame: {fileID: 11400000, guid: 03a1f2ba1d0cb4546ab8ed89732c46d7, type: 2}
 --- !u!1 &208495595
 GameObject:
@@ -17950,7 +17951,7 @@ GameObject:
   - component: {fileID: 1900761655}
   - component: {fileID: 1900761654}
   m_Layer: 0
-  m_Name: Dialogue-1
+  m_Name: dialogue-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17983,9 +17984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d95ea68eee6b8f4a80bda148d34b135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 0}
+  dictionaryKey: dialogue_1
   dialogueSequenceStartGame: {fileID: 11400000, guid: 2598e511c8d409543ab351c09cce9d44, type: 2}
-  index: 0
 --- !u!61 &1900761655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19260,10 +19260,10 @@ SceneRoots:
   - {fileID: 1990903634}
   - {fileID: 1245338939}
   - {fileID: 441754496}
-  - {fileID: 1902259557}
   - {fileID: 369866874}
   - {fileID: 2023960288}
   - {fileID: 1988993176}
   - {fileID: 558997093}
   - {fileID: 409282919}
+  - {fileID: 1902259557}
   - {fileID: 978605942}
