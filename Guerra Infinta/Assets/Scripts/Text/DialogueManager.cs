@@ -13,8 +13,13 @@ public class DialogueManager : MonoBehaviour
     public bool dialogue;
 
     private DialogueSequenceData currentSequence;
+    LanguageManager languageManager;
     private int currentIndex;
-    private Language currentLanguage = Language.PtBr;
+
+    public void Start()
+    {
+        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
+    }
 
     public void StartDialogue(DialogueSequenceData sequence)
     {
@@ -59,8 +64,8 @@ public class DialogueManager : MonoBehaviour
             iconImage.color = cor;
         }
 
-            speakerText.text = line.SpeakerName;
-        dialogueText.text = line.GetText(currentLanguage);
+        speakerText.text = line.SpeakerName;
+        dialogueText.text = line.GetText(languageManager.GetLanguage());
     }
 
     private void EndDialogue()
@@ -70,28 +75,14 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-
-    /*
-    public void StartMenuText(DialogueSequenceData sequence, Text text)
+    public void ChangeLenguagePtBr()
     {
-        currentSequence = sequence;
-        currentIndex = 0;
-        var line = currentSequence.dialogueLines[currentIndex];
-        text.text = line.GetText(currentLanguage);
-    }*/
-
-
-    public void SetLanguage(Language language)
-    {
-        currentLanguage = language;
-    }
-    public void ChangePtBr()
-    {
-        currentLanguage = Language.PtBr;
+        languageManager.SetLanguage(Language.PtBr);
     }
 
-    public void ChangeEng()
+    public void ChangeLenguageEng()
     {
-        currentLanguage = Language.Eng;
+        languageManager.SetLanguage(Language.Eng);
     }
+
 }
