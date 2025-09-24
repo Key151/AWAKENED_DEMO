@@ -5,8 +5,16 @@ using UnityEngine.EventSystems;
 //IPointerEnterHandler, IPointerExitHandler - É usado para saber se um objeto está com o mouse em cima ---- ISelectHandler, IDeselectHandler - É usado para saber se um botão está selecionado
 public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject enemyHUD;
+    [SerializeField] private GameObject enemyHUD;
+    [SerializeField] private SpriteRenderer seta;
     private bool selected = false;
+    private Animator anim;
+    private Color corNormal = Color.white;
+    private Color corHighlight = Color.yellow;
+
+    private const string Idle = "Seta Idle";
+
+    private const string Moving = "Seta Animation";
 
     void Start()
     {
@@ -15,18 +23,17 @@ public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             if (!selected)
             {
-                enemyHUD.SetActive(false);
-                //Debug.Log("Inicio-1");
+                anim = seta.GetComponent<Animator>();
+                NormalState();
             }
-            //Debug.Log("Inicio");
+            
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         if (enemyHUD != null)
         {
-            enemyHUD.SetActive(false);
-            //Debug.Log("Selecionado");
+            NormalState();
         }
     }
 
@@ -34,16 +41,32 @@ public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if (enemyHUD != null)
         {
-            enemyHUD.SetActive(true);
+            SelectedState();
             selected = true;
-            //Debug.Log("Deselecionado");
         }
     }
 
     public void OnClick()
     {
-        enemyHUD.SetActive(false);
+        NormalState();
+        //seta.color = (selected ? corNormal : corHighlight);
     }
+
+    public void NormalState()
+    {
+        enemyHUD.SetActive(false);
+        seta.color = corNormal;
+        anim.Play(Idle);
+    }
+
+    public void SelectedState()
+    {
+        enemyHUD.SetActive(true);
+        seta.color = corHighlight;
+        anim.Play(Moving);
+    } 
+
+
 
 
 }
