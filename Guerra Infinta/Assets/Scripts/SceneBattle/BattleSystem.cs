@@ -24,7 +24,8 @@ public class BattleSystem : MonoBehaviour
 
 
     [Header("Enemy Settings")]
-    public GameObject[] enemyPrefab;
+    [SerializeField] private float timer;
+    [SerializeField] private GameObject[] enemyPrefab;
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
     public List<BattleHUD> enemyHUD;
@@ -50,7 +51,7 @@ public class BattleSystem : MonoBehaviour
     [Header("Itens")]
     [SerializeField] private InventoryBattleList inventory;
 
-    [Header("Classes")]
+    [Header("UI")]
     [SerializeField] private ItensUI itensUI;
     [SerializeField] private VerificateButtonUI VerificateButtonUI;
 
@@ -62,12 +63,6 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
 
-        //battleEnemy = new BattleEnemy();
-
-        StartCoroutine(SetupBattle());
-    }
-    IEnumerator SetupBattle()
-    {
         //Cria uma copia do playerPrefab com a posicao do PlayerStation1
         GameObject playerGO = Instantiate(playerPrefab);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
@@ -76,6 +71,10 @@ public class BattleSystem : MonoBehaviour
         GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
+        StartCoroutine(SetupBattle());
+    }
+    IEnumerator SetupBattle()
+    {
         for (int i = 0; i <= 2; i++)
         {
             //Cria uma copia do enemyPrefab com a posicao do EnemyStation
@@ -151,10 +150,6 @@ public class BattleSystem : MonoBehaviour
         switch (state)
         {
             case BattleState.PLAYERTURN:
-                //namehud = BattleList[0].ToString();
-                //turnText.text = "Turno: " + namehud;
-                //hudController.ChanegenameTurn(turnText);
-                //Debug.Log("Player:" + BattleList);
                 PlayerTurn(BattleList[0]);
                 UpdateHudImage(BattleList[0]);
                 break;
@@ -173,14 +168,12 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn(Unit player_Unit)
     {
         VerificateButtonUI.ActivateButtons();
-        //VerificateButtonUI.MovePanel(BattleList[0] as UnitPlayer);
         player_Unit.HealAP();
         player_Unit.selected = true;
         BattleList[0].selected = true;
     }
-    IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
+    private IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
-        yield return new WaitForSeconds(0.1f);
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
         playerAtual.selected = false;
@@ -189,16 +182,17 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.ActivateDialguePanel();
         dialogueText.text = playerAtual.UnitName + " ataca!";
         playerAtual.Attack(enemyUnit[enemyNumber]);
+
+        yield return new WaitForSeconds(timer);
+
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
-        //Debug.Log($"{playerAtual} está com {playerAtual.DamageBonus} de dano bonus e atacando {enemyUnit[enemyNumber]}");
-        yield return new WaitForSeconds(0.5f);
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
     }
 
     // TURNO DO INIMIGO
-    IEnumerator EnemyTurn(Unit enemy)
+    private IEnumerator EnemyTurn(Unit enemy)
     {
         UnitPlayer player = ChoosePlayer(playerUnit, playerUnit_2);
 
@@ -235,7 +229,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(2f);
             VerificateButtonUI.DisactivateDialguePanel();
-            SavePLayer();
+            SavePlayers();
             SceneManager.LoadScene(sceneName);
         }
         else if (state == BattleState.LOST)
@@ -244,7 +238,7 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você foi derrotado.";
             yield return new WaitForSeconds(2f);
             VerificateButtonUI.DisactivateDialguePanel();
-            SavePLayer();
+            SavePlayers();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -262,26 +256,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    //BOTAO DO INIMIGO
-    /*
-    public void UseItem(int index, Unit player, Unit target, int enemyNumber)
+    public IEnumerator UseItem(int index, int enemyNumber)
     {
-        if (index < 0 || index >= inventory.inventoryList.Count) return;
-
-        //inventory.inventoryList[index].ApplyEffect(player, target);
-        inventory.inventoryList[index].ApplyEffect(player, enemyUnit[enemyNumber]);
-        Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
-        itensUI.ReduceQuantityIten(index);
-        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
-
-        BattleList.Add(BattleList[0]);
-        BattleList.RemoveAt(0);
-        VerificateTurn();
-    }*/
-
-    public void UseItem(int index, int enemyNumber)
-    {
-        if (index < 0 || index >= inventory.inventoryList.Count) return;
+        if (index < 0 || index >= inventory.inventoryList.Count) yield return null;
 
         //inventory.inventoryList[index].ApplyEffect(player, target);
         inventory.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
@@ -289,6 +266,8 @@ public class BattleSystem : MonoBehaviour
         Debug.Log(index);
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
+
+        yield return new WaitForSeconds(timer);
 
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
@@ -330,10 +309,9 @@ public class BattleSystem : MonoBehaviour
     public void GetToAttackEnemy(int enemyNumber)
     {
         StartCoroutine(AtackEnemy(BattleList[0], enemyNumber));
-
     }
 
-    public void SavePLayer()
+    public void SavePlayers()
     {
         playerUnit.SaveData();
         playerUnit_2.SaveData();

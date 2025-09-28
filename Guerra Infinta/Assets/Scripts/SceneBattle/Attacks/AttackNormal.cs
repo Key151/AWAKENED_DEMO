@@ -8,9 +8,7 @@ public class AttackNormal : IAttack
         int interval = 3;
         Random r = new();
         int DanoTotal = attacker.TotalDamage() + r.Next(-interval, interval);
-
-        target.TakeDamage(DanoTotal);
-
+        target.StartCoroutine(target.TakeDamage(DanoTotal));
         attacker.CurrentActionPoint -= valorBase;
 
         if (attacker.CurrentActionPoint <= 0)

@@ -62,6 +62,6 @@ public class EnemyButtonController : MonoBehaviour
     {
         DisactivateButtonsEnemy();
         verificateButtonUI.DisactivateReturnButton();
-        battleSystem.UseItem(itensIndex, enemyNumber);
+        StartCoroutine(battleSystem.UseItem(itensIndex, enemyNumber));
     }
 }

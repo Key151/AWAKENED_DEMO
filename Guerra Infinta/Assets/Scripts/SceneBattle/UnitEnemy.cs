@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using static BattleSystem;
 
@@ -11,10 +12,11 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         return base.CheckDead();
     }
 
-    public override void TakeDamage(int damage)
+    public override IEnumerator TakeDamage(int damage)
     {
         textDamage.ShowDamage(damage);
-        base.TakeDamage(damage);
+        StartCoroutine(base.TakeDamage(damage));
+        yield return new WaitForSeconds(1f);
     }
 
     public BattleState turnUnit()

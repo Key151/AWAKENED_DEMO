@@ -52,7 +52,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     {
         base.Awake();
         // Tenta carregar dados existentes
-        var savedPlyer = GameManager.Instance.loadPlayer(UnitName);
+        var savedPlyer = GameManager.Instance.LoadPlayer(UnitName);
 
         if (savedPlyer != null)
         {
@@ -67,6 +67,6 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
             playerId = UnitName,
             hp = CurrentHP
         };
-        GameManager.Instance.savePlayer(playerData);
+        GameManager.Instance.SavePlayer(playerData);
     }
 }

@@ -101,7 +101,7 @@ public class VerificateButtonUI : MonoBehaviour
         DisactivateItensPanel();
     }
 
-    // ATUALIZA OS BOTÔES DOS INIMIGOS
+    // ATUALIZA OS BOTOES DOS INIMIGOS
 
     public void KillEnemyButton(int enemyKilled) //Não permite que o botão do inimigo fique ativo
     {

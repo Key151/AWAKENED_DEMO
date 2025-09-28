@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Unit : MonoBehaviour, IDamageable
 {
@@ -6,13 +7,14 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int damageBase;
     [SerializeField] private int maxHP;
     [SerializeField] private int spd;
-    [SerializeField] private bool dead;
+
     [SerializeField] private int maxActionPoint;
     [SerializeField] private int currentActionPoint;
 
     private IAttack attackNormal;
     private int currentHP;
     private int damageBonus = 0;
+    private bool dead;
     public bool attacking;
     public bool selected;
     public bool takingDamage;
@@ -76,7 +78,7 @@ public class Unit : MonoBehaviour, IDamageable
         attackNormal.Attack(this, target);
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual IEnumerator TakeDamage(int damage)
     {
         currentHP -= damage;
         if (currentHP <= 0)
@@ -85,6 +87,7 @@ public class Unit : MonoBehaviour, IDamageable
             dead = true;
         }
         Debug.Log($"{this} recebeu {damage} de dano");
+        yield return new WaitForSeconds(1f);
     }
 
     public void HealAP()

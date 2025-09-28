@@ -7,6 +7,6 @@ public class ItemDamage: ApplyItem
 
     public override void ApplyEffect(Unit player, Unit target)
     {
-        target.TakeDamage(damageAmount + player.TotalDamage());
+        target.StartCoroutine(target.TakeDamage(damageAmount + player.TotalDamage()));
     }
 }

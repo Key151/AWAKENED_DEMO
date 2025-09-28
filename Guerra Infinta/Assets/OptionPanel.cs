@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static BattleSystem;
 
 public class OptionPanel : MonoBehaviour
 {
@@ -29,7 +27,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnBackButton()
     {
-        battleSystem.SavePLayer();
+        battleSystem.SavePlayers();
         SceneManager.LoadScene(sceneName);
     }
 

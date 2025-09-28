@@ -20,13 +20,13 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void savePlayer(PlayerData player)
+    public void SavePlayer(PlayerData player)
     {
         //Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
         playerDicio[player.playerId] = player;
     }
 
-    public PlayerData loadPlayer(string playerId)
+    public PlayerData LoadPlayer(string playerId)
     {
         //Debug.Log($"[LOAD] Tentando carregar {playerId}");
 

@@ -7,7 +7,7 @@ public class EffectPoison : ScriptableObject, IEffects
     [SerializeField] private int duration;
     public void Effect(Unit target)
     {
-        target.TakeDamage(damagePerTurn);
+        target.StartCoroutine(target.TakeDamage(damagePerTurn));
     }
 
     public bool verificate()
