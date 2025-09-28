@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tile
+    uniqueID: 330495243
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
