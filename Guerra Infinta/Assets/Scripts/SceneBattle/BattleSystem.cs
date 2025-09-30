@@ -110,8 +110,8 @@ public class BattleSystem : MonoBehaviour
     {
         DisableHudImage();
         VerificateButtonUI.DisactivateDialguePanel();
-        UpdateHud(playerHUD, playerUnit);
-        UpdateHud(playerHUD_2, playerUnit_2);
+        playerHUD.UpdateHUD(playerUnit);
+        playerHUD_2.UpdateHUD(playerUnit_2);
 
         for (int i = BattleList.Count - 1; i >= 0; i--)
         {
@@ -184,8 +184,8 @@ public class BattleSystem : MonoBehaviour
         playerAtual.Attack(enemyUnit[enemyNumber]);
 
         yield return new WaitForSeconds(timer);
-
-        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
+        //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
+        enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
@@ -197,22 +197,25 @@ public class BattleSystem : MonoBehaviour
         UnitPlayer player = ChoosePlayer(playerUnit, playerUnit_2);
 
         VerificateButtonUI.ActivateDialguePanel();
-        //battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
 
-        if (Random.Range(0, 10) >= 3)
+        dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
+        enemy.Attack(player);
+        yield return new WaitForSeconds(timer);
+
+        //battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
+        /*if (Random.Range(0, 10) >= 3)
         {
             dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
             enemy.Attack(player);
-            //player.takingDamage = true;
             yield return new WaitForSeconds(timer);
-            //player.takingDamage = false;
         }
-
         else
         {
-           dialogueText.text = enemy.UnitName + " se cura" + "!";
+            int heal = Random.Range(5, 15);
+            dialogueText.text = enemy.UnitName + " cura " + heal + " de vida!";
+            enemy.Heal(heal);
             yield return new WaitForSeconds(timer);
-        }
+        }*/
 
         VerificateButtonUI.DisactivateDialguePanel();
         BattleList.Add(BattleList[0]);
@@ -248,11 +251,26 @@ public class BattleSystem : MonoBehaviour
     {
         if (Random.Range(1, 3) == 1)
         {
-            return playerturn1;
+            if (!playerturn1.CheckDead())
+            {
+                return playerturn1;
+            }
+            else
+            {
+                return playerturn2;
+            }
+            
         }
         else
         {
-            return playerturn2;
+            if(!playerturn2.CheckDead())
+            {
+                return playerturn2;
+            }
+            else
+            {
+                return playerturn1;
+            }
         }
     }
 
@@ -260,25 +278,16 @@ public class BattleSystem : MonoBehaviour
     {
         if (index < 0 || index >= inventory.inventoryList.Count) yield return null;
 
-        //inventory.inventoryList[index].ApplyEffect(player, target);
         inventory.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
-        //Debug.Log($"Usou o item {inventory.inventoryList[index].name}");
-        Debug.Log(index);
         itensUI.ReduceQuantityIten(index);
-        enemyHUD[enemyNumber].SetHP(enemyUnit[enemyNumber].CurrentHP);
+        enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
+        //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
 
         yield return new WaitForSeconds(timer);
 
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();
-    }
-
-    public void UpdateHud(BattleHUD hud, Unit unit)
-    {
-        hud.SetHP(unit.CurrentHP);
-        hud.UpdateHPText(unit);
-        hud.SetActionPoint(unit);
     }
 
     public void UpdateHudImage(Unit unit)

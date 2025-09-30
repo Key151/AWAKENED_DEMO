@@ -37,17 +37,26 @@ public class BattleHUD : MonoBehaviour
         DisactiveHudImage();
     }
 
-    public void SetHP(int hp)
+    public void EnemySetHP(int hp)
+    {
+        hpSlider.value = hp;
+    }
+
+    public IEnumerator PlayerSetHP(int hp)
     {
         while(hpSlider.value != hp)
         {
             hpSlider.value--;
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
     public void UpdateHPText(Unit unit)
     {
-        hpText.text = unit.CurrentHP + "/" + unit.MaxHP;
+        if (hpText != null)
+        {
+            hpText.text = unit.CurrentHP + "/" + unit.MaxHP;
+        }
     }
 
     public void SetActionPoint(Unit unit)
@@ -73,5 +82,12 @@ public class BattleHUD : MonoBehaviour
             return;
         }
     }
+
+    public void UpdateHUD(Unit unit)
+    {
+        StartCoroutine(PlayerSetHP(unit.CurrentHP));
+        UpdateHPText(unit);
+    }
+
 
 }

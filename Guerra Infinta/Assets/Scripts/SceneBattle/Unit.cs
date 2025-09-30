@@ -73,7 +73,7 @@ public class Unit : MonoBehaviour, IDamageable
         transform.position = new Vector2(x, y);
     }
 
-   public void Attack(Unit target)
+   public virtual void Attack(Unit target)
     {
         attackNormal.Attack(this, target);
     }

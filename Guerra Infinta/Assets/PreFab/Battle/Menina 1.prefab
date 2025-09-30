@@ -104,9 +104,6 @@ MonoBehaviour:
   damageBase: 10
   maxHP: 50
   spd: 25
-  dead: 0
-  origenX: 0
-  origenY: 0
   maxActionPoint: 100
   currentActionPoint: 100
   attacking: 0

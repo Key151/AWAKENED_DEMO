@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: 
   icon: {fileID: 0}
-  portugueseText: "Configur\xE7\xF5es"
+  portugueseText: "Configura\xE7\xF5es"
   englishText: Settings
