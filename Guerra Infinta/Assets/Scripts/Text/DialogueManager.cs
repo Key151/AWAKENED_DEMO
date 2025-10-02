@@ -27,14 +27,14 @@ public class DialogueManager : MonoBehaviour
         currentSequence = sequence;
         currentIndex = 0;
         dialoguePanel.SetActive(true);
-        FindAnyObjectByType<Player>().speedControl = 0f;
+        PauseController.SetPause(true);
         ShowLine();
     }
 
     public void NextLine()
     {
         currentIndex++;
-        Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
+        //Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
         if (currentIndex >= currentSequence.dialogueLines.Count)
         {
             PauseController.SetPause(false);
@@ -71,18 +71,6 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         dialogue = false;
-        FindAnyObjectByType<Player>().speedControl = 1;
         dialoguePanel.SetActive(false);
     }
-
-    public void ChangeLenguagePtBr()
-    {
-        languageManager.SetLanguage(Language.PtBr);
-    }
-
-    public void ChangeLenguageEng()
-    {
-        languageManager.SetLanguage(Language.Eng);
-    }
-
 }
