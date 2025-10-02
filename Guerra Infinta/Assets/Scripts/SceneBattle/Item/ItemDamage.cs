@@ -5,6 +5,7 @@ public class ItemDamage: ApplyItem
 {
     [SerializeField] private int damageAmount;
 
+    [SerializeField] private string SfxName;
     public override void ApplyEffect(Unit player, Unit target)
     {
         target.StartCoroutine(target.TakeDamage(damageAmount + player.TotalDamage()));

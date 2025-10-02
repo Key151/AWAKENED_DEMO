@@ -7,11 +7,11 @@ public class DialogoInicial : MonoBehaviour
     [SerializeField] private GameObject screen;
     BlackScreen blackScreen;
 
-    [Header("Dicionário e GameManager-Save")]
+    [Header("Dicionaio e GameManager-Save")]
     [SerializeField] private string dictionaryKey;
     SaveDialogueManager saveDialogueManager;
 
-    [Header("Diálogo")]
+    [Header("Diaogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
     DialogueManager dialogueManager;
     private bool dialogueIsOn;

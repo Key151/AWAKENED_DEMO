@@ -51,6 +51,10 @@ public class BattleSystem : MonoBehaviour
     [Header("Itens")]
     [SerializeField] private InventoryBattleList inventory;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager;
+    private string BattleSong = "Battle01";
+
     [Header("UI")]
     [SerializeField] private ItensUI itensUI;
     [SerializeField] private VerificateButtonUI VerificateButtonUI;
@@ -59,7 +63,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Maneger = new BattleManager();
+        audioManager.PlayBGM(BattleSong);
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
 

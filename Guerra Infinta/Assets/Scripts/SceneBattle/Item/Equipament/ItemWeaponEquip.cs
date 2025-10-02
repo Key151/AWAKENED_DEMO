@@ -8,6 +8,8 @@ public class ItemWeaponEquip  : Item, IEquipment
     public string Description => description;
 
     [SerializeField] private int bonusDamage; // Exemplo de bônus de dano
+
+    [SerializeField] private string SfxName;
     public void Equip(UnitPlayer player)
     {
         player.DamageBonus += bonusDamage;

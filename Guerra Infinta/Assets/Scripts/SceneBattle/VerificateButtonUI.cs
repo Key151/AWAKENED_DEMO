@@ -17,7 +17,7 @@ public class VerificateButtonUI : MonoBehaviour
 
     public GameObject[] enemyButtonsGO; // GameObject dos botões dos inimigos para poder ativar e desavitar
     public Button[] enemyButtons;       // Buttons dos botões dos inimigos para poder selecionar
-    public GameObject[] verificateEnemyButton; // Objeto que pertence ao botão, se ele for desativado, o botão fica desativado
+    public GameObject[] verificateEnemyButton; // Objeto que pertence ao botao, se ele for desativado, o botao fica desativado
     //public GameObject[] enemyUI;
 
     // ATIVAR BOTOES
@@ -62,7 +62,7 @@ public class VerificateButtonUI : MonoBehaviour
     // DESATIVAR BOTOES
 
 
-    public void DisactivateButtons() // Desativa os botões de ataque e Voltar
+    public void DisactivateButtons() // Desativa os botoes de ataque e Voltar
     {
         attackButton.SetActive(false);
         itensButton.SetActive(false);
@@ -72,7 +72,7 @@ public class VerificateButtonUI : MonoBehaviour
     }
 
     
-    public void DisactivateButtonsEnemy() //Desativa  os botões para atacar os inimigos
+    public void DisactivateButtonsEnemy() //Desativa  os botoes para atacar os inimigos
     {
         for (int i = 0; i < enemyButtonsGO.Length; i++)
         {
@@ -103,7 +103,7 @@ public class VerificateButtonUI : MonoBehaviour
 
     // ATUALIZA OS BOTOES DOS INIMIGOS
 
-    public void KillEnemyButton(int enemyKilled) //Não permite que o botão do inimigo fique ativo
+    public void KillEnemyButton(int enemyKilled) //Nao permite que o botao do inimigo fique ativo
     {
         verificateEnemyButton[enemyKilled].SetActive(false);
     }
