@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DungeonCrawler_Example_0: -5416259480698169722
+      DungeonCrawler_Example_1: -6876759551743505342
+      DungeonCrawler_Example_2: -8668871632956449664
+      DungeonCrawler_Example_3: 5737569813632650127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

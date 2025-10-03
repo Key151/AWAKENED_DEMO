@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Overworld - Water - Thick 128x72_0: -1820510949420084278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

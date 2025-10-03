@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      104x80 Temple Kit_0: -881208495127396992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

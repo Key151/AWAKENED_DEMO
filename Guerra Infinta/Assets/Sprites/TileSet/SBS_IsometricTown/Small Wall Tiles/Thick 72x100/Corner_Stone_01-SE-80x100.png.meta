@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corner_Stone_01-SE-80x100_0: 4081837209840808976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

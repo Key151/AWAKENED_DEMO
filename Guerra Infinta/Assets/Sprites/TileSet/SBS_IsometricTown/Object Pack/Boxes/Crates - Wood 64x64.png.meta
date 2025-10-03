@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crates - Wood 64x64_0: 6769189956639450244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

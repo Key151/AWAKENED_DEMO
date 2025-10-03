@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flat_Stone_01_WindowA-SE-64x96_0: -5714814154182512557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

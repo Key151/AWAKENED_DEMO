@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floor_Stone_02-128x64_0: 4092306750704675422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

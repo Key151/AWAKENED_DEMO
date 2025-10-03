@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Copings - Stone 1 128x128_0: -6958423840262887759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

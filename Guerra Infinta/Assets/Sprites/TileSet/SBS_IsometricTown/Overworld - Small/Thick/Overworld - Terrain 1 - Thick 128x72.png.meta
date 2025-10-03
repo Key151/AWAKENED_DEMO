@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Overworld - Terrain 1 - Thick 128x72_0: 2166697213659411568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

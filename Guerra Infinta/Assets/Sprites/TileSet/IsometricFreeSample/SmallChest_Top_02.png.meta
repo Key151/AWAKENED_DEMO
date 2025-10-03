@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SmallChest_Top_02_0: -3043170382127628621
+      SmallChest_Top_02_1: 3091889170138550503
+      SmallChest_Top_02_2: 416374912084945240
+      SmallChest_Top_02_3: 5701757756373285077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floor_Rocky_01-128x64_0: 3379833564543856102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

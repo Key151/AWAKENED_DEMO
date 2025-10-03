@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Path_Stones_23-128x64_0: 4318713225541289698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WallBrick_Tall_01_0: -7131856632255359611
+      WallBrick_Tall_01_1: 7287886172351705763
+      WallBrick_Tall_01_2: -1407436241008772500
+      WallBrick_Tall_01_3: 3063968250309775012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

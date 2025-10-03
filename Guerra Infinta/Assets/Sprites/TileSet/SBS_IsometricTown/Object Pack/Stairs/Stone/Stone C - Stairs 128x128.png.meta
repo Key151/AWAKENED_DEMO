@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stone C - Stairs 128x128_0: 8130440457248554937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Isometric Buildings 2 - 64x96_0: -4873193004133875349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

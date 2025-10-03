@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Corner_Brick_01-SW-80x100_0: 4133758571978731317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

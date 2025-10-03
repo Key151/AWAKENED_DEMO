@@ -8,7 +8,7 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] private string dictionaryKey;
     SaveDialogueManager saveDialogueManager;
 
-    [Header("Diaogo")]
+    [Header("Dialogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
     DialogueManager dialogueManager;
 

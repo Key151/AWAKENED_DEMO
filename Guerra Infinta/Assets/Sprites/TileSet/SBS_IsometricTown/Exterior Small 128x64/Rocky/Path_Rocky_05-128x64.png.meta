@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Path_Rocky_05-128x64_0: 7532660641080008407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

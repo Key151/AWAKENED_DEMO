@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thick_Wood_01-SW-72x100_0: 2632651361055636410
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

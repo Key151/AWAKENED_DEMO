@@ -145,13 +145,31 @@ MonoBehaviour:
     ImpulseShape: 4
     CustomImpulseShape:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 5.877086
+        outSlope: 5.877086
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.028526442
+      - serializedVersion: 3
+        time: 1
+        value: -0.0028620362
+        inSlope: 9.595276
+        outSlope: 9.595276
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09478778
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     ImpulseDuration: 1
     ImpulseType: 0
-    DissipationRate: 0.25
+    DissipationRate: 0.409
     RawSignal: {fileID: 0}
     AmplitudeGain: 1
     FrequencyGain: 1
@@ -178,9 +196,9 @@ MonoBehaviour:
     ImpactRadius: 100
     DirectionMode: 0
     DissipationMode: 2
-    DissipationDistance: 100
+    DissipationDistance: 100.56
     PropagationSpeed: 343
-  DefaultVelocity: {x: 0, y: -1, z: 0}
+  DefaultVelocity: {x: 1, y: 0.2, z: 0}
 --- !u!1 &3778177419026114805
 GameObject:
   m_ObjectHideFlags: 0

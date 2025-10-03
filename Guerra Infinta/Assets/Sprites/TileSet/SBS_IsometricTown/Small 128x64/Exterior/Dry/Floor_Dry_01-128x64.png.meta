@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floor_Dry_01-128x64_0: -5129399203116778561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thick_Stone_01_WindowB-SE-72x100_0: 2016084579736500860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

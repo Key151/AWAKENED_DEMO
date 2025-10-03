@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floor_Ice_02-128x64_0: 7213615108328549987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

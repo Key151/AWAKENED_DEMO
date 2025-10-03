@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flat_Wood_01_WindowB-SE-64x96_0: -3881952965353059086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

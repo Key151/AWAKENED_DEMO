@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Isometric Town Roofing - 143x92_0: 8583985961523992691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

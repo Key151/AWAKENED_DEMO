@@ -89,6 +89,11 @@ public class BattleSystem : MonoBehaviour
             enemyHUD[i].SetHUD(enemyUnit[i]);
         }
 
+        for(int i = EnemysList.qtdEnemy; i < enemyBattleStation.Count; i++)
+        {
+            VerificateButtonUI.KillEnemyButton(i);
+        }
+
         BattleList = new List<Unit>() { playerUnit, playerUnit_2 };
 
         foreach (var enemy in enemyUnit)
@@ -100,7 +105,7 @@ public class BattleSystem : MonoBehaviour
 
         VerificateButtonUI.ActivateDialguePanel();
 
-        dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
+        //dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
 
         playerHUD.SetHUD(playerUnit);
         playerHUD_2.SetHUD(playerUnit_2);

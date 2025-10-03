@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Floor_Grill_01-128x64_0: 6782863652485665004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

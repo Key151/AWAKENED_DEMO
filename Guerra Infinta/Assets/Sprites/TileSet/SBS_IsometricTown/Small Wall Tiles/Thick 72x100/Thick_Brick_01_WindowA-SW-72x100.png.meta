@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thick_Brick_01_WindowA-SW-72x100_0: 6752671281101730851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
