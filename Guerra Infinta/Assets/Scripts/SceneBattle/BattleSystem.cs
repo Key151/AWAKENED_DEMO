@@ -25,7 +25,6 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Enemy Settings")]
     [SerializeField] private float timer;
-    [SerializeField] private GameObject[] enemyPrefab;
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
     public List<BattleHUD> enemyHUD;
@@ -79,10 +78,10 @@ public class BattleSystem : MonoBehaviour
         GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
-        for (int i = 0; i <= 2; i++)
+        for (int i = 0; i < EnemysList.qtdEnemy; i++)
         {
             //Cria uma copia do enemyPrefab com a posicao do EnemyStation
-            GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
+            GameObject enemyGO = Instantiate(EnemysList.enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
 
             //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
             enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
@@ -130,8 +129,6 @@ public class BattleSystem : MonoBehaviour
             if (enemyUnit[i].CheckDead())
             {
                 enemyUnit[i].gameObject.SetActive(false);
-                //Destroy(enemyUnit[i].gameObject);
-                //enemyUnit.RemoveAt(i);
                 VerificateButtonUI.KillEnemyButton(i);
             }
         }

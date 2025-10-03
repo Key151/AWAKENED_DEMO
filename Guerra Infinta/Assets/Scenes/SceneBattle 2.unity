@@ -2039,6 +2039,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2056260165}
   - {fileID: 530989527}
   - {fileID: 1222266298}
   - {fileID: 685035091}
@@ -2161,10 +2162,6 @@ MonoBehaviour:
   playerHUD: {fileID: 252062346}
   playerHUD_2: {fileID: 1638191999}
   timer: 1
-  enemyPrefab:
-  - {fileID: 508094171281282804, guid: 795688664dd767c438563dfc18fd450e, type: 3}
-  - {fileID: 508094171281282804, guid: a9d6e6a81592bc846a03ec636f9235a5, type: 3}
-  - {fileID: 508094171281282804, guid: b72e950d626c8b640b9b0f9eb35a8f78, type: 3}
   enemyBattleStation:
   - {fileID: 1236580795}
   - {fileID: 1369528205}
@@ -8830,12 +8827,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056260163}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4418392, y: 0.20224759, z: 1364.5225}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.859223, y: -2.3761792, z: 121.06824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 422247236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2059009862
 GameObject:
@@ -9170,9 +9167,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1936426211463276649, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5382348244132129561, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
       propertyPath: m_Name
       value: SaveSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838359139041395296, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9183,7 +9188,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2056260165}
   - {fileID: 1276758885}
   - {fileID: 686646627}
   - {fileID: 594033682}

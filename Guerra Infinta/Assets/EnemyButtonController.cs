@@ -1,9 +1,5 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static BattleSystem;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyButtonController : MonoBehaviour
 {
