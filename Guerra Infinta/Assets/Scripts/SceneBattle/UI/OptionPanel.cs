@@ -28,6 +28,7 @@ public class OptionPanel : MonoBehaviour
     public void OnBackButton()
     {
         battleSystem.SavePlayers();
+        AudioManager.Instance.StopBGM();
         SceneManager.LoadScene(sceneName);
     }
 

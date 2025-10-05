@@ -9,7 +9,8 @@ public class BattleSystem : MonoBehaviour
 {
     public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
     private enum Action { AtkNormal, Item, Def, Move }
-
+    private BattleState state;
+    private List<Unit> BattleList;
 
     //Game Object
     [Header("Player Settings")]
@@ -41,13 +42,6 @@ public class BattleSystem : MonoBehaviour
     [Header("Scene")]
     public string sceneName;
 
-    private BattleState state;
-    private List<Unit> BattleList;
-
-    [Header("HUD")]
-    //HUDController hudController = AddComponent();
-    public string namehud;
-
     [Header("Itens")]
     [SerializeField] private InventoryBattleList inventory;
 
@@ -78,7 +72,7 @@ public class BattleSystem : MonoBehaviour
         GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
-        for (int i = 0; i < EnemysList.qtdEnemy; i++)
+        for (int i = 0; i < enemyPrefab.Count; i++)
         {
             //Cria uma copia do enemyPrefab com a posicao do EnemyStation
             GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
@@ -89,7 +83,7 @@ public class BattleSystem : MonoBehaviour
             enemyHUD[i].SetHUD(enemyUnit[i]);
         }
 
-        for(int i = EnemysList.qtdEnemy; i < enemyBattleStation.Count; i++)
+        for(int i = enemyPrefab.Count; i < enemyBattleStation.Count; i++)
         {
             VerificateButtonUI.KillEnemyButton(i);
         }

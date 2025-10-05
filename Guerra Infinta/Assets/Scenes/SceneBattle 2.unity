@@ -2224,10 +2224,7 @@ MonoBehaviour:
   playerHUD: {fileID: 252062346}
   playerHUD_2: {fileID: 1638191999}
   timer: 1
-  enemyPrefab:
-  - {fileID: 508094171281282804, guid: 795688664dd767c438563dfc18fd450e, type: 3}
-  - {fileID: 508094171281282804, guid: a9d6e6a81592bc846a03ec636f9235a5, type: 3}
-  - {fileID: 508094171281282804, guid: b72e950d626c8b640b9b0f9eb35a8f78, type: 3}
+  enemyPrefab: []
   enemyBattleStation:
   - {fileID: 1236580795}
   - {fileID: 1369528205}
@@ -2239,7 +2236,6 @@ MonoBehaviour:
   dialogueText: {fileID: 1724139436}
   Maneger: {fileID: 530989528}
   sceneName: SceneExplorer
-  namehud: 
   inventory: {fileID: 11400000, guid: fa4e79a983d19a648977841cbff196bd, type: 2}
   BattleSong: Battle01
   itensUI: {fileID: 685035092}
