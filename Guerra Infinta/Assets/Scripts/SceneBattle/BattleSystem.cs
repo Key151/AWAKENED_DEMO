@@ -30,6 +30,8 @@ public class BattleSystem : MonoBehaviour
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
     public List<BattleHUD> enemyHUD;
+    [SerializeField] EnemyButtonController enemyButtonController;
+
 
 
     [Header("Dialogue Settings")]
@@ -81,11 +83,8 @@ public class BattleSystem : MonoBehaviour
             enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
 
             enemyHUD[i].SetHUD(enemyUnit[i]);
-        }
 
-        for(int i = enemyPrefab.Count; i < enemyBattleStation.Count; i++)
-        {
-            VerificateButtonUI.KillEnemyButton(i);
+            enemyButtonController.ActivateEnemyButton(i);
         }
 
         BattleList = new List<Unit>() { playerUnit, playerUnit_2 };
@@ -128,7 +127,7 @@ public class BattleSystem : MonoBehaviour
             if (enemyUnit[i].CheckDead())
             {
                 enemyUnit[i].gameObject.SetActive(false);
-                VerificateButtonUI.KillEnemyButton(i);
+                enemyButtonController.KillEnemyButton(i);
             }
         }
 

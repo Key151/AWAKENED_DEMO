@@ -10,10 +10,11 @@ public class NpcDialogue : MonoBehaviour
     private DialogueManager dialogueManager;
 
     [Header("Variáveis")]
-    [SerializeField] string scene;
     [SerializeField] private GameObject clickToSpeak;
     private bool readyToSpeak;
 
+    [Header("Batalha")]
+    [SerializeField] private StartBattleController startBattleController;
 
     void Start()    
     {
@@ -38,7 +39,7 @@ public class NpcDialogue : MonoBehaviour
 
             yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada até que a condição seja verdadeira
 
-            SceneManager.LoadScene(scene);
+            startBattleController.StartBattle();
         }
     }
 

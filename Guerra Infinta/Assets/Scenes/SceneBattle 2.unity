@@ -2224,7 +2224,8 @@ MonoBehaviour:
   playerHUD: {fileID: 252062346}
   playerHUD_2: {fileID: 1638191999}
   timer: 1
-  enemyPrefab: []
+  enemyPrefab:
+  - {fileID: 508094171281282804, guid: 795688664dd767c438563dfc18fd450e, type: 3}
   enemyBattleStation:
   - {fileID: 1236580795}
   - {fileID: 1369528205}
@@ -2233,6 +2234,7 @@ MonoBehaviour:
   - {fileID: 1952429318}
   - {fileID: 238658156}
   - {fileID: 1340170406}
+  enemyButtonController: {fileID: 889271973}
   dialogueText: {fileID: 1724139436}
   Maneger: {fileID: 530989528}
   sceneName: SceneExplorer
@@ -2555,7 +2557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 666757399446865978, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.4970093
       objectReference: {fileID: 0}
     - target: {fileID: 1865785067615737438, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_Pivot.x
@@ -2655,7 +2657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8295700816117488777, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 150.505
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4693,18 +4695,7 @@ MonoBehaviour:
   optionPanel: {fileID: 1061723422}
   dialoguePanel: {fileID: 2076801145}
   itensPanel: {fileID: 186557374}
-  enemyButtonsGO:
-  - {fileID: 236284967}
-  - {fileID: 1299947478}
-  - {fileID: 269254993}
-  enemyButtons:
-  - {fileID: 236284969}
-  - {fileID: 1299947480}
-  - {fileID: 269254995}
-  verificateEnemyButton:
-  - {fileID: 804407386}
-  - {fileID: 583928032}
-  - {fileID: 1252462104}
+  enemyButtonController: {fileID: 889271973}
 --- !u!4 &1222266298
 Transform:
   m_ObjectHideFlags: 0
@@ -9173,8 +9164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: SceneExplorer
   battleSystem: {fileID: 530989526}
-  VerificateButtonUI: {fileID: 1222266297}
-  EnemyButtonController: {fileID: 889271973}
+  verificateButtonUI: {fileID: 1222266297}
+  enemyButtonController: {fileID: 889271973}
 --- !u!1001 &7492925150676778363
 PrefabInstance:
   m_ObjectHideFlags: 0

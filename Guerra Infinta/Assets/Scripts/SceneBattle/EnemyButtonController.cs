@@ -11,6 +11,13 @@ public class EnemyButtonController : MonoBehaviour
     [SerializeField] private VerificateButtonUI verificateButtonUI;
 
 
+    private void Awake()
+    {
+        for(int i = 0; i < verificateEnemyButton.Length; i++)
+        {
+            KillEnemyButton(i);
+        }
+    }
     public void SelectEnemyButtonsItens(int itensIndex)
     {
         for (int i = 0; i < verificateEnemyButton.Length; i++)
@@ -49,15 +56,24 @@ public class EnemyButtonController : MonoBehaviour
 
     public void OnEnemyButtonAttack(int enemyNumber)
     {
-        DisactivateButtonsEnemy();
         verificateButtonUI.DisactivateReturnButton();
         battleSystem.GetToAttackEnemy(enemyNumber);
     }
 
     public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
     {
-        DisactivateButtonsEnemy();
         verificateButtonUI.DisactivateReturnButton();
         StartCoroutine(battleSystem.UseItem(itensIndex, enemyNumber));
     }
+
+    public void KillEnemyButton(int enemyKilled) //Desativa o botao do inimigo
+    {
+        verificateEnemyButton[enemyKilled].SetActive(false);
+    }
+
+    public void ActivateEnemyButton(int enemyActive) // Ativa o botão do inimigo
+    {
+        verificateEnemyButton[enemyActive].SetActive(true);
+    }
+
 }

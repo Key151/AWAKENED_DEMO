@@ -8,21 +8,21 @@ public class OptionPanel : MonoBehaviour
 
     [Header("Classes")]
     [SerializeField] private BattleSystem battleSystem;
-    [SerializeField] private VerificateButtonUI VerificateButtonUI;
-    [SerializeField] private EnemyButtonController EnemyButtonController;
+    [SerializeField] private VerificateButtonUI verificateButtonUI;
+    [SerializeField] private EnemyButtonController enemyButtonController;
 
     public void OnAttackButton()
     {
-        VerificateButtonUI.DisactivateButtons();
-        EnemyButtonController.SelectEnemyButtonAtack();
-        VerificateButtonUI.ActivateReturnButton();
+        verificateButtonUI.DisactivateButtons();
+        enemyButtonController.SelectEnemyButtonAtack();
+        verificateButtonUI.ActivateReturnButton();
     }
 
     public void OnItenButton()
     {
-        VerificateButtonUI.DisactivateButtons();
-        VerificateButtonUI.ActivateItensPanel();
-        VerificateButtonUI.ActivateReturnButton();
+        verificateButtonUI.DisactivateButtons();
+        verificateButtonUI.ActivateItensPanel();
+        verificateButtonUI.ActivateReturnButton();
     }
 
     public void OnBackButton()
@@ -34,8 +34,8 @@ public class OptionPanel : MonoBehaviour
 
     public void OnReturnButton()
     {
-        VerificateButtonUI.DisactivateReturnButton();
-        VerificateButtonUI.ActivateButtons();
+        verificateButtonUI.DisactivateReturnButton();
+        verificateButtonUI.ActivateButtons();
     }
 
 

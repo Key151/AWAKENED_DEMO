@@ -309,6 +309,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuText: {fileID: 11400000, guid: 0bca563885bc8334896b4907da6ff1b2, type: 2}
   text: {fileID: 334107327}
+--- !u!1 &81087022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 81087023}
+  - component: {fileID: 81087024}
+  m_Layer: 0
+  m_Name: StartBattleController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &81087023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81087022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1902259557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &81087024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81087022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a76d79bbdb286142beff9438400c497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBattle: SceneBattle 2
+  enemysList: {fileID: 1659323108}
 --- !u!1 &115183482
 GameObject:
   m_ObjectHideFlags: 0
@@ -21560,7 +21606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90a196484c7b3a44b5db997d2151b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemysList: {fileID: 1659323108}
 --- !u!4 &1902259557
 Transform:
   m_ObjectHideFlags: 0
@@ -21577,6 +21622,7 @@ Transform:
   - {fileID: 1609674956}
   - {fileID: 183810551}
   - {fileID: 1659323107}
+  - {fileID: 81087023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919989623
@@ -21845,8 +21891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueScene: {fileID: 11400000, guid: ce0fbe4467b3d2e4a9799ff1fd421059, type: 2}
-  scene: SceneBattle 2
   clickToSpeak: {fileID: 115183482}
+  startBattleController: {fileID: 81087024}
 --- !u!1 &2007886280
 GameObject:
   m_ObjectHideFlags: 0

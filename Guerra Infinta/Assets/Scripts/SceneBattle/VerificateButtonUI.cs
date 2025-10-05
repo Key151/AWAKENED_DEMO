@@ -15,10 +15,7 @@ public class VerificateButtonUI : MonoBehaviour
 
     [SerializeField] private GameObject itensPanel;
 
-    public GameObject[] enemyButtonsGO; // GameObject dos botões dos inimigos para poder ativar e desavitar
-    public Button[] enemyButtons;       // Buttons dos botões dos inimigos para poder selecionar
-    public GameObject[] verificateEnemyButton; // Objeto que pertence ao botao, se ele for desativado, o botao fica desativado
-    //public GameObject[] enemyUI;
+    [SerializeField] private EnemyButtonController enemyButtonController;
 
     // ATIVAR BOTOES
 
@@ -29,17 +26,6 @@ public class VerificateButtonUI : MonoBehaviour
         attackButton.SetActive(true);
         itensButton.SetActive(true);
         backButton.SetActive(true);
-    }
-
-    public void SelectEnemy()//Ativa  os botões para atacar os inimigos
-    {
-        for(int i = 0; i < verificateEnemyButton.Length; i++)
-        {
-            if (verificateEnemyButton[i].activeSelf)
-            {
-                enemyButtonsGO[i].SetActive(true);
-            }
-        }
     }
     
     public void ActivateDialguePanel() //Ativa o painel de Dialogo
@@ -71,15 +57,6 @@ public class VerificateButtonUI : MonoBehaviour
         optionPanel.SetActive(false);
     }
 
-    
-    public void DisactivateButtonsEnemy() //Desativa  os botoes para atacar os inimigos
-    {
-        for (int i = 0; i < enemyButtonsGO.Length; i++)
-        {
-            enemyButtonsGO[i].SetActive(false);
-        }
-    }
-
     public void DisactivateDialguePanel()
     {
         dialoguePanel.SetActive(false);
@@ -95,16 +72,9 @@ public class VerificateButtonUI : MonoBehaviour
 
     public void DisactivateReturnButton()
     {
+        enemyButtonController.DisactivateButtonsEnemy();
         optionPanel.SetActive(false);
         returnButton.SetActive(false);
-        DisactivateButtonsEnemy();
         DisactivateItensPanel();
-    }
-
-    // ATUALIZA OS BOTOES DOS INIMIGOS
-
-    public void KillEnemyButton(int enemyKilled) //Nao permite que o botao do inimigo fique ativo
-    {
-        verificateEnemyButton[enemyKilled].SetActive(false);
     }
 }
