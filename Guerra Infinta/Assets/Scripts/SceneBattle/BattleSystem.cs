@@ -25,6 +25,7 @@ public class BattleSystem : MonoBehaviour
 
     [Header("Enemy Settings")]
     [SerializeField] private float timer;
+    [SerializeField] private List<GameObject> enemyPrefab;
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
     public List<BattleHUD> enemyHUD;
@@ -41,7 +42,7 @@ public class BattleSystem : MonoBehaviour
     public string sceneName;
 
     private BattleState state;
-    List<Unit> BattleList;
+    private List<Unit> BattleList;
 
     [Header("HUD")]
     //HUDController hudController = AddComponent();
@@ -51,37 +52,36 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private InventoryBattleList inventory;
 
     [Header("Audio")]
-    [SerializeField] private AudioManager audioManager;
-    private string BattleSong = "Battle01";
+    [SerializeField] private string BattleSong = "Battle01";
 
     [Header("UI")]
     [SerializeField] private ItensUI itensUI;
     [SerializeField] private VerificateButtonUI VerificateButtonUI;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        audioManager.PlayBGM(BattleSong);
+        AudioManager.Instance.PlayBGM(BattleSong);
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
+        if (enemyPrefab.Count == 0) { enemyPrefab = new List<GameObject>(EnemysList.enemyPrefab); }
 
         StartCoroutine(SetupBattle());
     }
     IEnumerator SetupBattle()
     {
-        //Cria uma copia do playerPrefab com a posicao do PlayerStation1
+        //Cria uma playerPrefab no cenario
         GameObject playerGO = Instantiate(playerPrefab);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
-        //Cria uma copia do playerPrefab2 com a posicao do PlayerStation2
+        //Cria uma playerPrefab2 no cenario
         GameObject playerGO_2 = Instantiate(playerPrefab_2);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
         for (int i = 0; i < EnemysList.qtdEnemy; i++)
         {
             //Cria uma copia do enemyPrefab com a posicao do EnemyStation
-            GameObject enemyGO = Instantiate(EnemysList.enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
+            GameObject enemyGO = Instantiate(enemyPrefab[i], enemyBattleStation[i].position, enemyBattleStation[i].rotation);
 
             //Adiciona na lista (que está vazia) o obj criado pela junção do prefeb e posicao
             enemyUnit.Add(enemyGO.GetComponent<UnitEnemy>());
@@ -232,6 +232,7 @@ public class BattleSystem : MonoBehaviour
     // BATALHA ACABA
     IEnumerator EndBattle()
     {
+
         if (state == BattleState.WON)
         {
             VerificateButtonUI.ActivateDialguePanel();
@@ -250,6 +251,8 @@ public class BattleSystem : MonoBehaviour
             SavePlayers();
             SceneManager.LoadScene(sceneName);
         }
+
+        AudioManager.Instance.StopBGM();
     }
 
     // Escolhe o jogador que vai atacar
