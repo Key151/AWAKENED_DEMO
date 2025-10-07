@@ -8,7 +8,7 @@ public class MenuTextController : MonoBehaviour
     [SerializeField] private Text text;
     LanguageManager languageManager;
 
-
+    private Language lastLanguage;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,11 +16,30 @@ public class MenuTextController : MonoBehaviour
     {
         languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
         text.text = menuText.GetText(languageManager.GetLanguage());
+        lastLanguage = languageManager.GetLanguage();
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = menuText.GetText(languageManager.GetLanguage());
+        if (lastLanguage == languageManager.GetLanguage())
+        {
+            return;
+        }
+        else
+        {
+            lastLanguage = languageManager.GetLanguage();
+            text.text = menuText.GetText(languageManager.GetLanguage());
+        }
+            
+    }
+
+    public void ChangePTBR()
+    {
+        languageManager.ChangePtBr();
+    }
+    public void ChangeENG()
+    {
+        languageManager.ChangeEng();
     }
 }

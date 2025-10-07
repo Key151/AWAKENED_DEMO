@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: "Di\xE1logo-Inicial-0"
+  m_Name: "Di\xE1logo-Inicial 8"
   m_EditorClassIdentifier: 
-  speakerName: 
-  icon: {fileID: 0}
-  portugueseText: "Esse \xE9 o di\xE1logo Inicial"
-  englishText: This is the initial dialogue
+  speakerName: "M\xE3e"
+  icon: {fileID: 21300000, guid: d20ee44827505cd46b6f9999fe6c1f17, type: 3}
+  portugueseText: "Tudo bem, mas eu quero voc\xEAs dois em casa antes das 7 da noite."
+  englishText: Fine, but I want you both home before 7 p.m.

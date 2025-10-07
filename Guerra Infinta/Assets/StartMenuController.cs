@@ -10,9 +10,11 @@ public class StartMenuController : MonoBehaviour
     public string Scene = "Scene1 1";
     public GameObject menu;
     public GameObject controls;
+    LanguageManager languageManager;
 
     void Start()
     {
+        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
         AudioManager.Instance.PlayBGM(mainMenuSong);
         menu.SetActive(true);
     }
@@ -43,4 +45,15 @@ public class StartMenuController : MonoBehaviour
         controls.SetActive(false);
         menu.SetActive(true);
     }
+    public void ChangePTBR()
+    {
+        AudioManager.Instance.PlaySFX(enterMenu);
+        languageManager.ChangePtBr();
+    }
+    public void ChangeENG()
+    {
+        AudioManager.Instance.PlaySFX(enterMenu);
+        languageManager.ChangeEng();
+    }
+
 }

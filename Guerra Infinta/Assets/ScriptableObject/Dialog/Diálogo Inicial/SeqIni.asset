@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: SeqIni
   m_EditorClassIdentifier: 
   dialogueLines:
-  - {fileID: 11400000, guid: e98d7aef6d1ec80448433b1ba8e47675, type: 2}
-  - {fileID: 11400000, guid: e7c8cd432e45f3b409e6c8286b290ae6, type: 2}
+  - {fileID: 11400000, guid: 45cdedc8fab24fb48a97fce8b07eee95, type: 2}
+  - {fileID: 11400000, guid: ab98b20ec8f86f34294e309a18361695, type: 2}
+  - {fileID: 11400000, guid: 8a208a46bb2644943b636be099ff13cf, type: 2}
+  - {fileID: 11400000, guid: cdb74dd7fda7b57459c697ce4d048c97, type: 2}
+  - {fileID: 11400000, guid: 530294edcbaf6ec42ba7d5f491c0d80a, type: 2}
+  - {fileID: 11400000, guid: 00bdef3753418fa40a0c17811e93d065, type: 2}
+  - {fileID: 11400000, guid: 9f475c64be35cee47adf0fc0c6613478, type: 2}
+  - {fileID: 11400000, guid: e8250c4bc9f9a134ba15223f0c0fcff3, type: 2}
+  - {fileID: 11400000, guid: 82bdbe62faf7fc24494baebe1020ce58, type: 2}
+  - {fileID: 11400000, guid: d4e74b907e9d22b4ba71bd2a7d741322, type: 2}
