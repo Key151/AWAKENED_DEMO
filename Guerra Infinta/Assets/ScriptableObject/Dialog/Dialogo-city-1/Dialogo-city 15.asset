@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Dialogo-city 15
+  m_EditorClassIdentifier: 
+  speakerName: Marco
+  icon: {fileID: 0}
+  portugueseText: "Ah, um pouco dos dois, mas eu realmente me interesso por isso.
+    E falta gente que estude Hist\xF3ria aqui, as pessoas ignoram o nosso passado,
+    e repetem os mesmos erros."
+  englishText: "A bit of both, but I'm genuinely interested in History. There aren\u2019t
+    enough people studying it here, most people ignore our past, always repeating
+    the same mistakes."

@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Follow : MonoBehaviour
 {
 
     public float speed;
+    public int followDelay = 5;
     public  float StoppingDistance;
+    private bool isWalking;
+    private Vector2 moveInput;
     private Transform Target;
     private Animator animator;
+    private Rigidbody2D rb;
 
     private float lastInputX;
     private float lastInputY;
     private bool hasStopped;
 
+    PlayerMovement playerMovement;
+
     // Start is called before the first frame update
     void Start()
     {
-        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,53 +35,43 @@ public class Follow : MonoBehaviour
     {
         if (PauseController.IsGamePaused)
         {
-            animator.SetBool("isWalking", false);
-            animator.SetFloat("InputX", lastInputX);
-            animator.SetFloat("InputY", lastInputY);
+            isWalking = false;
+            animator.SetBool("isWalking", isWalking);
             return;
         }
         Move();
+        animator.SetBool("isWalking", isWalking);
     }
 
     private void Move()
     {
 
-        Vector2 direction = (Target.position - transform.position).normalized;
-
-        if(direction.magnitude > 0f)
+        if (playerMovement.positionHistory.Count > followDelay)
         {
-            lastInputX = direction.x;
-            lastInputY = direction.y;
-        }
+            Vector2 targetPosition = playerMovement.positionHistory[followDelay];
+            float distance = Vector2.Distance(transform.position, targetPosition);
 
-        if(!hasStopped)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
-            float threshold = 0.5f;
-            float inputX = Mathf.Abs(direction.x) < threshold ? 0 : direction.x;
-            float inputY = Mathf.Abs(direction.y) < threshold ? 0 : direction.y;
-            animator.SetFloat("InputX", inputX);
-            animator.SetFloat("InputY", inputY);
-            animator.SetBool("isWalking", true);
-        }
-            
+            if (distance > 0.0001f)
+            {
+                isWalking = true;
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            }
+            else
+            {
+                isWalking = false;
+                animator.SetBool("isWalking", isWalking);
+                animator.SetFloat("LastInputX", moveInput.x);
+                animator.SetFloat("LastInputY", moveInput.y);
+            }
 
-        if (Vector2.Distance(transform.position, Target.position) < StoppingDistance)
-        {
-            Stop();
+            moveInput = playerMovement.inputHistory[followDelay];
+            animator.SetFloat("InputX", moveInput.x);
+            animator.SetFloat("InputY", moveInput.y);
+
         }
         else
         {
-            hasStopped = false;
+            isWalking = false;
         }
-        
-    }
-
-    private void Stop()
-    {
-        hasStopped = true;
-        animator.SetBool("isWalking", false);
-        animator.SetFloat("LastInputX", lastInputX);
-        animator.SetFloat("LastInputY", lastInputY);
     }
 }
