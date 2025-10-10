@@ -9,6 +9,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     [SerializeField] private DamageText textDamage;
     private CinemachineImpulseSource impulseSource;
     private SpriteRenderer spriteRenderer;
+    private CameraShake cameraShake;
     private Color flashColor = Color.red;
     private float flashDuration = 0.5f;
     private Color originalColor;
@@ -16,8 +17,8 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     public void Start()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
-
         spriteRenderer = GetComponent<SpriteRenderer>();
+        cameraShake = GameObject.Find("CameraShake").GetComponent<CameraShake>();
         originalColor = spriteRenderer.color;
     }
 
@@ -38,6 +39,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     {
         base.Attack(target);
         impulseSource.GenerateImpulse();
+        cameraShake.StartShake();
     }
 
     public BattleState turnUnit()

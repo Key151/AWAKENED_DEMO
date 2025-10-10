@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogo-city 10
   m_EditorClassIdentifier: 
   speakerName: Rafael
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
   portugueseText: "E a\xED, j\xE1 decidiu pra que curso voc\xEA vai prestar vestibular?"
   englishText: So, have you decided what course you're going to take for the entrance
     exam?

@@ -51,6 +51,9 @@ TagManager:
   - name: Collision
     uniqueID: 2563110333
     locked: 0
+  - name: UIDown
+    uniqueID: 2482485931
+    locked: 0
   - name: Enemy
     uniqueID: 3799833709
     locked: 0
@@ -60,8 +63,8 @@ TagManager:
   - name: WalkBehind
     uniqueID: 1426817893
     locked: 0
-  - name: UIDown
-    uniqueID: 2482485931
+  - name: Decoration
+    uniqueID: 1064616757
     locked: 0
   - name: UIUP
     uniqueID: 3550988183

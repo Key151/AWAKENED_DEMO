@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dialogo-city 1
   m_EditorClassIdentifier: 
   speakerName: Rafael
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
   portugueseText: "Onde voc\xEA ia?"
   englishText: Where are you going?

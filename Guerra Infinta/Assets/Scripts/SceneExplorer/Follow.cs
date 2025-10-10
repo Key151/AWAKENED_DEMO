@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
+using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class Follow : MonoBehaviour
 {
@@ -51,9 +53,12 @@ public class Follow : MonoBehaviour
             Vector2 targetPosition = playerMovement.positionHistory[followDelay];
             float distance = Vector2.Distance(transform.position, targetPosition);
 
-            if (distance > 0.0001f)
+            if (distance > 0.01f)
             {
                 isWalking = true;
+                moveInput = playerMovement.inputHistory[followDelay];
+                animator.SetFloat("InputX", moveInput.x);
+                animator.SetFloat("InputY", moveInput.y);
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             }
             else
@@ -63,11 +68,6 @@ public class Follow : MonoBehaviour
                 animator.SetFloat("LastInputX", moveInput.x);
                 animator.SetFloat("LastInputY", moveInput.y);
             }
-
-            moveInput = playerMovement.inputHistory[followDelay];
-            animator.SetFloat("InputX", moveInput.x);
-            animator.SetFloat("InputY", moveInput.y);
-
         }
         else
         {

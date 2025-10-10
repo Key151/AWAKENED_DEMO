@@ -198,8 +198,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: -10
+  m_SortingLayerID: -1812481365
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &12968932
 RectTransform:
@@ -2107,6 +2107,7 @@ Transform:
   - {fileID: 685035091}
   - {fileID: 889271972}
   - {fileID: 1007976446}
+  - {fileID: 2049329816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519000538
@@ -2226,6 +2227,7 @@ MonoBehaviour:
   timer: 1
   enemyPrefab:
   - {fileID: 508094171281282804, guid: 795688664dd767c438563dfc18fd450e, type: 3}
+  - {fileID: 508094171281282804, guid: b72e950d626c8b640b9b0f9eb35a8f78, type: 3}
   enemyBattleStation:
   - {fileID: 1236580795}
   - {fileID: 1369528205}
@@ -2557,7 +2559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 666757399446865978, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4970093
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1865785067615737438, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_Pivot.x
@@ -2657,7 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8295700816117488777, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 150.505
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4154,7 +4156,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 330495243
-  m_SortingLayer: -1
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4989,7 +4991,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 330495243
-  m_SortingLayer: -1
+  m_SortingLayer: 1
   m_SortingOrder: -28
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8830,6 +8832,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
+--- !u!1 &2049329815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049329816}
+  - component: {fileID: 2049329817}
+  m_Layer: 0
+  m_Name: CameraShake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2049329816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049329815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 422247236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049329817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049329815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2187f7732e28048b8cf60282f597ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudTransform: {fileID: 686646627}
 --- !u!1 &2056260163
 GameObject:
   m_ObjectHideFlags: 0
@@ -9125,7 +9172,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -743979113
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &2142051389
