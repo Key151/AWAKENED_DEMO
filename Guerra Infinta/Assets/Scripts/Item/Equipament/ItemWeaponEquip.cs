@@ -3,7 +3,7 @@
 [CreateAssetMenu(menuName = "Items/WeaponEquip")]
 public class ItemWeaponEquip  : Item, IEquipment
 {
-    public TipoItem TipoWeapon => TipoItem.EquipWeapon;
+    public TypeItem TipoWeapon => TypeItem.EquipWeapon;
     public string ItemName => itemName;
     public string Description => description;
 

@@ -16,8 +16,8 @@ public class BattleSystem : MonoBehaviour
     [Header("Player Settings")]
     public GameObject playerPrefab;
     public GameObject playerPrefab_2;
-    public Transform playerBattleStation;
-    public Transform playerBattleStation_2;
+    //public Transform playerBattleStation;
+    //public Transform playerBattleStation_2;
     private UnitPlayerBoy playerUnit;
     private UnitPlayerGirl playerUnit_2;
     public BattleHUD playerHUD;
@@ -29,7 +29,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private List<GameObject> enemyPrefab;
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
-    public List<BattleHUD> enemyHUD;
+    private List<BattleHUD> enemyHUD = new();
     [SerializeField] EnemyButtonController enemyButtonController;
 
 
@@ -42,10 +42,10 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private BattleManager Maneger;
 
     [Header("Scene")]
-    public string sceneName;
+    public string NextSceneName;
 
     [Header("Itens")]
-    [SerializeField] private InventoryBattleList inventory;
+    [SerializeField] private Inventory inventoryBattle;
 
     [Header("Audio")]
     [SerializeField] private string BattleSong = "Battle01";
@@ -233,7 +233,7 @@ public class BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(timer * 2);
             VerificateButtonUI.DisactivateDialguePanel();
             SavePlayers();
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(NextSceneName);
         }
         else if (state == BattleState.LOST)
         {
@@ -242,7 +242,7 @@ public class BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(timer * 2);
             VerificateButtonUI.DisactivateDialguePanel();
             SavePlayers();
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(NextSceneName);
         }
 
         AudioManager.Instance.StopBGM();
@@ -278,9 +278,9 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator UseItem(int index, int enemyNumber)
     {
-        if (index < 0 || index >= inventory.inventoryList.Count) yield return null;
+        if (index < 0 || index >= inventoryBattle.inventoryList.Count) yield return null;
 
-        inventory.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
+        inventoryBattle.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);

@@ -9,7 +9,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
     private PlayerData playerData;
 
-    private readonly Dictionary<TipoItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
+    private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
     public BattleState turnUnit()
     {
         return BattleState.PLAYERTURN;
@@ -52,7 +52,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     {
         base.Awake();
         // Tenta carregar dados existentes
-        var savedPlyer = GameManager.Instance.LoadPlayer(UnitName);
+        var savedPlyer = PlayerManager.Instance.LoadPlayer(UnitName);
 
         if (savedPlyer != null)
         {
@@ -67,6 +67,6 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
             playerId = UnitName,
             hp = CurrentHP
         };
-        GameManager.Instance.SavePlayer(playerData);
+        PlayerManager.Instance.SavePlayer(playerData);
     }
 }

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6714124542276721564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8848866513820262793}
+  - component: {fileID: 3631068243957708479}
+  - component: {fileID: 8464818748655821698}
+  m_Layer: 0
+  m_Name: BattleSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8848866513820262793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714124542276721564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.417384, y: -2.5784268, z: -1243.4542}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3631068243957708479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714124542276721564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fc2176ee9b57747bad8fc53e0e6a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 2837856005212140483, guid: 00a1f61a175dc1b45aabbccd8ab86ad4, type: 3}
+  playerPrefab_2: {fileID: 7645501425345094461, guid: fb9d2b77d4a2cc44bb97859622226768, type: 3}
+  playerHUD: {fileID: 0}
+  playerHUD_2: {fileID: 0}
+  timer: 1
+  enemyPrefab: []
+  enemyBattleStation:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyButtonController: {fileID: 0}
+  dialogueText: {fileID: 0}
+  Maneger: {fileID: 8464818748655821698}
+  NextSceneName: SceneExplorer
+  inventoryBattle: {fileID: 11400000, guid: fa4e79a983d19a648977841cbff196bd, type: 2}
+  BattleSong: Battle01
+  itensUI: {fileID: 0}
+  VerificateButtonUI: {fileID: 0}
+--- !u!114 &8464818748655821698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714124542276721564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096dcd119aca51546ad321f5501374b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionCommand: {fileID: 0}

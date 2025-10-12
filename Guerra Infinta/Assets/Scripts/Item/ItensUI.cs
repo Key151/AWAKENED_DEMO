@@ -10,7 +10,7 @@ public class ItensUI : MonoBehaviour
     public GameObject itenTextPrefab;
 
     [Header("Classes")]
-    [SerializeField] private InventoryBattleList inventory;
+    [SerializeField] private Inventory inventory;
     [SerializeField] private VerificateButtonUI verificateButtonUI;
     [SerializeField] private EnemyButtonController enemyButtonController;
 
