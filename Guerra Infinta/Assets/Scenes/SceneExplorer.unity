@@ -2082,6 +2082,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.0169835, y: 0.074147224}
   m_EdgeRadius: 0
+--- !u!1 &783691296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5382348244132129561, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
+  m_PrefabInstance: {fileID: 1551047091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &784348197 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4684034695803963264, guid: c2dea297a2ae28348a8d96298b5b6aac, type: 3}
@@ -5682,7 +5687,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 772038314943428297, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1490660771}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5382348244132129561, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1840084596}
   m_SourcePrefab: {fileID: 100100000, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
 --- !u!1 &1609674955
 GameObject:
@@ -6364,6 +6372,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 772038314943428297, guid: 99e54a2416e15414ea79619d691c16ae, type: 3}
   m_PrefabInstance: {fileID: 1551047091}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1840084596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783691296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a34fe13ddcd856489351118bd427bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865140908
 GameObject:
   m_ObjectHideFlags: 0
