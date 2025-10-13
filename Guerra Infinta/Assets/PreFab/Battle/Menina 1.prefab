@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1040684824106060760}
   m_Layer: 3
   m_Name: Menina 1
-  m_TagString: Untagged
+  m_TagString: Menina
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

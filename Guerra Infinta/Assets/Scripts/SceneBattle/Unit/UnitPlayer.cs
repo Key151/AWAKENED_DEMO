@@ -49,15 +49,11 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         Debug.Log("Equipado com sucesso!");
     }
 
-    protected override void Awake()
-    {
-        base.Awake();
-        PlayerData = new PlayerData
-        {
-            playerId = UnitName,
-            hp = CurrentHP
-        };
-    }
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+
+    //}
 
     public void LoadData()
     {
@@ -69,10 +65,24 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
             // Se já existe, fica com ultimo HP
             CurrentHP = savedPlyer.hp;
         }
+        else
+        {
+            PlayerData = new PlayerData
+            {
+                playerId = UnitName,
+                hp = CurrentHP
+            };
+            PlayerManager.Instance.SavePlayer(PlayerData);
+        }
     }
 
     public void SaveData() {
 
+        PlayerData = new PlayerData
+        {
+            playerId = UnitName,
+            hp = CurrentHP
+        };
         PlayerManager.Instance.SavePlayer(PlayerData);
     }
 }
