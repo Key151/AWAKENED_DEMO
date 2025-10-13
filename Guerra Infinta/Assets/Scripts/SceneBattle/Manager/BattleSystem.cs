@@ -232,7 +232,6 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(timer * 2);
             VerificateButtonUI.DisactivateDialguePanel();
-            SavePlayers();
             SceneManager.LoadScene(NextSceneName);
         }
         else if (state == BattleState.LOST)
@@ -241,10 +240,11 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Você foi derrotado.";
             yield return new WaitForSeconds(timer * 2);
             VerificateButtonUI.DisactivateDialguePanel();
-            SavePlayers();
             SceneManager.LoadScene(NextSceneName);
         }
 
+        InventoryManager.Instance.SaveInventory();
+        SavePlayers();
         AudioManager.Instance.StopBGM();
     }
 

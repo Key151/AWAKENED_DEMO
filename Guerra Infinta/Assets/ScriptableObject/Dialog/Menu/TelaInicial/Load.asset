@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Granada
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Load
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: Granada
-  description: Joga granada para dar dano
-  quantity: 10
-  damageAmount: 20
-  SfxName: 
+  speakerName: 
+  icon: {fileID: 0}
+  portugueseText: Logar
+  englishText: Load

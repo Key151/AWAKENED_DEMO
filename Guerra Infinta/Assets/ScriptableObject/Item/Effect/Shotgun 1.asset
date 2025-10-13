@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Shotgun 1
   m_EditorClassIdentifier: 
+  id: 1
   itemName: Shotgun
   description: Uma 12
   quantity: 3
   damageAmount: 15
+  SfxName: 

@@ -1,5 +1,6 @@
 using System.Numerics;
 
+[System.Serializable]
 public class PlayerData
 {
     public string playerId;

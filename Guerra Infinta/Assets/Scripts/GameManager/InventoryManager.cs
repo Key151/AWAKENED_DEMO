@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -7,10 +8,12 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance { get; private set; }
 
     //public PlayerInventoryData inventoryData = new PlayerInventoryData();
-
-    public Dictionary<TypeItem, Inventory> ItemDatabase { get; private set; }
+    private Dictionary<NameItem, ItemData> ListItem = new Dictionary<NameItem, ItemData>();
+    public Dictionary<TypeItem, Dictionary<NameItem, ItemData>> ItemDatabase { get; private set; }
 
     [SerializeField] private Inventory inventoryBattleList;
+
+    private ItemData ItemData;
 
     //private List<Item> allItems; 
 
@@ -26,9 +29,22 @@ public class InventoryManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Cria dicionario para guardar as listas de itens de cada tipo
-        ItemDatabase = new Dictionary<TypeItem, Inventory>();
-        ItemDatabase[inventoryBattleList.type] = inventoryBattleList;
+        ItemDatabase = new Dictionary<TypeItem, Dictionary<NameItem, ItemData>>();
 
+        foreach(var item in inventoryBattleList.inventoryList)
+        {  
+            ItemData = new ItemData
+            {
+                id = item.id,
+                itemName = item.itemName,
+                quantity = item.quantity
+            };
+            ListItem[item.id] = ItemData;
+        }
+
+        ItemDatabase[inventoryBattleList.type] = ListItem;
+
+        //SaveData.Data.inventoriesDicioData = ItemDatabase;
     }
 
     //public void AddItem(string itemId, int amount = 1)
@@ -53,17 +69,28 @@ public class InventoryManager : MonoBehaviour
     //    }
     //}
 
-    public void SaveInventory(Inventory item)
+    public void SaveInventory()
     {
         //Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
-        ItemDatabase[inventoryBattleList.type] = item;
+        //ItemDatabase[inventoryBattleList.type] = item;
+
+        foreach (var itens in inventoryBattleList.inventoryList)
+        {
+            ItemData = new ItemData
+            {
+                id = itens.id,
+                itemName = itens.itemName,
+                quantity = itens.quantity
+            };
+            ListItem[itens.id] = ItemData;
+        }
     }
 
-    public Inventory LoadInventory(TypeItem type)
+    public Dictionary<NameItem, ItemData> LoadInventory(TypeItem type)
     {
         //Debug.Log($"[LOAD] Tentando carregar {playerId}");
 
-        if (ItemDatabase.TryGetValue(type, out Inventory data))
+        if (ItemDatabase.TryGetValue(type, out Dictionary<NameItem, ItemData> data))
         {
             //Debug.Log($"[LOAD] Achei {data.playerId} HP={data.hp}");
             return data;

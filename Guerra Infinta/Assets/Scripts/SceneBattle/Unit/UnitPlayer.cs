@@ -7,9 +7,23 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     private float attackX = -2f;
     private float attackY = 0f;
     [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
-    private PlayerData playerData;
+    public PlayerData PlayerData { private set;  get; }
 
     private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
+    void Start()
+    {
+
+        if (ItemEquipment != null)
+        {
+            foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
+            {
+                EquipItem(item);
+                Debug.Log($"Está com {item.ItemName}!");
+            }
+        }
+
+        LoadData();
+    }
     public BattleState turnUnit()
     {
         return BattleState.PLAYERTURN;
@@ -35,22 +49,18 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         Debug.Log("Equipado com sucesso!");
     }
 
-    void Start()
-    {
-        if (ItemEquipment != null)
-        {
-            foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
-            {
-                EquipItem(item);
-                Debug.Log($"Está com {item.ItemName}!");
-            }
-        }
-
-    }
-
     protected override void Awake()
     {
         base.Awake();
+        PlayerData = new PlayerData
+        {
+            playerId = UnitName,
+            hp = CurrentHP
+        };
+    }
+
+    public void LoadData()
+    {
         // Tenta carregar dados existentes
         var savedPlyer = PlayerManager.Instance.LoadPlayer(UnitName);
 
@@ -62,11 +72,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     }
 
     public void SaveData() {
-        playerData = new PlayerData
-        {
-            playerId = UnitName,
-            hp = CurrentHP
-        };
-        PlayerManager.Instance.SavePlayer(playerData);
+
+        PlayerManager.Instance.SavePlayer(PlayerData);
     }
 }

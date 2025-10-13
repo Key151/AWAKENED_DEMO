@@ -1,9 +1,11 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 public class SaveData
 {
-    public Dictionary<string, PlayerData> playerDicioData { get; set; }
-    public Dictionary<TypeItem, Inventory> inventoriesDicioData { get; set; }
+    public string currentSceneName;
+    public Dictionary<string, PlayerData> playerDicioData = new Dictionary<string, PlayerData>();
+    public Dictionary<TypeItem, Dictionary<NameItem, ItemData>> inventoriesDicioData = new Dictionary<TypeItem, Dictionary<NameItem, ItemData>>();
+
+    public static SaveData Data = new SaveData();
 }

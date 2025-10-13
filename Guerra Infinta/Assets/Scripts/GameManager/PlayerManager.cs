@@ -5,12 +5,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
 
+    [SerializeField] private UnitPlayerBoy Menino;
+    [SerializeField] private UnitPlayerGirl Menina;
     public Dictionary<string, PlayerData> PlayerDataSave { get;private set; }
 
     void Awake()
     {
-        PlayerDataSave = new Dictionary<string, PlayerData>();
-
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -18,6 +18,12 @@ public class PlayerManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        PlayerDataSave = new Dictionary<string, PlayerData>();
+        PlayerDataSave[Menino.UnitName] = Menino.PlayerData;
+        PlayerDataSave[Menina.UnitName] = Menina.PlayerData;
+
+        //SaveData.Data.playerDicioData = PlayerDataSave;
     }   
 
     public void SavePlayer(PlayerData player)

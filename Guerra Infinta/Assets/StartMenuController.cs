@@ -26,6 +26,21 @@ public class StartMenuController : MonoBehaviour
         SceneManager.LoadScene(Scene);
     }
 
+    public void LoadButton()
+    {
+        AudioManager.Instance.PlaySFX(enterMenu);
+        SceneManager.LoadScene(GameManager.Load());
+        //try
+        //{
+        //    AudioManager.Instance.PlaySFX(enterMenu);
+        //    SceneManager.LoadScene(GameManager.Load());
+        //}
+        //catch
+        //{
+        //    Debug.LogWarning("Erro para carregar!");
+        //}
+    }
+
     public void ExitButton()
     {
         AudioManager.Instance.PlaySFX(backMenu);

@@ -1,23 +1,25 @@
+using Newtonsoft.Json;
 using System.IO;
 using UnityEngine;
-using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour
 {
     private static string SavePath => Path.Combine(Application.persistentDataPath, "save.json");
 
-    public static void Save(SaveData data)
+    public static void Save()
     {
         //Save do que precisa
-        data.playerDicioData = PlayerManager.Instance.PlayerDataSave;
-        data.inventoriesDicioData = InventoryManager.Instance.ItemDatabase;
+        SaveData.Data.playerDicioData = PlayerManager.Instance.PlayerDataSave;
+        SaveData.Data.inventoriesDicioData = InventoryManager.Instance.ItemDatabase;
+        SaveData.Data.currentSceneName = SceneManager.GetActiveScene().name;
 
-        string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+        string json = JsonConvert.SerializeObject(SaveData.Data, Formatting.Indented);
         File.WriteAllText(SavePath, json);
         Debug.Log($"Jogo salvo em: {SavePath}");
     }
 
-    public static void Load()
+    public static string Load()
     {
         if (!File.Exists(SavePath))
         {
@@ -38,7 +40,9 @@ public class GameManager: MonoBehaviour
         {
             InventoryManager.Instance.ItemDatabase[key] = InventoryManager.Instance.LoadInventory(key);
         }
+
         Debug.Log("Save carregado com sucesso!");
+        return data.currentSceneName; 
 
     }
 
