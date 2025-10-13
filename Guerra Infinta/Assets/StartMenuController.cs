@@ -7,6 +7,7 @@ public class StartMenuController : MonoBehaviour
     private string mainMenuSong = "MainMenu";
     private string enterMenu = "Enter";
     private string backMenu = "Back";
+    private string LoadGame = "Load";
     public string Scene = "Scene1 1";
     public GameObject menu;
     public GameObject controls;
@@ -28,7 +29,7 @@ public class StartMenuController : MonoBehaviour
 
     public void LoadButton()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(LoadGame);
         SceneManager.LoadScene(GameManager.Load());
         //try
         //{
