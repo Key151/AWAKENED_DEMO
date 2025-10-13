@@ -39,7 +39,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     {
         base.Attack(target);
         impulseSource.GenerateImpulse();
-        cameraShake.StartShake();
+        //cameraShake.StartShake();
     }
 
     public BattleState turnUnit()

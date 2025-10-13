@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      encyclopedia_galactica_0: 8852031836551946533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

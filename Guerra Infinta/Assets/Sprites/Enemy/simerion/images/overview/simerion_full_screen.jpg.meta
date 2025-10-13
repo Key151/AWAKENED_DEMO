@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simerion_full_screen_0: -6506278121790057389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

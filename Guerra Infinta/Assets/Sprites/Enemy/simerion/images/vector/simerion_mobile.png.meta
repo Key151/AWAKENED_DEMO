@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simerion_mobile_0: -8361530883109721916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

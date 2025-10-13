@@ -29,7 +29,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private List<GameObject> enemyPrefab;
     private List<UnitEnemy> enemyUnit;
     public List<Transform> enemyBattleStation;
-    private List<BattleHUD> enemyHUD = new();
+    [SerializeField] private List<BattleHUD> enemyHUD;
     [SerializeField] EnemyButtonController enemyButtonController;
 
 
