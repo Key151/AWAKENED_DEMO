@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ButtonExplorer : MonoBehaviour
 {
-    private string mainMenuSong = "MainMenu";
+    private string ExplorerSong = "Explorer02";
     private string enterMenu = "Enter";
+    private string SaveGame = "Save";
     private string backMenu = "Back";
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayBGM(ExplorerSong);
+    }
     public void LoadScene(string sceneName)
     {
         AudioManager.Instance.PlaySFX(enterMenu);
@@ -16,7 +22,7 @@ public class ButtonExplorer : MonoBehaviour
 
     public void SaveButton()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(SaveGame);
         GameManager.Save();
     }
 }

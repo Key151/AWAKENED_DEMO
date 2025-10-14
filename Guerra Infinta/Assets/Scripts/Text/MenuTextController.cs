@@ -9,7 +9,7 @@ public class MenuTextController : MonoBehaviour
     LanguageManager languageManager;
 
     private Language lastLanguage;
-
+    private string enterMenu = "Enter";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,10 +36,12 @@ public class MenuTextController : MonoBehaviour
 
     public void ChangePTBR()
     {
+        AudioManager.Instance.PlaySFX(enterMenu);
         languageManager.ChangePtBr();
     }
     public void ChangeENG()
     {
+        AudioManager.Instance.PlaySFX(enterMenu);
         languageManager.ChangeEng();
     }
 }

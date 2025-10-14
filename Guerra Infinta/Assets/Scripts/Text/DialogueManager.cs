@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueSequenceData currentSequence;
     LanguageManager languageManager;
     private int currentIndex;
+    private string enterMenu = "Enter";
 
     public void Start()
     {
@@ -33,6 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
+        AudioManager.Instance.PlaySFX(enterMenu);
         currentIndex++;
         //Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
         if (currentIndex >= currentSequence.dialogueLines.Count)
