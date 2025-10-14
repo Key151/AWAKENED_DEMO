@@ -5852,9 +5852,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 508094171281282804, guid: 795688664dd767c438563dfc18fd450e, type: 3}
-  - {fileID: 508094171281282804, guid: a9d6e6a81592bc846a03ec636f9235a5, type: 3}
-  - {fileID: 508094171281282804, guid: b72e950d626c8b640b9b0f9eb35a8f78, type: 3}
+  - {fileID: 508094171281282804, guid: 2a4a7df60ca8d744bbc2534824f887b5, type: 3}
+  - {fileID: 508094171281282804, guid: b8c5d43ab2b4a3e458ddd0d2c42036d2, type: 3}
+  - {fileID: 508094171281282804, guid: d86dc08b635944c4cbaa8af86da0aeaa, type: 3}
 --- !u!1 &1675965609
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,3 @@
-
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -14,10 +13,17 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     private float flashDuration = 0.5f;
     private Color originalColor;
 
+    [Header("Animation")]
+    private Animator anim;
+    private string hurt = "Hurt";
+    private string dead = "Dead";
+    private string attack = "Attack";
+
     public void Start()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         cameraShake = GameObject.Find("CameraShake").GetComponent<CameraShake>();
         originalColor = spriteRenderer.color;
     }
@@ -32,11 +38,20 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         textDamage.ShowDamage(damage);
         StartCoroutine(Flash());
         StartCoroutine(base.TakeDamage(damage));
+        if (CheckDead())
+        {
+            anim.SetTrigger(dead);
+        }
+        else
+        {
+            anim.SetTrigger(hurt);
+        }
         yield return new WaitForSeconds(1f);
     }
 
     public override void Attack(Unit target)
     {
+        anim.SetTrigger(attack);
         base.Attack(target);
         impulseSource.GenerateImpulse();
         //cameraShake.StartShake();

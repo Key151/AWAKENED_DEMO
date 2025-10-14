@@ -18,20 +18,14 @@ public class BattleHUD : MonoBehaviour
     public void SetHUD(Unit unit)
     {
         nameText.text = unit.UnitName;
-        if (hpText != null)
-        {
-            hpText.text = unit.CurrentHP + "/" + unit.MaxHP;
-        }
-        if (ActionPointText != null && ActionPointSlider != null)
+
+        UpdateHPText(unit);
+        /*if (ActionPointText != null && ActionPointSlider != null)
         {
             ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
             ActionPointSlider.maxValue = unit.MaxActionPoint;
             ActionPointSlider.value = unit.CurrentActionPoint;
-        }
-        //if (levelText != null)
-        //{
-        //    levelText.text = "Lvl " + unit.UnitLevel;
-        //}
+        }*/
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
         DisactiveHudImage();

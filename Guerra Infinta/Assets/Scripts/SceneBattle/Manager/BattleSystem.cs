@@ -111,8 +111,8 @@ public class BattleSystem : MonoBehaviour
     {
         DisableHudImage();
         VerificateButtonUI.DisactivateDialguePanel();
-        playerHUD.UpdateHUD(playerUnit);
-        playerHUD_2.UpdateHUD(playerUnit_2);
+      //playerHUD.UpdateHUD(playerUnit);
+      //playerHUD_2.UpdateHUD(playerUnit_2);
 
         for (int i = BattleList.Count - 1; i >= 0; i--)
         {
@@ -199,6 +199,8 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
         enemy.Attack(player);
+        playerHUD.UpdateHUD(playerUnit);
+        playerHUD_2.UpdateHUD(playerUnit_2);
         yield return new WaitForSeconds(timer);
 
         //battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
