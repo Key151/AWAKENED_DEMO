@@ -17,3 +17,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a2d221d58e795b142af02d0663b45600, type: 3}
   - name: Back
     clip: {fileID: 8300000, guid: 5358e2ded4805f547881bfc43dc140b5, type: 3}
+  - name: Save
+    clip: {fileID: 8300000, guid: 7e58cc224b7e1da4e8ea2b6e120675a4, type: 3}
+  - name: Load
+    clip: {fileID: 8300000, guid: 10b717293398e7249887adf414618494, type: 3}
