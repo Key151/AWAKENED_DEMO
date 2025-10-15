@@ -7,7 +7,7 @@ public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     [SerializeField] private GameObject enemyHUD;
     [SerializeField] private SpriteRenderer seta;
-    private bool selected = false;
+    [SerializeField] private bool selected = false;
     private Animator anim;
     private Color corNormal = Color.white;
     private Color corHighlight = Color.yellow;
@@ -49,7 +49,6 @@ public class ShowOnSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnClick()
     {
         NormalState();
-        //seta.color = (selected ? corNormal : corHighlight);
     }
 
     public void NormalState()

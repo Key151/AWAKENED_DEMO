@@ -1247,6 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHUD: {fileID: 1952429316}
   seta: {fileID: 1437808043}
+  selected: 0
 --- !u!1 &238658154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5922930601157744371, guid: f6da14f3abc83f8449603a7167c14dba, type: 3}
@@ -1621,6 +1622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHUD: {fileID: 1340170404}
   seta: {fileID: 1052457417}
+  selected: 0
 --- !u!1 &311051477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,7 +3986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1061723423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5743,6 +5745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHUD: {fileID: 238658154}
   seta: {fileID: 1070951117}
+  selected: 0
 --- !u!1 &1322165236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,7 +8214,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142051384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4bd09612a85644f80d6726ef9c9bd6, type: 3}
   m_Name: 

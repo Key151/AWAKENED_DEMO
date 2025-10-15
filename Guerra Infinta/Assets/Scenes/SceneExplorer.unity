@@ -6609,6 +6609,7 @@ GameObject:
   - component: {fileID: 1990903632}
   - component: {fileID: 1990903631}
   - component: {fileID: 1990903635}
+  - component: {fileID: 1990903636}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -6763,7 +6764,7 @@ Transform:
   m_GameObject: {fileID: 1990903630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -28.53, y: -1.46, z: 0}
+  m_LocalPosition: {x: -25.64, y: -0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6777,7 +6778,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990903630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e945972ff31bbba43b538d7809c2c0ff, type: 3}
   m_Name: 
@@ -6785,6 +6786,18 @@ MonoBehaviour:
   dialogueScene: {fileID: 11400000, guid: ce0fbe4467b3d2e4a9799ff1fd421059, type: 2}
   clickToSpeak: {fileID: 115183482}
   startBattleController: {fileID: 81087024}
+--- !u!114 &1990903636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990903630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2007886280
 GameObject:
   m_ObjectHideFlags: 0
