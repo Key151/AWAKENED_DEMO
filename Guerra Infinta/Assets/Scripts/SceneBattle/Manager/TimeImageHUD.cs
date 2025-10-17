@@ -8,9 +8,9 @@ public class TimeIcon : ShowIcon
     public void StartActionIcon()
     {
         isActive = true;
-        //SetTimer(TimeAction.WindowEnd);
+        SetTimer(TimeAction.WindowEnd);
         popUp.transform.position = target.position; // posiciona no inimigo, se for dinamico precisa colocar no show()
-        Debug.Log("icone vai ser mostrado");
+        Debug.Log($"Timer={TimeAction.Timer}, Start={TimeAction.WindowStart}, End={TimeAction.WindowEnd}");
     }
 
     protected override void Show()
@@ -19,9 +19,11 @@ public class TimeIcon : ShowIcon
 
         base.Show();
 
-        bool sucess = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
+        bool success = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
 
-        if (sucess) popUp.SetActive(true);
+        Debug.Log($"Success={success}");
+
+        if (success) popUp.SetActive(true);
         else popUp.SetActive(false);
     }
 }

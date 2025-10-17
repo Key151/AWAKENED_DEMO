@@ -6,23 +6,21 @@ public class TimerActionComand : ScriptableObject
     [Header("Timing")]
     [SerializeField] private float windowStart;
     [SerializeField] private float windowEnd;
-    private float timer = 0f;
+    private float timerA = 0f;
 
     public float WindowStart
     {
         get { return windowStart; }
-        private set { windowStart = value; }
     }
 
     public float WindowEnd
     {
-        get { return windowStart; }
-        private set { windowStart = value; }
+        get { return windowEnd; }
     }
 
     public float Timer
     {
-        get { return timer; }
-        set { timer = value; }
+        get { return timerA; }
+        set { timerA = value; }
     }
 }

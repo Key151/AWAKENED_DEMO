@@ -13,6 +13,7 @@ public class ActionCommand : MonoBehaviour
     public void StartActionCommand(System.Action<bool> callback)
     {
         TimeAction.Timer = 0f;
+        Debug.Log($"Timer={TimeAction.Timer}, Start={TimeAction.WindowStart}, End={TimeAction.WindowEnd}");
         commandActive = true;
         inputReceived = false;
         onComplete = callback; // armazenou a funcao Action<bool>, nesse caso armazena a lambda
@@ -28,6 +29,7 @@ public class ActionCommand : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             bool success = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
+            TimeAction.Timer = 0f;
             CompleteCommand(success);
         }
 

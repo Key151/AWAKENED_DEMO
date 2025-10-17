@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86521ec86fda725498ff9c4af0f56243, type: 3}
   m_Name: TimerActionComand
   m_EditorClassIdentifier: 
-  windowStart: 1
-  windowEnd: 1.5
+  windowStart: 0.5
+  windowEnd: 2

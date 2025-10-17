@@ -178,7 +178,7 @@ public class BattleSystem : MonoBehaviour
         playerAtual.selected = false;
         Maneger.StartAttackSequence(playerAtual); //Processo de action Comand
         enemyUnit[enemyNumber].ShowIcon(); //Mostra imagem
-        yield return new WaitForSeconds(timer*2);
+        yield return new WaitForSeconds(timer*2.5f);
 
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
