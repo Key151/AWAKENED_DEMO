@@ -4,17 +4,15 @@ using UnityEngine;
 public class ActionCommand : MonoBehaviour
 {
     [Header("Timing")]
-    [SerializeField] private float windowStart;
-    [SerializeField] private float windowEnd;
+    [SerializeField] private TimerActionComand TimeAction;
 
-    private float timer = 0f;
     private bool commandActive = false;
     private bool inputReceived = false;
     private System.Action<bool> onComplete;
 
     public void StartActionCommand(System.Action<bool> callback)
     {
-        timer = 0f;
+        TimeAction.Timer = 0f;
         commandActive = true;
         inputReceived = false;
         onComplete = callback; // armazenou a funcao Action<bool>, nesse caso armazena a lambda
@@ -24,16 +22,16 @@ public class ActionCommand : MonoBehaviour
     {
         if (!commandActive) return;
 
-        timer += Time.deltaTime;
+        TimeAction.Timer += Time.deltaTime;
         //Debug.Log($"tempo atual:{timer}");
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            bool success = timer >= windowStart && timer <= windowEnd;
+            bool success = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
             CompleteCommand(success);
         }
 
-        if (timer > windowEnd && !inputReceived)
+        if (TimeAction.Timer > TimeAction.WindowEnd && !inputReceived)
         {
             CompleteCommand(false);
         }

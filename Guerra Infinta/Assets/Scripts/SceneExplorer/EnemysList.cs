@@ -7,8 +7,9 @@ public class EnemysList: MonoBehaviour
     public static List<GameObject> enemyPrefab = new List<GameObject>();
     public static int qtdEnemy;
 
-    private int percentEnemySpaw = 100;
-    private int minusPercent = 15; // Modificar posteriormente para dado de acordo para cada inimigo
+    [Header("Enemy percent")]
+    [SerializeField] private int percentEnemySpaw = 100;
+    [SerializeField] private int minusPercent = 15; // Modificar posteriormente para dado de acordo para cada inimigo
 
     public void selectedEnemy()
     {

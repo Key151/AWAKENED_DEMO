@@ -176,7 +176,10 @@ public class BattleSystem : MonoBehaviour
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
         playerAtual.selected = false;
-        Maneger.StartAttackSequence(playerAtual);
+        Maneger.StartAttackSequence(playerAtual); //Processo de action Comand
+        enemyUnit[enemyNumber].ShowIcon(); //Mostra imagem
+        yield return new WaitForSeconds(timer*2);
+
         VerificateButtonUI.DisactivateButtons();
         VerificateButtonUI.ActivateDialguePanel();
         dialogueText.text = playerAtual.UnitName + " ataca!";
@@ -202,21 +205,6 @@ public class BattleSystem : MonoBehaviour
         playerHUD.UpdateHUD(playerUnit);
         playerHUD_2.UpdateHUD(playerUnit_2);
         yield return new WaitForSeconds(timer);
-
-        //battleEnemy.SystemEnemyBattle(enemy as UnitEnemy, player);
-        /*if (Random.Range(0, 10) >= 3)
-        {
-            dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-            enemy.Attack(player);
-            yield return new WaitForSeconds(timer);
-        }
-        else
-        {
-            int heal = Random.Range(5, 15);
-            dialogueText.text = enemy.UnitName + " cura " + heal + " de vida!";
-            enemy.Heal(heal);
-            yield return new WaitForSeconds(timer);
-        }*/
 
         VerificateButtonUI.DisactivateDialguePanel();
         BattleList.Add(BattleList[0]);

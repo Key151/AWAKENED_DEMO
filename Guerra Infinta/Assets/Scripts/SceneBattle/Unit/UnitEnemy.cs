@@ -5,7 +5,10 @@ using static BattleSystem;
 
 public class UnitEnemy : Unit, IVerificateTurnUnit
 {
+    [Header("ShowIcon")]
     [SerializeField] private DamageText textDamage;
+    [SerializeField] private TimeIcon iconAction;
+
     private CinemachineImpulseSource impulseSource;
     private SpriteRenderer spriteRenderer;
     private CameraShake cameraShake;
@@ -31,6 +34,11 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     public override bool CheckDead()
     {
         return base.CheckDead();
+    }
+
+    public void ShowIcon()
+    {
+        iconAction.StartActionIcon();
     }
 
     public override IEnumerator TakeDamage(int damage)
