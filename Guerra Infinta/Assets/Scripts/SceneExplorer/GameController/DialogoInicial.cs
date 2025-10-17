@@ -39,7 +39,7 @@ public class DialogoInicial : MonoBehaviour
     public void StartDialogue()
     {
         screen.SetActive(true);
-        blackScreen = GameObject.Find("BlackScreen").GetComponent<BlackScreen>();
+        blackScreen = screen.GetComponent<BlackScreen>();
         if (!dialogueIsOn)
         {
             PauseController.SetPause(true);
@@ -48,7 +48,7 @@ public class DialogoInicial : MonoBehaviour
         }
         else if (dialogueIsOn && !dialogueManager.dialogue)
         {
-            blackScreen.StartAnimatorBS();
+            blackScreen.StartFadeIn();
             saveDialogueManager.SaveDialogue(dictionaryKey, true);
         }
     }

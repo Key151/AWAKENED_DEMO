@@ -9,7 +9,7 @@ public class StartBattleController : MonoBehaviour
 
     public void StartBattle()
     {
-        enemysList.selectedEnemy();
+        enemysList.SelectedEnemy();
         SceneManager.LoadScene(sceneBattle);
     }
 

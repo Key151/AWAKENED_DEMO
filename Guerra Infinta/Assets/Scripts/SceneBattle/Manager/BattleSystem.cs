@@ -57,7 +57,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.Instance.PlayBGM(BattleSong);
+        //AudioManager.Instance.PlayBGM(BattleSong);
         state = BattleState.START;
         enemyUnit = new List<UnitEnemy>();
         if (enemyPrefab.Count == 0) { enemyPrefab = new List<GameObject>(EnemysList.enemyPrefab); }

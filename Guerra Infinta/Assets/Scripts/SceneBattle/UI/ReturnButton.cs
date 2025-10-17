@@ -3,11 +3,11 @@ using UnityEngine;
 public class ReturnButton : MonoBehaviour
 {
 
-    OptionPanel optionPanel;
+    private OptionPanel optionPanel;
 
     void Start()
     {
-        optionPanel = GameObject.Find("Canvas(Front)").GetComponent<OptionPanel>();
+        optionPanel = FindAnyObjectByType<OptionPanel>();
     }
 
     void Update()

@@ -8,23 +8,30 @@ public class StartMenuController : MonoBehaviour
     private string enterMenu = "Enter";
     private string backMenu = "Back";
     private string LoadGame = "Load";
-    public string Scene = "Scene1 1";
+    public string Scene = "SceneExplorer";
     public GameObject menu;
     public GameObject controls;
     LanguageManager languageManager;
+
+    [Header("Black Screen")]
+    [SerializeField] private GameObject screen;
+    BlackScreen blackScreen;
 
     void Start()
     {
         languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
         AudioManager.Instance.PlayBGM(mainMenuSong);
         menu.SetActive(true);
+        screen.SetActive(false);
     }
 
     public void StartButton()
     {
         AudioManager.Instance.PlaySFX(enterMenu);
         AudioManager.Instance.StopBGM();
-        SceneManager.LoadScene(Scene);
+        screen.SetActive(true);
+        blackScreen = screen.GetComponent<BlackScreen>();
+        blackScreen.StartFadeOut();
     }
 
     public void LoadButton()

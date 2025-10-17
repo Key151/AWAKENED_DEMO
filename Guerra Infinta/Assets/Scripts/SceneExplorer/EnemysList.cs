@@ -11,7 +11,7 @@ public class EnemysList: MonoBehaviour
     [SerializeField] private int percentEnemySpaw = 100;
     [SerializeField] private int minusPercent = 15; // Modificar posteriormente para dado de acordo para cada inimigo
 
-    public void selectedEnemy()
+    public void SelectedEnemy()
     {
         qtdEnemy = 0;
         enemyPrefab?.Clear();

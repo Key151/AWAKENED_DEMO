@@ -16,6 +16,12 @@ public class EnemyEncounter : MonoBehaviour
     [Header("Battle")]
     private StartBattleController startBattleController;
 
+    [Header("Audio")]
+    [SerializeField] private string BattleSong = "Battle01";
+
+    [Header("Black Screen")]
+    [SerializeField] private GameObject screen;
+    BlackScreen blackScreen;
 
     void Start()
     {
@@ -35,8 +41,13 @@ public class EnemyEncounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.Instance.PlayBGM(BattleSong);
         cam.Follow = enemyTransform;
         enemyInCamera = true;
+
+        screen.SetActive(true);
+        blackScreen = screen.GetComponent<BlackScreen>();
+        blackScreen.StartFadeOut();
     }
 
     private void CameraMovement()
