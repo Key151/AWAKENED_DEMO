@@ -111,8 +111,9 @@ public class BattleSystem : MonoBehaviour
     {
         DisableHudImage();
         VerificateButtonUI.DisactivateDialguePanel();
-      //playerHUD.UpdateHUD(playerUnit);
-      //playerHUD_2.UpdateHUD(playerUnit_2);
+        Debug.Log("Vida dos personagens após o verificateTurn: " + playerUnit.CurrentHP + ", " + playerUnit_2.CurrentHP);
+        //playerHUD.UpdateHUD(playerUnit);
+        //playerHUD_2.UpdateHUD(playerUnit_2);
 
         for (int i = BattleList.Count - 1; i >= 0; i--)
         {

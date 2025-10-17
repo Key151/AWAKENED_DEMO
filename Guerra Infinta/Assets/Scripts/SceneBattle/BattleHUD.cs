@@ -15,6 +15,8 @@ public class BattleHUD : MonoBehaviour
     public Slider ActionPointSlider;
     public GameObject hudImage;
 
+    //[SerializeField] private ParticleSystem particle;
+
     public void SetHUD(Unit unit)
     {
         nameText.text = unit.UnitName;
@@ -28,6 +30,7 @@ public class BattleHUD : MonoBehaviour
         }*/
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
+        Debug.Log(unit.name + " tem " + unit.CurrentHP + " de vida");
         DisactiveHudImage();
     }
 
@@ -38,7 +41,8 @@ public class BattleHUD : MonoBehaviour
 
     public IEnumerator PlayerSetHP(int hp)
     {
-        while(hpSlider.value != hp)
+        //particle.Play();
+        while(hpSlider.value > hp)
         {
             hpSlider.value--;
             yield return new WaitForSeconds(0.02f);
