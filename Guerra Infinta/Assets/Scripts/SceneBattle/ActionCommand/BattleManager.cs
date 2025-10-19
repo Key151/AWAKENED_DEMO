@@ -6,16 +6,16 @@ public class BattleManager : MonoBehaviour
     [SerializeField]
     private ActionCommand actionCommand;
 
-    public void StartAttackSequence(UnitPlayer player)
+    public void StartAttackSequence(UnitPlayer player, UnitEnemy unitEnemy)
     {
         Debug.Log("Iniciando ataque!");
-        TriggerActionCommand(player);
+        TriggerActionCommand(player, unitEnemy);
     }
 
-    public void TriggerActionCommand(UnitPlayer player)
+    public void TriggerActionCommand(UnitPlayer player, UnitEnemy unitEnemy)
     {
         // esse "resultado =>" é lambda, ou seja, faz a função direto no local para isso precisa do Action<> 
-        actionCommand.StartActionCommand(result => OnActionCommandResult(result, player));
+        actionCommand.StartActionCommand(result => OnActionCommandResult(result, player), unitEnemy);
     }
 
     public void OnActionCommandResult(bool success, UnitPlayer unitPlayer)

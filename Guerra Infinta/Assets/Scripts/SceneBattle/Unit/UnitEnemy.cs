@@ -22,6 +22,8 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     private string dead = "Dead";
     private string attack = "Attack";
 
+    private bool isClicked;
+
     public void Start()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
@@ -75,6 +77,27 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         spriteRenderer.color = flashColor;
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = originalColor;
+    }
+
+    public bool ClickEnemy()
+    {
+        isClicked = false;
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            if(hit.collider != null && hit.collider.transform == this.transform)
+            {
+                Debug.Log("Clicou no inimigo " + UnitName);
+                isClicked = true;
+            }
+            else
+            {
+                Debug.Log("Não clicou no inimigo " + UnitName);
+            }
+        }
+        return isClicked;
     }
 
 }

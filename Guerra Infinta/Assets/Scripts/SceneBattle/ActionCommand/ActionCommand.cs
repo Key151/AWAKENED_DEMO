@@ -9,10 +9,13 @@ public class ActionCommand : MonoBehaviour
     private bool commandActive = false;
     private bool inputReceived = false;
     private System.Action<bool> onComplete;
+    
+    private UnitEnemy enemy;
 
-    public void StartActionCommand(System.Action<bool> callback)
+    public void StartActionCommand(System.Action<bool> callback, UnitEnemy unitEnemy)
     {
         TimeAction.Timer = 0f;
+        enemy = unitEnemy;
         Debug.Log($"Timer={TimeAction.Timer}, Start={TimeAction.WindowStart}, End={TimeAction.WindowEnd}");
         commandActive = true;
         inputReceived = false;
@@ -26,12 +29,19 @@ public class ActionCommand : MonoBehaviour
         TimeAction.Timer += Time.deltaTime;
         //Debug.Log($"tempo atual:{timer}");
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (enemy.ClickEnemy())
         {
             bool success = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
             TimeAction.Timer = 0f;
             CompleteCommand(success);
         }
+
+        /*if (Input.GetKeyDown(KeyCode.Return))
+        {
+            bool success = TimeAction.Timer >= TimeAction.WindowStart && TimeAction.Timer <= TimeAction.WindowEnd;
+            TimeAction.Timer = 0f;
+            CompleteCommand(success);
+        }*/
 
         if (TimeAction.Timer > TimeAction.WindowEnd && !inputReceived)
         {

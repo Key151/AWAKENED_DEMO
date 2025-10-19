@@ -177,7 +177,7 @@ public class BattleSystem : MonoBehaviour
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
         playerAtual.selected = false;
-        Maneger.StartAttackSequence(playerAtual); //Processo de action Comand
+        Maneger.StartAttackSequence(playerAtual, enemyUnit[enemyNumber]); //Processo de action Comand
         enemyUnit[enemyNumber].ShowIcon(); //Mostra imagem
         yield return new WaitForSeconds(timer*2.5f);
 

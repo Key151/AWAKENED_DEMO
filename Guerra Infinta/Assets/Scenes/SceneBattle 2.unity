@@ -8264,11 +8264,11 @@ PrefabInstance:
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyPrefab.Array.data[1]'
       value: 
-      objectReference: {fileID: 508094171281282804, guid: 2a4a7df60ca8d744bbc2534824f887b5, type: 3}
+      objectReference: {fileID: 508094171281282804, guid: d86dc08b635944c4cbaa8af86da0aeaa, type: 3}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyPrefab.Array.data[2]'
       value: 
-      objectReference: {fileID: 508094171281282804, guid: d86dc08b635944c4cbaa8af86da0aeaa, type: 3}
+      objectReference: {fileID: 508094171281282804, guid: 2a4a7df60ca8d744bbc2534824f887b5, type: 3}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyBattleStation.Array.data[0]'
       value: 
