@@ -10,9 +10,15 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     public PlayerData PlayerData { private set;  get; }
 
     private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
+
+    protected override void Awake()
+    {
+        base.Awake();
+        LoadData();
+    }
+
     void Start()
     {
-
         if (ItemEquipment != null)
         {
             foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
@@ -21,8 +27,6 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
                 Debug.Log($"Está com {item.ItemName}!");
             }
         }
-
-        LoadData();
     }
     public BattleState turnUnit()
     {
@@ -48,12 +52,6 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         newItem.Equip(this);
         Debug.Log("Equipado com sucesso!");
     }
-
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-
-    //}
 
     public void LoadData()
     {
