@@ -21,3 +21,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7e58cc224b7e1da4e8ea2b6e120675a4, type: 3}
   - name: Load
     clip: {fileID: 8300000, guid: 10b717293398e7249887adf414618494, type: 3}
+  - name: BattleEffect09
+    clip: {fileID: 8300000, guid: 3bf2b9e31f789fc478cc904e33e98ede, type: 3}
+  - name: BattleEffect12
+    clip: {fileID: 8300000, guid: 9f20deda2e2e33549acd8a0ca4adcc19, type: 3}
+  - name: BattleEffect18
+    clip: {fileID: 8300000, guid: 72c68830738ce6f41bb7994b7536b3d0, type: 3}

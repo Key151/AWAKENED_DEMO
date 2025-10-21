@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f6b9309cba3d49ab3c7aa069bcbf2, type: 3}
+  m_Name: Sequence-Dialogo-city4
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - {fileID: 11400000, guid: 5b7bab55e2e1a154892e33f8563b8e35, type: 2}
+  - {fileID: 11400000, guid: f9637ab99381cb640b0a27d58ca06be6, type: 2}
+  - {fileID: 11400000, guid: 7b42fb025fbffa44799574c0ae94bc10, type: 2}
+  - {fileID: 11400000, guid: 3a500b18245c3dd40ace5873b253fb1d, type: 2}
+  - {fileID: 11400000, guid: 626e2c6c3d66a8b469510d691d70a4d4, type: 2}
+  - {fileID: 11400000, guid: cda1663f6ac86ae4b93a87ec59b346ef, type: 2}

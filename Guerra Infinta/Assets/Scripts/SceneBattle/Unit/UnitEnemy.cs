@@ -22,6 +22,11 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     private string dead = "Dead";
     private string attack = "Attack";
 
+    [Header("SoundEffect")]
+    private string effect09 = "BattleEffect09";
+    private string effect12 = "BattleEffect12";
+    private string effect18 = "BattleEffect18";
+
     private bool isClicked;
 
     public void Start()
@@ -47,6 +52,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     {
         textDamage.ShowDamage(damage);
         StartCoroutine(Flash());
+        AudioManager.Instance.PlaySFX(effect18, true);
         StartCoroutine(base.TakeDamage(damage));
         if (CheckDead())
         {
@@ -62,6 +68,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     public override void Attack(Unit target)
     {
         anim.SetTrigger(attack);
+        AudioManager.Instance.PlaySFX(effect12, true);
         base.Attack(target);
         impulseSource.GenerateImpulse();
         //cameraShake.StartShake();
