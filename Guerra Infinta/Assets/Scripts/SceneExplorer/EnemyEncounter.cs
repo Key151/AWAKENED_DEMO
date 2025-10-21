@@ -1,4 +1,5 @@
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyEncounter : MonoBehaviour
@@ -41,13 +42,16 @@ public class EnemyEncounter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AudioManager.Instance.PlayBGM(BattleSong);
-        cam.Follow = enemyTransform;
-        enemyInCamera = true;
+        if (collision.gameObject.CompareTag("Menino"))
+        {
+            AudioManager.Instance.PlayBGM(BattleSong);
+            cam.Follow = enemyTransform;
+            enemyInCamera = true;
 
-        screen.SetActive(true);
-        blackScreen = screen.GetComponent<BlackScreen>();
-        blackScreen.StartFadeOut();
+            screen.SetActive(true);
+            blackScreen = screen.GetComponent<BlackScreen>();
+            blackScreen.StartFadeOut();
+        }
     }
 
     private void CameraMovement()

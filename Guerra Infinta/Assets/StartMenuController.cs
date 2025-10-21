@@ -27,7 +27,7 @@ public class StartMenuController : MonoBehaviour
 
     public void StartButton()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         AudioManager.Instance.StopBGM();
         screen.SetActive(true);
         blackScreen = screen.GetComponent<BlackScreen>();
@@ -36,7 +36,7 @@ public class StartMenuController : MonoBehaviour
 
     public void LoadButton()
     {
-        AudioManager.Instance.PlaySFX(LoadGame);
+        AudioManager.Instance.PlaySFX(LoadGame, true);
         SceneManager.LoadScene(GameManager.Load());
         //try
         //{
@@ -51,31 +51,31 @@ public class StartMenuController : MonoBehaviour
 
     public void ExitButton()
     {
-        AudioManager.Instance.PlaySFX(backMenu);
+        AudioManager.Instance.PlaySFX(backMenu, true);
         Application.Quit();
     }
 
     public void OpenControls()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         menu.SetActive(false);
         controls.SetActive(true);
     }
 
     public void OpenMenu()
     {
-        AudioManager.Instance.PlaySFX(backMenu);
+        AudioManager.Instance.PlaySFX(backMenu, true);
         controls.SetActive(false);
         menu.SetActive(true);
     }
     public void ChangePTBR()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         languageManager.ChangePtBr();
     }
     public void ChangeENG()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         languageManager.ChangeEng();
     }
 

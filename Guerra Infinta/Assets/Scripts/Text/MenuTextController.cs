@@ -36,12 +36,12 @@ public class MenuTextController : MonoBehaviour
 
     public void ChangePTBR()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         languageManager.ChangePtBr();
     }
     public void ChangeENG()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         languageManager.ChangeEng();
     }
 }

@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource randomPitchAudioSource;
     [SerializeField] private AudioLibrary BgmLibrary;
     [SerializeField] private AudioLibrary SfxLibrary;
 
@@ -42,12 +43,21 @@ public class AudioManager : MonoBehaviour
     }
 
     // ----------- SFX -----------
-    public void PlaySFX(string key)
+    public void PlaySFX(string key, bool randomPitch = false)
     {
         var clip = SfxLibrary.GetClip(key);
+
         if (clip != null)
         {
-            sfxSource.PlayOneShot(clip);
+            if (randomPitch)
+            {
+                randomPitchAudioSource.pitch = Random.Range(0.8f, 1.2f);
+                randomPitchAudioSource.PlayOneShot(clip);
+            }
+            else
+            {
+                sfxSource.PlayOneShot(clip);
+            }
         }
         else
         {

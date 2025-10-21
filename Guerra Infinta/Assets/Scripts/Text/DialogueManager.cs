@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         currentIndex++;
         //Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
         if (currentIndex >= currentSequence.dialogueLines.Count)

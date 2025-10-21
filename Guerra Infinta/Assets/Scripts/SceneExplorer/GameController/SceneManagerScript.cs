@@ -16,13 +16,13 @@ public class ButtonExplorer : MonoBehaviour
     }
     public void LoadScene(string sceneName)
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         SceneManager.LoadScene(sceneName);
     }
 
     public void SaveButton()
     {
-        AudioManager.Instance.PlaySFX(SaveGame);
+        AudioManager.Instance.PlaySFX(SaveGame, true);
         GameManager.Save();
     }
 }

@@ -17,7 +17,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnAttackButton()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         verificateButtonUI.DisactivateButtons();
         enemyButtonController.SelectEnemyButtonAtack();
         verificateButtonUI.ActivateReturnButton();
@@ -25,7 +25,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnItenButton()
     {
-        AudioManager.Instance.PlaySFX(enterMenu);
+        AudioManager.Instance.PlaySFX(enterMenu, true);
         verificateButtonUI.DisactivateButtons();
         verificateButtonUI.ActivateItensPanel();
         verificateButtonUI.ActivateReturnButton();
@@ -33,7 +33,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnBackButton()
     {
-        AudioManager.Instance.PlaySFX(backMenu);
+        AudioManager.Instance.PlaySFX(backMenu, true);
         battleSystem.SavePlayers();
         AudioManager.Instance.StopBGM();
         SceneManager.LoadScene(sceneName);
@@ -41,7 +41,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnReturnButton()
     {
-        AudioManager.Instance.PlaySFX(backMenu);
+        AudioManager.Instance.PlaySFX(backMenu, true);
         verificateButtonUI.DisactivateReturnButton();
         verificateButtonUI.ActivateButtons();
     }
