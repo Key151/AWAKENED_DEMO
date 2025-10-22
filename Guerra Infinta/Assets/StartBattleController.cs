@@ -7,9 +7,9 @@ public class StartBattleController : MonoBehaviour
     [SerializeField] string sceneBattle;
     [SerializeField] EnemysList enemysList;
 
-    public void StartBattle()
+    public void StartBattle(int? index = null)
     {
-        enemysList.SelectedEnemy();
+        enemysList.SelectedEnemy(index);
         SceneManager.LoadScene(sceneBattle);
     }
 

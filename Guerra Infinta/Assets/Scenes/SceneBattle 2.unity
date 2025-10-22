@@ -8255,7 +8255,7 @@ PrefabInstance:
       objectReference: {fileID: 617006741}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: enemyPrefab.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyPrefab.Array.data[0]'

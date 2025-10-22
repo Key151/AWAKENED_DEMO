@@ -24,8 +24,13 @@ public class EnemyEncounter : MonoBehaviour
     [SerializeField] private GameObject screen;
     BlackScreen blackScreen;
 
+    [Header("Enemy Index")]
+    [SerializeField] private int enemyIndex;
+    private int? realEnemyIndex;
+
     void Start()
     {
+        realEnemyIndex = GetEnemyIndex();
         startBattleController = FindAnyObjectByType<StartBattleController>();
         cam = FindAnyObjectByType<CinemachineCamera>();
         enemyTransform = GetComponent<Transform>();
@@ -69,9 +74,14 @@ public class EnemyEncounter : MonoBehaviour
         else
         {
             cam.Lens.OrthographicSize = 1f;
-            startBattleController.StartBattle();
+            startBattleController.StartBattle(realEnemyIndex);
 
         }
+    }
+
+    public int? GetEnemyIndex()
+    {
+        return enemyIndex >= 0 ? enemyIndex : (int?)null;
     }
 
 
