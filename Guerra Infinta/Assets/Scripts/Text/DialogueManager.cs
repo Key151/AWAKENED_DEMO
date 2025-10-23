@@ -7,8 +7,10 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("UI")]
     public Image iconImage;
-    public Text speakerText;
-    public Text dialogueText;
+    //public Text speakerText;
+    //public Text dialogueText;
+    [SerializeField] private TextMeshProUGUI speakerText;
+    [SerializeField] private TextMeshProUGUI dialogueText;
     public GameObject dialoguePanel;
     public bool dialogue;
 

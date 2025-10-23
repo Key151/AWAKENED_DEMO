@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ public class MenuTextController : MonoBehaviour
 
     [SerializeField] private DialogueLineData menuText;
     [SerializeField] private Text text;
+    [SerializeField] private TextMeshProUGUI textPro;
+    [SerializeField] private bool usingTMP = false;
     LanguageManager languageManager;
 
     private Language lastLanguage;
@@ -15,8 +18,15 @@ public class MenuTextController : MonoBehaviour
     void Start()
     {
         languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
-        text.text = menuText.GetText(languageManager.GetLanguage());
-        lastLanguage = languageManager.GetLanguage();
+        if (!usingTMP)
+        {
+            text.text = menuText.GetText(languageManager.GetLanguage());
+        }
+        else
+        {
+            textPro.text = menuText.GetText(languageManager.GetLanguage());
+        }
+            lastLanguage = languageManager.GetLanguage();
     }
 
     // Update is called once per frame
@@ -29,7 +39,14 @@ public class MenuTextController : MonoBehaviour
         else
         {
             lastLanguage = languageManager.GetLanguage();
-            text.text = menuText.GetText(languageManager.GetLanguage());
+            if (!usingTMP)
+            {
+                text.text = menuText.GetText(languageManager.GetLanguage());
+            }
+            else
+            {
+                textPro.text = menuText.GetText(languageManager.GetLanguage());
+            }
         }
             
     }
