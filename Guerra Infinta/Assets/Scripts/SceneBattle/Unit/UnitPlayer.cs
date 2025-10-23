@@ -74,13 +74,10 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         }
     }
 
-    public void SaveData() {
-
-        PlayerData = new PlayerData
-        {
-            playerId = UnitName,
-            hp = CurrentHP
-        };
-        PlayerManager.Instance.SavePlayer(PlayerData);
+    public void SaveData() 
+    {
+        var savedPlyer = PlayerManager.Instance.LoadPlayer(UnitName);
+        savedPlyer.hp = CurrentHP;
+        PlayerManager.Instance.SavePlayer(savedPlyer);
     }
 }

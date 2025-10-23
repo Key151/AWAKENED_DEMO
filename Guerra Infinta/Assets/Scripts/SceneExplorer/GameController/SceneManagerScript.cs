@@ -12,12 +12,11 @@ public class ButtonExplorer : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayBGM(ExplorerSong);
         PlayerManager.Instance.LoadPosition();
+        AudioManager.Instance.PlayBGM(ExplorerSong);   
     }
     public void LoadScene(string sceneName)
     {
-        PlayerManager.Instance.SavePosition();
         AudioManager.Instance.PlaySFX(enterMenu, true);
         SceneManager.LoadScene(sceneName);
     }

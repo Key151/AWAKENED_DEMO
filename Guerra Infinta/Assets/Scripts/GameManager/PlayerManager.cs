@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -9,17 +10,16 @@ public class PlayerManager : MonoBehaviour
 
     void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-        PlayerDataSave = new Dictionary<string, PlayerData>();
-        PlayerDataSave = SaveData.Data.playerDicioData;
+        if (PlayerDataSave == null) PlayerDataSave = new Dictionary<string, PlayerData>(); // <- so cria se for a primeira vez
+ 
         //SaveData.Data.playerDicioData = PlayerDataSave;
     }
 
@@ -53,6 +53,10 @@ public class PlayerManager : MonoBehaviour
 
         PlayerDataSave[nomeMenina].playerPosition = posicaoMenino;
         PlayerDataSave[nomeMenino].playerPosition = posicaoMenino;
+
+
+        Debug.Log($"[LOAD - SavePosition] Achei {PlayerDataSave[nomeMenino].playerId} Position={PlayerDataSave[nomeMenino].playerPosition}");
+
     }
 
     public void LoadPosition()
@@ -61,15 +65,14 @@ public class PlayerManager : MonoBehaviour
         string nomeMenino = menino.GetComponent<UnitPlayer>().UnitName;
 
         GameObject menina = GameObject.FindWithTag("Menina");
+        string nomeMenina = menina.GetComponent<UnitPlayer>().UnitName;
 
-        if (PlayerDataSave[nomeMenino].playerPosition == Vector3.zero)
-        {
-            PlayerDataSave[nomeMenino].playerPosition = menino.transform.position;
-        }
+        Debug.Log($"[LoadPosition] Achei {PlayerDataSave[nomeMenino].playerId} Position={PlayerDataSave[nomeMenino].playerPosition}");
+
+        if (PlayerDataSave[nomeMenino].playerPosition == Vector3.zero) return;
 
         else //if (PlayerDataSave.TryGetValue(nomeMenino, out PlayerData data)) //Procura o player com esse ID e armazena em data
         {
-            Debug.Log($"[LOAD] Achei {PlayerDataSave[nomeMenino].playerId} Position={PlayerDataSave[nomeMenino].playerPosition}");
             menino.transform.position = PlayerDataSave[nomeMenino].playerPosition;
             menina.transform.position = PlayerDataSave[nomeMenino].playerPosition;
         }

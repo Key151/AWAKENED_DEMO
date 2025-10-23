@@ -3,10 +3,9 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager: MonoBehaviour
+public class GameManager
 {
     private static string SavePath => Path.Combine(Application.persistentDataPath, "save.json");
-
     public static void Save()
     {
         //Save do que precisa

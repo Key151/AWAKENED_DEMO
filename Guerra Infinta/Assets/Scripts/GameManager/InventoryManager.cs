@@ -26,10 +26,10 @@ public class InventoryManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         // Cria dicionario para guardar as listas de itens de cada tipo
-        ItemDatabase = new Dictionary<TypeItem, Dictionary<NameItem, ItemData>>();
+        if (ItemDatabase == null) ItemDatabase = new Dictionary<TypeItem, Dictionary<NameItem, ItemData>>();
 
         foreach(var item in inventoryBattleList.inventoryList)
         {  
