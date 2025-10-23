@@ -10,11 +10,18 @@ public class GameManager: MonoBehaviour
     public static void Save()
     {
         //Save do que precisa
+        PlayerManager.Instance.SavePosition();
         SaveData.Data.playerDicioData = PlayerManager.Instance.PlayerDataSave;
         SaveData.Data.inventoriesDicioData = InventoryManager.Instance.ItemDatabase;
         SaveData.Data.currentSceneName = SceneManager.GetActiveScene().name;
+        SaveData.Data.dataDialog = SaveDialogueManager.CopyDialogue();
 
-        string json = JsonConvert.SerializeObject(SaveData.Data, Formatting.Indented);
+        var settings = new JsonSerializerSettings
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+        };
+
+        string json = JsonConvert.SerializeObject(SaveData.Data, Formatting.Indented, settings);
         File.WriteAllText(SavePath, json);
         Debug.Log($"Jogo salvo em: {SavePath}");
     }
@@ -27,22 +34,25 @@ public class GameManager: MonoBehaviour
         }
 
         string json = File.ReadAllText(SavePath);
-        SaveData data = JsonConvert.DeserializeObject<SaveData>(json);
+        SaveData.Data = JsonConvert.DeserializeObject<SaveData>(json);
 
         //Load do Player
-        foreach (var key in data.playerDicioData.Keys)
+        foreach (var key in SaveData.Data.playerDicioData.Keys)
         {
-            PlayerManager.Instance.PlayerDataSave[key] = PlayerManager.Instance.LoadPlayer(key);
+            PlayerManager.Instance.PlayerDataSave[key] = SaveData.Data.playerDicioData[key];
         }
 
         //Load dos intens
-        foreach (var key in data.inventoriesDicioData.Keys)
+        foreach (var key in SaveData.Data.inventoriesDicioData.Keys)
         {
-            InventoryManager.Instance.ItemDatabase[key] = InventoryManager.Instance.LoadInventory(key);
+            InventoryManager.Instance.ItemDatabase[key] = SaveData.Data.inventoriesDicioData[key];
         }
 
+        //Load dos dialogos
+        SaveDialogueManager.PasteDialogue(SaveData.Data.dataDialog);
+
         Debug.Log("Save carregado com sucesso!");
-        return data.currentSceneName; 
+        return SaveData.Data.currentSceneName; 
 
     }
 
