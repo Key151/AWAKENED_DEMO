@@ -4,7 +4,7 @@ using UnityEngine;
 public class SaveDialogueManager : MonoBehaviour
 {
 
-    private Dictionary<string, bool> dialogueDicio = new Dictionary<string, bool>();
+    private static Dictionary<string, bool> dialogueDicio = new Dictionary<string, bool>();
 
     void Awake()
     {
@@ -33,5 +33,14 @@ public class SaveDialogueManager : MonoBehaviour
     {
         dialogueDicio.Add("dialogue_Inicial", false);
         dialogueDicio.Add("dialogue_1", false);
+    }
+    public static Dictionary<string, bool> CopyDialogue()
+    {
+        return dialogueDicio;
+    }
+
+    public static void PasteDialogue(Dictionary<string, bool> dialogue)
+    {
+        dialogueDicio = dialogue;
     }
 }
