@@ -1,13 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
+    [Header("Audio Source")]
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource randomPitchAudioSource;
+
+    [Header("Library")]
     [SerializeField] private AudioLibrary BgmLibrary;
     [SerializeField] private AudioLibrary SfxLibrary;
 
@@ -42,6 +46,10 @@ public class AudioManager : MonoBehaviour
     {
         bgmSource.Stop();
     }
+    public void SetVolumeBGM(float volume)
+    {
+        bgmSource.volume = volume;
+    }
 
     // ----------- SFX -----------
     public void PlaySFX(string key, bool randomPitch = false)
@@ -64,5 +72,10 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning($"SFX '{key}' nao encontrado!");
         }
+    }
+    public void SetVolumeSFX(float volume)
+    {
+        sfxSource.volume = volume;
+        randomPitchAudioSource.volume = volume;
     }
 }
