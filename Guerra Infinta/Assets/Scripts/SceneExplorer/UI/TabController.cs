@@ -9,7 +9,7 @@ public class TabController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ActivateTab(3);
+        ActivateTab(0);
     }
 
     public void ActivateTab(int tabNo)
