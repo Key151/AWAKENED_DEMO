@@ -3,11 +3,20 @@ using UnityEngine;
 
 public class SaveDialogueManager : MonoBehaviour
 {
+    public static SaveDialogueManager Instance { get; private set; }
 
     private static Dictionary<string, bool> dialogueDicio = new Dictionary<string, bool>();
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
         CreatDialogue();
     }
 
