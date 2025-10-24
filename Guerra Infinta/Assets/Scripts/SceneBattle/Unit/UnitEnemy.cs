@@ -48,11 +48,11 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         iconAction.StartActionIcon();
     }
 
-    public override IEnumerator TakeDamage(int damage)
+    public override IEnumerator TakeDamage(int damage, string sfx= "BattleEffect18")
     {
         textDamage.ShowDamage(damage);
         StartCoroutine(Flash());
-        AudioManager.Instance.PlaySFX(effect18, true);
+        AudioManager.Instance.PlaySFX(sfx, true);
         StartCoroutine(base.TakeDamage(damage));
         if (CheckDead())
         {
@@ -68,7 +68,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     public override void Attack(Unit target)
     {
         anim.SetTrigger(attack);
-        AudioManager.Instance.PlaySFX(effect12, true);
+        //AudioManager.Instance.PlaySFX(effect12, true);
         base.Attack(target);
         impulseSource.GenerateImpulse();
         //cameraShake.StartShake();
@@ -101,7 +101,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
             }
             else
             {
-                Debug.Log("Não clicou no inimigo " + UnitName);
+                Debug.Log("Nao clicou no inimigo " + UnitName);
             }
         }
         return isClicked;

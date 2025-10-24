@@ -78,8 +78,9 @@ public class Unit : MonoBehaviour, IDamageable
         attackNormal.Attack(this, target);
     }
 
-    public virtual IEnumerator TakeDamage(int damage)
+    public virtual IEnumerator TakeDamage(int damage, string sfx = "BattleEffect12")
     {
+        AudioManager.Instance.PlaySFX(sfx, true);
         currentHP -= damage;
         if (currentHP <= 0)
         {

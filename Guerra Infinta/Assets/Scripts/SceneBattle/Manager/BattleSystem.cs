@@ -132,15 +132,18 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
-        if (!BattleList.OfType<UnitEnemy>().Any())
+        if (!BattleList.OfType<UnitPlayer>().Any())
+        {
+            state = BattleState.LOST;
+        }
+
+        else if (!BattleList.OfType<UnitEnemy>().Any())
         {
             state = BattleState.WON;
         }
 
-        else if (!BattleList.OfType<UnitPlayer>().Any())
-        {
-            state = BattleState.LOST;
-        }
+        //IVerificateTurnUnit turnUnit = BattleList[0] as IVerificateTurnUnit;
+        //state = turnUnit.turnUnit();
 
         else if (BattleList[0] is IVerificateTurnUnit turnUnit)
         {

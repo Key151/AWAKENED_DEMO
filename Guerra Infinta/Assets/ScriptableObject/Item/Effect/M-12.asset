@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Shotgun 1
+  m_Name: M-12
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: Shotgun
+  id: 4
+  itemName: MachineGun
   description: Uma 12
   quantity: 3
   damageAmount: 15
-  SfxName: 
+  SfxName: MachineGun

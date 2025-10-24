@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Pistola
   m_EditorClassIdentifier: 
+  id: 0
   itemName: Pistola
   description: Uma pistola simples
-  quantity: 10
+  quantity: 9
   damageAmount: 10
+  SfxName: Gun

@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 1
   itemName: Shotgun
   description: Uma 12
-  quantity: 10
+  quantity: 7
   damageAmount: 15
-  SfxName: 
+  SfxName: ShotGun
