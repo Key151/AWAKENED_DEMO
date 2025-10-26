@@ -96,7 +96,7 @@ public class BattleSystem : MonoBehaviour
 
         BattleList.Sort((a, b) => b.Spd.CompareTo(a.Spd));
 
-        VerificateButtonUI.ActivateDialguePanel();
+        //VerificateButtonUI.ActivateDialguePanel();
 
         //dialogueText.text = "Um " + enemyUnit[0].UnitName + " Apareceu...\n";
 
@@ -171,6 +171,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn(Unit player_Unit)
     {
         VerificateButtonUI.ActivateButtons();
+        if (PauseController.IsGamePaused) return;
         player_Unit.HealAP();
         player_Unit.selected = true;
         BattleList[0].selected = true;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2950692509740986449}
   - component: {fileID: 2442143760580514928}
   m_Layer: 3
-  m_Name: Yamabushi_tengu
+  m_Name: Tutorial_Yamabushi_tengu 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   unitName: Yamabushi Tengu
   damageBase: 7
   maxHP: 50
-  spd: 25
+  spd: 5
   maxActionPoint: 0
   currentActionPoint: 0
   attacking: 0

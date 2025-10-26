@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f6b9309cba3d49ab3c7aa069bcbf2, type: 3}
+  m_Name: Sequence_Tutorial
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - {fileID: 11400000, guid: 0fc2e41065d09c64587e75e8214cac45, type: 2}
+  - {fileID: 11400000, guid: dd55cb9ff9a79604ebd57d5a2df3d47b, type: 2}
+  - {fileID: 11400000, guid: 899f1953196ead64491fa7c6446712e4, type: 2}
+  - {fileID: 11400000, guid: 2f74eb91ff817634a800d2a5103d6326, type: 2}
+  - {fileID: 11400000, guid: b8853368f440e8c458332fb1e0a0fb0a, type: 2}
+  - {fileID: 11400000, guid: 6c3be8b3d1ce888418eba21c7937d769, type: 2}
+  - {fileID: 11400000, guid: 59a5b29de52533e458837f0e0058e9f9, type: 2}

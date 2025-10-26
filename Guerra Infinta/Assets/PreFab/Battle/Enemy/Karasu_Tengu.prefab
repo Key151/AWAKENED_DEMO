@@ -108,7 +108,7 @@ MonoBehaviour:
   unitName: Karasu Tengo
   damageBase: 7
   maxHP: 50
-  spd: 50
+  spd: 30
   maxActionPoint: 0
   currentActionPoint: 0
   attacking: 0

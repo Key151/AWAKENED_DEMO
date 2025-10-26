@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Damage
+  m_Name: Tutorial_Dialogue 1
   m_EditorClassIdentifier: 
   speakerName: 
   icon: {fileID: 0}
-  portugueseText: 'ATAQUE:  '
-  englishText: 'DAMAGE:  '
+  portugueseText: "Mas primeiro precisamos entender sobre os inimigos, voc\xEA pode
+    ver que tem um agora na sua frente. Eles podem aparecer em grupos de at\xE9 tr\xEAs
+    inimigos, ent\xE3o fique atento!"
+  englishText: 

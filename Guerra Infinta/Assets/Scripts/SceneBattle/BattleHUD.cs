@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class BattleHUD : MonoBehaviour
 {
-    public Text nameText;
+    //public Text nameText;
+    [SerializeField] private TextMeshProUGUI nameText;
     public Text levelText;
-    public Text hpText;
+    //public Text hpText;
+    [SerializeField] private TextMeshProUGUI hpText;
     public Slider hpSlider;
     public TextMeshPro nameTextMesh;
     public Text ActionPointText;

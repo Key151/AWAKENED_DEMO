@@ -11,9 +11,9 @@ public class EnemysList: MonoBehaviour
     [SerializeField] private int percentEnemySpaw = 100;
     [SerializeField] private int minusPercent = 15; // Modificar posteriormente para dado de acordo para cada inimigo
 
-    public void SelectedEnemy(int? i = null)
+    public void SelectedEnemy(IReadOnlyList<GameObject> enemies = null)
     {
-        if (i == null)
+        if (enemies == null)
         {
             qtdEnemy = 0;
             enemyPrefab?.Clear();
@@ -32,8 +32,11 @@ public class EnemysList: MonoBehaviour
         {
             qtdEnemy = 0;
             enemyPrefab?.Clear();
-            enemyPrefab.Add(enemyList[i.GetValueOrDefault()]);
-            qtdEnemy++;
+            for (int index = 0; index < enemies.Count; index++)
+            {
+                enemyPrefab.Add(enemies[index]);
+                qtdEnemy++;
+            }
         }
     }
 }

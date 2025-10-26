@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,13 +25,14 @@ public class EnemyEncounter : MonoBehaviour
     [SerializeField] private GameObject screen;
     BlackScreen blackScreen;
 
-    [Header("Enemy Index")]
-    [SerializeField] private int enemyIndex;
-    private int? realEnemyIndex;
+    [Header("Enemy List")]
+    [SerializeField] private List<GameObject> enemyList;
+
 
     void Start()
     {
-        realEnemyIndex = GetEnemyIndex();
+        if (enemyList.Count == 0) enemyList = null;
+
         startBattleController = FindAnyObjectByType<StartBattleController>();
         cam = FindAnyObjectByType<CinemachineCamera>();
         enemyTransform = GetComponent<Transform>();
@@ -74,14 +76,10 @@ public class EnemyEncounter : MonoBehaviour
         else
         {
             cam.Lens.OrthographicSize = 1f;
-            startBattleController.StartBattle(realEnemyIndex);
+            PauseController.SetPause(false);
+            startBattleController.StartBattle(enemyList);
 
         }
-    }
-
-    public int? GetEnemyIndex()
-    {
-        return enemyIndex >= 0 ? enemyIndex : (int?)null;
     }
 
 

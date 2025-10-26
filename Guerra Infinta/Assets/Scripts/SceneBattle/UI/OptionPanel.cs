@@ -17,6 +17,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnAttackButton()
     {
+        if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(enterMenu, true);
         verificateButtonUI.DisactivateButtons();
         enemyButtonController.SelectEnemyButtonAtack();
@@ -25,6 +26,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnItenButton()
     {
+        if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(enterMenu, true);
         verificateButtonUI.DisactivateButtons();
         verificateButtonUI.ActivateItensPanel();
@@ -33,6 +35,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnBackButton()
     {
+        if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(backMenu, true);
         battleSystem.SavePlayers();
         AudioManager.Instance.StopBGM();
@@ -41,6 +44,7 @@ public class OptionPanel : MonoBehaviour
 
     public void OnReturnButton()
     {
+        if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(backMenu, true);
         verificateButtonUI.DisactivateReturnButton();
         verificateButtonUI.ActivateButtons();

@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Damage
+  m_Name: Tutorial_Dialogue 5
   m_EditorClassIdentifier: 
   speakerName: 
   icon: {fileID: 0}
-  portugueseText: 'ATAQUE:  '
-  englishText: 'DAMAGE:  '
+  portugueseText: "Se voc\xEA quiser dar dano \xE0 um inimigo, voc\xEA pode atacar
+    ele diretamente com o bot\xE3o \"ATACAR\" ou tamb\xE9m poder\xE1 usar algum item
+    no bot\xE3o \"ITENS\", eles podem ser bem \xFAteis em uma batalha, ent\xE3o sempre
+    olhe os itens que voc\xEA tem."
+  englishText: 

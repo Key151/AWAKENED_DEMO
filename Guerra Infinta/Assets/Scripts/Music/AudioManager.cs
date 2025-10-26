@@ -23,7 +23,15 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Instance = this;
+        bgmSource.volume = 1.0f;
+        sfxSource.volume = 1.0f;
+        randomPitchAudioSource.volume = 1.0f;
         //DontDestroyOnLoad(gameObject);
+    }
+
+    void Update()
+    {
+        //Debug.Log("BGM: " + bgmSource.volume);
     }
 
     // ----------- BGM -----------
@@ -49,6 +57,12 @@ public class AudioManager : MonoBehaviour
     public void SetVolumeBGM(float volume)
     {
         bgmSource.volume = volume;
+        Debug.Log("BGM: " + bgmSource.volume);
+    }
+
+    public float GetVolumeBGM()
+    {
+        return bgmSource.volume;
     }
 
     // ----------- SFX -----------
@@ -77,5 +91,9 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.volume = volume;
         randomPitchAudioSource.volume = volume;
+    }
+    public float GetVolumeSFX()
+    {
+        return sfxSource.volume;
     }
 }

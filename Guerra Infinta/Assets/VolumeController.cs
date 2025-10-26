@@ -6,31 +6,40 @@ public class VolumeController : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider bgmSlider;
-
-    AudioManager audioManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
+        Debug.Log("Volume: " + AudioManager.Instance.GetVolumeBGM());
+        sfxSlider.value = sfxSlider.maxValue;
+        bgmSlider.value = bgmSlider.maxValue;
 
-        audioManager.SetVolumeSFX(sfxSlider.value);
-        audioManager.SetVolumeBGM(bgmSlider.value);
+        if(AudioManager.Instance.GetVolumeBGM() != 1.0f || AudioManager.Instance.GetVolumeSFX() != 1.0f)
+        {
+            sfxSlider.value = AudioManager.Instance.GetVolumeSFX();
+            bgmSlider.value = AudioManager.Instance.GetVolumeBGM();
+            Debug.Log("Está Diferente!");
+        }
+        else
+        {
+            AudioManager.Instance.SetVolumeSFX(sfxSlider.value);
+            AudioManager.Instance.SetVolumeBGM(bgmSlider.value);
+        }
 
         sfxSlider.onValueChanged.AddListener(delegate { OnValueChanceSFX(); });
-        bgmSlider.onValueChanged.AddListener(delegate { OnValueChanceBGM(); });
-    }
-
-    // ----------- BGM -----------
-
-    public void OnValueChanceBGM()
-    {
-        audioManager.SetVolumeBGM(bgmSlider.value);
+        bgmSlider.onValueChanged.AddListener(delegate { OnValueChanceBGM(); });    
     }
 
     // ----------- SFX -----------
 
     public void OnValueChanceSFX()
     {
-        audioManager.SetVolumeSFX(sfxSlider.value);
+        AudioManager.Instance.SetVolumeSFX(sfxSlider.value);
+    }
+
+    // ----------- BGM -----------
+
+    public void OnValueChanceBGM()
+    {
+        AudioManager.Instance.SetVolumeBGM(bgmSlider.value);
     }
 }
