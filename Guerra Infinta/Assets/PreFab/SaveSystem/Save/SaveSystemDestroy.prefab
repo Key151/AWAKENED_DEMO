@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8121474127616368166}
-  - component: {fileID: 5269289340028395346}
+  - component: {fileID: -1443978348102430064}
   m_Layer: 0
   m_Name: SaveSystemDestroy
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 7996238671490593498}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5269289340028395346
+--- !u!114 &-1443978348102430064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,10 +44,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4368241284541843429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a34fe13ddcd856489351118bd427bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 17ae92f9c69df9640bcc63eb8780780f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroy: 1
 --- !u!1 &8784084447164682039
 GameObject:
   m_ObjectHideFlags: 0

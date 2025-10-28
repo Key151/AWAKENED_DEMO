@@ -27,6 +27,7 @@ public class StartMenuController : MonoBehaviour
 
     public void StartButton()
     {
+        SaveSystemDestroy.Instance.DestroySaveSystem();
         AudioManager.Instance.PlaySFX(enterMenu, true);
         AudioManager.Instance.StopBGM();
         screen.SetActive(true);

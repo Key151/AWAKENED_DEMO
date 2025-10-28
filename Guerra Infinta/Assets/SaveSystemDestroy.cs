@@ -13,15 +13,20 @@ public class SaveSystemDestroy : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoad;
+        //SceneManager.sceneLoaded += OnSceneLoad;
     }
 
-    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    /*private void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "TelaInicial")
         {
             SceneManager.sceneLoaded -= OnSceneLoad;
             Destroy(gameObject);
         }
+    }*/
+
+    public void DestroySaveSystem()
+    {
+        Destroy(gameObject);
     }
 }
