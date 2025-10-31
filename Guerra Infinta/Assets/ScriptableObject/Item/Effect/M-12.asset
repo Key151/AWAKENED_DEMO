@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: MachineGun
   description: Uma 12
   quantity: 3
-  damageAmount: 15
+  damageAmount: 13
+  ActionPointCost: 10
   SfxName: MachineGun

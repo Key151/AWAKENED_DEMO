@@ -11,9 +11,9 @@ public class BattleEnemy
         if (Random.Range(0, 10) >= 3)
         {
             enemy.Attack(player);
-            player.takingDamage = true;
+            player.TakingDamage = true;
             BattleSystem.dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
-            player.takingDamage = false;
+            player.TakingDamage = false;
         }
         
         else

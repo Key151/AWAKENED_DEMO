@@ -18,9 +18,9 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
 
     [Header("Animation")]
     private Animator anim;
-    private string hurt = "Hurt";
-    private string dead = "Dead";
-    private string attack = "Attack";
+    private string hurtAni = "Hurt";
+    private string deadAni = "Dead";
+    private string attackAni = "Attack";
 
     [Header("SoundEffect")]
     private string effect09 = "BattleEffect09";
@@ -56,18 +56,18 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         StartCoroutine(base.TakeDamage(damage));
         if (CheckDead())
         {
-            anim.SetTrigger(dead);
+            anim.SetTrigger(deadAni);
         }
         else
         {
-            anim.SetTrigger(hurt);
+            anim.SetTrigger(hurtAni);
         }
         yield return new WaitForSeconds(1f);
     }
 
     public override void Attack(Unit target)
     {
-        anim.SetTrigger(attack);
+        anim.SetTrigger(attackAni);
         //AudioManager.Instance.PlaySFX(effect12, true);
         base.Attack(target);
         impulseSource.GenerateImpulse();

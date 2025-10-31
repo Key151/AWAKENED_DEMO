@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5341536685258964796}
   - component: {fileID: 5408585331003473277}
   m_Layer: 3
-  m_Name: Menino 1
+  m_Name: Menino
   m_TagString: Menino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,12 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Menino
   damageBase: 10
-  maxHP: 50
-  spd: 30
+  maxHP: 60
+  spd: 25
   maxActionPoint: 100
-  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0
-  ItemEquipment:
-  - {fileID: 11400000, guid: 6be4861c3f597dc499b9bda8787520cd, type: 2}
+  ItemEquipment: []

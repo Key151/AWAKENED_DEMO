@@ -16,9 +16,9 @@ public class Unit : MonoBehaviour, IDamageable
     private int currentActionPoint;
     private int damageBonus = 0;
     private bool dead;
-    public bool attacking;
-    public bool selected;
-    public bool takingDamage;
+    public bool Attacking { get; set; }
+    public bool Selected { get; set; }
+    public bool TakingDamage { get; set; }
 
     public string UnitName
     {
@@ -64,6 +64,7 @@ public class Unit : MonoBehaviour, IDamageable
         get { return spd; }
         set { spd = value; }
     }
+
     public int TotalDamage()
     {
         return damageBase + damageBonus;

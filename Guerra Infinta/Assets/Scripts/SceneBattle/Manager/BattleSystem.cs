@@ -175,14 +175,14 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.ActivateButtons();
         if (PauseController.IsGamePaused) return;
         player_Unit.HealAP();
-        player_Unit.selected = true;
-        BattleList[0].selected = true;
+        player_Unit.Selected = true;
+        BattleList[0].Selected = true;
     }
     private IEnumerator AtackEnemy(Unit player_Unit, int enemyNumber)
     {
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
-        playerAtual.selected = false;
+        playerAtual.Selected = false;
         enemyUnit[enemyNumber].ShowIcon(); //Mostra imagem
         yield return StartCoroutine(Maneger.StartAttackSequence(playerAtual, enemyUnit[enemyNumber]));
 

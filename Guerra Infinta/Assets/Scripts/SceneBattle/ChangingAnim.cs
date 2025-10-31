@@ -35,17 +35,17 @@ public class ChangingAnim : MonoBehaviour
         {
             ChangeAnimatonState(Dead);
         }
-        else if(Unit.attacking)
+        else if(Unit.Attacking)
         {
             ChangeAnimatonState(Attack);
         }
-        else if(Unit.takingDamage)
+        else if(Unit.TakingDamage)
         {
             ChangeAnimatonState(Takng_Damage);
         }
         else
         {
-            if (Unit.selected)
+            if (Unit.Selected)
             {
                 ChangeAnimatonState(Idle_Selected);
             }

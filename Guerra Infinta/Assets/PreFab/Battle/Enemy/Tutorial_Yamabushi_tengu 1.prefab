@@ -109,8 +109,7 @@ MonoBehaviour:
   damageBase: 7
   maxHP: 50
   spd: 5
-  maxActionPoint: 0
-  currentActionPoint: 0
+  maxActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0

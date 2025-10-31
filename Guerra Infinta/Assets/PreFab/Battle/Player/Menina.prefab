@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1058578942766788368}
   - component: {fileID: 1040684824106060760}
   m_Layer: 3
-  m_Name: Menina 1
+  m_Name: Menina
   m_TagString: Menina
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,9 +103,8 @@ MonoBehaviour:
   unitName: Menina
   damageBase: 10
   maxHP: 50
-  spd: 25
+  spd: 30
   maxActionPoint: 100
-  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0
