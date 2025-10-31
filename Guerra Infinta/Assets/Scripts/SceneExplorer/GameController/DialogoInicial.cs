@@ -50,6 +50,7 @@ public class DialogoInicial : MonoBehaviour
         {
             blackScreen.StartFadeIn();
             saveDialogueManager.SaveDialogue(dictionaryKey, true);
+            StateObjectsController.Instance.ChangeStateObjects("StartGame");
         }
     }
 }

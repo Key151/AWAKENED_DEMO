@@ -14,6 +14,10 @@ public class OptionPanel : MonoBehaviour
     [SerializeField] private BattleSystem battleSystem;
     [SerializeField] private VerificateButtonUI verificateButtonUI;
     [SerializeField] private EnemyButtonController enemyButtonController;
+    DialogueManager dialogueManager;
+
+    [Header("Diaogo")]
+    [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
 
     public void OnAttackButton()
     {
@@ -37,6 +41,15 @@ public class OptionPanel : MonoBehaviour
     {
         if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(backMenu, true);
+
+        if (GameStateController.Instance.GetCurrentState() == "StartGame")
+        {
+            PauseController.SetPause(true);
+            dialogueManager = FindAnyObjectByType<DialogueManager>();
+            dialogueManager.StartDialogue(dialogueSequenceStartGame);
+            return;
+        }
+
         battleSystem.SavePlayers();
         AudioManager.Instance.StopBGM();
         SceneManager.LoadScene(sceneName);
@@ -44,7 +57,6 @@ public class OptionPanel : MonoBehaviour
 
     public void OnReturnButton()
     {
-        if (PauseController.IsGamePaused) return;
         AudioManager.Instance.PlaySFX(backMenu, true);
         verificateButtonUI.DisactivateReturnButton();
         verificateButtonUI.ActivateButtons();

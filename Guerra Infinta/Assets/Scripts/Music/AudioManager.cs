@@ -57,7 +57,6 @@ public class AudioManager : MonoBehaviour
     public void SetVolumeBGM(float volume)
     {
         bgmSource.volume = volume;
-        Debug.Log("BGM: " + bgmSource.volume);
     }
 
     public float GetVolumeBGM()

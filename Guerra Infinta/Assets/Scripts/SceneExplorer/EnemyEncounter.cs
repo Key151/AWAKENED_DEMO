@@ -12,6 +12,7 @@ public class EnemyEncounter : MonoBehaviour
     private float removeOrtho = 0.1f;
 
     [Header("Enemy Settings")]
+    [SerializeField] private string enemyID;
     private Transform enemyTransform;
     private bool enemyInCamera;
 
@@ -28,14 +29,29 @@ public class EnemyEncounter : MonoBehaviour
     [Header("Enemy List")]
     [SerializeField] private List<GameObject> enemyList;
 
+    [Header("ChangeGameState (Deixar vazio se não quiser mudar o status do jogo)")]
+    [SerializeField] private string state;
+
 
     void Start()
     {
         if (enemyList.Count == 0) enemyList = null;
 
+        if (string.IsNullOrEmpty(state))
+        {
+            state = null;
+        }
+
         startBattleController = FindAnyObjectByType<StartBattleController>();
         cam = FindAnyObjectByType<CinemachineCamera>();
         enemyTransform = GetComponent<Transform>();
+
+        if(EnemyController.Instance != null && EnemyController.Instance.IsEnemyDefeated(enemyID))
+        {
+            StateObjectsController.Instance.ChangeStateObjects(state);
+            gameObject.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -77,6 +93,7 @@ public class EnemyEncounter : MonoBehaviour
         {
             cam.Lens.OrthographicSize = 1f;
             PauseController.SetPause(false);
+            EnemyController.Instance.MarkEnemyDefeated(enemyID);
             startBattleController.StartBattle(enemyList);
 
         }

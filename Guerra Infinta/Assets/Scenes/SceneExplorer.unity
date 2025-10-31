@@ -800,7 +800,6 @@ MonoBehaviour:
   maxHP: 50
   spd: 25
   maxActionPoint: 100
-  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0
@@ -852,10 +851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 1
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList:
   - {fileID: 508094171281282804, guid: 8158f9c0dd0766444ba9b4e4862a956d, type: 3}
+  state: TutorialBattle
 --- !u!61 &288482283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5665,6 +5666,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068124174}
   m_CullTransparentMesh: 1
+--- !u!1 &1080484381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080484382}
+  - component: {fileID: 1080484383}
+  m_Layer: 0
+  m_Name: StateObjectsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080484382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080484381}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1902259557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1080484383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080484381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8fa3d14a9dfab429f59485856094a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartGame:
+  - {fileID: 288482280}
+  TutorialBattle:
+  - {fileID: 1761395473}
 --- !u!1 &1122645343
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,7 +7355,6 @@ MonoBehaviour:
   maxHP: 50
   spd: 30
   maxActionPoint: 100
-  currentActionPoint: 100
   attacking: 0
   selected: 0
   takingDamage: 0
@@ -7448,9 +7496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 2
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList: []
+  state: 
 --- !u!61 &1761395476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7859,6 +7909,7 @@ Transform:
   - {fileID: 1659323107}
   - {fileID: 81087023}
   - {fileID: 1760689335}
+  - {fileID: 1080484382}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1903417452 stripped
@@ -8074,9 +8125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList: []
+  state: 
 --- !u!1 &2007886280
 GameObject:
   m_ObjectHideFlags: 0
@@ -12050,11 +12103,11 @@ SceneRoots:
   - {fileID: 441754496}
   - {fileID: 369866874}
   - {fileID: 2023960288}
-  - {fileID: 1902259557}
   - {fileID: 8439379913779844026}
   - {fileID: 5539305318549413914}
   - {fileID: 93480028}
   - {fileID: 288482286}
   - {fileID: 1761395479}
+  - {fileID: 1902259557}
   - {fileID: 1846124989}
   - {fileID: 1512819239}

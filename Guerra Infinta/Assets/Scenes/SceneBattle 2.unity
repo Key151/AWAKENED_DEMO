@@ -8577,6 +8577,7 @@ MonoBehaviour:
   battleSystem: {fileID: 4922367621937568285}
   verificateButtonUI: {fileID: 1222266297}
   enemyButtonController: {fileID: 889271973}
+  dialogueSequenceStartGame: {fileID: 11400000, guid: 29ff2036e46e6754887602a5edf2c53b, type: 2}
 --- !u!114 &2142051391
 MonoBehaviour:
   m_ObjectHideFlags: 0

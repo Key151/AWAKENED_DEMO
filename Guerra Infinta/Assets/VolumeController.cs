@@ -9,7 +9,6 @@ public class VolumeController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("Volume: " + AudioManager.Instance.GetVolumeBGM());
         sfxSlider.value = sfxSlider.maxValue;
         bgmSlider.value = bgmSlider.maxValue;
 
@@ -17,7 +16,6 @@ public class VolumeController : MonoBehaviour
         {
             sfxSlider.value = AudioManager.Instance.GetVolumeSFX();
             bgmSlider.value = AudioManager.Instance.GetVolumeBGM();
-            Debug.Log("Está Diferente!");
         }
         else
         {
