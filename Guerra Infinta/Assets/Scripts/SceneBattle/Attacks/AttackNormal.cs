@@ -4,10 +4,12 @@ public class AttackNormal : IAttack
 {
     public void Attack(Unit attacker, Unit target)
     {
-        int valorBase = 5;
-        int interval = 3;
+        int valorBase = 10*target.Spd/attacker.Spd; //Cursto de AP
+        int interval = 5; // Margem de dano
+
         Random r = new();
         int DanoTotal = attacker.TotalDamage() + r.Next(-interval, interval);
+
         target.StartCoroutine(target.TakeDamage(DanoTotal));
         attacker.CurrentActionPoint -= valorBase;
 
@@ -16,6 +18,6 @@ public class AttackNormal : IAttack
             attacker.CurrentActionPoint = 0;
         }
 
-        //UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.TotalDamage()}");
+        UnityEngine.Debug.Log($"o {attacker} está atacanndo para {target} com dano de {attacker.TotalDamage()} e AP é {attacker.CurrentActionPoint}");
     }
 }

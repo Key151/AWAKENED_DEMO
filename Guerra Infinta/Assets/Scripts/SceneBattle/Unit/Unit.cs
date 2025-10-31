@@ -9,10 +9,11 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int spd;
 
     [SerializeField] private int maxActionPoint;
-    [SerializeField] private int currentActionPoint;
+    
 
     private IAttack attackNormal;
     private int currentHP;
+    private int currentActionPoint;
     private int damageBonus = 0;
     private bool dead;
     public bool attacking;
@@ -108,6 +109,7 @@ public class Unit : MonoBehaviour, IDamageable
     {
         attackNormal = new AttackNormal();
         currentHP = maxHP;
+        currentActionPoint = maxActionPoint;
     }
 
     //-----------------------------

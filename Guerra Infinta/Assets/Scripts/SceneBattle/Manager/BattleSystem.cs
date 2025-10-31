@@ -94,7 +94,7 @@ public class BattleSystem : MonoBehaviour
             BattleList.Add(enemy);
         }
 
-        BattleList.Sort((a, b) => b.Spd.CompareTo(a.Spd));
+        BattleList.Sort((a, b) => b.CurrentActionPoint.CompareTo(a.CurrentActionPoint));
 
         //VerificateButtonUI.ActivateDialguePanel();
 
@@ -131,6 +131,8 @@ public class BattleSystem : MonoBehaviour
                 enemyButtonController.KillEnemyButton(i);
             }
         }
+
+        BattleList.Sort((a, b) => b.CurrentActionPoint.CompareTo(a.CurrentActionPoint));
 
         if (!BattleList.OfType<UnitPlayer>().Any())
         {
