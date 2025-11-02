@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: AP
+  m_EditorClassIdentifier: 
+  speakerName: 
+  icon: {fileID: 0}
+  portugueseText: "AP: \xC9 valor o ponto de a\xE7\xE3o, com ela define a ordem de
+    quem vai atacar primeiro. Quanto maior mais rapido chega seu turno para atacar."
+  englishText: 'AP: The point of action is valued, with it it defines the order of
+    who will attack first. The higher the faster your turn comes to attack.'

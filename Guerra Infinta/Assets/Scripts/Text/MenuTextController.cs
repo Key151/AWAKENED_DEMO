@@ -17,7 +17,7 @@ public class MenuTextController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
+        languageManager = GameObject.FindWithTag("LanguageManager").GetComponent<LanguageManager>();
         if (!usingTMP)
         {
             text.text = menuText.GetText(languageManager.GetLanguage());
