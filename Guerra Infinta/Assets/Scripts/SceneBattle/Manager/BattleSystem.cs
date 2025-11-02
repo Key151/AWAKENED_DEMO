@@ -150,6 +150,7 @@ public class BattleSystem : MonoBehaviour
         else if (BattleList[0] is IVerificateTurnUnit turnUnit)
         {
             state = turnUnit.turnUnit();
+            BattleList[0].HealAP();
         }
 
         switch (state)
@@ -174,7 +175,6 @@ public class BattleSystem : MonoBehaviour
     {
         VerificateButtonUI.ActivateButtons();
         if (PauseController.IsGamePaused) return;
-        player_Unit.HealAP();
         player_Unit.Selected = true;
         BattleList[0].Selected = true;
     }
@@ -190,6 +190,8 @@ public class BattleSystem : MonoBehaviour
         VerificateButtonUI.ActivateDialguePanel();
         dialogueText.text = playerAtual.UnitName + " ataca!";
         playerAtual.Attack(enemyUnit[enemyNumber]);
+        playerHUD.UpdateApHUD(playerUnit);
+        playerHUD_2.UpdateApHUD(playerUnit_2);
 
         yield return new WaitForSeconds(timer);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
@@ -280,6 +282,8 @@ public class BattleSystem : MonoBehaviour
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
+        playerHUD.UpdateApHUD(playerUnit);
+        playerHUD_2.UpdateApHUD(playerUnit_2);
 
         yield return new WaitForSeconds(timer);
 

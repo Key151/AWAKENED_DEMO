@@ -106,13 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Kitsune
-  damageBase: 7
-  maxHP: 50
-  spd: 50
+  damageBase: 9
+  maxHP: 40
+  spd: 20
   maxActionPoint: 100
-  attacking: 0
-  selected: 0
-  takingDamage: 0
   textDamage: {fileID: 790877607623345090}
   iconAction: {fileID: 3715185373546910389}
 --- !u!114 &7311989276286646145

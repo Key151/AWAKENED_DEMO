@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   itemName: Pistola
   description: Uma pistola simples
-  quantity: 3
+  quantity: 5
   damageAmount: 10
   ActionPointCost: 8
   SfxName: Gun

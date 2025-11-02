@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   itemName: Shotgun
   description: Uma 12
-  quantity: 3
+  quantity: 5
   damageAmount: 17
   ActionPointCost: 15
   SfxName: ShotGun

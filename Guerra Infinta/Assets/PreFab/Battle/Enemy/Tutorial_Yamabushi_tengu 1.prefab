@@ -106,13 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Yamabushi Tengu
-  damageBase: 7
-  maxHP: 50
-  spd: 5
+  damageBase: 6
+  maxHP: 40
+  spd: 15
   maxActionPoint: 100
-  attacking: 0
-  selected: 0
-  takingDamage: 0
   textDamage: {fileID: 1961664321347140155}
   iconAction: {fileID: 2471918576294619980}
 --- !u!114 &7311989276286646145

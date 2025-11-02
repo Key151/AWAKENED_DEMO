@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class BattleHUD : MonoBehaviour
 {
-    //public Text nameText;
     [SerializeField] private TextMeshProUGUI nameText;
-    public Text levelText;
-    //public Text hpText;
-    [SerializeField] private TextMeshProUGUI hpText;
-    public Slider hpSlider;
-    public TextMeshPro nameTextMesh;
-    public Text ActionPointText;
-    public Slider ActionPointSlider;
     public GameObject hudImage;
+
+    [Header("HP")]
+    [SerializeField] private TextMeshProUGUI hpText;
+    [SerializeField] private Slider hpSlider;
+
+    [Header("AP")]
+    [SerializeField] private TextMeshProUGUI ActionPointText;
+    [SerializeField] private Slider ActionPointSlider;
 
     //[SerializeField] private ParticleSystem particle;
 
@@ -24,14 +24,16 @@ public class BattleHUD : MonoBehaviour
         nameText.text = unit.UnitName;
 
         UpdateHPText(unit);
-        /*if (ActionPointText != null && ActionPointSlider != null)
+
+        if (ActionPointSlider != null)
         {
-            ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
             ActionPointSlider.maxValue = unit.MaxActionPoint;
             ActionPointSlider.value = unit.CurrentActionPoint;
-        }*/
+        }
+
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
+
         Debug.Log(unit.name + " tem " + unit.CurrentHP + " de vida");
         DisactiveHudImage();
     }
@@ -51,6 +53,16 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
+    public IEnumerator PlayerSetAP(int ap)
+    {
+        //particle.Play();
+        while (ActionPointSlider.value > ap)
+        {
+            ActionPointSlider.value--;
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
     public void UpdateHPText(Unit unit)
     {
         if (hpText != null)
@@ -59,12 +71,14 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
-    public void SetActionPoint(Unit unit)
+    public void UpdateAPText(Unit unit)
     {
-        ActionPointSlider.value = unit.CurrentActionPoint;
-        ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
-
+        if (hpText != null)
+        {
+            ActionPointText.text = unit.CurrentActionPoint + "/" + unit.MaxActionPoint;
+        }
     }
+
 
     public void ActiveHudImage()
     {
@@ -89,5 +103,10 @@ public class BattleHUD : MonoBehaviour
         UpdateHPText(unit);
     }
 
+    public void UpdateApHUD(Unit unit)
+    {
+        StartCoroutine(PlayerSetAP(unit.CurrentActionPoint));
+        UpdateAPText(unit);
+    }
 
 }

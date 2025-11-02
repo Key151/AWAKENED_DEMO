@@ -107,12 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Karasu Tengo
   damageBase: 7
-  maxHP: 50
-  spd: 30
+  maxHP: 45
+  spd: 25
   maxActionPoint: 100
-  attacking: 0
-  selected: 0
-  takingDamage: 0
   textDamage: {fileID: 3428158485501864538}
   iconAction: {fileID: 1649580171215944493}
 --- !u!114 &7311989276286646145

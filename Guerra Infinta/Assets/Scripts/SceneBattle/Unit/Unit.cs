@@ -95,7 +95,9 @@ public class Unit : MonoBehaviour, IDamageable
 
     public void HealAP()
     {
-        CurrentActionPoint += 10;
+        int maxAP = 100;
+        CurrentActionPoint += 6;
+        CurrentActionPoint = Mathf.Clamp(CurrentActionPoint, 0, maxAP);
     }
 
     public virtual bool CheckDead()
