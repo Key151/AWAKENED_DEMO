@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Marco
   icon: {fileID: 21300000, guid: 346a3483c500faa40bc5a9423b5ea7a8, type: 3}
-  portugueseText: "Espera, o que \xE9 aquilo ali?"
+  portugueseText: Espera, o que foi isso?
   englishText: 

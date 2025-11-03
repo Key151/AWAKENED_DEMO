@@ -986,10 +986,6 @@ MonoBehaviour:
   maxHP: 50
   spd: 25
   maxActionPoint: 100
-  currentActionPoint: 100
-  attacking: 0
-  selected: 0
-  takingDamage: 0
   ItemEquipment: []
 --- !u!1 &288482280
 GameObject:
@@ -1038,10 +1034,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList:
   - {fileID: 508094171281282804, guid: 8158f9c0dd0766444ba9b4e4862a956d, type: 3}
+  state: 
 --- !u!61 &288482283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8481,10 +8479,6 @@ MonoBehaviour:
   maxHP: 50
   spd: 30
   maxActionPoint: 100
-  currentActionPoint: 100
-  attacking: 0
-  selected: 0
-  takingDamage: 0
   ItemEquipment:
   - {fileID: 11400000, guid: 6be4861c3f597dc499b9bda8787520cd, type: 2}
 --- !u!1 &1758392235
@@ -8664,9 +8658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList: []
+  state: 
 --- !u!61 &1761395476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9369,9 +9365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 
   BattleSong: Battle01
   screen: {fileID: 1818204973}
   enemyList: []
+  state: 
 --- !u!1 &2007886280
 GameObject:
   m_ObjectHideFlags: 0

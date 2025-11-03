@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   portugueseText: "AP: \xC9 valor o ponto de a\xE7\xE3o, com ela define a ordem de
     quem vai atacar primeiro. Quanto maior mais rapido chega seu turno para atacar"
-  englishText: 'AP: The point of action is valued, with it it defines the order of
-    who will attack first. The higher the faster your turn comes to attack'
+  englishText: 'AP: Is the value of point of action, with it it defines the order
+    of who will attack first. The higher the faster your turn comes to attack'

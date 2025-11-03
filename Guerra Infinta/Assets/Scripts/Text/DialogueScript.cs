@@ -14,12 +14,16 @@ public class DialogueScript : MonoBehaviour
 
     private bool dialogueIsOn;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        saveDialogueManager = GameObject.Find("SaveDialogueManager").GetComponent<SaveDialogueManager>();
+        saveDialogueManager = FindAnyObjectByType<SaveDialogueManager>();
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
+
+        if (saveDialogueManager != null && saveDialogueManager.GetDialogueValue(dictionaryKey))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -27,7 +31,11 @@ public class DialogueScript : MonoBehaviour
     {
         if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
-            StartDialogue();
+            if (collision.CompareTag("Menino"))
+            {
+                StartDialogue();
+                this.gameObject.SetActive(false);
+            }
         }
         else
         {

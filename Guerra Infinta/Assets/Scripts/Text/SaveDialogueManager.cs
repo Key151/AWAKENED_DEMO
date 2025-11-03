@@ -42,8 +42,11 @@ public class SaveDialogueManager : MonoBehaviour
     {
         dialogueDicio.Clear();
         dialogueDicio.Add("dialogue_Inicial", false);
-        dialogueDicio.Add("dialogue_1", false);
         dialogueDicio.Add("dialogue_Tutorial", false);
+        dialogueDicio.Add("dialogue_1", false);
+        dialogueDicio.Add("dialogue_2", false);
+        dialogueDicio.Add("dialogue_3", false);
+        dialogueDicio.Add("dialogue_4", false);
     }
     public static Dictionary<string, bool> CopyDialogue()
     {

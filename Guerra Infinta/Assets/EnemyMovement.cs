@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float waitTime;
     private bool isWaiting;
+    private float time;
     private Vector2 toMove;
     Animator anim;
 
@@ -14,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     {
         toMove = transform.position;
         anim = GetComponent<Animator>();
+        time = 0;
     }
 
     // Update is called once per frame
@@ -50,6 +53,15 @@ public class EnemyMovement : MonoBehaviour
                 transform.eulerAngles = new Vector3(0f, 180f, 0f);
             }
         }
+
+        time += Time.deltaTime;
+
+        if (time > waitTime)
+        {
+            StartCoroutine(Wait());
+            time = 0;
+        }
+
     }
 
     IEnumerator Wait()

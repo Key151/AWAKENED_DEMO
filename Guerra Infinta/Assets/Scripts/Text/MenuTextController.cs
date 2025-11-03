@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,8 @@ public class MenuTextController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        languageManager = GameObject.FindWithTag("LanguageManager").GetComponent<LanguageManager>();
+        //languageManager = GameObject.FindWithTag("LanguageManager").GetComponent<LanguageManager>();
+        languageManager  = FindAnyObjectByType<LanguageManager>().GetComponent<LanguageManager>();
         if (!usingTMP)
         {
             text.text = menuText.GetText(languageManager.GetLanguage());
