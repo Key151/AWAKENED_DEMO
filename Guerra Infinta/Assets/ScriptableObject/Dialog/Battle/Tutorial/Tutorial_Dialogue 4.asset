@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Tutorial_Dialogue 4
   m_EditorClassIdentifier: 
-  speakerName: 
+  speakerName: Narrador
   icon: {fileID: 0}
-  portugueseText: "Voc\xEA ainda pode ver a vida do seus personagens, voc\xEA pode
-    identificar de quem pertence a vida a partir do nome e da imagem do rosto, ent\xE3o
-    fique atento para n\xE3o deixar sua vida chegar em 0!"
+  portugueseText: "E \xE9 isso! Boa sorte na sua primeira batalha, derrote esse inimigo
+    e continue avan\xE7ando!"
   englishText: 

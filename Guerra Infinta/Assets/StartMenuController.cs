@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +18,7 @@ public class StartMenuController : MonoBehaviour
 
     void Start()
     {
-        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
+        languageManager = LanguageManager.Instance;
         AudioManager.Instance.PlayBGM(mainMenuSong);
         menu.SetActive(true);
         screen.SetActive(false);
@@ -28,6 +27,7 @@ public class StartMenuController : MonoBehaviour
     public void StartButton()
     {
         SaveSystemDestroy.Instance.DestroySaveSystem();
+        //Instantiate(saveSystem, new Vector3(0, 0, 0), Quaternion.identity);
         AudioManager.Instance.PlaySFX(enterMenu, true);
         AudioManager.Instance.StopBGM();
         screen.SetActive(true);

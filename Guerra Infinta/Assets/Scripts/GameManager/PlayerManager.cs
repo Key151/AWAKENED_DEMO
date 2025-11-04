@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -25,20 +24,20 @@ public class PlayerManager : MonoBehaviour
 
     public void SavePlayer(PlayerData player)
     {
-        //Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
+        Debug.Log($"[SAVE] {player.playerId} HP={player.hp}");
         PlayerDataSave[player.playerId] = player;
     }
 
     public PlayerData LoadPlayer(string playerId)
     {
-        //Debug.Log($"[LOAD] Tentando carregar {playerId}");
+        Debug.Log($"[LOAD] Tentando carregar {playerId}");
 
         if (PlayerDataSave.TryGetValue(playerId, out PlayerData data))
         {
-            //Debug.Log($"[LOAD] Achei {data.playerId} HP={data.hp}");
+            Debug.Log($"[LOAD] Achei {data.playerId} HP={data.hp}");
             return data;
         }
-        //Debug.Log("[LOAD] Nao encontrado!");
+        Debug.Log("[LOAD] Nao encontrado!");
         return null;
     }
 

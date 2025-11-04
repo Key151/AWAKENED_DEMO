@@ -253,6 +253,7 @@ MonoBehaviour:
   Scene: SceneExplorer
   menu: {fileID: 1939555241}
   controls: {fileID: 445913825}
+  saveSystem: {fileID: 4368241284541843429, guid: 187cb9e7e2f59b94082c69d96735af89, type: 3}
   screen: {fileID: 1031035869}
 --- !u!1 &150636973
 GameObject:
@@ -3442,7 +3443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1939555242
 RectTransform:
   m_ObjectHideFlags: 0

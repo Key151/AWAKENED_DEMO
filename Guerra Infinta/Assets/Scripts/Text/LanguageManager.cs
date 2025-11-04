@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class LanguageManager : MonoBehaviour
 {
-
+    public static LanguageManager Instance { get; private set; }
     private Language currentLanguage;
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         currentLanguage = Language.PtBr;
     }
 

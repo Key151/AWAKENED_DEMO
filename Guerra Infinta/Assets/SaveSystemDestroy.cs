@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SaveSystemDestroy : MonoBehaviour
 {
@@ -13,18 +12,7 @@ public class SaveSystemDestroy : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        //SceneManager.sceneLoaded += OnSceneLoad;
     }
-
-    /*private void OnSceneLoad(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "TelaInicial")
-        {
-            SceneManager.sceneLoaded -= OnSceneLoad;
-            Destroy(gameObject);
-        }
-    }*/
-
     public void DestroySaveSystem()
     {
         Destroy(gameObject);

@@ -14,9 +14,9 @@ public class DialogueScript : MonoBehaviour
 
     private bool dialogueIsOn;
 
-    private void Awake()
+    void Start()
     {
-        saveDialogueManager = FindAnyObjectByType<SaveDialogueManager>();
+        saveDialogueManager = SaveDialogueManager.Instance;
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
 

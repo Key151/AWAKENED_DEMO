@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-
 public class DialogueManager : MonoBehaviour
 {
     [Header("UI")]
@@ -19,9 +18,10 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex;
     private string enterMenu = "Enter";
 
-    public void Start()
+    void Start()
     {
-        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
+        languageManager = LanguageManager.Instance;
+        Debug.Log(languageManager.GetLanguage());
     }
 
     public void StartDialogue(DialogueSequenceData sequence)
