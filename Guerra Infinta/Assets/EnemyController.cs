@@ -26,4 +26,14 @@ public class EnemyController : MonoBehaviour
     {
         return defeatedEnemies.Contains(enemyID);
     }
+
+    public HashSet<string> SetDefeatedEnemies()
+    {
+        return defeatedEnemies;
+    }
+
+    public void GetDefeatedEnemies(HashSet<string> enemy)
+    {
+        defeatedEnemies = enemy;
+    }
 }

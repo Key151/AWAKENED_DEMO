@@ -5,28 +5,28 @@ using UnityEngine.SceneManagement;
 public class NpcDialogue : MonoBehaviour
 {
 
-    [Header("Di·logo")]
+    [Header("Diaogo")]
     [SerializeField] private DialogueSequenceData dialogueScene;
     private DialogueManager dialogueManager;
 
-    [Header("Vari·veis")]
+    [Header("Variaeis")]
     [SerializeField] private GameObject clickToSpeak;
     private bool readyToSpeak;
 
     [Header("Batalha")]
     [SerializeField] private StartBattleController startBattleController;
 
-    void Start()    
-    {
-        dialogueManager = FindAnyObjectByType<DialogueManager>();
-        DisactiveClickToSpeak();
-    }
+    //void Start()    
+    //{
+    //    dialogueManager = FindAnyObjectByType<DialogueManager>();
+    //    DisactiveClickToSpeak();
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        StartCoroutine(EsperarDialogoETrocarCena());
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    StartCoroutine(EsperarDialogoETrocarCena());
+    //}
 
     IEnumerator EsperarDialogoETrocarCena()
     {
@@ -37,7 +37,7 @@ public class NpcDialogue : MonoBehaviour
             DisactiveClickToSpeak();
             readyToSpeak = false;
 
-            yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada atÈ que a condiÁ„o seja verdadeira
+            yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada atÅEque a condicao seja verdadeira
 
             startBattleController.StartBattle();
         }

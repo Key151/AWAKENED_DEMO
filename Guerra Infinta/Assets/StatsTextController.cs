@@ -25,7 +25,7 @@ public class StatsTextController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        languageManager = GameObject.Find("LanguageManager").GetComponent<LanguageManager>();
+        languageManager = GameObject.FindWithTag("LanguageManager").GetComponent<LanguageManager>(); 
 
         textProLife.text = menuTextLife.GetText(languageManager.GetLanguage()) + unit.CurrentHP + "/" + unit.MaxHP;
         textProDamage.text = menuTextDamage.GetText(languageManager.GetLanguage()) + unit.Damage;

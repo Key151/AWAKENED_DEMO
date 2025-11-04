@@ -20,6 +20,16 @@ public class GameStateController : MonoBehaviour
 
         CreatDialogue();
     }
+    public Dictionary<string, bool> SetGameStateDicio()
+    {
+        return gameStateDicio;
+    }
+
+    public void GetGameStateDicio(Dictionary<string, bool> state)
+    {
+        gameStateDicio = state;
+    }
+
     public void CreatDialogue()
     {
         gameStateDicio.Clear();

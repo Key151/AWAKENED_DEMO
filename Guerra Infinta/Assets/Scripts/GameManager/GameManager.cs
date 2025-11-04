@@ -14,6 +14,8 @@ public class GameManager
         SaveData.Data.inventoriesDicioData = InventoryManager.Instance.ItemDatabase;
         SaveData.Data.currentSceneName = SceneManager.GetActiveScene().name;
         SaveData.Data.dataDialog = SaveDialogueManager.CopyDialogue();
+        SaveData.Data.defeatedEnemiesSave = EnemyController.Instance.SetDefeatedEnemies();
+        SaveData.Data.gameStateDicioSave = GameStateController.Instance.SetGameStateDicio();
 
         var settings = new JsonSerializerSettings
         {
@@ -49,6 +51,13 @@ public class GameManager
 
         //Load dos dialogos
         SaveDialogueManager.PasteDialogue(SaveData.Data.dataDialog);
+
+        //Load dos inimigos
+        EnemyController.Instance.GetDefeatedEnemies(SaveData.Data.defeatedEnemiesSave);
+
+        //Load do status do jogo
+        GameStateController.Instance.GetGameStateDicio(SaveData.Data.gameStateDicioSave);
+
 
         Debug.Log("Save carregado com sucesso!");
         return SaveData.Data.currentSceneName; 
