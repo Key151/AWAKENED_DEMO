@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Dialogo-city5 2
   m_EditorClassIdentifier: 
-  speakerName: Marco
-  icon: {fileID: 0}
-  portugueseText: Fica perto de mim.
+  speakerName: Rafaela
+  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
+  portugueseText: Olhando agora, eles me parecem um pouco familiar...
   englishText: 

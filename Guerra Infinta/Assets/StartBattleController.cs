@@ -14,5 +14,4 @@ public class StartBattleController : MonoBehaviour
         enemysList.SelectedEnemy(enemies);
         SceneManager.LoadScene(sceneBattle);
     }
-
 }

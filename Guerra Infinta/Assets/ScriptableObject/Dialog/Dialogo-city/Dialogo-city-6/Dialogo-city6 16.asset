@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Dialogo-city7 5
+  m_Name: Dialogo-city6 16
   m_EditorClassIdentifier: 
-  speakerName: Rafael
-  icon: {fileID: 0}
-  portugueseText: "Ent\xE3o voc\xEA quer ficar isolado nesse quarto? Quanto tempo
-    at\xE9 algu\xE9m encontrar a gente aqui?"
+  speakerName: Marco
+  icon: {fileID: 21300000, guid: 346a3483c500faa40bc5a9423b5ea7a8, type: 3}
+  portugueseText: 'Espera um pouco, preciso buscar uma coisa antes. '
   englishText: 

@@ -11,35 +11,56 @@ public class DialogueScript : MonoBehaviour
     [Header("Dialogo")]
     [SerializeField] private DialogueSequenceData dialogueSequenceStartGame;
     DialogueManager dialogueManager;
-
     private bool dialogueIsOn;
+
+    private bool isColliding;
+
+    [Header("ChangeGameState (Deixar vazio se não quiser mudar o status do jogo)")]
+    [SerializeField] private string state;
 
     void Start()
     {
         saveDialogueManager = SaveDialogueManager.Instance;
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
+        isColliding = false;
 
-        if (saveDialogueManager != null && saveDialogueManager.GetDialogueValue(dictionaryKey))
+        if (string.IsNullOrEmpty(state))
         {
-            gameObject.SetActive(false);
+            state = null;
         }
     }
-
-    // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
         if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
-            if (collision.CompareTag("Menino"))
+            if (isColliding)
             {
                 StartDialogue();
-                this.gameObject.SetActive(false);
             }
         }
         else
         {
+            StateObjectsController.Instance.ChangeStateObjects(state);
             this.gameObject.SetActive(false);
+        }
+    }
+
+
+    // Update is called once per frame
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Menino"))
+        {
+            isColliding = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Menino"))
+        {
+            isColliding = false;
         }
     }
 

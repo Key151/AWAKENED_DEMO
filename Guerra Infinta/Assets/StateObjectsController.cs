@@ -9,6 +9,8 @@ public class StateObjectsController : MonoBehaviour
     [SerializeField] private List<GameObject> StartGame;
     [SerializeField] private List<GameObject> TutorialBattle;
 
+    private GameStateController gameStateController;
+
     void Awake()
     {
         Instance = this;
@@ -16,6 +18,7 @@ public class StateObjectsController : MonoBehaviour
     private void Start()
     {
         DisableAllLists();
+        //gameStateController = GameStateController.Instance;
         ChangeStateObjects(GameStateController.Instance.GetCurrentState());
     }
 

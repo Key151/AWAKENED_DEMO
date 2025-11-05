@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Animations;
 using static BattleSystem;
 
 public class UnitEnemy : Unit, IVerificateTurnUnit

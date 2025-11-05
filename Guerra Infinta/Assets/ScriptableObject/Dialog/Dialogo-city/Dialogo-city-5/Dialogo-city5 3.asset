@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dialogo-city5 3
   m_EditorClassIdentifier: 
   speakerName: Marco
-  icon: {fileID: 0}
-  portugueseText: "Entra naquele beco, r\xE1pido!"
+  icon: {fileID: 21300000, guid: 346a3483c500faa40bc5a9423b5ea7a8, type: 3}
+  portugueseText: "N\xE3o importa agora, fica perto de mim."
   englishText: 

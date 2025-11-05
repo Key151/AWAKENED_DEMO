@@ -219,12 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyID: 1
+  enemyID: 
   BattleSong: Battle01
   screen: {fileID: 0}
-  enemyList:
-  - {fileID: 508094171281282804, guid: 8158f9c0dd0766444ba9b4e4862a956d, type: 3}
-  state: TutorialBattle
+  enemyList: []
+  state: 
 --- !u!114 &4708113731817801197
 MonoBehaviour:
   m_ObjectHideFlags: 0

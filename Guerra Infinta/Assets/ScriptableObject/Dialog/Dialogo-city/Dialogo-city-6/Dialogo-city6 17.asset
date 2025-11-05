@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Dialogo-city6 1
+  m_Name: Dialogo-city6 17
   m_EditorClassIdentifier: 
   speakerName: Rafaela
   icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
-  portugueseText: Marco, a gente precisa fazer alguma coisa.
+  portugueseText: O que?
   englishText: 
