@@ -41,9 +41,7 @@ public class DialogueManager : MonoBehaviour
         //Debug.Log($"Proxima linha, a linha atual: {currentIndex}");
         if (currentIndex >= currentSequence.dialogueLines.Count)
         {
-            PauseController.SetPause(false);
-            EndDialogue();
-            return;
+            SkipDialogue();
         }
         else
         {
@@ -70,6 +68,13 @@ public class DialogueManager : MonoBehaviour
 
         speakerText.text = line.SpeakerName;
         dialogueText.text = line.GetText(languageManager.GetLanguage());
+    }
+
+    public void SkipDialogue()
+    {
+        PauseController.SetPause(false);
+        EndDialogue();
+        return;
     }
 
     private void EndDialogue()
