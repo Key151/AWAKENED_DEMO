@@ -8,6 +8,7 @@ public class StateObjectsController : MonoBehaviour
 
     [SerializeField] private List<GameObject> StartGame;
     [SerializeField] private List<GameObject> TutorialBattle;
+    [SerializeField] private List<GameObject> ParentsMissing;
 
     private GameStateController gameStateController;
 
@@ -55,5 +56,6 @@ public class StateObjectsController : MonoBehaviour
     {
         SetActiveList(StartGame, false);
         SetActiveList(TutorialBattle, false);
+        SetActiveList(ParentsMissing, false);
     }
 }

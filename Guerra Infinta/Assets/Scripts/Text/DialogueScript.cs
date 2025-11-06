@@ -15,8 +15,12 @@ public class DialogueScript : MonoBehaviour
 
     private bool isColliding;
 
-    [Header("ChangeGameState (Deixar vazio se não quiser mudar o status do jogo)")]
+    [Header("ChangeGameState (Colocar somente se for mudar o status do jogo)")]
     [SerializeField] private string state;
+
+    [Header("Black Screen (Colocar somente se for usar a tela preta)")]
+    [SerializeField] private GameObject screen;
+    BlackScreen blackScreen;
 
     void Start()
     {
@@ -41,7 +45,6 @@ public class DialogueScript : MonoBehaviour
         }
         else
         {
-            StateObjectsController.Instance.ChangeStateObjects(state);
             this.gameObject.SetActive(false);
         }
     }
@@ -68,13 +71,24 @@ public class DialogueScript : MonoBehaviour
     {
         if (!dialogueIsOn)
         {
+            if(screen != null)
+            {
+                screen.SetActive(true);
+                blackScreen = screen.GetComponent<BlackScreen>();
+                blackScreen.StartFadeOut();
+            }
             PauseController.SetPause(true);
             dialogueManager.StartDialogue(dialogueSequenceStartGame);
             dialogueIsOn = true;
         }
         else if (dialogueIsOn && !dialogueManager.dialogue)
         {
+            if (screen != null)
+            {
+                blackScreen.StartFadeIn();
+            }
             saveDialogueManager.SaveDialogue(dictionaryKey, true);
+            StateObjectsController.Instance.ChangeStateObjects(state);
         }
     }
 
