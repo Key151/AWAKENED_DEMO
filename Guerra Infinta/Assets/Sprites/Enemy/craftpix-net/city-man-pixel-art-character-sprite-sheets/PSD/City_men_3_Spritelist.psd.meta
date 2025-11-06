@@ -1,0 +1,1181 @@
+fileFormatVersion: 2
+guid: b378096e655ec8046a583ef3aa50f9c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4825039130158778591
+    second: City_men_3_Spritelist_0
+  - first:
+      213: 6449438617029071305
+    second: City_men_3_Spritelist_1
+  - first:
+      213: 5175911961388184993
+    second: City_men_3_Spritelist_2
+  - first:
+      213: -225239089666202338
+    second: City_men_3_Spritelist_3
+  - first:
+      213: -1458413350031140398
+    second: City_men_3_Spritelist_4
+  - first:
+      213: -3106358646642822011
+    second: City_men_3_Spritelist_5
+  - first:
+      213: 7939210725420292762
+    second: City_men_3_Spritelist_6
+  - first:
+      213: -433376411239562784
+    second: City_men_3_Spritelist_7
+  - first:
+      213: -162643342376769674
+    second: City_men_3_Spritelist_8
+  - first:
+      213: 559708722933838178
+    second: City_men_3_Spritelist_9
+  - first:
+      213: -327430060898750488
+    second: City_men_3_Spritelist_10
+  - first:
+      213: 4717106648050828809
+    second: City_men_3_Spritelist_11
+  - first:
+      213: 2048481887958579644
+    second: City_men_3_Spritelist_12
+  - first:
+      213: -3269673634438906389
+    second: City_men_3_Spritelist_13
+  - first:
+      213: -1716125666609913654
+    second: City_men_3_Spritelist_14
+  - first:
+      213: -5734306912521478645
+    second: City_men_3_Spritelist_15
+  - first:
+      213: -3050486876271645697
+    second: City_men_3_Spritelist_16
+  - first:
+      213: 4817074048004197029
+    second: City_men_3_Spritelist_17
+  - first:
+      213: -383800462142655761
+    second: City_men_3_Spritelist_18
+  - first:
+      213: 20749882173615732
+    second: City_men_3_Spritelist_19
+  - first:
+      213: -5805366188439728299
+    second: City_men_3_Spritelist_20
+  - first:
+      213: 7266655297707787449
+    second: City_men_3_Spritelist_21
+  - first:
+      213: -6037200957549280242
+    second: City_men_3_Spritelist_22
+  - first:
+      213: 6407498040293163312
+    second: City_men_3_Spritelist_23
+  - first:
+      213: 2879021742928023412
+    second: City_men_3_Spritelist_24
+  - first:
+      213: -5557674399941546226
+    second: City_men_3_Spritelist_25
+  - first:
+      213: 3803581631806379949
+    second: City_men_3_Spritelist_26
+  - first:
+      213: 5796940448755657341
+    second: City_men_3_Spritelist_27
+  - first:
+      213: 67236191882368138
+    second: City_men_3_Spritelist_28
+  - first:
+      213: -198471941043219504
+    second: City_men_3_Spritelist_29
+  - first:
+      213: 5468799032345579731
+    second: City_men_3_Spritelist_30
+  - first:
+      213: -1159582661705428720
+    second: City_men_3_Spritelist_31
+  - first:
+      213: 7391630663979088994
+    second: City_men_3_Spritelist_32
+  - first:
+      213: -4334367645309953791
+    second: City_men_3_Spritelist_33
+  - first:
+      213: 9055388151709006042
+    second: City_men_3_Spritelist_34
+  - first:
+      213: -2071710568622420872
+    second: City_men_3_Spritelist_35
+  - first:
+      213: -7147671027061217889
+    second: City_men_3_Spritelist_36
+  - first:
+      213: -1480445444577515852
+    second: City_men_3_Spritelist_37
+  - first:
+      213: -2988645970052874507
+    second: City_men_3_Spritelist_38
+  - first:
+      213: -7629214137646559303
+    second: City_men_3_Spritelist_39
+  - first:
+      213: 5334212587052884417
+    second: City_men_3_Spritelist_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 639
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd84974568bf5f240800000000000000
+      internalID: 4825039130158778591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 639
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c154b86042018950800000000000000
+      internalID: 6449438617029071305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 639
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5fc37718884d740800000000000000
+      internalID: 5175911961388184993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 639
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15e9e6cd3acfdcf0800000000000000
+      internalID: -225239089666202338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_4
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 639
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9d4bff8cca2cbe0800000000000000
+      internalID: -1458413350031140398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_5
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 639
+        width: 30
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58434e1e44ff3e4d0800000000000000
+      internalID: -3106358646642822011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 511
+        width: 35
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ad5ad471ebd2e60800000000000000
+      internalID: 7939210725420292762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_7
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 511
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1480a33765cf9f0800000000000000
+      internalID: -433376411239562784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_8
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 511
+        width: 32
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 677ec88edbc2ebdf0800000000000000
+      internalID: -162643342376769674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_9
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 511
+        width: 20
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261b8283e1c74c700800000000000000
+      internalID: 559708722933838178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_10
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 511
+        width: 27
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef685b281cb47bf0800000000000000
+      internalID: -327430060898750488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_11
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 511
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90604bc0187867140800000000000000
+      internalID: 4717106648050828809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_12
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 511
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9b79c7c6bad6c10800000000000000
+      internalID: 2048481887958579644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_13
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 511
+        width: 33
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedfec72729cf92d0800000000000000
+      internalID: -3269673634438906389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_14
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 511
+        width: 23
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac029c37cc81f28e0800000000000000
+      internalID: -1716125666609913654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_15
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 511
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e1716ae36ab60b0800000000000000
+      internalID: -5734306912521478645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_16
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 383
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb66d3295e7aa5d0800000000000000
+      internalID: -3050486876271645697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 383
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa0b00235fa9d240800000000000000
+      internalID: 4817074048004197029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_18
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 388
+        width: 55
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe23b5d53877caaf0800000000000000
+      internalID: -383800462142655761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_19
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 383
+        width: 52
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ee61c68e7b94000800000000000000
+      internalID: 20749882173615732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_20
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 383
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f8cf2b5323f6fa0800000000000000
+      internalID: -5805366188439728299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_21
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 383
+        width: 43
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4451d2e7858d460800000000000000
+      internalID: 7266655297707787449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_22
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 383
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0480af27bd873ca0800000000000000
+      internalID: -6037200957549280242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_23
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 388
+        width: 54
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0318faee4810ce850800000000000000
+      internalID: 6407498040293163312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_24
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 385
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fc9df750754f720800000000000000
+      internalID: 2879021742928023412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_25
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 383
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fa33e349c2fd2b0800000000000000
+      internalID: -5557674399941546226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 255
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da71506875909c430800000000000000
+      internalID: 3803581631806379949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_27
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 255
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7aac28ef9ed27050800000000000000
+      internalID: 5796940448755657341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_28
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 255
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84d235d5fedee000800000000000000
+      internalID: 67236191882368138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_29
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 255
+        width: 51
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d39c3832d2ee3df0800000000000000
+      internalID: -198471941043219504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_30
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 127
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d055f6beb315eb40800000000000000
+      internalID: 5468799032345579731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_31
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 168
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011985186b558efe0800000000000000
+      internalID: -1159582661705428720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_32
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 174
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cbb552de8549660800000000000000
+      internalID: 7391630663979088994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_33
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 127
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1099a5f479b39d3c0800000000000000
+      internalID: -4334367645309953791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_34
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 127
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad875e5eb833bad70800000000000000
+      internalID: 9055388151709006042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_35
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 161
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c86d7d63ecf33e0800000000000000
+      internalID: -2071710568622420872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_36
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 29
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f952aa4221f5ecc90800000000000000
+      internalID: -7147671027061217889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_37
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 28
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6ac9e36b6647be0800000000000000
+      internalID: -1480445444577515852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_38
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe789323523686d0800000000000000
+      internalID: -2988645970052874507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_39
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf4032c9269f1690800000000000000
+      internalID: -7629214137646559303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_men_3_Spritelist_40
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 0
+        width: 66
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c164b7061ee60a40800000000000000
+      internalID: 5334212587052884417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
