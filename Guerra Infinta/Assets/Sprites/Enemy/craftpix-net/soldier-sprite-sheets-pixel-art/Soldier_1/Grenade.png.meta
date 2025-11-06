@@ -373,7 +373,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grenade_0: 7374725294872216382
+      Grenade_1: 3376900314206834495
+      Grenade_2: -5704811672117845835
+      Grenade_3: -4374606788681764087
+      Grenade_4: 4405584725071162727
+      Grenade_5: -7678666374313002775
+      Grenade_6: -6252165173325568836
+      Grenade_7: -2916380699248684955
+      Grenade_8: -8233403809498355693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

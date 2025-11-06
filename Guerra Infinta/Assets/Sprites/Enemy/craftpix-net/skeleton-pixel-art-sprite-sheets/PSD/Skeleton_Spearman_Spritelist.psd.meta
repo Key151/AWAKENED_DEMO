@@ -1373,7 +1373,56 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skeleton_Spearman_Spritelist_0: -5084014537709960598
+      Skeleton_Spearman_Spritelist_1: -8428140062166179171
+      Skeleton_Spearman_Spritelist_10: 3491349917320931235
+      Skeleton_Spearman_Spritelist_11: 5499515528659453548
+      Skeleton_Spearman_Spritelist_12: -7319725691383558188
+      Skeleton_Spearman_Spritelist_13: -8430821621706714051
+      Skeleton_Spearman_Spritelist_14: 5891721975659248644
+      Skeleton_Spearman_Spritelist_15: 7595210369468709299
+      Skeleton_Spearman_Spritelist_16: 7331986335047272435
+      Skeleton_Spearman_Spritelist_17: -9217688618972743179
+      Skeleton_Spearman_Spritelist_18: 3949778614544296940
+      Skeleton_Spearman_Spritelist_19: -6492583921357536659
+      Skeleton_Spearman_Spritelist_2: -479066491898330303
+      Skeleton_Spearman_Spritelist_20: -1081238201044685688
+      Skeleton_Spearman_Spritelist_21: -6912927257715500817
+      Skeleton_Spearman_Spritelist_22: -6987239053135147701
+      Skeleton_Spearman_Spritelist_23: -6994970627589969572
+      Skeleton_Spearman_Spritelist_24: -8996947638847887147
+      Skeleton_Spearman_Spritelist_25: -4561838409931183695
+      Skeleton_Spearman_Spritelist_26: -8528942214336048809
+      Skeleton_Spearman_Spritelist_27: -5745020675946222569
+      Skeleton_Spearman_Spritelist_28: -9120953678520832557
+      Skeleton_Spearman_Spritelist_29: 6646782176579777197
+      Skeleton_Spearman_Spritelist_3: 5514273815679954880
+      Skeleton_Spearman_Spritelist_30: -3917059764954045819
+      Skeleton_Spearman_Spritelist_31: -7277797268788981379
+      Skeleton_Spearman_Spritelist_32: -7190526886503359521
+      Skeleton_Spearman_Spritelist_33: 532059916092201380
+      Skeleton_Spearman_Spritelist_34: 2600745139881639550
+      Skeleton_Spearman_Spritelist_35: -3494018230627575494
+      Skeleton_Spearman_Spritelist_36: -8190318341702728889
+      Skeleton_Spearman_Spritelist_37: -7321002556386451052
+      Skeleton_Spearman_Spritelist_38: -3047945340237678213
+      Skeleton_Spearman_Spritelist_39: -7633894892712932414
+      Skeleton_Spearman_Spritelist_4: 1917892627597743657
+      Skeleton_Spearman_Spritelist_40: -233153608308042655
+      Skeleton_Spearman_Spritelist_41: 7219014325713711932
+      Skeleton_Spearman_Spritelist_42: -6757079444710461609
+      Skeleton_Spearman_Spritelist_43: -1998913832132902204
+      Skeleton_Spearman_Spritelist_44: 4708057523382477292
+      Skeleton_Spearman_Spritelist_45: -5912122364966249412
+      Skeleton_Spearman_Spritelist_46: -7230800056845404503
+      Skeleton_Spearman_Spritelist_47: -2465267430316329818
+      Skeleton_Spearman_Spritelist_48: -1484666807827900212
+      Skeleton_Spearman_Spritelist_5: -2955115324146575359
+      Skeleton_Spearman_Spritelist_6: 6214986057289285659
+      Skeleton_Spearman_Spritelist_7: 3624416863449839802
+      Skeleton_Spearman_Spritelist_8: 749778206612535893
+      Skeleton_Spearman_Spritelist_9: 1514358602261350271
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

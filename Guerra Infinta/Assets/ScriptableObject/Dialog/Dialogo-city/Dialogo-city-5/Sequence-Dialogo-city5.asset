@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Sequence-Dialogo-city5
   m_EditorClassIdentifier: 
   dialogueLines:
-  - {fileID: 11400000, guid: 7a33236b5e7ed324696844349fb61e95, type: 2}
-  - {fileID: 11400000, guid: 7d900a54ad52fd2458eac5267ca0f215, type: 2}
-  - {fileID: 11400000, guid: 6ec1f02df25c2ba4499e29f9421cc563, type: 2}
-  - {fileID: 11400000, guid: ce7cebdd485a11d4db710cdbb3f80fa2, type: 2}
+  - {fileID: 11400000, guid: e1639a161a732a9429de5c9c2ce7ba15, type: 2}
+  - {fileID: 11400000, guid: 19985faaf7a35bd41a0deecfd7a9c45e, type: 2}

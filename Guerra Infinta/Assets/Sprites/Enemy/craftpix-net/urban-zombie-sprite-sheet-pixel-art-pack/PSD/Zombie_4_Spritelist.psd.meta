@@ -1098,7 +1098,45 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zombie_4_Spritelist_0: 9065953878118359659
+      Zombie_4_Spritelist_1: 1254113082002478785
+      Zombie_4_Spritelist_10: -5731951868739415171
+      Zombie_4_Spritelist_11: -1849064706892665284
+      Zombie_4_Spritelist_12: 6327159249976797955
+      Zombie_4_Spritelist_13: 6208191592797812816
+      Zombie_4_Spritelist_14: -6450132300443732635
+      Zombie_4_Spritelist_15: 1489490367197995860
+      Zombie_4_Spritelist_16: 2412580848947079122
+      Zombie_4_Spritelist_17: -5690683696664336227
+      Zombie_4_Spritelist_18: -1736238401697154092
+      Zombie_4_Spritelist_19: 6792939537983304695
+      Zombie_4_Spritelist_2: -6693441396461395864
+      Zombie_4_Spritelist_20: 5687364166621278907
+      Zombie_4_Spritelist_21: -4517258596943885253
+      Zombie_4_Spritelist_22: 3074959411773453678
+      Zombie_4_Spritelist_23: -6162108574948701811
+      Zombie_4_Spritelist_24: -1428777027565879867
+      Zombie_4_Spritelist_25: -7852871465332646518
+      Zombie_4_Spritelist_26: -9100242090862339190
+      Zombie_4_Spritelist_27: 1484866980074501836
+      Zombie_4_Spritelist_28: 8659405991293442612
+      Zombie_4_Spritelist_29: -7674056908890179597
+      Zombie_4_Spritelist_3: -3377478988665514281
+      Zombie_4_Spritelist_30: 6122135526989449319
+      Zombie_4_Spritelist_31: -4528990755784929019
+      Zombie_4_Spritelist_32: -1135535842875362761
+      Zombie_4_Spritelist_33: 2234886888697541816
+      Zombie_4_Spritelist_34: -2236456708332573329
+      Zombie_4_Spritelist_35: 2547872312712338521
+      Zombie_4_Spritelist_36: -2659359193473995333
+      Zombie_4_Spritelist_37: -3355954924939640712
+      Zombie_4_Spritelist_4: 379082985603904281
+      Zombie_4_Spritelist_5: -1385714619748170029
+      Zombie_4_Spritelist_6: -1077938403732325474
+      Zombie_4_Spritelist_7: -1759308504913316575
+      Zombie_4_Spritelist_8: 8221801319408550370
+      Zombie_4_Spritelist_9: 8138499160604346846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

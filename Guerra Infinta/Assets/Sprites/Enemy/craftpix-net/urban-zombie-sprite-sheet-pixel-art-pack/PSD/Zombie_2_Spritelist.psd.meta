@@ -948,7 +948,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zombie_2_Spritelist_0: -9003917705568732534
+      Zombie_2_Spritelist_1: 3200086262570283634
+      Zombie_2_Spritelist_10: 5004826796523373859
+      Zombie_2_Spritelist_11: -7863714443236423870
+      Zombie_2_Spritelist_12: -9070052485704870688
+      Zombie_2_Spritelist_13: -2771056793223182874
+      Zombie_2_Spritelist_14: 7545917427211894401
+      Zombie_2_Spritelist_15: 5959168836630724517
+      Zombie_2_Spritelist_16: -2730670488128676683
+      Zombie_2_Spritelist_17: -8467785615730490317
+      Zombie_2_Spritelist_18: 1991857059404822327
+      Zombie_2_Spritelist_19: 9206903862343722733
+      Zombie_2_Spritelist_2: 3513837024976187927
+      Zombie_2_Spritelist_20: 4433174804119803117
+      Zombie_2_Spritelist_21: 1087462429020545350
+      Zombie_2_Spritelist_22: 2391419920583037991
+      Zombie_2_Spritelist_23: 8688915910081816195
+      Zombie_2_Spritelist_24: -5582642319173907870
+      Zombie_2_Spritelist_25: -2853208251134700554
+      Zombie_2_Spritelist_26: -1663112636096401777
+      Zombie_2_Spritelist_27: 5215999018434433726
+      Zombie_2_Spritelist_28: 4808105531469716537
+      Zombie_2_Spritelist_29: -5851944888733066586
+      Zombie_2_Spritelist_3: 8408459515321847404
+      Zombie_2_Spritelist_30: 1595239552725519523
+      Zombie_2_Spritelist_31: -4768920351255044224
+      Zombie_2_Spritelist_4: -2098574674203743997
+      Zombie_2_Spritelist_5: -4413742737504127155
+      Zombie_2_Spritelist_6: -65627849125426842
+      Zombie_2_Spritelist_7: -6062016280399062682
+      Zombie_2_Spritelist_8: -5393470726252159671
+      Zombie_2_Spritelist_9: 1609360875437552340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

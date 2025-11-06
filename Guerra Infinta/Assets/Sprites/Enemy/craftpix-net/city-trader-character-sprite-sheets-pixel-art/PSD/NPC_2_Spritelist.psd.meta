@@ -1298,7 +1298,53 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NPC_2_Spritelist_0: 8413638285181068517
+      NPC_2_Spritelist_1: 6721479694133860730
+      NPC_2_Spritelist_10: -5137553758878365904
+      NPC_2_Spritelist_11: -5362107196711572846
+      NPC_2_Spritelist_12: -8634655106235296227
+      NPC_2_Spritelist_13: -373501095722515313
+      NPC_2_Spritelist_14: -1263219429313928616
+      NPC_2_Spritelist_15: -8712736513765544635
+      NPC_2_Spritelist_16: 6603949175752223956
+      NPC_2_Spritelist_17: 6727806949195058813
+      NPC_2_Spritelist_18: -498953755804136893
+      NPC_2_Spritelist_19: -5575730113236144544
+      NPC_2_Spritelist_2: 3280621103752764559
+      NPC_2_Spritelist_20: -825592928397377478
+      NPC_2_Spritelist_21: 2049521397497214620
+      NPC_2_Spritelist_22: 7116552262629118025
+      NPC_2_Spritelist_23: 8244318905863332961
+      NPC_2_Spritelist_24: -2048996618126707221
+      NPC_2_Spritelist_25: -6325380097438368437
+      NPC_2_Spritelist_26: 1127904271202324783
+      NPC_2_Spritelist_27: 8436000844908831949
+      NPC_2_Spritelist_28: 6698524175916768583
+      NPC_2_Spritelist_29: 2897182966638374437
+      NPC_2_Spritelist_3: -3069267397420768920
+      NPC_2_Spritelist_30: -3041456366299457380
+      NPC_2_Spritelist_31: 5526486887610796962
+      NPC_2_Spritelist_32: 7521101078720487924
+      NPC_2_Spritelist_33: 9068018341398356042
+      NPC_2_Spritelist_34: 8065864108817720300
+      NPC_2_Spritelist_35: 7165607642039756652
+      NPC_2_Spritelist_36: 4032430099156684594
+      NPC_2_Spritelist_37: -8239421626478591885
+      NPC_2_Spritelist_38: 7473996256454196866
+      NPC_2_Spritelist_39: 3272396582873604811
+      NPC_2_Spritelist_4: -1631159230727280720
+      NPC_2_Spritelist_40: -5020781192508339447
+      NPC_2_Spritelist_41: 3080585856072838868
+      NPC_2_Spritelist_42: 2415875874524802553
+      NPC_2_Spritelist_43: 8476642797573003084
+      NPC_2_Spritelist_44: 2200918278496748867
+      NPC_2_Spritelist_45: -3886835287554251726
+      NPC_2_Spritelist_5: -3050715408561896875
+      NPC_2_Spritelist_6: -5044508831046024563
+      NPC_2_Spritelist_7: -1126602954029392139
+      NPC_2_Spritelist_8: 1643432885988123802
+      NPC_2_Spritelist_9: -4398861796134489695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

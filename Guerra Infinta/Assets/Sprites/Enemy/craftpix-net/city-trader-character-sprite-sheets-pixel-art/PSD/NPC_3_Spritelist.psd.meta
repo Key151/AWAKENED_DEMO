@@ -1123,7 +1123,46 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NPC_3_Spritelist_0: -570922242088116183
+      NPC_3_Spritelist_1: 3560592549333337422
+      NPC_3_Spritelist_10: 288822451604734106
+      NPC_3_Spritelist_11: -2675601696969425732
+      NPC_3_Spritelist_12: -6762456521950314641
+      NPC_3_Spritelist_13: 1440092064633070088
+      NPC_3_Spritelist_14: -5937496791722469620
+      NPC_3_Spritelist_15: 4033945700631914137
+      NPC_3_Spritelist_16: -2559828494076502755
+      NPC_3_Spritelist_17: -7566247074543428056
+      NPC_3_Spritelist_18: -3152093633712637660
+      NPC_3_Spritelist_19: -777898054269638810
+      NPC_3_Spritelist_2: 6746222873202233187
+      NPC_3_Spritelist_20: -8735175258768707062
+      NPC_3_Spritelist_21: 3159783383772691039
+      NPC_3_Spritelist_22: -7620443307398475915
+      NPC_3_Spritelist_23: -1580099875487385676
+      NPC_3_Spritelist_24: -7466305291138598516
+      NPC_3_Spritelist_25: 4723411703297572745
+      NPC_3_Spritelist_26: -717212341042882387
+      NPC_3_Spritelist_27: 446744894108186504
+      NPC_3_Spritelist_28: 5368973851312869328
+      NPC_3_Spritelist_29: -4983921616315766465
+      NPC_3_Spritelist_3: 4027310641000703998
+      NPC_3_Spritelist_30: 3197336409751858792
+      NPC_3_Spritelist_31: 8143702806333999696
+      NPC_3_Spritelist_32: 796845215948942170
+      NPC_3_Spritelist_33: -8270504647429278744
+      NPC_3_Spritelist_34: -5117409675079612816
+      NPC_3_Spritelist_35: 8674931412672200711
+      NPC_3_Spritelist_36: -8758959736016530326
+      NPC_3_Spritelist_37: 8302824962458978675
+      NPC_3_Spritelist_38: 6419980692525600727
+      NPC_3_Spritelist_4: -244235504846477457
+      NPC_3_Spritelist_5: 7771802912586559277
+      NPC_3_Spritelist_6: 8036967895258909786
+      NPC_3_Spritelist_7: -9085553675017171651
+      NPC_3_Spritelist_8: 1838396697060480154
+      NPC_3_Spritelist_9: 7269993761214963255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
