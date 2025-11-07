@@ -36,7 +36,6 @@ public class InventoryManager : MonoBehaviour
             ItemData = new ItemData
             {
                 id = item.id,
-                itemName = item.ItemName(),
                 quantity = item.quantity
             };
             ListItem[item.id] = ItemData;
@@ -79,7 +78,6 @@ public class InventoryManager : MonoBehaviour
             ItemData = new ItemData
             {
                 id = itens.id,
-                itemName = itens.ItemName(),
                 quantity = itens.quantity
             };
             ListItem[itens.id] = ItemData;
