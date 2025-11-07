@@ -9026,12 +9026,12 @@ PrefabInstance:
       objectReference: {fileID: 617006741}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: enemyPrefab.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyPrefab.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 508094171281282804, guid: 8158f9c0dd0766444ba9b4e4862a956d, type: 3}
     - target: {fileID: 3631068243957708479, guid: 5466a951db3375946a9ad551d05fe1cd, type: 3}
       propertyPath: 'enemyPrefab.Array.data[1]'
       value: 
