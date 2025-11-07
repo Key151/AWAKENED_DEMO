@@ -39,7 +39,7 @@ public class ItensUI : MonoBehaviour
                 Button entry = Instantiate(itenPrefab, itenListContent);
                 TMP_Text itenNameText = entry.transform.Find("ItensNameText").GetComponent<TMP_Text>();
                 Transform itenNumberList = entry.transform.Find("ItensNumberPanel");
-                itenNameText.text = testIten.itemName;
+                itenNameText.text = testIten.ItemName();
 
                 //Quantidade do item
                 GameObject quantityTextGO = Instantiate(itenTextPrefab, itenNumberList);

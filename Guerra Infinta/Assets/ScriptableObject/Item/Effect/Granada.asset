@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Granada
   m_EditorClassIdentifier: 
   id: 2
-  itemName: Granada
-  description: Joga granada para dar dano
+  itemName: {fileID: 11400000, guid: 862214e400a82e645ba835080752e2dc, type: 2}
+  description: {fileID: 11400000, guid: d09a3c3e0f2894948a7fcea915711c25, type: 2}
   quantity: 5
   damageAmount: 25
   ActionPointCost: 30

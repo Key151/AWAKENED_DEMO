@@ -4,8 +4,6 @@
 public class ItemWeaponEquip  : Item, IEquipment
 {
     public TypeItem TipoWeapon => TypeItem.EquipWeapon;
-    public string ItemName => itemName;
-    public string Description => description;
 
     [SerializeField] private int bonusDamage; // Exemplo de bônus de dano
 
@@ -13,11 +11,11 @@ public class ItemWeaponEquip  : Item, IEquipment
     public void Equip(UnitPlayer player)
     {
         player.DamageBonus += bonusDamage;
-        Debug.Log($"{ItemName} equipada! Dano aumentado em {bonusDamage}.");
+        Debug.Log($"{ItemName()} equipada! Dano aumentado em {bonusDamage}.");
     }
     public void Unequip(UnitPlayer player)
     {
         player.DamageBonus -= bonusDamage;
-        Debug.Log($"{ItemName} desequipada! Dano reduzido em {bonusDamage}.");
+        Debug.Log($"{ItemName()} desequipada! Dano reduzido em {bonusDamage}.");
     }
 }

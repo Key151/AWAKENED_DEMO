@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b923b53c9dcdd6e4d93ba89a717e26b7, type: 3}
   m_Name: PauDeMadeira
   m_EditorClassIdentifier: 
-  itemName: Pau de Madeira
-  description: "Ataca com peda\xE7o de madeira"
+  id: 0
+  itemName: {fileID: 11400000, guid: aa15557c7265c8641baa2584e514fe19, type: 2}
+  description: {fileID: 11400000, guid: e403a0edd72a3e641b1cd4aebfd796be, type: 2}
+  quantity: 0
   bonusDamage: 5
+  SfxName: 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Shotgun
-  description: Uma 12
+  itemName: {fileID: 11400000, guid: b9106b1993b71ad4587560409051c742, type: 2}
+  description: {fileID: 11400000, guid: 2dc6670e41e9a02468bf8d5bda70327e, type: 2}
   quantity: 5
   damageAmount: 17
   ActionPointCost: 15

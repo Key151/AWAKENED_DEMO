@@ -24,7 +24,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
             foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
             {
                 EquipItem(item);
-                Debug.Log($"Está com {item.ItemName}!");
+                Debug.Log($"Está com {item.ItemName()}!");
             }
         }
     }

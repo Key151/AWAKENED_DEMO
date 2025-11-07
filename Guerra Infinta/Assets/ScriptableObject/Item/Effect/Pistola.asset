@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pistola
   m_EditorClassIdentifier: 
   id: 0
-  itemName: Pistola
-  description: Uma pistola simples
+  itemName: {fileID: 11400000, guid: 00cd60a4b40d7eb49a0c74f0d85459e3, type: 2}
+  description: {fileID: 11400000, guid: f32338d900c72d04381eea632fc5073c, type: 2}
   quantity: 5
   damageAmount: 10
   ActionPointCost: 8
