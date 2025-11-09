@@ -38,6 +38,7 @@ public class StartMenuController : MonoBehaviour
     public void LoadButton()
     {
         AudioManager.Instance.PlaySFX(LoadGame, true);
+        AudioManager.Instance.StopBGM();
         SceneManager.LoadScene(GameManager.Load());
         //try
         //{

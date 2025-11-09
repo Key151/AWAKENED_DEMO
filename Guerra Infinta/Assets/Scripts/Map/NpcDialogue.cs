@@ -28,20 +28,20 @@ public class NpcDialogue : MonoBehaviour
     //    StartCoroutine(EsperarDialogoETrocarCena());
     //}
 
-    IEnumerator EsperarDialogoETrocarCena()
-    {
-        if (Input.GetButtonDown("Fire1") && readyToSpeak)
-        {
-            PauseController.SetPause(true);
-            dialogueManager.StartDialogue(dialogueScene);
-            DisactiveClickToSpeak();
-            readyToSpeak = false;
+    //IEnumerator EsperarDialogoETrocarCena()
+    //{
+    //    if (Input.GetButtonDown("Fire1") && readyToSpeak)
+    //    {
+    //        PauseController.SetPause(true);
+    //        dialogueManager.StartDialogue(dialogueScene);
+    //        DisactiveClickToSpeak();
+    //        readyToSpeak = false;
 
-            yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada atÅEque a condicao seja verdadeira
+    //        yield return new WaitUntil(() => dialogueManager.dialogue == false); // Aqui a corrotina fica parada atÅEque a condicao seja verdadeira
 
-            startBattleController.StartBattle();
-        }
-    }
+    //        startBattleController.StartBattle();
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

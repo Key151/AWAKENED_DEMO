@@ -11,14 +11,14 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
 
     private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
 
-    protected override void Awake()
-    {
-        base.Awake();
-        LoadData();
-    }
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+    //}
 
     void Start()
     {
+        LoadData();
         if (ItemEquipment != null)
         {
             foreach (var item in ItemEquipment) // Usa for para verificar todos os itens equipados
@@ -56,19 +56,20 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     public void LoadData()
     {
         // Tenta carregar dados existentes
-        var savedPlyer = PlayerManager.Instance.LoadPlayer(UnitName);
+        PlayerData = PlayerManager.Instance.LoadPlayer(UnitName);
 
-        if (savedPlyer != null)
+        if (PlayerData != null)
         {
             // Se já existe, fica com ultimo HP
-            CurrentHP = savedPlyer.hp;
+            CurrentHP = PlayerData.hp;
         }
         else
         {
             PlayerData = new PlayerData
             {
                 playerId = UnitName,
-                hp = CurrentHP
+                hp = CurrentHP,
+                playerPosition = Vector3.zero
             };
             PlayerManager.Instance.SavePlayer(PlayerData);
         }

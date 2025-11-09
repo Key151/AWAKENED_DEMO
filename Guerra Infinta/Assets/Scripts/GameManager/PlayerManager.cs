@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
         //DontDestroyOnLoad(gameObject);
 
         if (PlayerDataSave == null) PlayerDataSave = new Dictionary<string, PlayerData>(); // <- so cria se for a primeira vez
- 
+
         //SaveData.Data.playerDicioData = PlayerDataSave;
     }
 
