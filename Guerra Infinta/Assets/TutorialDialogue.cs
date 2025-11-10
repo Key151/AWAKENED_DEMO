@@ -15,7 +15,7 @@ public class TutorialDialogue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        saveDialogueManager = GameObject.Find("SaveDialogueManager").GetComponent<SaveDialogueManager>();
+        saveDialogueManager = SaveDialogueManager.Instance;
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
     }
@@ -23,7 +23,7 @@ public class TutorialDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
+        if (saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
             StartDialogue();
         }

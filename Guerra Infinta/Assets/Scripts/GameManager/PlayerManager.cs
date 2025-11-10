@@ -60,6 +60,7 @@ public class PlayerManager : MonoBehaviour
 
     public void LoadPosition()
     {
+
         GameObject menino = GameObject.FindWithTag("Menino");
         string nomeMenino = menino.GetComponent<UnitPlayer>().UnitName;
 

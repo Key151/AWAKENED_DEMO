@@ -58,7 +58,6 @@ public class OptionPanel : MonoBehaviour
     public void OnReturnButton()
     {
         AudioManager.Instance.PlaySFX(backMenu, true);
-        AudioManager.Instance.StopBGM();
         verificateButtonUI.DisactivateReturnButton();
         verificateButtonUI.ActivateButtons();
     }

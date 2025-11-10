@@ -33,8 +33,6 @@ public class BattleHUD : MonoBehaviour
 
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
-
-        Debug.Log(unit.name + " tem " + unit.CurrentHP + " de vida");
         DisactiveHudImage();
     }
 
@@ -82,7 +80,14 @@ public class BattleHUD : MonoBehaviour
 
     public void ActiveHudImage()
     {
-        hudImage.SetActive(true);
+        if (hudImage != null)
+        {
+            hudImage.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void DisactiveHudImage()

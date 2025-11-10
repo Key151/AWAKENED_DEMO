@@ -8,6 +8,7 @@ public class ItensUI : MonoBehaviour
     public Transform itenListContent;
     public Button itenPrefab;
     public GameObject itenTextPrefab;
+    public GameObject itensImagePrefab;
 
     [Header("Classes")]
     [SerializeField] private Inventory inventory;
@@ -39,12 +40,17 @@ public class ItensUI : MonoBehaviour
                 Button entry = Instantiate(itenPrefab, itenListContent);
                 TMP_Text itenNameText = entry.transform.Find("ItensNameText").GetComponent<TMP_Text>();
                 Transform itenNumberList = entry.transform.Find("ItensNumberPanel");
+                Transform itensImagePanel = entry.transform.Find("ItensImagePanel");
                 itenNameText.text = testIten.ItemName();
 
                 //Quantidade do item
                 GameObject quantityTextGO = Instantiate(itenTextPrefab, itenNumberList);
                 TMP_Text quantityText = quantityTextGO.GetComponent<TMP_Text>();
                 quantityText.text = testIten.quantity.ToString();
+
+                GameObject itensImagemGO = Instantiate(itensImagePrefab, itensImagePanel);
+                Image itensImagem = itensImagemGO.GetComponent<Image>();
+                itensImagem.sprite = testIten.icon;
 
                 int index = i;
                 entry.onClick.RemoveAllListeners();

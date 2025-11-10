@@ -27,7 +27,6 @@ public class DialogueScript : MonoBehaviour
         saveDialogueManager = SaveDialogueManager.Instance;
         dialogueManager = FindAnyObjectByType<DialogueManager>();
         dialogueIsOn = false;
-        isColliding = false;
 
         if (string.IsNullOrEmpty(state))
         {

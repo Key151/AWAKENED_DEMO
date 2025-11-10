@@ -10,8 +10,11 @@ public class ButtonExplorer : MonoBehaviour
 
     private void Start()
     {
-        PlayerManager.Instance.LoadPosition();
-        AudioManager.Instance.PlayBGM(ExplorerSong);   
+        AudioManager.Instance.PlayBGM(ExplorerSong);
+        if(GameStateController.Instance.GetCurrentState() != null)
+        {
+            PlayerManager.Instance.LoadPosition();
+        }
     }
     public void LoadScene(string sceneName)
     {

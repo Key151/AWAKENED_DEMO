@@ -28,10 +28,10 @@ public class VerificateButtonUI : MonoBehaviour
         backButton.SetActive(true);
     }
     
-    public void ActivateDialguePanel() //Ativa o painel de Dialogo
+    /*public void ActivateDialguePanel() //Ativa o painel de Dialogo
     {
         dialoguePanel.SetActive(true);
-    }
+    }*/
 
     public void ActivateItensPanel() //Ativa o painel de Itens
     {
@@ -57,11 +57,11 @@ public class VerificateButtonUI : MonoBehaviour
         optionPanel.SetActive(false);
     }
 
-    public void DisactivateDialguePanel()
+    /*public void DisactivateDialguePanel()
     {
         dialoguePanel.SetActive(false);
 
-    }
+    }*/
 
     public void DisactivateItensPanel() //Ativa o painel de Itens
     {

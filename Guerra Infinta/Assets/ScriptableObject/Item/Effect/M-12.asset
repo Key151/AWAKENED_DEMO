@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   itemName: {fileID: 11400000, guid: 61281694db24f1a4f8432cb35f897b8c, type: 2}
+  icon: {fileID: 21300000, guid: 63edfb0ce91b80546b149dbcacddd2e4, type: 3}
   description: {fileID: 11400000, guid: 8af4cc7139b9a894f8f423181711794e, type: 2}
   quantity: 5
   damageAmount: 13

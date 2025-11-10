@@ -4,7 +4,7 @@ public abstract class Item : ScriptableObject
 {
     public NameItem id;
     public DialogueLineData itemName;
-    //public Sprite icon;
+    public Sprite icon;
     public DialogueLineData description;
     public int quantity;
 

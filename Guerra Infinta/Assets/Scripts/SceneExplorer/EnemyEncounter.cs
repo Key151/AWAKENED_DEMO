@@ -45,8 +45,9 @@ public class EnemyEncounter : MonoBehaviour
         startBattleController = FindAnyObjectByType<StartBattleController>();
         cam = FindAnyObjectByType<CinemachineCamera>();
         enemyTransform = GetComponent<Transform>();
+        enemyInCamera = false;
 
-        if(EnemyController.Instance != null && EnemyController.Instance.IsEnemyDefeated(enemyID))
+        if (EnemyController.Instance != null && EnemyController.Instance.IsEnemyDefeated(enemyID))
         {
             StateObjectsController.Instance.ChangeStateObjects(state);
             gameObject.SetActive(false);
@@ -95,7 +96,6 @@ public class EnemyEncounter : MonoBehaviour
             PauseController.SetPause(false);
             EnemyController.Instance.MarkEnemyDefeated(enemyID);
             startBattleController.StartBattle(enemyList);
-
         }
     }
 
