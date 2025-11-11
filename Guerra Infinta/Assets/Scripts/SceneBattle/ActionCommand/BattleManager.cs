@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour
     {
         bool finished = false;
         bool success = false;
+        player.DamageBonus = 0;
 
         Debug.Log("Iniciando ataque!");
         TriggerActionCommand(player, result =>
@@ -37,9 +38,10 @@ public class BattleManager : MonoBehaviour
 
     public void OnActionCommandResult(bool success, UnitPlayer unitPlayer)
     {
+        int damageSucess = unitPlayer.TotalDamage() * 70 / 100;
         if (success)
         {
-            unitPlayer.DamageBonus += 10; // Exemplo de bonus de dano
+            unitPlayer.DamageBonus += damageSucess; // Exemplo de bonus de dano
             Debug.Log("Ataque Crítico!");
         }
         else

@@ -16,8 +16,8 @@ public class BattleSystem : MonoBehaviour
     [Header("Player Settings")]
     public GameObject playerPrefab;
     public GameObject playerPrefab_2;
-    //public Transform playerBattleStation;
-    //public Transform playerBattleStation_2;
+    public Transform playerBattleStation;
+    public Transform playerBattleStation_2;
     private UnitPlayerBoy playerUnit;
     private UnitPlayerGirl playerUnit_2;
     public BattleHUD playerHUD;
@@ -67,11 +67,11 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         //Cria uma playerPrefab no cenario
-        GameObject playerGO = Instantiate(playerPrefab);
+        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation.position, playerBattleStation.rotation);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
         //Cria uma playerPrefab2 no cenario
-        GameObject playerGO_2 = Instantiate(playerPrefab_2);
+        GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation_2.position, playerBattleStation_2.rotation);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
         for (int i = 0; i < enemyPrefab.Count; i++)
@@ -173,6 +173,7 @@ public class BattleSystem : MonoBehaviour
     // TURNO DO PLAYER
     void PlayerTurn(Unit player_Unit)
     {
+        VerificateButtonUI.SetPosition(player_Unit.transform);
         VerificateButtonUI.ActivateButtons();
         if (PauseController.IsGamePaused) return;
         player_Unit.Selected = true;

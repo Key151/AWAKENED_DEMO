@@ -77,4 +77,9 @@ public class VerificateButtonUI : MonoBehaviour
         returnButton.SetActive(false);
         DisactivateItensPanel();
     }
+
+    public void SetPosition(Transform NewPosition)
+    {
+        NewPosition = optionPanel.transform;
+    }
 }
