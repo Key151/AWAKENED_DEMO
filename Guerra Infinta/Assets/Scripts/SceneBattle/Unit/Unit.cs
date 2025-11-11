@@ -70,6 +70,12 @@ public class Unit : MonoBehaviour, IDamageable
         return damageBase + damageBonus;
     }
 
+    public Vector3 GetPosition()
+    {
+        Vector3 position = transform.position;
+        return position;
+    }
+
     public void SetPosition(float x, float y)
     {
         transform.position = new Vector2(x, y);

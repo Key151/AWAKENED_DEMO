@@ -78,8 +78,8 @@ public class VerificateButtonUI : MonoBehaviour
         DisactivateItensPanel();
     }
 
-    public void SetPosition(Transform NewPosition)
+    public void SetPosition(Vector3 NewPosition)
     {
-        NewPosition = optionPanel.transform;
+        optionPanel.transform.position = NewPosition;
     }
 }

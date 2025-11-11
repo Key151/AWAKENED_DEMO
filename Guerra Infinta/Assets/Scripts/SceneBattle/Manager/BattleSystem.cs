@@ -176,7 +176,7 @@ public class BattleSystem : MonoBehaviour
     // TURNO DO PLAYER
     void PlayerTurn(Unit player_Unit)
     {
-        VerificateButtonUI.SetPosition(player_Unit.transform);
+        VerificateButtonUI.SetPosition(player_Unit.GetPosition());
         VerificateButtonUI.ActivateButtons();
         if (PauseController.IsGamePaused) return;
         player_Unit.Selected = true;
