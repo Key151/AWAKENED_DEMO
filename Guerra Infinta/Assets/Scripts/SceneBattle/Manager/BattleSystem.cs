@@ -105,6 +105,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(timer);
 
+        playerHUD.SetHUD(playerUnit);
+        playerHUD_2.SetHUD(playerUnit_2);
+
         VerificateTurn();
     }
     void VerificateTurn()
@@ -189,7 +192,7 @@ public class BattleSystem : MonoBehaviour
 
         VerificateButtonUI.DisactivateButtons();
         //VerificateButtonUI.ActivateDialguePanel();
-        dialogueText.text = playerAtual.UnitName + " ataca!";
+        //dialogueText.text = playerAtual.UnitName + " ataca!";
         playerAtual.Attack(enemyUnit[enemyNumber]);
         playerHUD.UpdateApHUD(playerUnit);
         playerHUD_2.UpdateApHUD(playerUnit_2);
@@ -209,7 +212,7 @@ public class BattleSystem : MonoBehaviour
 
         //VerificateButtonUI.ActivateDialguePanel();
 
-        dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
+        //dialogueText.text = enemy.UnitName + " ataca\n" + player.UnitName + "!";
         enemy.Attack(player);
         playerHUD.UpdateHUD(playerUnit);
         playerHUD_2.UpdateHUD(playerUnit_2);
@@ -228,7 +231,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             //VerificateButtonUI.ActivateDialguePanel();
-            dialogueText.text = "Você venceu a batalha!";
+            //dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(timer * 2);
             //VerificateButtonUI.DisactivateDialguePanel();
             SceneManager.LoadScene(NextSceneName);
@@ -236,7 +239,7 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             //VerificateButtonUI.ActivateDialguePanel();
-            dialogueText.text = "Você foi derrotado.";
+            //dialogueText.text = "Você foi derrotado.";
             yield return new WaitForSeconds(timer * 2);
             //VerificateButtonUI.DisactivateDialguePanel();
             SceneManager.LoadScene(NextSceneName);

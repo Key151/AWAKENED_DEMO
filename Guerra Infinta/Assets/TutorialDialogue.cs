@@ -23,7 +23,7 @@ public class TutorialDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (saveDialogueManager.GetDialogueValue(dictionaryKey))
+        if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
             StartDialogue();
         }

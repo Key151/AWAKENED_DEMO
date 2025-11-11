@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   portugueseText: "E para facilitar, somente os inimigos aparecem na tela, ent\xE3o
     mantenha o foco neles!"
-  englishText: 
+  englishText: To make it easier, only enemies show up on screen, so keep your focus
+    on them!

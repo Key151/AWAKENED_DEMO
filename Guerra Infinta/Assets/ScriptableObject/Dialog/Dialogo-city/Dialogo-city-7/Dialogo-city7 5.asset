@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
   portugueseText: "Ent\xE3o voc\xEA quer ficar isolado nesse quarto? Quanto tempo
     at\xE9 algu\xE9m encontrar a gente aqui?"
-  englishText: 
+  englishText: So you want to stay isolated in this room? How long until someone
+    finds us here?

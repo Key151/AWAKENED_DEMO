@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Marco
   icon: {fileID: 21300000, guid: 346a3483c500faa40bc5a9423b5ea7a8, type: 3}
-  portugueseText: "Foi o que eu senti tamb\xE9m, n\xE3o sei o que essa pessoa fez
-    com a nossa cabe\xE7a. Mas acabou, vamos embora daqui."
-  englishText: 
+  portugueseText: "Foi o que eu senti tamb\xE9m. Eu n\xE3o sei o que essa pessoa
+    fez com a nossa cabe\xE7a, mas acabou, vamos embora pra casa."
+  englishText: "\rThat's how I felt too. I don't know what that person did to our
+    heads, but it's over, let's go home."
