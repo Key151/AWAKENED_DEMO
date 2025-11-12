@@ -49,7 +49,7 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         iconAction.StartActionIcon();
     }
 
-    public override IEnumerator TakeDamage(int damage, string sfx= "BattleEffect18")
+    public override IEnumerator TakeDamage(int damage, string sfx= "BattleEffect18", HitEffectType effect = HitEffectType.Normal)
     {
         textDamage.ShowDamage(damage);
         StartCoroutine(Flash());

@@ -7,9 +7,8 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int damageBase;
     [SerializeField] private int maxHP;
     [SerializeField] private int spd;
-
     [SerializeField] private int maxActionPoint;
-    
+    [SerializeField] private DamageEffectManager damageEffectManager;
 
     private IAttack attackNormal;
     private int currentHP;
@@ -86,9 +85,10 @@ public class Unit : MonoBehaviour, IDamageable
         attackNormal.Attack(this, target);
     }
 
-    public virtual IEnumerator TakeDamage(int damage, string sfx = "BattleEffect12")
+    public virtual IEnumerator TakeDamage(int damage, string sfx = "BattleEffect12", HitEffectType effect = HitEffectType.Normal)
     {
         AudioManager.Instance.PlaySFX(sfx, true);
+        damageEffectManager.PlayHitEffect(effect);
         currentHP -= damage;
         if (currentHP <= 0)
         {
