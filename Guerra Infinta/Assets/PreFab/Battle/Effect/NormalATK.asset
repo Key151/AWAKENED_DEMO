@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NormalATK
   m_EditorClassIdentifier: 
   type: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 7223318384662707245, guid: 38e5f9c1b4b660342aa21d6bf31cb621, type: 3}

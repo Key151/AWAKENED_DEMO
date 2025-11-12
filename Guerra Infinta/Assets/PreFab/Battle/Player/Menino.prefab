@@ -108,7 +108,7 @@ MonoBehaviour:
   maxHP: 60
   spd: 25
   maxActionPoint: 100
-  damageEffectManager: {fileID: 0}
+  damageEffectManager: {fileID: 8742356915502914586}
   ItemEquipment: []
 --- !u!1001 &873345565417597748
 PrefabInstance:
@@ -274,6 +274,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1380906853631722567, guid: e699f226a6422254b92a3b52ba23cf31, type: 3}
   m_PrefabInstance: {fileID: 1153495910417227437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8742356915502914586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7588878874506937015, guid: e699f226a6422254b92a3b52ba23cf31, type: 3}
+  m_PrefabInstance: {fileID: 1153495910417227437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f614fed4889d443bab8c945c594965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4072887063077545772
 PrefabInstance:
   m_ObjectHideFlags: 0
