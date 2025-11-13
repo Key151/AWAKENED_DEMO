@@ -22,9 +22,10 @@ public class DamageEffectManager : MonoBehaviour
 
     public void PlayHitEffect(HitEffectType type)
     {
-        if (effectAnimations.TryGetValue(type, out string animationName))
+        if (effectAnimations.TryGetValue(type, out string triggerName))
         {
-            effectAnimator.Play(animationName, -1, 0f);
+            effectAnimator.ResetTrigger(triggerName);
+            effectAnimator.SetTrigger(triggerName);
         }
         else
         {
