@@ -21,3 +21,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: daf847e1f58d1e5479c68fa8b898fcda, type: 3}
   - name: Explorer02
     clip: {fileID: 8300000, guid: 4bc92800d4243fb46bc95fc8bdef2692, type: 3}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: d13afc5d7fa1d6b41b72dea075cb32bd, type: 3}

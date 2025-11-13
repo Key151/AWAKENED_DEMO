@@ -12,8 +12,8 @@ public class VerificateButtonUI : MonoBehaviour
     [SerializeField] private GameObject returnButton;
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject dialoguePanel;
-
     [SerializeField] private GameObject itensPanel;
+    [SerializeField] private GameObject GameOverPanel;
 
     [SerializeField] private EnemyButtonController enemyButtonController;
 
@@ -28,10 +28,12 @@ public class VerificateButtonUI : MonoBehaviour
         backButton.SetActive(true);
     }
     
-    /*public void ActivateDialguePanel() //Ativa o painel de Dialogo
+    public void ActivateGameOverPanel() //Ativa o painel de game over
     {
-        dialoguePanel.SetActive(true);
-    }*/
+        string music = "GameOver";
+        AudioManager.Instance.PlayBGM(music);
+        GameOverPanel.SetActive(true);
+    }
 
     public void ActivateItensPanel() //Ativa o painel de Itens
     {

@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 public class OptionPanel : MonoBehaviour
 {
     [Header("Scene")]
-    public string sceneName;
+    public string sceneExplorer;
+    public string sceneMenu;
 
     [Header("Music")]
     private string enterMenu = "Enter";
     private string backMenu = "Back";
+    private string LoadGame = "Load";
 
     [Header("Classes")]
     [SerializeField] private BattleSystem battleSystem;
@@ -52,7 +54,7 @@ public class OptionPanel : MonoBehaviour
 
         battleSystem.SavePlayers();
         AudioManager.Instance.StopBGM();
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneExplorer);
     }
 
     public void OnReturnButton()
@@ -62,5 +64,18 @@ public class OptionPanel : MonoBehaviour
         verificateButtonUI.ActivateButtons();
     }
 
+    public void OnReturnMenu()
+    {
+        AudioManager.Instance.PlaySFX(backMenu, true);
+        AudioManager.Instance.StopBGM();
+        SceneManager.LoadScene(sceneMenu);
+    }
+
+    public void OnLoadGame()
+    {
+        AudioManager.Instance.PlaySFX(LoadGame, true);
+        AudioManager.Instance.StopBGM();
+        SceneManager.LoadScene(GameManager.Load());
+    }
 
 }

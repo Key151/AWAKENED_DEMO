@@ -234,19 +234,16 @@ public class BattleSystem : MonoBehaviour
             //dialogueText.text = "Você venceu a batalha!";
             yield return new WaitForSeconds(timer * 2);
             //VerificateButtonUI.DisactivateDialguePanel();
+            InventoryManager.Instance.SaveInventory();
+            SavePlayers();
             SceneManager.LoadScene(NextSceneName);
+
         }
         else if (state == BattleState.LOST)
         {
-            //VerificateButtonUI.ActivateDialguePanel();
-            //dialogueText.text = "Você foi derrotado.";
-            yield return new WaitForSeconds(timer * 2);
-            //VerificateButtonUI.DisactivateDialguePanel();
-            SceneManager.LoadScene(NextSceneName);
+            VerificateButtonUI.ActivateGameOverPanel();
         }
 
-        InventoryManager.Instance.SaveInventory();
-        SavePlayers();
         AudioManager.Instance.StopBGM();
     }
 
