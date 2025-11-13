@@ -44,6 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f614fed4889d443bab8c945c594965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectAnchor: {fileID: 0}
-  effects:
-  - {fileID: 11400000, guid: ccc86b3dd741a7a43ab41a293c6e150f, type: 2}
+  effectAnimator: {fileID: 5034100554196293961, guid: 38e5f9c1b4b660342aa21d6bf31cb621, type: 3}

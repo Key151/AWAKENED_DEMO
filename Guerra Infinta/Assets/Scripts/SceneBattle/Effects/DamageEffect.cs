@@ -3,21 +3,32 @@ using UnityEngine;
 
 public class DamageEffectManager : MonoBehaviour
 {
-    [SerializeField] private Transform effectAnchor; // ponto onde o efeito aparece
-    [SerializeField] private List<HitEffectData> effects; // lista de efeitos disponiveis
+    [SerializeField] private Animator effectAnimator;
+
+    private Dictionary<HitEffectType, string> effectAnimations;
+
+    private void Awake()
+    {
+        // associa cada tipo ao nome da animacao
+        effectAnimations = new Dictionary<HitEffectType, string>
+            {
+                { HitEffectType.Normal , "NormalATK" },
+                { HitEffectType.Explosion, "CriticalEffect" },
+                { HitEffectType.Pistol, "FireEffect" },
+                { HitEffectType.Slash, "PoisonEffect" },
+                { HitEffectType.Shotgun, "HealEffect" }
+            };
+    }
 
     public void PlayHitEffect(HitEffectType type)
     {
-        // Busca o efeito correto na lista
-        HitEffectData effectData = effects.Find(e => e.type == type);
-        if (effectData == null || effectData.prefab == null)
+        if (effectAnimations.TryGetValue(type, out string animationName))
         {
-            Debug.LogWarning($"Nenhum efeito configurado para {type}");
-            return;
+            effectAnimator.Play(animationName, -1, 0f);
         }
-
-        // Instancia o efeito no ponto indicado
-        GameObject effect = Instantiate(effectData.prefab, effectAnchor.position, Quaternion.identity);
-        Destroy(effect, 1.0f); // tempo para sumir o efeito
+        else
+        {
+            Debug.LogWarning($"Efeito '{type}' nao encontrado no dicionario!");
+        }
     }
 }
