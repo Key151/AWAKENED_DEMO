@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ae1428346e49a4ca6e14a4300efda4, type: 3}
   m_Name: Rafael
   m_EditorClassIdentifier: 
-  portugueseText: 
-  englishText: 
+  portugueseText: Rafael
+  englishText: Rafael

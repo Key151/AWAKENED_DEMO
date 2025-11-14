@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Tutorial_Dialogue 2
   m_EditorClassIdentifier: 
-  speakerName: Narrador
+  speakerName: {fileID: 11400000, guid: d4a3bdbec5f079148a7b8f1438fb19fb, type: 2}
   icon: {fileID: 0}
   portugueseText: "E para facilitar, somente os inimigos aparecem na tela, ent\xE3o
     mantenha o foco neles!"
