@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Shadow
   damageBase: 5
-  maxHP: 80
-  spd: 30
+  maxHP: 40
+  spd: 20
   maxActionPoint: 100
   damageEffectManager: {fileID: 2676647530674486131}
   textDamage: {fileID: 7864661660599780055}
@@ -245,7 +245,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 5.3333335, y: 5.3333335}
     newSize: {x: 0.09, y: 0.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

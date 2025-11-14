@@ -14,11 +14,11 @@ public class DamageEffectManager : MonoBehaviour
         // associa cada tipo ao nome da animacao
         effectAnimations = new Dictionary<HitEffectType, string>
             {
-                { HitEffectType.Normal , "Effect1" },
-                { HitEffectType.Explosion, "CriticalEffect" },
-                { HitEffectType.Pistol, "FireEffect" },
+                { HitEffectType.Normal , "Normal" },
+                { HitEffectType.Explosion, "Explosion2" },
+                { HitEffectType.Pistol, "Pistol" },
                 { HitEffectType.Slash, "PoisonEffect" },
-                { HitEffectType.Shotgun, "HealEffect" }
+                { HitEffectType.Shotgun, "Explosion" }
             };
     }
 
@@ -27,7 +27,7 @@ public class DamageEffectManager : MonoBehaviour
         if (effectAnimations.TryGetValue(type, out string triggerName))
         {
             //effectAnimator.ResetTrigger(triggerName);
-            effectAnimator.SetTrigger(effectAnimations[type]);
+            effectAnimator.SetTrigger(triggerName);
         }
         else
         {

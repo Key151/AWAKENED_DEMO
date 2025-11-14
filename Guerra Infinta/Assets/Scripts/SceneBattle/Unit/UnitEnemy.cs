@@ -15,11 +15,6 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     private float flashDuration = 0.5f;
     private Color originalColor;
 
-    [Header("SoundEffect")]
-    private string effect09 = "BattleEffect09";
-    private string effect12 = "BattleEffect12";
-    private string effect18 = "BattleEffect18";
-
     private bool isClicked;
 
     public void Start()
@@ -40,11 +35,11 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
         iconAction.StartActionIcon();
     }
 
-    public override IEnumerator TakeDamage(int damage, string sfx= "BattleEffect18", HitEffectType effect = HitEffectType.Normal)
+    public override IEnumerator TakeDamage(int damage, string sfx, HitEffectType effect)
     {
         textDamage.ShowDamage(damage);
         //StartCoroutine(Flash());
-        StartCoroutine(base.TakeDamage(damage));
+        StartCoroutine(base.TakeDamage(damage, sfx, effect));
         yield return new WaitForSeconds(1f);
     }
 

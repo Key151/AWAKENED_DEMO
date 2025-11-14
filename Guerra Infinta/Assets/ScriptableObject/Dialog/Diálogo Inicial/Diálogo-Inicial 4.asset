@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: "Di\xE1logo-Inicial 4"
   m_EditorClassIdentifier: 
-  speakerName: "M\xE3e"
+  speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
   icon: {fileID: 21300000, guid: d20ee44827505cd46b6f9999fe6c1f17, type: 3}
   portugueseText: "N\xE3o gosto que voc\xEAs saiam sozinhos na rua, eu fico preocupada."
   englishText: "I don\u2019t like it when you two go out alone, it worries me."

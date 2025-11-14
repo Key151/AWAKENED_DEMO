@@ -34,4 +34,4 @@ MonoBehaviour:
   - name: ShotGun
     clip: {fileID: 8300000, guid: e5d7961b59a22404495bb77af6892bc1, type: 3}
   - name: MachineGun
-    clip: {fileID: 8300000, guid: 064a83488e55a3d45b228fc60eba19ec, type: 3}
+    clip: {fileID: 8300000, guid: 2f4b89a8ee6948b488712628de7ebc22, type: 3}

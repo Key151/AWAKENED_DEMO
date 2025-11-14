@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: DialogoTeste 2
   m_EditorClassIdentifier: 
-  speakerName: Inimigo
+  speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
   icon: {fileID: 21300000, guid: 2c1050bdc8c8ba14ead38532607ad157, type: 3}
   portugueseText: "Eu n\xE3o quero conversar, vamos lutar!"
   englishText: "I don\xB4t want to talk, i want to battle!"
