@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6148311128742900206}
   - component: {fileID: 5341536685258964796}
   - component: {fileID: 5408585331003473277}
+  - component: {fileID: -2298318831158334210}
   m_Layer: 3
   m_Name: Menino
   m_TagString: Menino
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 1143668267
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2425068948780354478, guid: 62a6aab6759df5f439dd87630cd7462a, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 1cc8b9437330d374e9287b8b5f89475c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,6 +111,28 @@ MonoBehaviour:
   maxActionPoint: 100
   damageEffectManager: {fileID: 8742356915502914586}
   ItemEquipment: []
+--- !u!95 &-2298318831158334210
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837856005212140483}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d88a380fe99c90408dd346c548e832f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &873345565417597748
 PrefabInstance:
   m_ObjectHideFlags: 0

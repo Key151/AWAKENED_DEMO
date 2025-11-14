@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1955093052048205875}
   - component: {fileID: 1058578942766788368}
   - component: {fileID: 1040684824106060760}
+  - component: {fileID: -7230950139264113728}
   m_Layer: 3
   m_Name: Menina
   m_TagString: Menina
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 1143668267
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1220360099, guid: 9503ab799bf973540bf2ce970b2e2116, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 6796e0d618a48c54b831f2b67385b93e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,6 +111,28 @@ MonoBehaviour:
   maxActionPoint: 100
   damageEffectManager: {fileID: 545946196463479425}
   ItemEquipment: []
+--- !u!95 &-7230950139264113728
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645501425345094461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f938c8edca7614442a89a48ca020c20e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1448859773813752501
 PrefabInstance:
   m_ObjectHideFlags: 0

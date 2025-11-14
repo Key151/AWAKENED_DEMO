@@ -1,7 +1,6 @@
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.Animations;
 using static BattleSystem;
 
 public class UnitEnemy : Unit, IVerificateTurnUnit
@@ -12,16 +11,9 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
 
     private CinemachineImpulseSource impulseSource;
     private SpriteRenderer spriteRenderer;
-    private CameraShake cameraShake;
     private Color flashColor = Color.red;
     private float flashDuration = 0.5f;
     private Color originalColor;
-
-    [Header("Animation")]
-    private Animator anim;
-    private string hurtAni = "Hurt";
-    private string deadAni = "Dead";
-    private string attackAni = "Attack";
 
     [Header("SoundEffect")]
     private string effect09 = "BattleEffect09";
@@ -34,9 +26,8 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
-        cameraShake = GameObject.Find("CameraShake").GetComponent<CameraShake>();
         originalColor = spriteRenderer.color;
+        SetAnimator(GetComponent<Animator>());
     }
 
     public override bool CheckDead()
@@ -52,27 +43,15 @@ public class UnitEnemy : Unit, IVerificateTurnUnit
     public override IEnumerator TakeDamage(int damage, string sfx= "BattleEffect18", HitEffectType effect = HitEffectType.Normal)
     {
         textDamage.ShowDamage(damage);
-        StartCoroutine(Flash());
-        AudioManager.Instance.PlaySFX(sfx, true);
+        //StartCoroutine(Flash());
         StartCoroutine(base.TakeDamage(damage));
-        if (CheckDead())
-        {
-            anim.SetTrigger(deadAni);
-        }
-        else
-        {
-            anim.SetTrigger(hurtAni);
-        }
         yield return new WaitForSeconds(1f);
     }
 
     public override void Attack(Unit target)
     {
-        anim.SetTrigger(attackAni);
-        //AudioManager.Instance.PlaySFX(effect12, true);
         base.Attack(target);
         impulseSource.GenerateImpulse();
-        //cameraShake.StartShake();
     }
 
     public BattleState turnUnit()

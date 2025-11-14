@@ -110,6 +110,7 @@ MonoBehaviour:
   maxHP: 100
   spd: 80
   maxActionPoint: 150
+  damageEffectManager: {fileID: 0}
   textDamage: {fileID: 7864661660599780055}
   iconAction: {fileID: 6076441713128362912}
 --- !u!114 &7311989276286646145

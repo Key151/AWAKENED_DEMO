@@ -17,6 +17,14 @@ public class VerificateButtonUI : MonoBehaviour
 
     [SerializeField] private EnemyButtonController enemyButtonController;
 
+    private void Start()
+    {
+        optionPanel.SetActive(false);
+        dialoguePanel.SetActive(false);
+        itensPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+    }
+
     // ATIVAR BOTOES
 
     // Ativa os  botões de ataque e Voltar

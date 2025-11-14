@@ -32,7 +32,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private List<BattleHUD> enemyHUD;
     [SerializeField] EnemyButtonController enemyButtonController;
 
-
+    [SerializeField] private float spriteHeight = 3;
 
     [Header("Dialogue Settings")]
     public Text dialogueText;
@@ -67,11 +67,11 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         //Cria uma playerPrefab no cenario
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation.position, playerBattleStation.rotation);
+        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation.position + new Vector3(0, spriteHeight, 0), playerBattleStation.rotation);
         playerUnit = playerGO.GetComponent<UnitPlayerBoy>();
 
         //Cria uma playerPrefab2 no cenario
-        GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation_2.position, playerBattleStation_2.rotation);
+        GameObject playerGO_2 = Instantiate(playerPrefab_2, playerBattleStation_2.position + new Vector3(0, spriteHeight, 0), playerBattleStation_2.rotation);
         playerUnit_2 = playerGO_2.GetComponent<UnitPlayerGirl>();
 
         for (int i = 0; i < enemyPrefab.Count; i++)

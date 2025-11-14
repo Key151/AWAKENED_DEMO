@@ -24,10 +24,14 @@ public class Follow : MonoBehaviour
 
     PlayerMovement playerMovement;
 
+    //private string walk = "isWalking";
+    private string walk = "Walk";
+
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerMovement = GameObject.FindGameObjectWithTag("Menino").GetComponent<PlayerMovement>();
+        //playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -38,11 +42,11 @@ public class Follow : MonoBehaviour
         if (PauseController.IsGamePaused)
         {
             isWalking = false;
-            animator.SetBool("isWalking", isWalking);
+            animator.SetBool(walk, isWalking);
             return;
         }
         Move();
-        animator.SetBool("isWalking", isWalking);
+        animator.SetBool(walk, isWalking);
     }
 
     private void Move()
@@ -52,21 +56,30 @@ public class Follow : MonoBehaviour
         {
             Vector2 targetPosition = playerMovement.positionHistory[followDelay];
             float distance = Vector2.Distance(transform.position, targetPosition);
+            Vector2 direction = targetPosition - (Vector2)transform.position;
 
             if (distance > 0.01f)
             {
                 isWalking = true;
                 moveInput = playerMovement.inputHistory[followDelay];
-                animator.SetFloat("InputX", moveInput.x);
-                animator.SetFloat("InputY", moveInput.y);
+                //animator.SetFloat("InputX", moveInput.x);
+                //animator.SetFloat("InputY", moveInput.y);
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                if (direction.x > 0)
+                {
+                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                }
+                else if (direction.x < 0)
+                {
+                    transform.eulerAngles = new Vector3(0f, 180f, 0f);
+                }
             }
             else
             {
                 isWalking = false;
-                animator.SetBool("isWalking", isWalking);
-                animator.SetFloat("LastInputX", moveInput.x);
-                animator.SetFloat("LastInputY", moveInput.y);
+                animator.SetBool(walk, isWalking);
+                //animator.SetFloat("LastInputX", moveInput.x);
+                //animator.SetFloat("LastInputY", moveInput.y);
             }
         }
         else

@@ -11,11 +11,6 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
 
     private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
 
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-    //}
-
     void Start()
     {
         LoadData();
@@ -27,6 +22,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
                 Debug.Log($"Está com {item.ItemName()}!");
             }
         }
+        SetAnimator(GetComponent<Animator>());
     }
     public BattleState turnUnit()
     {

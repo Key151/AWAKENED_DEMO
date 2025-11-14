@@ -10,6 +10,12 @@ public class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int maxActionPoint;
     [SerializeField] private DamageEffectManager damageEffectManager;
 
+    [Header("Animation")]
+    private Animator animator;
+    private string hurtAni = "Hurt";
+    private string deadAni = "Dead";
+    private string attackAni = "Attack";
+
     private IAttack attackNormal;
     private int currentHP;
     private int currentActionPoint;
@@ -18,6 +24,11 @@ public class Unit : MonoBehaviour, IDamageable
     public bool Attacking { get; set; }
     public bool Selected { get; set; }
     public bool TakingDamage { get; set; }
+
+    public void SetAnimator(Animator anim)
+    {
+        animator = anim;
+    }
 
     public string UnitName
     {
@@ -83,6 +94,7 @@ public class Unit : MonoBehaviour, IDamageable
    public virtual void Attack(Unit target)
     {
         attackNormal.Attack(this, target);
+        animator.SetTrigger(attackAni);
     }
 
     public virtual IEnumerator TakeDamage(int damage, string sfx = "BattleEffect12", HitEffectType effect = HitEffectType.Normal)
@@ -94,6 +106,14 @@ public class Unit : MonoBehaviour, IDamageable
         {
             currentHP = 0;
             dead = true;
+        }
+        if (CheckDead())
+        {
+            animator.SetTrigger(deadAni);
+        }
+        else
+        {
+            animator.SetTrigger(hurtAni);
         }
         Debug.Log($"{this} recebeu {damage} de dano");
         yield return new WaitForSeconds(1f);

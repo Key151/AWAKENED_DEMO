@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     public List<Vector2> positionHistory = new List<Vector2>();
     public List<Vector2> inputHistory = new List<Vector2>();
+    //private string walk = "isWalking";
+    private string walk = "Walk";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (PauseController.IsGamePaused)
         {
             rb.linearVelocity = Vector2.zero;
-            animator.SetBool("isWalking", false);
+            animator.SetBool(walk, false);
             return;
         }
 
@@ -47,20 +49,32 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.linearVelocity = moveInput * moveSpeed;
-        animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
+        animator.SetBool(walk, rb.linearVelocity.magnitude > 0);
+        if (animator.GetBool(walk))
+        {
+            if (moveInput.x > 0)
+            {
+                transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            }
+            else if (moveInput.x < 0)
+            {
+                transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            }
+        }
+        
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         if (context.canceled)
         {
-            animator.SetBool("isWalking", false);
-            animator.SetFloat("LastInputX", moveInput.x);
-            animator.SetFloat("LastInputY", moveInput.y);
+            animator.SetBool(walk, false);
+            //animator.SetFloat("LastInputX", moveInput.x);
+            //animator.SetFloat("LastInputY", moveInput.y);
         }
         moveInput = context.ReadValue<Vector2>();
-        animator.SetFloat("InputX", moveInput.x);
-        animator.SetFloat("InputY", moveInput.y);
+        //animator.SetFloat("InputX", moveInput.x);
+        //animator.SetFloat("InputY", moveInput.y);
     }
 
     ///////////////////////////////////////////////////
