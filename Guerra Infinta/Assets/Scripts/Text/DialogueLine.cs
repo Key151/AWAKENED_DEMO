@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue/Dialogue Line")]
 public class DialogueLineData : ScriptableObject, IDialogue
 {
-    [SerializeField] private string speakerName;
+    [SerializeField] private DialogueText speakerName;
     [SerializeField] private Sprite icon;
 
     [TextArea(3, 5)]
@@ -13,7 +13,7 @@ public class DialogueLineData : ScriptableObject, IDialogue
     [TextArea(3, 5)]
     [SerializeField] private string englishText;
 
-    public string SpeakerName => speakerName;
+    public string SpeakerName => speakerName.GetTextBase(LanguageManager.Instance.GetLanguage());
     public Sprite Icon => icon;
 
     public string GetText(Language language)
