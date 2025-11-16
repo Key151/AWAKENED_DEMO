@@ -35,7 +35,7 @@ public class ItensUI : MonoBehaviour
             //Nome de item
             testIten = inventory.inventoryList[i];
 
-            if (testIten.quantity > 0)
+            if (testIten.Quantity > 0)
             {
                 Button entry = Instantiate(itenPrefab, itenListContent);
                 TMP_Text itenNameText = entry.transform.Find("ItensNameText").GetComponent<TMP_Text>();
@@ -46,7 +46,7 @@ public class ItensUI : MonoBehaviour
                 //Quantidade do item
                 GameObject quantityTextGO = Instantiate(itenTextPrefab, itenNumberList);
                 TMP_Text quantityText = quantityTextGO.GetComponent<TMP_Text>();
-                quantityText.text = testIten.quantity.ToString();
+                quantityText.text = testIten.Quantity.ToString();
 
                 GameObject itensImagemGO = Instantiate(itensImagePrefab, itensImagePanel);
                 Image itensImagem = itensImagemGO.GetComponent<Image>();
@@ -63,12 +63,6 @@ public class ItensUI : MonoBehaviour
                 i--;
             }
         }
-    }
-
-    public void ReduceQuantityIten(int index)
-    {
-        inventory.inventoryList[index].quantity--;
-        UpdateItensUI();
     }
 
 }

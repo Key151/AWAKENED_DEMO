@@ -43,12 +43,12 @@ public class PlayerManager : MonoBehaviour
 
     public void SavePosition()
     {
-        GameObject menino = GameObject.FindWithTag("Menino");
-        string nomeMenino = menino.GetComponent<UnitPlayer>().UnitName;
-        Vector3 posicaoMenino = menino.transform.position;
+        GameObject player1 = GameObject.FindWithTag("Menino");
+        string nomeMenino = player1.GetComponent<UnitPlayer>().UnitName;
+        Vector3 posicaoMenino = player1.transform.position;
 
-        GameObject menina = GameObject.FindWithTag("Menina");
-        string nomeMenina = menina.GetComponent<UnitPlayer>().UnitName;
+        GameObject player2 = GameObject.FindWithTag("Menina");
+        string nomeMenina = player2.GetComponent<UnitPlayer>().UnitName;
 
         PlayerDataSave[nomeMenina].playerPosition = posicaoMenino;
         PlayerDataSave[nomeMenino].playerPosition = posicaoMenino;

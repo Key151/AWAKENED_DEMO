@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4dfd92683e4034692cb1524ad2650e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  speedControl: 1
+  moveSpeed: 6
+  speedControl: 3
   recordTimer: 0
   positionHistory: []
   inputHistory: []

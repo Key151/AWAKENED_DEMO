@@ -11,6 +11,9 @@ public class ItemDamage: ApplyItem
     public override void ApplyEffect(Unit player, Unit target)
     {
         string aniItem = "AttackItem";
+        int LossNumber = -1;
+
+        Gain(LossNumber);
         player.CurrentActionPoint -= ActionPointCost;
         player.GetAnimator().SetTrigger(aniItem);
         target.StartCoroutine(target.TakeDamage(damageAmount + player.TotalDamage(), SfxName, EffectName));

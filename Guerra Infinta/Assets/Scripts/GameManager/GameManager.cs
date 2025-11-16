@@ -43,7 +43,7 @@ public class GameManager
             PlayerManager.Instance.PlayerDataSave[key] = SaveData.Data.playerDicioData[key];
         }
 
-        //Load dos intens
+        //Load dos itens
         foreach (var key in SaveData.Data.inventoriesDicioData.Keys)
         {
             InventoryManager.Instance.ItemDatabase[key] = SaveData.Data.inventoriesDicioData[key];

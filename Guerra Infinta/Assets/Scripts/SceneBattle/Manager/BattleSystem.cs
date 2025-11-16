@@ -283,7 +283,7 @@ public class BattleSystem : MonoBehaviour
         if (index < 0 || index >= inventoryBattle.inventoryList.Count) yield return null;
 
         inventoryBattle.inventoryList[index].ApplyEffect(BattleList[0], enemyUnit[enemyNumber]);
-        itensUI.ReduceQuantityIten(index);
+        itensUI.UpdateItensUI();
         enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
         playerHUD.UpdateApHUD(playerUnit);
@@ -301,7 +301,7 @@ public class BattleSystem : MonoBehaviour
         if (index < 0 || index >= inventoryBattle.inventoryList.Count) yield return null;
 
         inventoryBattle.inventoryList[index].ApplyEffect(BattleList[0], BattleList[0]);
-        itensUI.ReduceQuantityIten(index);
+        itensUI.UpdateItensUI();
 
         playerHUD.UpdateHUD(playerUnit);
         playerHUD_2.UpdateHUD(playerUnit_2);

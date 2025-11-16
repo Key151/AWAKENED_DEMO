@@ -35,10 +35,10 @@ public class InventoryManager : MonoBehaviour
         {  
             ItemData = new ItemData
             {
-                id = item.id,
-                quantity = item.quantity
+                id = item.ID,
+                quantity = item.Quantity
             };
-            ListItem[item.id] = ItemData;
+            ListItem[item.ID] = ItemData;
         }
 
         ItemDatabase[inventoryBattleList.type] = ListItem;
@@ -77,10 +77,10 @@ public class InventoryManager : MonoBehaviour
         {
             ItemData = new ItemData
             {
-                id = itens.id,
-                quantity = itens.quantity
+                id = itens.ID,
+                quantity = itens.Quantity
             };
-            ListItem[itens.id] = ItemData;
+            ListItem[itens.ID] = ItemData;
         }
     }
 

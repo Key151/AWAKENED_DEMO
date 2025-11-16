@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57962b588379354abd0f8a7faf3371c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Rafaela
+  unitName: Rafael
   damageBase: 10
   maxHP: 50
   spd: 30
