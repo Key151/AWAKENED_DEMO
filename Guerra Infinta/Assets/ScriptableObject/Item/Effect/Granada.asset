@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Granada
   m_EditorClassIdentifier: 
   id: 2
-  itemName: {fileID: 11400000, guid: 862214e400a82e645ba835080752e2dc, type: 2}
+  itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}
   icon: {fileID: 21300000, guid: 99188031538736a4f9b5dfe2d5a33991, type: 3}
-  description: {fileID: 11400000, guid: d09a3c3e0f2894948a7fcea915711c25, type: 2}
+  description: {fileID: 11400000, guid: 51a19354842464740839e1219871fd3e, type: 2}
   quantity: 8
+  typeBattle: 0
   damageAmount: 25
   ActionPointCost: 30
   SfxName: Granade

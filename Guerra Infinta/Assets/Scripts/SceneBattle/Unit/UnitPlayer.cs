@@ -7,6 +7,7 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
 {
     private float attackX = -2f;
     private float attackY = 0f;
+
     [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
 
     [Header("ShowIcon")]
@@ -41,11 +42,27 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         return BattleState.PLAYERTURN;
     }
 
-    public void MoveAtk(Transform enemy)
+    public override void Attack(Unit target)
+    {
+        base.Attack(target);
+        MoveAtk(target.transform);
+    }
+
+    private void MoveAtk(Transform enemy)
     {
         float playerPositionX = enemy.position.x + attackX;
         float playerPositionY = enemy.position.y + attackY;
         transform.position = new Vector2(playerPositionX, playerPositionY);
+    }
+
+    public void MovePosition(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+    public Vector3 CathPositionCurrent()
+    {
+        return transform.position;
     }
 
     public void EquipItem(ItemWeaponEquip newItem)

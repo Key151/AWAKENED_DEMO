@@ -39,9 +39,11 @@ public class BattleManager : MonoBehaviour
     public void OnActionCommandResult(bool success, UnitPlayer unitPlayer)
     {
         int damageSucess = unitPlayer.TotalDamage() * 70 / 100;
+        string atk = "AttackCritical";
         if (success)
         {
             unitPlayer.DamageBonus += damageSucess; // Exemplo de bonus de dano
+            AudioManager.Instance.PlaySFX(atk);
             Debug.Log("Ataque Crítico!");
         }
         else

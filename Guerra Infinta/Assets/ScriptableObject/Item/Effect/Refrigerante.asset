@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Refrigerante
   m_EditorClassIdentifier: 
   id: 0
-  itemName: {fileID: 0}
+  itemName: {fileID: 11400000, guid: 2d793774f6419e04f9325a4b9f39d92c, type: 2}
   icon: {fileID: 0}
-  description: {fileID: 0}
+  description: {fileID: 11400000, guid: c46d690fac98190498450c6f877b3e12, type: 2}
   quantity: 5
   typeBattle: 3
   Heal: 20

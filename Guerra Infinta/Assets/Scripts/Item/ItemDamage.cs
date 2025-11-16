@@ -10,7 +10,9 @@ public class ItemDamage: ApplyItem
     [SerializeField] private HitEffectType EffectName;
     public override void ApplyEffect(Unit player, Unit target)
     {
+        string aniItem = "AttackItem";
         player.CurrentActionPoint -= ActionPointCost;
+        player.GetAnimator().SetTrigger(aniItem);
         target.StartCoroutine(target.TakeDamage(damageAmount + player.TotalDamage(), SfxName, EffectName));
     }
 }

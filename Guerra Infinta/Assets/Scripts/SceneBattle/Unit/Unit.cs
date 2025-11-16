@@ -25,11 +25,6 @@ public class Unit : MonoBehaviour, IDamageable
     public bool Selected { get; set; }
     public bool TakingDamage { get; set; }
 
-    public void SetAnimator(Animator anim)
-    {
-        animator = anim;
-    }
-
     public string UnitName
     {
         get { return unitName; }
@@ -78,6 +73,16 @@ public class Unit : MonoBehaviour, IDamageable
     public int TotalDamage()
     {
         return damageBase + damageBonus;
+    }
+
+    public void SetAnimator(Animator anim)
+    {
+        animator = anim;
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
     }
 
     public Vector3 GetPosition()

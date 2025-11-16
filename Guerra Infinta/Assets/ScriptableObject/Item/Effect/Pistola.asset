@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Pistola
   m_EditorClassIdentifier: 
   id: 0
-  itemName: {fileID: 11400000, guid: 00cd60a4b40d7eb49a0c74f0d85459e3, type: 2}
+  itemName: {fileID: 11400000, guid: 350e52620d756cd4fbef47724f666a55, type: 2}
   icon: {fileID: 21300000, guid: 63edfb0ce91b80546b149dbcacddd2e4, type: 3}
-  description: {fileID: 11400000, guid: f32338d900c72d04381eea632fc5073c, type: 2}
-  quantity: 8
+  description: {fileID: 11400000, guid: 346c821fd9bcfe6409852e74ead4048a, type: 2}
+  quantity: 7
+  typeBattle: 0
   damageAmount: 10
   ActionPointCost: 8
   SfxName: Gun

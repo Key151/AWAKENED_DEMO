@@ -186,6 +186,7 @@ public class BattleSystem : MonoBehaviour
     {
         UnitPlayer playerAtual = player_Unit as UnitPlayer;
 
+        var PositionInitial = playerAtual.CathPositionCurrent();
         playerAtual.Selected = false;
         enemyUnit[enemyNumber].ShowIcon(); //Mostra imagem
         yield return StartCoroutine(Maneger.StartAttackSequence(playerAtual, enemyUnit[enemyNumber]));
@@ -200,6 +201,8 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(timer);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
         enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
+        playerAtual.MovePosition(PositionInitial);
+
         BattleList.Add(BattleList[0]);
         BattleList.RemoveAt(0);
         VerificateTurn();

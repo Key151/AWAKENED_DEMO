@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TimerActionComand
   m_EditorClassIdentifier: 
   windowStart: 0.5
-  windowEnd: 2
+  windowEnd: 1.5

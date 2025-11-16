@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   id: 1
-  itemName: {fileID: 11400000, guid: b9106b1993b71ad4587560409051c742, type: 2}
+  itemName: {fileID: 11400000, guid: 114634c2531a0834f90fdbb63e2b5f99, type: 2}
   icon: {fileID: 21300000, guid: f50cfdbaa1b5a794a9497dd301fb0b2d, type: 3}
-  description: {fileID: 11400000, guid: 2dc6670e41e9a02468bf8d5bda70327e, type: 2}
-  quantity: 6
+  description: {fileID: 11400000, guid: b3464b3f69390554199db48aec141314, type: 2}
+  quantity: 4
+  typeBattle: 0
   damageAmount: 17
   ActionPointCost: 15
   SfxName: ShotGun
