@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f6b9309cba3d49ab3c7aa069bcbf2, type: 3}
+  m_Name: Sequence-Dialogo-city14
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - {fileID: 11400000, guid: 1968ff13ccb2a9742929bbf1e3139013, type: 2}
+  - {fileID: 11400000, guid: c0a2c398db3ae4d45ab46c688fbdc10e, type: 2}
+  - {fileID: 11400000, guid: 2802d383397854b409f55afd824f356d, type: 2}
+  - {fileID: 11400000, guid: fa3f732989689e44f8a9d25d4b0f3189, type: 2}
+  - {fileID: 11400000, guid: d81973e50b2817740adda70c611af3b9, type: 2}
+  - {fileID: 11400000, guid: 222fe53d7a47d3846a02bbaecf2b1ae8, type: 2}
+  - {fileID: 11400000, guid: e21a9d227295e0747974a6345b082641, type: 2}
+  - {fileID: 11400000, guid: 51432875024e6064b91931ccbf15ea70, type: 2}
+  - {fileID: 11400000, guid: b35c7420f2ee55f47b4626ff30686027, type: 2}
+  - {fileID: 11400000, guid: 2bf38eab47f2c1b4da0b32b99c498f28, type: 2}
+  - {fileID: 11400000, guid: a3808e0498ca4d043adc2c53e9bcc750, type: 2}
+  - {fileID: 11400000, guid: 62bf26eb9157b21489c595a33ee3a731, type: 2}

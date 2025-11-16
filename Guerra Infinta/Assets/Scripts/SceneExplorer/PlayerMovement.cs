@@ -64,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    public void ResetPosotionHistory()
+    {
+        positionHistory.Clear();
+    }
+
     public void Move(InputAction.CallbackContext context)
     {
         if (context.canceled)

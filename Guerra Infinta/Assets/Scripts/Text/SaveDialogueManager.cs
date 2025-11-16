@@ -43,10 +43,14 @@ public class SaveDialogueManager : MonoBehaviour
         dialogueDicio.Clear();
         dialogueDicio.Add("dialogue_Inicial", false);
         dialogueDicio.Add("dialogue_Tutorial", false);
-        dialogueDicio.Add("dialogue_1", false);
-        dialogueDicio.Add("dialogue_2", false);
-        dialogueDicio.Add("dialogue_3", false);
-        dialogueDicio.Add("dialogue_4", false);
+        dialogueDicio.Add("dialogue_8", false);
+        dialogueDicio.Add("dialogue_9", false);
+        dialogueDicio.Add("dialogue_10", false);
+        dialogueDicio.Add("dialogue_11", false);
+        dialogueDicio.Add("dialogue_12", false);
+        dialogueDicio.Add("dialogue_13", false);
+        dialogueDicio.Add("dialogue_14", false);
+        dialogueDicio.Add("dialogue_15", false);
     }
     public static Dictionary<string, bool> CopyDialogue()
     {

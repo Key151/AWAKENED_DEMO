@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Dialogo-city14 7
+  m_EditorClassIdentifier: 
+  speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
+  icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
+  portugueseText: "Voc\xEA sabe o que t\xE1 acontecendo? Eu vi nossos pais Marco,
+    sendo interrogados na nossa casa por militares. Voc\xEA t\xE1 escondendo alguma
+    coisa de mim."
+  englishText: Do you know what's going on? I saw our parents, Marco, being interrogated
+    in our house by the military. You're hiding something from me.

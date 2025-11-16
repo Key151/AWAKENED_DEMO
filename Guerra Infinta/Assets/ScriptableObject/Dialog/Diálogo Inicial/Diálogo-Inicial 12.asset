@@ -15,4 +15,5 @@ MonoBehaviour:
   speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
   icon: {fileID: 0}
   portugueseText: Tudo parece normal, mas no fim de um beco, Marco nota algo estranho.
-  englishText: 
+  englishText: Everything seems normal, but at the end of an alley, Marco notices
+    something strange.

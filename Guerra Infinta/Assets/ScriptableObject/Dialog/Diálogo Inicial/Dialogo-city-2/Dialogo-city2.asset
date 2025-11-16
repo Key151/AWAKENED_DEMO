@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dialogo-city2
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 77e36259d1f9d9c4d8b511fe716bb1e6, type: 2}
-  icon: {fileID: 21300000, guid: dddef6f4a9d53c94e92333c7634f25ef, type: 3}
+  icon: {fileID: 21300000, guid: d20ee44827505cd46b6f9999fe6c1f17, type: 3}
   portugueseText: "Espera, o que \xE9 aquilo ali?"
-  englishText: Wait, what is that?
+  englishText: Wait, what's that over there?

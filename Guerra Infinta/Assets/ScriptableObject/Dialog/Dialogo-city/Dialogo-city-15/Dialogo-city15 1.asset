@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Dialogo-city15 1
+  m_EditorClassIdentifier: 
+  speakerName: {fileID: 0}
+  icon: {fileID: 0}
+  portugueseText: "O que estava na vis\xE3o dos irm\xE3os era real, eles viviam sob
+    uma ditadura militar, e seus pais estavam sendo perseguidos pelo regime, e uma
+    tropa de soldados estava fazendo uma queima de arquivo no jornal, queimando evid\xEAncias
+    de seus crimes e eliminando qualquer detrator que fosse encontrado ali. "
+  englishText: What the siblings were seeing was real; they were living under a military
+    dictatorship, their parents were being persecuted by the regime, and a troop
+    of soldiers was carrying out a cover-up at the newspaper, burning evidence of
+    their crimes and eliminating any detractors they could find there.

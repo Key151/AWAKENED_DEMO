@@ -22,6 +22,8 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] private GameObject screen;
     BlackScreen blackScreen;
 
+    [Header("Position (Usar se quiser mudar a posição do personagem")]
+    [SerializeField] private GameObject position;
     void Start()
     {
         saveDialogueManager = SaveDialogueManager.Instance;
@@ -76,12 +78,20 @@ public class DialogueScript : MonoBehaviour
                 blackScreen = screen.GetComponent<BlackScreen>();
                 blackScreen.StartFadeOut();
             }
-            PauseController.SetPause(true);
-            dialogueManager.StartDialogue(dialogueSequenceStartGame);
             dialogueIsOn = true;
+            dialogueManager.StartDialogue(dialogueSequenceStartGame);
         }
         else if (dialogueIsOn && !dialogueManager.dialogue)
         {
+            if (position != null)
+            {
+                GameObject marco = GameObject.FindWithTag("Menino");
+                GameObject Rafael = GameObject.FindWithTag("Menina");
+                marco.GetComponent<PlayerMovement>().ResetPosotionHistory();
+                Rafael.transform.position = position.transform.position;
+                marco.transform.position = position.transform.position;
+                
+            }
             if (screen != null)
             {
                 blackScreen.StartFadeIn();

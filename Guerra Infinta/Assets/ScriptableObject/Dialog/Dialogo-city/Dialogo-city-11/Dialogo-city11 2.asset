@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Dialogo-city11 2
   m_EditorClassIdentifier: 
-  speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
-  icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
-  portugueseText: "N\xE3o, a gente t\xE1 aqui junto. "
-  englishText: 
+  speakerName: {fileID: 11400000, guid: 77e36259d1f9d9c4d8b511fe716bb1e6, type: 2}
+  icon: {fileID: 21300000, guid: dddef6f4a9d53c94e92333c7634f25ef, type: 3}
+  portugueseText: "Fica atr\xE1s de mim. "
+  englishText: Stay behind me.

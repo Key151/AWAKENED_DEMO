@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Dialogo-city7 11-2
+  m_EditorClassIdentifier: 
+  speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
+  icon: {fileID: 0}
+  portugueseText: "Depois de um tempo Marco decide sair do quarto, e vai falar com
+    seu irm\xE3o."
+  englishText: After a while, Marco decides to leave the room and goes to talk to
+    his brother.

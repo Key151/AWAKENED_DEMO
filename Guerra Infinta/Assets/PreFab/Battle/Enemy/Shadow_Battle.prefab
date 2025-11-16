@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Shadow
-  damageBase: 5
-  maxHP: 40
-  spd: 20
-  maxActionPoint: 100
+  damageBase: 8
+  maxHP: 65
+  spd: 30
+  maxActionPoint: 120
   damageEffectManager: {fileID: 2676647530674486131}
   textDamage: {fileID: 7864661660599780055}
   iconAction: {fileID: 6076441713128362912}

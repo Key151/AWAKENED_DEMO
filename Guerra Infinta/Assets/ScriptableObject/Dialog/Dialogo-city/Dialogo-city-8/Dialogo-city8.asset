@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
   portugueseText: "O caminho t\xE1 bloqueado. Deve ter algum jeito de passar por
     aqui."
-  englishText: 
+  englishText: The road is blocked. There must be some way to get through here.

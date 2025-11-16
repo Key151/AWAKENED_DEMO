@@ -15,4 +15,4 @@ MonoBehaviour:
   speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
   icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
   portugueseText: Ok, me mostra o caminho.
-  englishText: 
+  englishText: Okay, show me the way.

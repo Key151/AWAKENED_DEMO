@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sequence-Dialogo-city11
   m_EditorClassIdentifier: 
   dialogueLines:
-  - {fileID: 11400000, guid: 0fb7d56c32a28164a91c3b2470241521, type: 2}
-  - {fileID: 11400000, guid: a90b5936599b2c34fa331e590165c87c, type: 2}
-  - {fileID: 11400000, guid: f9d0590211ef2b048b83d98312c8871a, type: 2}
+  - {fileID: 11400000, guid: f47d8b76f47ff074a8486fd759366630, type: 2}
+  - {fileID: 11400000, guid: 8124b718303b7ac43ab5660fbe925322, type: 2}
+  - {fileID: 11400000, guid: a1b74a90e0e14fa4e96b73d511b08ae0, type: 2}
+  - {fileID: 11400000, guid: 150fef197a745324392a6e7401ffaf6f, type: 2}

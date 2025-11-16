@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Name: Dialogo-city15 2
+  m_EditorClassIdentifier: 
+  speakerName: {fileID: 0}
+  icon: {fileID: 0}
+  portugueseText: "Mas por algum motivo, Marco e Rafael se imaginavam vivendo em
+    um mundo ut\xF3pico onde essa ditadura n\xE3o existia, e a vis\xE3o que ambos
+    tiveram os fez na verdade despertar dessa ilus\xE3o, e enxergar o mundo real
+    novamente. Os irm\xE3os v\xE3o atr\xE1s de seus pais que est\xE3o escondidos
+    no jornal, tentando encontr\xE1-los antes dos militares."
+  englishText: But for some reason, Marco and Rafael imagined themselves living in
+    a utopian world where this dictatorship didn't exist, and the vision they both
+    had actually awakened them from this illusion and allowed them to see the real
+    world again. The brothers go in search of their parents, who are hidden in the
+    newspaper, trying to find them before the military.
