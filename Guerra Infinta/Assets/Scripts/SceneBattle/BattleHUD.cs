@@ -43,11 +43,21 @@ public class BattleHUD : MonoBehaviour
 
     public IEnumerator PlayerSetHP(int hp)
     {
-        //particle.Play();
-        while(hpSlider.value > hp)
+        if(hpSlider.value > hp)
         {
-            hpSlider.value--;
-            yield return new WaitForSeconds(0.02f);
+            while (hpSlider.value > hp)
+            {
+                hpSlider.value--;
+                yield return new WaitForSeconds(0.02f);
+            }
+        }
+        else if(hpSlider.value < hp)
+        {
+            while (hpSlider.value < hp)
+            {
+                hpSlider.value++;
+                yield return new WaitForSeconds(0.02f);
+            }
         }
     }
 

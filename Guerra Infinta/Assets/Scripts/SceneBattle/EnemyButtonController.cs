@@ -20,21 +20,16 @@ public class EnemyButtonController : MonoBehaviour
         }
     }
 
-    public void UseItem(int index, TypeBattle type)
+    public void UseItem(int itensIndex, TypeBattle type)
     {
         if(type == TypeBattle.TargetEnemy)
         {
-            SelectEnemyButtonsItens(index);
+            SelectEnemyButtonsItens(itensIndex);
         }
         else if (type == TypeBattle.TargetPlayer)
         {
-
+            OnPlayerIten(itensIndex);
         }
-    }
-
-    public void SelectPlayerItens()
-    {
-
     }
 
     public void SelectEnemyButtonsItens(int itensIndex)
@@ -82,7 +77,13 @@ public class EnemyButtonController : MonoBehaviour
     public void OnEnemyButtonIten(int enemyNumber, int itensIndex)
     {
         verificateButtonUI.DisactivateReturnButton();
-        StartCoroutine(battleSystem.UseItem(itensIndex, enemyNumber));
+        StartCoroutine(battleSystem.UseItemEnemy(itensIndex, enemyNumber));
+    }
+
+    public void OnPlayerIten(int itensIndex)
+    {
+        verificateButtonUI.DisactivateReturnButton();
+        StartCoroutine(battleSystem.UseItemPlayer(itensIndex));
     }
 
     public void KillEnemyButton(int enemyKilled) //Desativa o botao do inimigo

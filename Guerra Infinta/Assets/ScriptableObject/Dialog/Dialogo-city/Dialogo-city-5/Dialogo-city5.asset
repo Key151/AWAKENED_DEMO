@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Dialogo-city4 4
+  m_Name: Dialogo-city5
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
   icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
-  portugueseText: "O que era aquilo? Quando aquele cara sumiu, eu senti que n\xE3o
-    tinha mais controle da minha mente, que eu enxerguei o mundo pelos olhos de outra
-    pessoa."
-  englishText: What was that? When that guy disapeard, I felt like I no longer had
-    control of my mind, that I was seeing the world through someone else's eyes.
+  portugueseText: Marco, olha ali. Corre!
+  englishText: 

@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: "Di\xE1logo-Inicial 12"
+  m_Name: Dialogo-city5 4
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
   icon: {fileID: 0}
-  portugueseText: Tudo parece normal, mas no fim de um beco, Marco nota algo estranho.
+  portugueseText: "Um homem morto est\xE1 ca\xEDdo em um canto, e tem uma escopeta
+    em sua m\xE3o. Marco decide pegar a escopeta, com medo do que est\xE1 acontecendo
+    e querendo proteger seu irm\xE3o mais novo. Rafael pega um peda\xE7o de madeira,
+    para usar como arma improvisada."
   englishText: 

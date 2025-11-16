@@ -53,8 +53,9 @@ public class ItensUI : MonoBehaviour
                 itensImagem.sprite = testIten.icon;
 
                 int index = i;
+                TypeBattle type = testIten.typeBattle;
                 entry.onClick.RemoveAllListeners();
-                entry.onClick.AddListener(() => {verificateButtonUI.DisactivateItensPanel(); verificateButtonUI.ActivateReturnButton(); enemyButtonController.SelectEnemyButtonsItens(index); });
+                entry.onClick.AddListener(() => {verificateButtonUI.DisactivateItensPanel(); verificateButtonUI.ActivateReturnButton(); enemyButtonController.UseItem(index, type);});
             }
             else
             {

@@ -278,7 +278,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    public IEnumerator UseItem(int index, int enemyNumber)
+    public IEnumerator UseItemEnemy(int index, int enemyNumber)
     {
         if (index < 0 || index >= inventoryBattle.inventoryList.Count) yield return null;
 
@@ -286,6 +286,25 @@ public class BattleSystem : MonoBehaviour
         itensUI.ReduceQuantityIten(index);
         enemyHUD[enemyNumber].EnemySetHP(enemyUnit[enemyNumber].CurrentHP);
         //enemyHUD[enemyNumber].UpdateHUD(enemyUnit[enemyNumber]);
+        playerHUD.UpdateApHUD(playerUnit);
+        playerHUD_2.UpdateApHUD(playerUnit_2);
+
+        yield return new WaitForSeconds(timer);
+
+        BattleList.Add(BattleList[0]);
+        BattleList.RemoveAt(0);
+        VerificateTurn();
+    }
+
+    public IEnumerator UseItemPlayer(int index)
+    {
+        if (index < 0 || index >= inventoryBattle.inventoryList.Count) yield return null;
+
+        inventoryBattle.inventoryList[index].ApplyEffect(BattleList[0], BattleList[0]);
+        itensUI.ReduceQuantityIten(index);
+
+        playerHUD.UpdateHUD(playerUnit);
+        playerHUD_2.UpdateHUD(playerUnit_2);
         playerHUD.UpdateApHUD(playerUnit);
         playerHUD_2.UpdateApHUD(playerUnit_2);
 
