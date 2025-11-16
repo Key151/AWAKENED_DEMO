@@ -10,6 +10,7 @@ public class GameManager
     {
         //Save do que precisa
         PlayerManager.Instance.SavePosition();
+        SaveData.Data.currentLanguageSave = LanguageManager.Instance.GetLanguage();
         SaveData.Data.playerDicioData = PlayerManager.Instance.PlayerDataSave;
         SaveData.Data.inventoriesDicioData = InventoryManager.Instance.ItemDatabase;
         SaveData.Data.currentSceneName = SceneManager.GetActiveScene().name;
@@ -57,6 +58,9 @@ public class GameManager
 
         //Load do status do jogo
         GameStateController.Instance.GetGameStateDicio(SaveData.Data.gameStateDicioSave);
+
+        //Load da lingua
+        LanguageManager.Instance.SetLanguage(SaveData.Data.currentLanguageSave);
 
 
         Debug.Log("Save carregado com sucesso!");

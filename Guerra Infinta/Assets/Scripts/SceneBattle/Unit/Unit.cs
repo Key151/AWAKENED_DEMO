@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour, IDamageable
     public int CurrentHP
     {
         get { return currentHP; }
-        set { currentHP = Mathf.Clamp(CurrentActionPoint, 0, MaxHP); ; }
+        set { currentHP = Mathf.Clamp(value, 0, MaxHP); ; }
     }
     public int MaxActionPoint
     {
@@ -50,7 +50,7 @@ public class Unit : MonoBehaviour, IDamageable
     public int CurrentActionPoint
     {
         get { return currentActionPoint; }
-        set { currentActionPoint = Mathf.Clamp(CurrentActionPoint, 0, MaxActionPoint); }
+        set { currentActionPoint = Mathf.Clamp(value, 0, MaxActionPoint); }
     }
 
     public int Damage
@@ -126,9 +126,8 @@ public class Unit : MonoBehaviour, IDamageable
 
     public void HealAP()
     {
-        int maxAP = 100;
         CurrentActionPoint += 6;
-        CurrentActionPoint = Mathf.Clamp(CurrentActionPoint, 0, maxAP);
+        //CurrentActionPoint = Mathf.Clamp(CurrentActionPoint, 0, maxActionPoint);
     }
 
     public virtual bool CheckDead()
