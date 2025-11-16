@@ -39,7 +39,7 @@ public class Unit : MonoBehaviour, IDamageable
     public int CurrentHP
     {
         get { return currentHP; }
-        set { currentHP = value; }
+        set { currentHP = Mathf.Clamp(CurrentActionPoint, 0, MaxHP); ; }
     }
     public int MaxActionPoint
     {
@@ -50,7 +50,7 @@ public class Unit : MonoBehaviour, IDamageable
     public int CurrentActionPoint
     {
         get { return currentActionPoint; }
-        set { currentActionPoint = value; }
+        set { currentActionPoint = Mathf.Clamp(CurrentActionPoint, 0, MaxActionPoint); }
     }
 
     public int Damage

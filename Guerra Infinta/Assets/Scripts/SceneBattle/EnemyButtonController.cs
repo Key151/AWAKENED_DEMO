@@ -26,7 +26,7 @@ public class EnemyButtonController : MonoBehaviour
         {
             SelectEnemyButtonsItens(itensIndex);
         }
-        else if (type == TypeBattle.TargetPlayer)
+        else if (type == TypeBattle.Self)
         {
             OnPlayerIten(itensIndex);
         }
