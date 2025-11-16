@@ -2,11 +2,12 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject
 {
+    [SerializeField] protected int quantity;
     public NameItem ID { get; private set; }
     public DialogueText itemName;
     public Sprite icon;
     public DialogueText description;
-    public int Quantity {  get; private set; }
+    public int Quantity => quantity;
 
     public string ItemName()
     {
@@ -20,6 +21,11 @@ public abstract class Item : ScriptableObject
 
     public void Gain(int number)
     {
-        Quantity += number;
+        quantity += number;
+    }
+
+    public void Lose(int number)
+    {
+        quantity = Mathf.Max(0, quantity - number);
     }
 }

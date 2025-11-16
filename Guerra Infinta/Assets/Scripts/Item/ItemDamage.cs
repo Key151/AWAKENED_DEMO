@@ -13,7 +13,7 @@ public class ItemDamage: ApplyItem
         string aniItem = "AttackItem";
         int LossNumber = -1;
 
-        Gain(LossNumber);
+        Lose(LossNumber);
         player.CurrentActionPoint -= ActionPointCost;
         player.GetAnimator().SetTrigger(aniItem);
         target.StartCoroutine(target.TakeDamage(damageAmount + player.TotalDamage(), SfxName, EffectName));
