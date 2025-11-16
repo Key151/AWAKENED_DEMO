@@ -15,7 +15,7 @@ public class ItensUI : MonoBehaviour
     [SerializeField] private VerificateButtonUI verificateButtonUI;
     [SerializeField] private EnemyButtonController enemyButtonController;
 
-    private Item testIten;
+    private ApplyItem testIten;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

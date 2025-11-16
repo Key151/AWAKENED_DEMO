@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,24 @@ public class EnemyButtonController : MonoBehaviour
             KillEnemyButton(i);
         }
     }
+
+    public void UseItem(int index, TypeBattle type)
+    {
+        if(type == TypeBattle.TargetEnemy)
+        {
+            SelectEnemyButtonsItens(index);
+        }
+        else if (type == TypeBattle.TargetPlayer)
+        {
+
+        }
+    }
+
+    public void SelectPlayerItens()
+    {
+
+    }
+
     public void SelectEnemyButtonsItens(int itensIndex)
     {
         for (int i = 0; i < verificateEnemyButton.Length; i++)

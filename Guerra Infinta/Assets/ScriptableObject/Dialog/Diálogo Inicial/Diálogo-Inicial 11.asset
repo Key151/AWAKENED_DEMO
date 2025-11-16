@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Dialogo-city2 8
+  m_Name: "Di\xE1logo-Inicial 11"
   m_EditorClassIdentifier: 
-  speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
-  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
-  portugueseText: "...T\xE1 bom, vai na frente."
-  englishText: ...Okay, you go first.
+  speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
+  icon: {fileID: 0}
+  portugueseText: "Marco e Rafael saem de casa, e andam pela cidade de S\xE3o Paulo."
+  englishText: 

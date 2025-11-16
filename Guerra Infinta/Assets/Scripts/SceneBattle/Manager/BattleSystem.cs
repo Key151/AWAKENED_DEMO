@@ -160,7 +160,7 @@ public class BattleSystem : MonoBehaviour
         {
             case BattleState.PLAYERTURN:
                 PlayerTurn(BattleList[0]);
-                UpdateHudImage(BattleList[0]);
+                //UpdateHudImage(BattleList[0]);
                 break;
             case BattleState.ENEMYTURN:
                 //Debug.Log("Enemy:" + BattleList);

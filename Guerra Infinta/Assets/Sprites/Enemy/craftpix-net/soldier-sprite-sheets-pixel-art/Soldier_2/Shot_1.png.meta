@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,10 +154,10 @@ TextureImporter:
       name: Shot_1_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 0
         y: 0
-        width: 50
-        height: 63
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Shot_1_1
       rect:
         serializedVersion: 2
-        x: 171
+        x: 128
         y: 0
-        width: 53
-        height: 63
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: Shot_1_2
       rect:
         serializedVersion: 2
-        x: 299
+        x: 256
         y: 0
-        width: 49
-        height: 63
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: Shot_1_3
       rect:
         serializedVersion: 2
-        x: 347
-        y: 37
-        width: 17
-        height: 18
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,33 +238,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Shot_1_4
-      rect:
-        serializedVersion: 2
-        x: 427
-        y: 0
-        width: 67
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f01e3343b36ebd8e0800000000000000
-      internalID: -1667486095057362673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d4eb8021c332a5246a1529f96f514fb7
     internalID: 0
     vertices: []
     indices: 
@@ -278,7 +256,6 @@ TextureImporter:
       Shot_1_1: 6696727700688068806
       Shot_1_2: -8203447701829558940
       Shot_1_3: 5985486658555984184
-      Shot_1_4: -1667486095057362673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

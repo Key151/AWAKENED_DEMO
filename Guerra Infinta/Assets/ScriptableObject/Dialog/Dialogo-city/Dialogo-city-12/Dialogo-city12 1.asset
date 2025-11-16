@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Dialogo-city12 1
   m_EditorClassIdentifier: 
-  speakerName: Marco
-  icon: {fileID: 0}
+  speakerName: {fileID: 11400000, guid: 77e36259d1f9d9c4d8b511fe716bb1e6, type: 2}
+  icon: {fileID: 21300000, guid: dddef6f4a9d53c94e92333c7634f25ef, type: 3}
   portugueseText: A gente conseguiu.
-  englishText: 
+  englishText: We did it.

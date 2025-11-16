@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dialogo-city7 14
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 77e36259d1f9d9c4d8b511fe716bb1e6, type: 2}
-  icon: {fileID: 21300000, guid: 346a3483c500faa40bc5a9423b5ea7a8, type: 3}
+  icon: {fileID: 21300000, guid: dddef6f4a9d53c94e92333c7634f25ef, type: 3}
   portugueseText: "Acho que eu sei onde a gente deve come\xE7ar a procurar por eles. "
   englishText: I think I know where we should start looking for them.

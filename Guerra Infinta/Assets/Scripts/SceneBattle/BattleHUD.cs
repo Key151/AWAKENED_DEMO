@@ -33,7 +33,7 @@ public class BattleHUD : MonoBehaviour
 
         hpSlider.maxValue = unit.MaxHP;
         hpSlider.value = unit.CurrentHP;
-        DisactiveHudImage();
+        //DisactiveHudImage();
     }
 
     public void EnemySetHP(int hp)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogo-city4 4
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
-  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
+  icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
   portugueseText: "O que era aquilo? Quando aquele cara sumiu, eu senti que n\xE3o
     tinha mais controle da minha mente, que eu enxerguei o mundo pelos olhos de outra
     pessoa."

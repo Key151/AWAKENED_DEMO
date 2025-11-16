@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogo-city 14
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: 4e50a3a78c0112749af40f3191aef2c8, type: 2}
-  icon: {fileID: 21300000, guid: 4f10aa612ccd51d449f87e131a87002e, type: 3}
+  icon: {fileID: 21300000, guid: 4cbe1dfcc2d68844d91852d0c7112519, type: 3}
   portugueseText: "Tamb\xE9m acho que n\xE3o, mas voc\xEA quer cursar Hist\xF3ria
     pra estudar mesmo, ou ficar curtindo na faculdade?"
   englishText: I agree, but do you want to study History seriously, or you will just
