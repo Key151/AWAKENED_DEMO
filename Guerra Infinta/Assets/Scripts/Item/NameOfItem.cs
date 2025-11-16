@@ -5,5 +5,7 @@ public enum NameItem
     ShotGun,
     Granade,
     PieceOfWood,
-    MachineGun
+    MachineGun,
+    CocaCola,
+    Rifle
 }

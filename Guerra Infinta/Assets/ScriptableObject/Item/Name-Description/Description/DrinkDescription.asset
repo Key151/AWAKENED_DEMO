@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68ae1428346e49a4ca6e14a4300efda4, type: 3}
-  m_Name: PauDeMadeiraDescription
+  m_Name: DrinkDescription
   m_EditorClassIdentifier: 
-  portugueseText: Um cabo de vassora, serve para conseguir dar mais dano
-  englishText: A broomstick can be used to deal more damage
+  portugueseText: "Garanto que n\xE3o \xE9 bebida alco\xF3lica, recupara um pouco
+    de vida"
+  englishText: I assure you that it is not alcohol, it recovers a little HP

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
+  m_Script: {fileID: 11500000, guid: 68ae1428346e49a4ca6e14a4300efda4, type: 3}
   m_Name: M-12Name
   m_EditorClassIdentifier: 
-  speakerName: 
-  icon: {fileID: 0}
   portugueseText: M-12
   englishText: Machine Gun

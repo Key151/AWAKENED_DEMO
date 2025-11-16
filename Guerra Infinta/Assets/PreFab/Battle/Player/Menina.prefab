@@ -111,6 +111,7 @@ MonoBehaviour:
   maxActionPoint: 100
   damageEffectManager: {fileID: 545946196463479425}
   ItemEquipment: []
+  textDamage: {fileID: 6608840114922939881}
 --- !u!95 &-7230950139264113728
 Animator:
   serializedVersion: 7
@@ -321,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3320649433946710834, guid: ce5fc85725228974a837899124082e75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3320649433946710834, guid: ce5fc85725228974a837899124082e75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,6 +378,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3320649433946710834, guid: ce5fc85725228974a837899124082e75, type: 3}
   m_PrefabInstance: {fileID: 2701902065013439000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6608840114922939881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9135627217044266993, guid: ce5fc85725228974a837899124082e75, type: 3}
+  m_PrefabInstance: {fileID: 2701902065013439000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5671574fee209d4bb948c869dda57ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7981093276564170806
 PrefabInstance:
   m_ObjectHideFlags: 0

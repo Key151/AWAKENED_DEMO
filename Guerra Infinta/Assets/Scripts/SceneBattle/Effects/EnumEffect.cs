@@ -4,5 +4,6 @@ public enum HitEffectType
     Explosion,
     Shotgun,
     Pistol,
-    Slash
+    Slash,
+    Heal
 }

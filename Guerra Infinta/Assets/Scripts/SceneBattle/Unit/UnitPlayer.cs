@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using static BattleSystem;
 
@@ -7,6 +8,10 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
     private float attackX = -2f;
     private float attackY = 0f;
     [SerializeField] private List<ItemWeaponEquip> ItemEquipment;
+
+    [Header("ShowIcon")]
+    [SerializeField] private DamageText textDamage;
+
     public PlayerData PlayerData { private set;  get; }
 
     private readonly Dictionary<TypeItem, ItemWeaponEquip> equippedItems = new(); //CASO TIVER MAIS DE UM ITEM EQUIPAVEL
@@ -24,6 +29,13 @@ public class UnitPlayer : Unit, IVerificateTurnUnit
         }
         SetAnimator(GetComponent<Animator>());
     }
+    public override IEnumerator TakeDamage(int damage, string sfx, HitEffectType effect)
+    {
+        textDamage.ShowDamage(damage);
+        StartCoroutine(base.TakeDamage(damage));
+        yield return new WaitForSeconds(1f);
+    }
+
     public BattleState turnUnit()
     {
         return BattleState.PLAYERTURN;
