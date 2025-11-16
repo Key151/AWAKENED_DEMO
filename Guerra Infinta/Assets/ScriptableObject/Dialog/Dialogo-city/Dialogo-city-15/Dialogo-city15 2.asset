@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
   m_Name: Dialogo-city15 2
   m_EditorClassIdentifier: 
-  speakerName: {fileID: 0}
+  speakerName: {fileID: 11400000, guid: 0fcb4f4247841f844a4ed3948dae66cf, type: 2}
   icon: {fileID: 0}
   portugueseText: "Mas por algum motivo, Marco e Rafael se imaginavam vivendo em
     um mundo ut\xF3pico onde essa ditadura n\xE3o existia, e a vis\xE3o que ambos
