@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 0}
   icon: {fileID: 0}
-  portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nAlexandre\nClaudemir\nRaquel\nWillians\n\nSons
-    e m\xFAsicas:\n\nMaouDamashii\n\nArtes:"
-  englishText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nAlexandre\nClaudemir\nRaquel\nWillians\n\nSons
-    e m\xFAsicas:\n\nMaouDamashii\n\nArtes:"
+  portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programador\nHugo - Designer\nLucas
+    - Programador\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\r\nProf.
+    Me. Claudemir Martins da Silva\r\nProfa. Dra. Raquel Silva\nProf. Esp. Willians
+    Monteiro da Silva\n\nSons e m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
+  englishText: "Credits\n\nGroup:\n\nElton - Programmer\nHugo - Designer\nLucas -
+    Programmer\n\nSupervisors:\n\nProf. Dr. Alexandre Santaella Braga\r\nProf. Me.
+    Claudemir Martins da Silva\r\nProfa. Dra. Raquel Silva\nProf. Esp. Willians Monteiro
+    da Silva\t\n\nSounds and music:\n\nMaouDamashii\n\nArts:\n\ncraftpix.net\nBDragon1727"

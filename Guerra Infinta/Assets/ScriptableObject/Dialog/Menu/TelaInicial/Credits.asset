@@ -14,11 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 0}
   icon: {fileID: 0}
-  portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\nProf.
-    Me. Claudemir Martins da Silva\nProfa. Dra. Raquel Silva\nWillians\n\nSons e
-    m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
-  englishText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\nProf.
-    Me. Claudemir Martins da Silva\nProfa. Dra. Raquel Silva\nWillians\n\nSons e
-    m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
+  portugueseText: "Cr\xE9ditos"
+  englishText: Credits

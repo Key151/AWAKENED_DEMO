@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Granada
   m_EditorClassIdentifier: 
-  id: 2
+  quantity: 10
   itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}
-  icon: {fileID: 21300000, guid: 99188031538736a4f9b5dfe2d5a33991, type: 3}
+  icon: {fileID: 3200376712716912117, guid: 9f54dddc6a03a43418c8e9834d51fc1b, type: 3}
   description: {fileID: 11400000, guid: 51a19354842464740839e1219871fd3e, type: 2}
-  quantity: 8
   typeBattle: 0
   damageAmount: 25
   ActionPointCost: 30

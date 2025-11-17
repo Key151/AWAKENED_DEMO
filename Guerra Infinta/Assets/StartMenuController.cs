@@ -11,6 +11,7 @@ public class StartMenuController : MonoBehaviour
     public GameObject menu;
     public GameObject controls;
     public GameObject instruction;
+    public GameObject instruction_ing;
     public GameObject credits;
     LanguageManager languageManager;
 
@@ -77,6 +78,8 @@ public class StartMenuController : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(enterMenu, true);
         controls.SetActive(false);
+        if (LanguageManager.Instance.GetLanguage() == Language.PtBr) instruction.SetActive(true);
+        else instruction_ing.SetActive(true);
         instruction.SetActive(true);
     }
 
@@ -92,6 +95,7 @@ public class StartMenuController : MonoBehaviour
         AudioManager.Instance.PlaySFX(backMenu, true);
         credits.SetActive(false);
         instruction.SetActive(false);
+        instruction_ing.SetActive(false);
         controls.SetActive(true);
     }
 
