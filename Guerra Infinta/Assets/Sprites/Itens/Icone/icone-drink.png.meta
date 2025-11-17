@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f36d7470d6b1d84f89bc0ead13c97cb
+guid: aeea56116fb15f644bfd303e24007413
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6033280328393917619
-    second: Drink_0
+      213: -8406681671915637987
+    second: icone-drink_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Drink_0
+      name: icone-drink_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 46
-        width: 63
-        height: 109
+        x: 0
+        y: 4
+        width: 212
+        height: 233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4b7abbc18b754ca0800000000000000
-      internalID: -6033280328393917619
+      spriteID: d137ea55f87755b80800000000000000
+      internalID: -8406681671915637987
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Drink_0: -6033280328393917619
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
