@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: d4a3bdbec5f079148a7b8f1438fb19fb, type: 2}
   icon: {fileID: 0}
-  portugueseText: "Na parte inferior da tela temos algumas op\xE7\xF5es, voc\xEA
-    pode atacar, usar algum item ou fugir do inimigo."
-  englishText: 'At the bottom of the screen, you have a few options: attack, use
-    an item, or escape from the enemy.'
+  portugueseText: "E \xE9 isso! Boa sorte na sua primeira batalha, derrote esse inimigo
+    e continue avan\xE7ando!"
+  englishText: "That\u2019s all! Good luck in your first battle, defeat the enemy
+    and keep moving forward!"

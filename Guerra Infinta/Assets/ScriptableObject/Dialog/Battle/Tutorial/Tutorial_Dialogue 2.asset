@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 11400000, guid: d4a3bdbec5f079148a7b8f1438fb19fb, type: 2}
   icon: {fileID: 0}
-  portugueseText: "E para facilitar, somente os inimigos aparecem na tela, ent\xE3o
-    mantenha o foco neles!"
-  englishText: To make it easier, only enemies show up on screen, so keep your focus
-    on them!
+  portugueseText: "Perto do seus personagens, temos algumas op\xE7\xF5es, voc\xEA
+    pode atacar, usar algum item ou fugir do inimigo."
+  englishText: "\rNext to your characters, you have a few options: attack, use an
+    item, or escape from the enemy."
