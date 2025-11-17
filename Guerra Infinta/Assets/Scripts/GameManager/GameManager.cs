@@ -48,6 +48,7 @@ public class GameManager
         foreach (var key in SaveData.Data.inventoriesDicioData.Keys)
         {
             InventoryManager.Instance.ItemDatabase[key] = SaveData.Data.inventoriesDicioData[key];
+            Debug.Log("DEBUG DOS ITENS: " + SaveData.Data.inventoriesDicioData[key]);
         }
 
         //Load dos dialogos
