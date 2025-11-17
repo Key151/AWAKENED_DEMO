@@ -10,6 +10,8 @@ public class StartMenuController : MonoBehaviour
     public string Scene = "SceneExplorer";
     public GameObject menu;
     public GameObject controls;
+    public GameObject instruction;
+    public GameObject credits;
     LanguageManager languageManager;
 
     [Header("Black Screen")]
@@ -70,6 +72,29 @@ public class StartMenuController : MonoBehaviour
         controls.SetActive(false);
         menu.SetActive(true);
     }
+
+    public void OpenInstruction()
+    {
+        AudioManager.Instance.PlaySFX(enterMenu, true);
+        controls.SetActive(false);
+        instruction.SetActive(true);
+    }
+
+    public void OpenCredits()
+    {
+        AudioManager.Instance.PlaySFX(enterMenu, true);
+        controls.SetActive(false);
+        credits.SetActive(true);
+    }
+
+    public void BackControls()
+    {
+        AudioManager.Instance.PlaySFX(backMenu, true);
+        credits.SetActive(false);
+        instruction.SetActive(false);
+        controls.SetActive(true);
+    }
+
     public void ChangePTBR()
     {
         AudioManager.Instance.PlaySFX(enterMenu, true);
