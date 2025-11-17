@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icone-drink_0: -8406681671915637987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
