@@ -112,7 +112,7 @@ public class BattleSystem : MonoBehaviour
     }
     void VerificateTurn()
     {
-        DisableHudImage();
+        //DisableHudImage();
         //VerificateButtonUI.DisactivateDialguePanel();
         Debug.Log("Vida dos personagens após o verificateTurn: " + playerUnit.CurrentHP + ", " + playerUnit_2.CurrentHP);
         //playerHUD.UpdateHUD(playerUnit);
