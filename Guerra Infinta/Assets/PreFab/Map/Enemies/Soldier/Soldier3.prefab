@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4708113731817801197}
   - component: {fileID: 3081206835336928604}
   m_Layer: 0
-  m_Name: Soldier 2
+  m_Name: Soldier3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -495133587
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 0990de982f83acd4782844cc484a2cc5, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: df4b19ec0ab4a6a439d274e4dd8bb8a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ Animator:
   m_GameObject: {fileID: 6697906209462940925}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d6428b55aa57764d906348d39fa6160, type: 2}
+  m_Controller: {fileID: 9100000, guid: a8c5f942d3d2ddc4a991ccba1c2d1894, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -219,10 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyID: Soldier1_0
+  enemyID: Soldier3_0
   BattleSong: Battle01
   screen: {fileID: 0}
-  enemyList: []
+  enemyList:
+  - {fileID: 508094171281282804, guid: e0a8ff51b900bd34c9a7d8f2876049cf, type: 3}
   state: 
 --- !u!114 &4708113731817801197
 MonoBehaviour:

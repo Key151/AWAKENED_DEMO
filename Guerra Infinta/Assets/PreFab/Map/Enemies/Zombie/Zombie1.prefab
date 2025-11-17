@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4708113731817801197}
   - component: {fileID: 3081206835336928604}
   m_Layer: 0
-  m_Name: Soldier 1
+  m_Name: Zombie1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -495133587
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 0990de982f83acd4782844cc484a2cc5, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 0b4109a0b396c5c48b29689d51d2288d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ Animator:
   m_GameObject: {fileID: 6697906209462940925}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8c5f942d3d2ddc4a991ccba1c2d1894, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0bf77cede15a4d46b19876227a648a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.33067834, y: -1.3435912}
+  m_Offset: {x: 0.0127363205, y: -1.3073244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +159,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.570956, y: 3.2059813}
+  m_Size: {x: 1.9073124, y: 3.1937008}
   m_EdgeRadius: 0
 --- !u!61 &439925075258869255
 BoxCollider2D:
@@ -195,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.38720763, y: -2.410534}
+  m_Offset: {x: 0.027956963, y: -2.573989}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -205,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.9015896, y: 0.45892143}
+  m_Size: {x: 1.6671238, y: 0.30690384}
   m_EdgeRadius: 0
 --- !u!114 &5786319205761629483
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyID: Soldier2_0
+  enemyID: Zombie1_0
   BattleSong: Battle01
   screen: {fileID: 0}
   enemyList: []

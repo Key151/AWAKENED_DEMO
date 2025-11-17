@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4708113731817801197}
   - component: {fileID: 3081206835336928604}
   m_Layer: 0
-  m_Name: Soldier
+  m_Name: Soldier2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -495133587
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 5211559bbfe07e348ba1458b2fbeb4b8, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 0990de982f83acd4782844cc484a2cc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ Animator:
   m_GameObject: {fileID: 6697906209462940925}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a848b891598cb5347aaafb4559339478, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3d6428b55aa57764d906348d39fa6160, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.013520241, y: -1.3603806}
+  m_Offset: {x: -0.33067834, y: -1.3435912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +159,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3191051, y: 3.3067217}
+  m_Size: {x: 2.570956, y: 3.2059813}
   m_EdgeRadius: 0
 --- !u!61 &439925075258869255
 BoxCollider2D:
@@ -195,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0010328293, y: -2.4021378}
+  m_Offset: {x: -0.38720763, y: -2.410534}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -205,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7336864, y: 0.5428734}
+  m_Size: {x: 1.9015896, y: 0.45892143}
   m_EdgeRadius: 0
 --- !u!114 &5786319205761629483
 MonoBehaviour:
@@ -219,11 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18b320dd032b874cb2f26bc8848dcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyID: Soldier1_0
+  enemyID: Soldier2_0
   BattleSong: Battle01
   screen: {fileID: 0}
   enemyList:
-  - {fileID: 508094171281282804, guid: c4e01e296899c2442a0b59c255a9f555, type: 3}
+  - {fileID: 508094171281282804, guid: bfe8ab7887abf9345bb41d4da28fe240, type: 3}
   state: 
 --- !u!114 &4708113731817801197
 MonoBehaviour:

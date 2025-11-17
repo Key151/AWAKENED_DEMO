@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: b04522b5e2a568c4da19e8e8b021a686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8, y: 8}
@@ -110,6 +110,7 @@ MonoBehaviour:
   maxHP: 70
   spd: 65
   maxActionPoint: 100
+  damageEffectManager: {fileID: 0}
   textDamage: {fileID: 7864661660599780055}
   iconAction: {fileID: 6076441713128362912}
 --- !u!114 &7311989276286646145
@@ -243,7 +244,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 5.3333335, y: 5.3333335}
     newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

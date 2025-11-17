@@ -36,6 +36,8 @@ public class GameStateController : MonoBehaviour
         gameStateDicio.Add("StartGame", false);
         gameStateDicio.Add("TutorialBattle", false);
         gameStateDicio.Add("ParentsMissing", false);
+        gameStateDicio.Add("GoingToJornal", false);
+        gameStateDicio.Add("EndGame", false);
     }
 
     public void DisableCurrentState()
