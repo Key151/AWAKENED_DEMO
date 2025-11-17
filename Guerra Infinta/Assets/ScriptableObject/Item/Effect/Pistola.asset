@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Pistola
   m_EditorClassIdentifier: 
-  id: 0
+  quantity: 5
   itemName: {fileID: 11400000, guid: 350e52620d756cd4fbef47724f666a55, type: 2}
   icon: {fileID: 21300000, guid: 63edfb0ce91b80546b149dbcacddd2e4, type: 3}
   description: {fileID: 11400000, guid: 346c821fd9bcfe6409852e74ead4048a, type: 2}
-  quantity: 7
   typeBattle: 0
   damageAmount: 10
   ActionPointCost: 8

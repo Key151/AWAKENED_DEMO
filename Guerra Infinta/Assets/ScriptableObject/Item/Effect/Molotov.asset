@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: Molotov
   m_EditorClassIdentifier: 
-  quantity: 8
+  quantity: 4
   itemName: {fileID: 11400000, guid: 772df43b7657a144c8a05b5a27c7e927, type: 2}
   icon: {fileID: 21300000, guid: 99188031538736a4f9b5dfe2d5a33991, type: 3}
   description: {fileID: 11400000, guid: 607b86349a547d041bac8fcf911a7c0e, type: 2}

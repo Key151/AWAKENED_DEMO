@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
   m_Name: M-12
   m_EditorClassIdentifier: 
-  id: 4
+  quantity: 5
   itemName: {fileID: 11400000, guid: 93306e67af757b34fac39845c0886a41, type: 2}
   icon: {fileID: 21300000, guid: 63edfb0ce91b80546b149dbcacddd2e4, type: 3}
   description: {fileID: 11400000, guid: f946a2b5f7df35d4ead34128baa44dab, type: 2}
-  quantity: 7
   typeBattle: 0
   damageAmount: 13
   ActionPointCost: 10
