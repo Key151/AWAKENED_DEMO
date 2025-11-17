@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a0a7c0357dfda4a87fc72851d5e488, type: 3}
-  m_Name: Creditos
+  m_Name: Credits
   m_EditorClassIdentifier: 
   speakerName: {fileID: 0}
   icon: {fileID: 0}
   portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nAlexandre\nClaudemir\nRaquel\nWillians\n\nSons
-    e m\xFAsicas:\n\nMaouDamashii\n\nArtes:"
+    - Programa\xE7\xE3o\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\nProf.
+    Me. Claudemir Martins da Silva\nProfa. Dra. Raquel Silva\nWillians\n\nSons e
+    m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
   englishText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programa\xE7\xE3o\nHugo - Design\nLucas
-    - Programa\xE7\xE3o\n\nOrientadores:\n\nAlexandre\nClaudemir\nRaquel\nWillians\n\nSons
-    e m\xFAsicas:\n\nMaouDamashii\n\nArtes:"
+    - Programa\xE7\xE3o\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\nProf.
+    Me. Claudemir Martins da Silva\nProfa. Dra. Raquel Silva\nWillians\n\nSons e
+    m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
