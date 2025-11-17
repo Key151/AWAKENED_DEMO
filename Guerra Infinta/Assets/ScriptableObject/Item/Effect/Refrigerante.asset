@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a91a9b84ced4e478d360856f09aa0e, type: 3}
   m_Name: Refrigerante
   m_EditorClassIdentifier: 
-  quantity: 5
+  quantity: 3
   itemName: {fileID: 11400000, guid: 2d793774f6419e04f9325a4b9f39d92c, type: 2}
   icon: {fileID: 0}
   description: {fileID: 11400000, guid: c46d690fac98190498450c6f877b3e12, type: 2}
   typeBattle: 3
   Heal: 20
-  ActionPointCost: 5
+  ActionPointCost: 8
   SfxName: Drink
   EffectName: 0
