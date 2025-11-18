@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Granada
+  m_Name: Shotgun-StartGame
   m_EditorClassIdentifier: 
   quantity: 5
-  itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}
-  icon: {fileID: 3200376712716912117, guid: 9f54dddc6a03a43418c8e9834d51fc1b, type: 3}
-  description: {fileID: 11400000, guid: 51a19354842464740839e1219871fd3e, type: 2}
+  itemName: {fileID: 11400000, guid: 114634c2531a0834f90fdbb63e2b5f99, type: 2}
+  icon: {fileID: 21300000, guid: f50cfdbaa1b5a794a9497dd301fb0b2d, type: 3}
+  description: {fileID: 11400000, guid: b3464b3f69390554199db48aec141314, type: 2}
   typeBattle: 0
-  damageAmount: 25
-  ActionPointCost: 30
-  SfxName: Granade
-  EffectName: 1
+  damageAmount: 17
+  ActionPointCost: 15
+  SfxName: ShotGun
+  EffectName: 2

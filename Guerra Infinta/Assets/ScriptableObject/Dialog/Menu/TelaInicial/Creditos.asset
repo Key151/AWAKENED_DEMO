@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: {fileID: 0}
   icon: {fileID: 0}
-  portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton - Programador\nHugo - Designer\nLucas
-    - Programador\n\nOrientadores:\n\nProf. Dr. Alexandre Santaella Braga\r\nProf.
-    Me. Claudemir Martins da Silva\r\nProfa. Dra. Raquel Silva\nProf. Esp. Willians
-    Monteiro da Silva\n\nSons e m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727"
-  englishText: "Credits\n\nGroup:\n\nElton - Programmer\nHugo - Designer\nLucas -
-    Programmer\n\nSupervisors:\n\nProf. Dr. Alexandre Santaella Braga\r\nProf. Me.
-    Claudemir Martins da Silva\r\nProfa. Dra. Raquel Silva\nProf. Esp. Willians Monteiro
-    da Silva\t\n\nSounds and music:\n\nMaouDamashii\n\nArts:\n\ncraftpix.net\nBDragon1727"
+  portugueseText: "Cr\xE9ditos\n\nGrupo:\n\nElton Hideaki Masuko - Programador\nHugo
+    Targa Almeida - Designer\nLucas Rullo Takimoto - Programador\n\nOrientadores:\n\nProf.
+    Dr. Alexandre Santaella Braga\r\nProf. Me. Claudemir Martins da Silva\r\nProfa.
+    Dra. Raquel Silva\nProf. Esp. Willians Monteiro da Silva\n\nSons e m\xFAsicas:\n\nMaouDamashii\n\nArtes:\n\ncraftpix.net\nBDragon1727\n\nAgradecimentos
+    especias:\n\nProf. Me. Alan Henrique Pardo de Carvalho\nFatec S\xE3o Caetano
+    do Sul Antonio Russo"
+  englishText: "Credits\n\nGroup:\n\nElton Hideaki Masuko - Programmer\nHugo Targa
+    Almeida - Designer\nLucas Rullo Takimoto - Programmer\n\nSupervisors:\n\nProf.
+    Dr. Alexandre Santaella Braga\r\nProf. Me. Claudemir Martins da Silva\r\nProfa.
+    Dra. Raquel Silva\nProf. Esp. Willians Monteiro da Silva\t\n\nSounds and music:\n\nMaouDamashii\n\nArts:\n\ncraftpix.net\nBDragon1727\n\r\nSpecial
+    thanks:\n\nProf. Me. Alan Henrique Pardo de Carvalho\nFatec S\xE3o Caetano do
+    Sul Antonio Russo"

@@ -74,8 +74,15 @@ public class OptionPanel : MonoBehaviour
     public void OnLoadGame()
     {
         AudioManager.Instance.PlaySFX(LoadGame, true);
-        AudioManager.Instance.StopBGM();
-        SceneManager.LoadScene(GameManager.Load());
+        if (GameManager.Load() != null)
+        {
+            SceneManager.LoadScene(GameManager.Load());
+            AudioManager.Instance.StopBGM();
+        }
+        else
+        {
+            OnReturnMenu();
+        }
     }
 
 }

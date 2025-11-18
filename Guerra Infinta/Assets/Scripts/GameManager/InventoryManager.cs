@@ -96,4 +96,15 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log("[LOAD] Nao encontrado!");
         return null;
     }
+
+    public void StartGame(Inventory inventory)
+    {
+        inventoryBattleList.inventoryList.Clear();
+        foreach (ApplyItem item in inventory.inventoryList)
+        {
+            inventoryBattleList.inventoryList.Add(item);
+            //inventoryBattleList.inventoryList.Add(ApplyItem.CreateInstance();
+        }
+        
+    }
 }

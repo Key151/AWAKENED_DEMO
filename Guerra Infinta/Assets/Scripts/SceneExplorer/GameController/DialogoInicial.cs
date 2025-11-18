@@ -16,6 +16,8 @@ public class DialogoInicial : MonoBehaviour
     DialogueManager dialogueManager;
     private bool dialogueIsOn;
 
+    [SerializeField] private Inventory inventory;
+
     void Start()
     {
         saveDialogueManager = GameObject.Find("SaveDialogueManager").GetComponent<SaveDialogueManager>();
@@ -28,6 +30,7 @@ public class DialogoInicial : MonoBehaviour
         if (!saveDialogueManager.GetDialogueValue(dictionaryKey))
         {
             StartDialogue();
+            InventoryManager.Instance.StartGame(inventory);
         }
         else
         {

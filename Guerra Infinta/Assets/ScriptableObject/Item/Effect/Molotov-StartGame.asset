@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Granada
+  m_Name: Molotov-StartGame
   m_EditorClassIdentifier: 
   quantity: 5
-  itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}
-  icon: {fileID: 3200376712716912117, guid: 9f54dddc6a03a43418c8e9834d51fc1b, type: 3}
-  description: {fileID: 11400000, guid: 51a19354842464740839e1219871fd3e, type: 2}
+  itemName: {fileID: 11400000, guid: 772df43b7657a144c8a05b5a27c7e927, type: 2}
+  icon: {fileID: 21300000, guid: 99188031538736a4f9b5dfe2d5a33991, type: 3}
+  description: {fileID: 11400000, guid: 607b86349a547d041bac8fcf911a7c0e, type: 2}
   typeBattle: 0
   damageAmount: 25
   ActionPointCost: 30
-  SfxName: Granade
+  SfxName: Molotov
   EffectName: 1

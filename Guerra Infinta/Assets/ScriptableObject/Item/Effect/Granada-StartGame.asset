@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Granada
+  m_Name: Granada-StartGame
   m_EditorClassIdentifier: 
   quantity: 5
   itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}

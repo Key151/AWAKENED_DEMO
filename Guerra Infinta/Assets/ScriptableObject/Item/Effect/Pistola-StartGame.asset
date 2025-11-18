@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4996a12094557049a6c853bdd0984aa, type: 3}
-  m_Name: Granada
+  m_Name: Pistola-StartGame
   m_EditorClassIdentifier: 
   quantity: 5
-  itemName: {fileID: 11400000, guid: b08dccfdd69b2ae4097911193db0a6a4, type: 2}
-  icon: {fileID: 3200376712716912117, guid: 9f54dddc6a03a43418c8e9834d51fc1b, type: 3}
-  description: {fileID: 11400000, guid: 51a19354842464740839e1219871fd3e, type: 2}
+  itemName: {fileID: 11400000, guid: 350e52620d756cd4fbef47724f666a55, type: 2}
+  icon: {fileID: 21300000, guid: 63edfb0ce91b80546b149dbcacddd2e4, type: 3}
+  description: {fileID: 11400000, guid: 346c821fd9bcfe6409852e74ead4048a, type: 2}
   typeBattle: 0
-  damageAmount: 25
-  ActionPointCost: 30
-  SfxName: Granade
-  EffectName: 1
+  damageAmount: 10
+  ActionPointCost: 8
+  SfxName: Gun
+  EffectName: 3

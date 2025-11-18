@@ -33,6 +33,7 @@ public class GameManager
         if (!File.Exists(SavePath))
         {
             Debug.LogWarning("Nenhum arquivo de save encontrado!");
+            return null;
         }
 
         string json = File.ReadAllText(SavePath);
