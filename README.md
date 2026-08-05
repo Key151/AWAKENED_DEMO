@@ -5,8 +5,8 @@ Awakened is a Turn-Based RPG game developed for Windows. Awakened explores human
 
 ## 📥 Downloads
 
-* **[Click here for download Awakend_demo.zip](https://github.com/Key151/Vetoo/releases/download/v1.0.0/Vetoo.apk)**  
-* **[Click here for download GDD-Awakened_pt-br.pdf](https://github.com/Key151/Vetoo/releases/download/v1.0.0/Vetoo.apk)**
+* **[Click here for download Awakend_demo.zip](https://github.com/LucasRTK/JogoTCC/releases/download/v0.1.0/Awakened_demo.zip)**  
+* **[Click here for download GDD-Awakened_pt-br.pdf](https://github.com/LucasRTK/JogoTCC/blob/main/GDD-Awakened_pt-br.pdf)**
 
 ## Trailer (video's 1:30 min):
 * **[Trailer AWAKENED_DEMO](https://drive.google.com/file/d/16ZsJeKgCrh9Ou52yVozfdnn0L0rr_IEc/view?usp=drive_link)**
