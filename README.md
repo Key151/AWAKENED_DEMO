@@ -1,7 +1,7 @@
 # AWAKENED DEMO
 
 <details>
-<summary><h3>🇧🇷 Clique aqui para ler em Português</h3></summary>
+<summary><h3>📍 Clique aqui para ler em Português</h3></summary>
   
 ## Resumo:
 Awakened é um jogo desenvolvido para Windows do gênero RPG de Turno. Awakened tem como temática transversal os direitos humanos, contando uma história ambientada na ditadura militar do Brasil com o intuito de representar aspectos importantes do período por meio de uma mídia interativa. Pelos olhos de personagens fictícios que sofrem uma tragédia pessoal, a narrativa se baseia em fatos reais da época para demonstrar como a vida era para muitas pessoas no Brasil comandado pela ditadura.
@@ -57,7 +57,7 @@ Awakened é um jogo desenvolvido para Windows do gênero RPG de Turno. Awakened 
 </details>
 
 <details>
-<summary><h3>🇺🇸 Click here to read in English</h3></summary>
+<summary><h3>📍 Click here to read in English</h3></summary>
   
 ## Abstract:
 Awakened is a Turn-Based RPG game developed for Windows. Awakened explores human rights as its central theme, telling a story set during the Brazilian Dictatorship that spanned from 1964 until 1985, with the intent of representing important aspects of this period through an interactive medium. Through the perspective of fictional characters that go through a personal tragedy, the narrative is based on real events of that time to demonstrate how life was for many people in Brazil under the dictatorship’s command.
