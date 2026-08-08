@@ -45,6 +45,11 @@ Awakened é um jogo desenvolvido para Windows do gênero RPG de Turno. Awakened 
 * Exibição das informações dos personagens, como vida, ações disponíveis, inventário e diálogos.
 * Navegação entre menus de forma intuitiva durante a exploração e as batalhas.
 
+### Sistema de Idiomas
+* O jogo possui suporte aos idiomas Português e Inglês.
+* Os jogadores podem alternar entre os dois idiomas através da interface do jogo.
+* O idioma selecionado é aplicado aos textos do jogo, incluindo diálogos, menus e outros elementos da interface.
+
 ### Sistema de Áudio
 * Trilha sonora para ambientação das diferentes áreas do jogo.
 * Efeitos sonoros durante exploração, combate, interação com NPCs e utilização de habilidades.
@@ -101,6 +106,11 @@ Awakened is a Turn-Based RPG game developed for Windows. Awakened explores human
 * User interface composed of menus, an exploration HUD, and battle screens.
 * Displays character information such as health, available actions, inventory, and dialogues.
 * Intuitive navigation between menus during exploration and combat.
+
+### Language System
+* The game supports **Portuguese and English** languages.
+* Players can switch between the two languages through the game's interface.
+* The selected language is applied to the game's texts, including dialogues, menus, and other interface elements.
 
 ### Audio System
 * Background music designed to match the atmosphere of each area.
